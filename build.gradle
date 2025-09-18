@@ -18,7 +18,27 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name = "Iron's Maven - Release"
+        url = "https://code.redspace.io/releases"
+    }
+
+    maven {
+        name = "Iron's Maven - Snapshots"
+        url = "https://code.redspace.io/snapshots"
+    }
+
+    maven { url = "https://maven.enginehub.org/repo/" }
+    maven {
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+    maven { url = "https://maven.theillusivec4.top" }
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://maven.blamejared.com" }
+    maven { url = "https://maven.kosmx.dev/" }
 }
 
 base {
@@ -112,27 +132,47 @@ configurations {
 }
 
 dependencies {
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    //Iron's Spells 'n Spellbooks
+    implementation "curse.maven:iss-855414:6932556"
+    implementation "curse.maven:geckolib-388172:6304958"
+    implementation "curse.maven:player_animator-658587:6024462"
+    implementation "curse.maven:curios-309927:6342656"
 
-    // Example mod dependency using a file as dependency
-    // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
+    //Apothic Attributes
+    implementation "curse.maven:apothic-attributes-898963:6302334"
+    implementation "curse.maven:placebo-283644:6337156"
+    compileOnly "curse.maven:apotheosis-${apotheosis_version}"
 
-    // Example project dependency using a sister or child project:
-    // implementation project(":myproject")
+    //Ace Utils
+    implementation "curse.maven:ace_utils-1299492:6925303"
 
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    //AzureLib
+    implementation "curse.maven:azurelib-817423:7007247"
+
+    //JEI
+    compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
+
+    //Cataclysm Spellbooks
+    implementation "curse.maven:cataclysm_spellbooks-1099461:6925079"
+    implementation "curse.maven:l_enders_cataclysm-551586:6906997"
+    implementation "curse.maven:lionfish-1001614:6168249"
+
+    //SnackPirate's Aeromancy Additions
+    implementation "curse.maven:snackpirates_aeromancy_additions-1160104:6781033"
+    implementation "curse.maven:expandability-465066:5428824"
+
+    //Magic From The East
+    implementation "curse.maven:magic_from_the_east-1224162:6864551"
+
+    //Familiar Lib
+    implementation "curse.maven:familiar_lib-1316458:6824093"
+
+    //Ender's Spells and Stuff
+    implementation "curse.maven:enders_spells_and_stuff-1140215:6903947"
+    implementation "curse.maven:gtbcs-spelllib-1194714:6164512"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

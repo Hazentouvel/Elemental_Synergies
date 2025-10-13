@@ -34,6 +34,14 @@ public class ESArmorMaterials {
             2,
             0.1F);
 
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> GEOMANCY_MATERIAL = register("geomancy",
+            esPureArmorMap(),
+            40,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            2,
+            0.1F);
+
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> PURE_ARTIFACT_MATERIAL = register("pure_artifact",
             esPureArtifactArmorMap(),
             40,

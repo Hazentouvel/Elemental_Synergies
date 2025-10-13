@@ -350,15 +350,6 @@ public class CloudmasterSageEntity extends NeutralWizard implements VillagerData
         if (this.offers == null) {
             this.offers = new MerchantOffers();
             this.offers.add(new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 24),
-                    Optional.empty(),
-                    FurledMapItem.of(IronsSpellbooks.id("evoker_fort"), Component.translatable("item.irons_spellbooks.evoker_fort_battle_plans")),
-                    0,
-                    1,
-                    5,
-                    10f
-            ));
-            this.offers.add(new MerchantOffer(
                     new ItemCost(ItemRegistry.GREATER_HEALING_POTION.get()),
                     new ItemStack(Items.EMERALD, 18),
                     3,
@@ -383,8 +374,6 @@ public class CloudmasterSageEntity extends NeutralWizard implements VillagerData
 
     @Override
     public void overrideOffers(MerchantOffers pOffers) {
-        //Not implemented by villagers. Might be only used client-side
-        //TODO: anyscroll trades???
     }
 
     @Override

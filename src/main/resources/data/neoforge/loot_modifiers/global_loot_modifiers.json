@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "entries": [
+    "elemental_synergies:entity_drops/breeze_modifiers",
+    "elemental_synergies:entity_drops/bluff_modifiers"
+    ]
+}

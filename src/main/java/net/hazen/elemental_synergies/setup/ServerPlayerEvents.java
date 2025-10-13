@@ -1,16 +1,13 @@
-package net.hazen.elemental_synergies.setup.player;
+package net.hazen.elemental_synergies.setup;
 
 import com.snackpirate.aeromancy.data.AADamageTypes;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.effect.ImmolateEffect;
-import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.registries.ESItemRegistry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

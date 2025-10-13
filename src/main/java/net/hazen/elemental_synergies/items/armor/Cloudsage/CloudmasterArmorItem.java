@@ -6,7 +6,7 @@ import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.items.armor.ESArmorMaterials;
-import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItem;
+import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItemGeckolib;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -14,7 +14,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class CloudmasterArmorItem extends ImbuableESArmorItem implements IDisableJacket {
+public class CloudmasterArmorItem extends ImbuableESArmorItemGeckolib implements IDisableJacket {
     public CloudmasterArmorItem(ArmorItem.Type type, Item.Properties settings) {
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.PURE_ARTIFACT_MATERIAL, type, settings,

@@ -1,5 +1,44 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "item.elemental_synergies.zephyr_essence": "Zephyr Essence",
+  "item.elemental_synergies.aerialite_fragment": "Aerialite Fragment",
+  "item.elemental_synergies.aerialite_ingot": "Aerialite Ingot",
+  "item.elemental_synergies.cluster": "Cluster",
+
+
+
+  "item.elemental_synergies.cloudmaster_hat": "Cloudmaster Hat",
+  "item.elemental_synergies.cloudmaster_crown": "Cloudmaster Crown",
+  "item.elemental_synergies.cloudmaster_chestplate": "Cloudmaster Chestplate",
+  "item.elemental_synergies.cloudmaster_leggings": "Cloudmaster Leggings",
+  "item.elemental_synergies.cloudmaster_boots": "Cloudmaster Boots",
+
+  "item.elemental_synergies.aerospec_hat": "Aerospec Hat",
+  "item.elemental_synergies.aerospec_crown": "Aerospec Crown",
+  "item.elemental_synergies.aerospec_helm": "Aerospec Helm",
+  "item.elemental_synergies.aerospec_chestplate": "Aerospec Chestplate",
+  "item.elemental_synergies.aerospec_robes": "Aerospec Robes",
+  "item.elemental_synergies.aerospec_leggings": "Aerospec Leggings",
+  "item.elemental_synergies.aerospec_boots": "Aerospec Boots",
+
+  "item.elemental_synergies.titan_helmet": "Titan Mask",
+  "item.elemental_synergies.titan_chestplate": "Titan Chestplate",
+  "item.elemental_synergies.titan_leggings": "Titan Leggings",
+  "item.elemental_synergies.titan_boots": "Titan Boots",
+
+  "item.elemental_synergies.geckolib_titan_helmet": "Titan Mask",
+  "item.elemental_synergies.geckolib_titan_chestplate": "Titan Chestplate",
+  "item.elemental_synergies.geckolib_titan_leggings": "Titan Leggings",
+  "item.elemental_synergies.geckolib_titan_boots": "Titan Boots",
+
+  "item.elemental_synergies.arcane_mace": "Arcane Mace",
+
+
+  "item.elemental_synergies.grimoire_of_corruption": "Grimoire of Corruption",
+
+
+  "creativetab.elemental_synergies.synergized_materials": "Synergized Materials",
+  "creativetab.elemental_synergies.synergized_equipment": "Synergized Equipment",
+
+
+  "material.elemental_synergies.aerialite": "Aerialite"
 }

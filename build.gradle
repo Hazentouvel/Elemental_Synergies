@@ -155,10 +155,13 @@ dependencies {
     compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
     runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
 
+    //Hazen 'n Stuff
+    implementation "curse.maven:hazennstuff-1231627:7103087"
+
     //Cataclysm Spellbooks
-    implementation "curse.maven:cataclysm_spellbooks-1099461:6925079"
-    implementation "curse.maven:l_enders_cataclysm-551586:6906997"
-    implementation "curse.maven:lionfish-1001614:6168249"
+    //implementation "curse.maven:cataclysm_spellbooks-1099461:6925079"
+    //implementation "curse.maven:l_enders_cataclysm-551586:6906997"
+    //implementation "curse.maven:lionfish-1001614:6168249"
 
     //SnackPirate's Aeromancy Additions
     implementation "curse.maven:snackpirates_aeromancy_additions-1160104:6781033"
@@ -171,8 +174,12 @@ dependencies {
     implementation "curse.maven:familiar_lib-1316458:6824093"
 
     //Ender's Spells and Stuff
-    implementation "curse.maven:enders_spells_and_stuff-1140215:6903947"
-    implementation "curse.maven:gtbcs-spelllib-1194714:6164512"
+    //implementation "curse.maven:enders_spells_and_stuff-1140215:6903947"
+
+    //GTBC's Geomancy+
+    implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"
+    implementation "curse.maven:mowzies-mobs-250498:6700443"
+    implementation "curse.maven:gtbcs-spelllib-1194714:7041582"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

@@ -22,6 +22,8 @@ public class ImbuableESArmorItem extends ESArmorItem implements IPresetSpellCont
             return;
         }
 
+        // This makes it so that helmets and chestplates can be imbued
+        // If you only want chestplates to be imbued, remove the || section of the if statement
         if (itemStack.getItem() instanceof ArmorItem armorItem)
         {
             if (armorItem.getType() == ArmorItem.Type.CHESTPLATE)

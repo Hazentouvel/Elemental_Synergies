@@ -1,0 +1,46 @@
+{
+  "descriptionId": "material.elemental_synergies.aerialite",
+  "ingredient": {
+    "tag": "c:ingots/aerialite"
+  },
+  "materialType": [
+    "metal",
+    "gold"
+  ],
+  "paletteLocation": "elemental_synergies:palettes/aerialite",
+  "quality": 3,
+  "bonusParameters": {
+    "irons_jewelry:attribute": {
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 3,
+      "operation": "add_value"
+    },
+    "irons_jewelry:positive_effect": {
+      "effect": "aero_additions:wind_shield"
+    },
+    "irons_jewelry:negative_effect": {
+      "effect": "aero_additions:breathless"
+    },
+    "irons_jewelry:action": {
+      "targetSelf": false,
+      "action": {
+        "type": "irons_jewelry:explode",
+        "translation": "action.irons_jewelry.explode.wind_burst",
+        "affect_self": false,
+        "radius": {
+          "base": 3,
+          "scalar": 1
+        },
+        "knockback_multiplier": 3.0,
+        "block_interaction": "none",
+        "large_particle": {
+          "type": "minecraft:gust_emitter_large"
+        },
+        "small_particle": {
+          "type": "minecraft:gust_emitter_small"
+        },
+        "sound": "minecraft:entity.wind_charge.wind_burst"
+      }
+    }
+  }
+}

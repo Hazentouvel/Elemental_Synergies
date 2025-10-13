@@ -5,15 +5,21 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.elemental_synergies.items.armor.Cloudsage.CloudmasterArmorModel;
 import net.hazen.elemental_synergies.items.armor.ESArmorMaterials;
-import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItem;
+import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItemGeckolib;
+import net.hazen.hazennstuff.compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.compat.EndersSpellsAndStuffCompat;
+import net.hazen.hazennstuff.compat.MalumCompat;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class AerospecArmorItem extends ImbuableESArmorItem implements IDisableJacket {
+import java.util.List;
+
+public class AerospecArmorItem extends ImbuableESArmorItemGeckolib implements IDisableJacket {
     public AerospecArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
@@ -21,6 +27,15 @@ public class AerospecArmorItem extends ImbuableESArmorItem implements IDisableJa
                 new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
+    }
+
+    public List<ItemAttributeModifiers.Entry> createExtraAttributes() {
+        var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
+        ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
+        MalumCompat.addArcaneResonance(attributes, group);
+        ArsNoveauCompat.addManaRegen(attributes, group);
+        ArsNoveauCompat.addMaxMana(attributes, group);
+        return attributes.build().modifiers();
     }
 
     // Just supply the armor model here; you don't have to worry about making a new renderer

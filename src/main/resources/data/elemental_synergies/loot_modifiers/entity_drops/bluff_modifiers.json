@@ -1,0 +1,12 @@
+{
+  "type": "irons_spellbooks:append_loot",
+  "conditions": [
+    {
+      "condition":
+      "neoforge:loot_table_id",
+      "loot_table_id":
+      "mowziesmobs:entities/bluff"
+    }
+  ],
+  "key": "elemental_synergies:entities/additional_bluff_loot"
+}

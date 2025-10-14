@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "elemental_synergies:cluster"
+    },
+    "F": {
+      "item": "irons_spellbooks:fire_rune"
+    },
+    "G": {
+      "item": "gtbcs_geomancy_plus:geo_rune"
+    },
+    "N": {
+      "item": "irons_spellbooks:netherite_mage_chestplate"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "CNC",
+    "FZG",
+    "ZZZ"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 1,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:titan_chestplate"
+  }
+}

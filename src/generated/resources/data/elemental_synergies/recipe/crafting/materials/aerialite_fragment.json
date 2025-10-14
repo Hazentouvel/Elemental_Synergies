@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:breeze_rod"
+    },
+    "S": {
+      "item": "hazennstuff:zenalite_ingot"
+    },
+    "Z": {
+      "item": "elemental_synergies:zephyr_essence"
+    }
+  },
+  "pattern": [
+    " Z ",
+    "BSB",
+    " Z "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:aerialite_fragment"
+  }
+}

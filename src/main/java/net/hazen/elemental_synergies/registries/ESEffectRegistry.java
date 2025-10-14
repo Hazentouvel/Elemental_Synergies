@@ -16,7 +16,7 @@ public class ESEffectRegistry {
 
 
     public static final DeferredHolder<MobEffect, MobEffect> WIND_SHEAR = MOB_EFFECTS.register("wind_shear",
-            () -> new WindShearEffect(MobEffectCategory.HARMFUL, 0x2E2EFF));
+            () -> new WindShearEffect(MobEffectCategory.HARMFUL, 0xa3b6ff));
 
 
     public static void register(IEventBus eventBus) {

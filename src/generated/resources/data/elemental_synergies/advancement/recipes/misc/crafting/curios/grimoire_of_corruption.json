@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ritual_orihon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "iss_magicfromtheeast:ritual_orihon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "elemental_synergies:crafting/curios/grimoire_of_corruption"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ritual_orihon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elemental_synergies:crafting/curios/grimoire_of_corruption"
+    ]
+  }
+}

@@ -7,14 +7,19 @@
 
 
   "item.elemental_synergies.cloudmaster_hat": "Cloudmaster Hat",
+  "item.elemental_synergies.cloudmaster_hat.description": "Equipping the hat strengthens your Wind affinity, causing you to inflict windshear.",
   "item.elemental_synergies.cloudmaster_crown": "Cloudmaster Crown",
+  "item.elemental_synergies.cloudmaster_crown.description": "Equipping the crown strengthens your Wind affinity, causing you to inflict windshear.",
   "item.elemental_synergies.cloudmaster_chestplate": "Cloudmaster Chestplate",
   "item.elemental_synergies.cloudmaster_leggings": "Cloudmaster Leggings",
   "item.elemental_synergies.cloudmaster_boots": "Cloudmaster Boots",
 
   "item.elemental_synergies.aerospec_hat": "Aerospec Hat",
+  "item.elemental_synergies.aerospec_hat.description": "A Calamity Mod reference. Wearing this hat, increase your affinity for magic.",
   "item.elemental_synergies.aerospec_crown": "Aerospec Crown",
+  "item.elemental_synergies.aerospec_crown.description": "A Calamity Mod reference. Wearing this crown, increase your affinity for archery.",
   "item.elemental_synergies.aerospec_helm": "Aerospec Helm",
+  "item.elemental_synergies.aerospec_helm.description": "A Calamity Mod reference. Wearing this helm, increase your affinity for sword mastery.",
   "item.elemental_synergies.aerospec_chestplate": "Aerospec Chestplate",
   "item.elemental_synergies.aerospec_robes": "Aerospec Robes",
   "item.elemental_synergies.aerospec_leggings": "Aerospec Leggings",
@@ -31,6 +36,7 @@
   "item.elemental_synergies.geckolib_titan_boots": "Titan Boots",
 
   "item.elemental_synergies.arcane_mace": "Arcane Mace",
+  "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
 
 
   "item.elemental_synergies.grimoire_of_corruption": "Grimoire of Corruption",
@@ -40,5 +46,8 @@
   "creativetab.elemental_synergies.synergized_equipment": "Synergized Equipment",
 
 
-  "material.elemental_synergies.aerialite": "Aerialite"
+  "material.elemental_synergies.aerialite": "Aerialite",
+
+  "effect.elemental_synergies.wind_shear": "Wind Shear",
+  "effect.elemental_synergies.wind_shear.description": "Inflicts damage over time."
 }

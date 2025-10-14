@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "elemental_synergies:aerialite_ingot"
+    },
+    "P": {
+      "item": "minecraft:netherite_helmet"
+    },
+    "R": {
+      "item": "irons_spellbooks:arcane_rune"
+    }
+  },
+  "pattern": [
+    "RCR",
+    "CPC",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:aerospec_hat"
+  }
+}

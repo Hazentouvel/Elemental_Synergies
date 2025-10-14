@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aerialite_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elemental_synergies:aerialite_fragment"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:aerialite_ingot_from_blasting_aerialite_fragment"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aerialite_fragment"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:aerialite_ingot_from_blasting_aerialite_fragment"
+    ]
+  }
+}

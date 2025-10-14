@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "aero_additions:air_staff"
+    },
+    "M": {
+      "item": "minecraft:mace"
+    },
+    "R": {
+      "item": "aero_additions:wind_rune"
+    },
+    "S": {
+      "item": "hazennstuff:steel_ingot"
+    },
+    "Z": {
+      "item": "elemental_synergies:zephyr_essence"
+    }
+  },
+  "pattern": [
+    "SMS",
+    "RZR",
+    " A "
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [
+          {
+            "id": "aero_additions:wind_charge",
+            "index": 0,
+            "level": 3,
+            "locked": true
+          }
+        ],
+        "maxSpells": 1,
+        "mustEquip": false,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:arcane_mace"
+  }
+}

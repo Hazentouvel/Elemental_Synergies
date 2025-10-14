@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "iss_magicfromtheeast:ritual_orihon"
+    },
+    "C": {
+      "tag": "minecraft:candles"
+    },
+    "R": {
+      "item": "hazennstuff:shadow_rune"
+    },
+    "S": {
+      "item": "hazennstuff:steel_ingot"
+    }
+  },
+  "pattern": [
+    " CS",
+    "RAR",
+    "SR "
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 10,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:grimoire_of_corruption"
+  }
+}

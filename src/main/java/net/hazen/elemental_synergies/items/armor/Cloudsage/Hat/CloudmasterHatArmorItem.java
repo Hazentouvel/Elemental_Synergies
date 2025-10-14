@@ -10,15 +10,21 @@ import net.hazen.elemental_synergies.items.armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItemGeckolib;
 import net.hazen.elemental_synergies.items.armor.Titan.Azurelib.TitanArmorItem;
 import net.hazen.hazennstuff.registries.HnSEffects;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
+
+import java.util.List;
 
 public class CloudmasterHatArmorItem extends ImbuableESArmorItemGeckolib implements IDisableJacket {
     public CloudmasterHatArmorItem(Type type, Properties settings) {
@@ -41,6 +47,18 @@ public class CloudmasterHatArmorItem extends ImbuableESArmorItemGeckolib impleme
         if (!player.hasEffect(HnSEffects.MAGE_SET_BONUS)) {
             player.addEffect(new MobEffectInstance(HnSEffects.MAGE_SET_BONUS, 320, 0, false, false, false));
         }
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack,
+                                @NotNull TooltipContext context,
+                                @NotNull List<Component> lines,
+                                @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, context, lines, flag);
+
+        // Custom item description section
+        lines.add(Component.translatable("item.hazennstuff.cloudmaster_hat.description")
+                .withStyle(Style.EMPTY.withColor(0xa3b6ff).withItalic(true)));
     }
 
     private boolean isWearingFullSet(Player player) {

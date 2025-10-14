@@ -3,11 +3,12 @@ package net.hazen.elemental_synergies.setup;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageEntity;
 import net.hazen.elemental_synergies.registries.ESEntityRegistry;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
-@EventBusSubscriber(modid = ElementalSynergies.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(value = Dist.CLIENT)
 public class CommonSetup {
 
     @SubscribeEvent

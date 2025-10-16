@@ -20,7 +20,6 @@ public class ESCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SYNERGIZED_EQUIPMENT = CREATIVE_MODE_TAB.register("synergized_equipment",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ESItemRegistry.CLOUDMASTER_CROWN.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_equipment"))
                     .title(Component.translatable("creativetab.elemental_synergies.synergized_equipment"))
                     .displayItems((itemDisplayParameters, output) -> {
 
@@ -87,8 +86,8 @@ public class ESCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SYNERGIZED_MATERIALS = CREATIVE_MODE_TAB.register("synergized_materials",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ESItemRegistry.ZEPHYR_ESSENCE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_materials"))
-                    .title(Component.translatable("creativetab.elemental_synergies.synergized_materials"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "synergized_equipment"))
+                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_equipment"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ESItemRegistry.ZEPHYR_ESSENCE.get());

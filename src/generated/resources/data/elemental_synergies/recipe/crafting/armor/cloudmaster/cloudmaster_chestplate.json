@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "elemental_synergies:aerialite_ingot"
+    },
+    "D": {
+      "item": "irons_spellbooks:divine_soulshard"
+    },
+    "M": {
+      "item": "irons_spellbooks:mithril_weave"
+    },
+    "P": {
+      "item": "elemental_synergies:aerospec_robes"
+    }
+  },
+  "pattern": [
+    "C C",
+    "MPM",
+    "CDC"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 1,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:cloudmaster_chestplate"
+  }
+}

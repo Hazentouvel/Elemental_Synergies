@@ -158,6 +158,64 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/aerospec/aerospec_boots"));
 
 
+        //Cloudmaster
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.CLOUDMASTER_HAT.get())
+                .pattern("C C")
+                .pattern("MPM")
+                .pattern(" D ")
+                .define('C', ESItemRegistry.AERIALITE_INGOT.get())
+                .define('D', ItemRegistry.DIVINE_SOULSHARD.get())
+                .define('M', ItemRegistry.MITHRIL_WEAVE.get())
+                .define('P', ESItemRegistry.AEROSPEC_HAT.get())
+                .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/cloudmaster/cloudmaster_hat"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.CLOUDMASTER_CROWN.get())
+                .pattern("C C")
+                .pattern("MPM")
+                .pattern(" D ")
+                .define('C', ESItemRegistry.AERIALITE_INGOT.get())
+                .define('D', ItemRegistry.DIVINE_SOULSHARD.get())
+                .define('M', ItemRegistry.MITHRIL_WEAVE.get())
+                .define('P', ESItemRegistry.AEROSPEC_CROWN.get())
+                .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/cloudmaster/cloudmaster_crown"));
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.CLOUDMASTER_CHESTPLATE.get())
+                .pattern("C C")
+                .pattern("MPM")
+                .pattern("CDC")
+                .define('C', ESItemRegistry.AERIALITE_INGOT.get())
+                .define('D', ItemRegistry.DIVINE_SOULSHARD.get())
+                .define('M', ItemRegistry.MITHRIL_WEAVE.get())
+                .define('P', ESItemRegistry.AEROSPEC_ROBES.get())
+                .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/cloudmaster/cloudmaster_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
+                .pattern("MDM")
+                .pattern("CPC")
+                .pattern("C C")
+                .define('C', ESItemRegistry.AERIALITE_INGOT.get())
+                .define('D', ItemRegistry.DIVINE_SOULSHARD.get())
+                .define('M', ItemRegistry.MITHRIL_WEAVE.get())
+                .define('P', ESItemRegistry.AEROSPEC_LEGGINGS.get())
+                .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/cloudmaster/cloudmaster_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.CLOUDMASTER_BOOTS.get())
+                .pattern("CPC")
+                .pattern("MDM")
+                .pattern("   ")
+                .define('C', ESItemRegistry.AERIALITE_INGOT.get())
+                .define('D', ItemRegistry.DIVINE_SOULSHARD.get())
+                .define('M', ItemRegistry.MITHRIL_WEAVE.get())
+                .define('P', ESItemRegistry.AEROSPEC_BOOTS.get())
+                .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/cloudmaster/cloudmaster_boots"));
+
+
 
         /*
         *** Geomancy

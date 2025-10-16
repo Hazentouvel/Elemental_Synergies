@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "elemental_synergies:aerialite_ingot"
+    },
+    "D": {
+      "item": "irons_spellbooks:divine_soulshard"
+    },
+    "M": {
+      "item": "irons_spellbooks:mithril_weave"
+    },
+    "P": {
+      "item": "elemental_synergies:aerospec_leggings"
+    }
+  },
+  "pattern": [
+    "MDM",
+    "CPC",
+    "C C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:cloudmaster_leggings"
+  }
+}

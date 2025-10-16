@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.items.armor.Cloudsage;
+package net.hazen.elemental_synergies.items.armor.Cloudmaster;
 
 import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
@@ -19,8 +19,8 @@ public class CloudmasterArmorItem extends ImbuableESArmorItemGeckolib implements
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.PURE_ARTIFACT_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
 

@@ -34,6 +34,7 @@ public class ESArmorMaterials {
             2,
             0.1F);
 
+
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> GEOMANCY_MATERIAL = register("geomancy",
             esPureArmorMap(),
             40,

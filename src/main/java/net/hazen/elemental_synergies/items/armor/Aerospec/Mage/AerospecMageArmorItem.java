@@ -36,8 +36,8 @@ public class AerospecMageArmorItem extends ImbuableESArmorItemGeckolib implement
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
 
@@ -58,7 +58,7 @@ public class AerospecMageArmorItem extends ImbuableESArmorItemGeckolib implement
         super.appendHoverText(stack, context, lines, flag);
 
         // Custom item description section
-        lines.add(Component.translatable("item.hazennstuff.aerospec_hat.description")
+        lines.add(Component.translatable("item.elemental_synergies.aerospec_hat.description")
                 .withStyle(Style.EMPTY.withColor(0xa3b6ff).withItalic(true)));
     }
 

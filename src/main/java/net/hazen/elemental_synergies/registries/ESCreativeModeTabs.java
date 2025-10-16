@@ -1,10 +1,13 @@
 package net.hazen.elemental_synergies.registries;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.hazennstuff.HazenNStuff;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -17,6 +20,7 @@ public class ESCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SYNERGIZED_EQUIPMENT = CREATIVE_MODE_TAB.register("synergized_equipment",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ESItemRegistry.CLOUDMASTER_CROWN.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_equipment"))
                     .title(Component.translatable("creativetab.elemental_synergies.synergized_equipment"))
                     .displayItems((itemDisplayParameters, output) -> {
 
@@ -83,8 +87,8 @@ public class ESCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SYNERGIZED_MATERIALS = CREATIVE_MODE_TAB.register("synergized_materials",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ESItemRegistry.ZEPHYR_ESSENCE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "synergized_equipment"))
-                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_equipment"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_materials"))
+                    .title(Component.translatable("creativetab.elemental_synergies.synergized_materials"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ESItemRegistry.ZEPHYR_ESSENCE.get());

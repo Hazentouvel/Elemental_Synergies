@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.items.armor.Cloudsage.Crown;
+package net.hazen.elemental_synergies.items.armor.Cloudmaster.Crown;
 
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.hazen.elemental_synergies.ElementalSynergies;

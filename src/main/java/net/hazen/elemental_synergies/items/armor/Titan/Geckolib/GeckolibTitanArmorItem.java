@@ -5,12 +5,10 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.elemental_synergies.items.armor.Cloudsage.CloudmasterArmorModel;
 import net.hazen.elemental_synergies.items.armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.items.armor.ImbuableESArmorItemGeckolib;
 import net.hazen.elemental_synergies.items.armor.Titan.Azurelib.TitanArmorItem;
 import net.hazen.hazennstuff.compat.ArsNoveauCompat;
-import net.hazen.hazennstuff.compat.EndersSpellsAndStuffCompat;
 import net.hazen.hazennstuff.compat.MalumCompat;
 import net.hazen.hazennstuff.registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,9 +30,9 @@ public class GeckolibTitanArmorItem extends ImbuableESArmorItemGeckolib implemen
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.PURE_ARTIFACT_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(GGAttributes.GEO_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(GGAttributes.GEO_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
 

@@ -37,10 +37,10 @@ public class AerospecHelmArmorItem extends ImbuableESArmorItemGeckolib implement
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .10, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(Attributes.ATTACK_DAMAGE, 1, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(ALObjects.Attributes.ARMOR_SHRED, .15, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(Attributes.ATTACK_DAMAGE, 1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(ALObjects.Attributes.ARMOR_SHRED, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
 
@@ -62,7 +62,7 @@ public class AerospecHelmArmorItem extends ImbuableESArmorItemGeckolib implement
         super.appendHoverText(stack, context, lines, flag);
 
         // Custom item description section
-        lines.add(Component.translatable("item.hazennstuff.aerospec_helm.description")
+        lines.add(Component.translatable("item.elemental_synergies.aerospec_helm.description")
                 .withStyle(Style.EMPTY.withColor(0xa3b6ff).withItalic(true)));
     }
 

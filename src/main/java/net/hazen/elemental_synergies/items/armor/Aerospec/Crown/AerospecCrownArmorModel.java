@@ -2,7 +2,6 @@ package net.hazen.elemental_synergies.items.armor.Aerospec.Crown;
 
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.items.armor.Cloudsage.CloudmasterArmorItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 

@@ -38,10 +38,10 @@ public class AerospecCrownArmorItem extends ImbuableESArmorItemGeckolib implemen
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .10, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(ALObjects.Attributes.DRAW_SPEED, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(ALObjects.Attributes.ARROW_DAMAGE, .15, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(ALObjects.Attributes.DRAW_SPEED, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(ALObjects.Attributes.ARROW_DAMAGE, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
 
@@ -63,7 +63,7 @@ public class AerospecCrownArmorItem extends ImbuableESArmorItemGeckolib implemen
         super.appendHoverText(stack, context, lines, flag);
 
         // Custom item description section
-        lines.add(Component.translatable("item.hazennstuff.aerospec_crown.description")
+        lines.add(Component.translatable("item.elemental_synergies.aerospec_crown.description")
                 .withStyle(Style.EMPTY.withColor(0xa3b6ff).withItalic(true)));
     }
 

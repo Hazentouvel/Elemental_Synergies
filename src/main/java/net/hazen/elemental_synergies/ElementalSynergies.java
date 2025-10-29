@@ -6,17 +6,14 @@ import mod.azure.azurelib.rewrite.animation.cache.AzIdentityRegistry;
 import mod.azure.azurelib.rewrite.render.armor.AzArmorRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
-import net.hazen.elemental_synergies.items.armor.ESArmorMaterials;
-import net.hazen.elemental_synergies.items.armor.Titan.Azurelib.TitanArmorRenderer;
-import net.hazen.elemental_synergies.items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
-import net.hazen.elemental_synergies.items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
+import net.hazen.elemental_synergies.Items.Armor.ESArmorMaterials;
+import net.hazen.elemental_synergies.Items.Armor.Titan.Azurelib.TitanArmorRenderer;
+import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
+import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
 import net.hazen.elemental_synergies.registries.ESCreativeModeTabs;
 import net.hazen.elemental_synergies.registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.registries.ESItemRegistry;
-import net.hazen.hazennstuff.item.curios.Spellbooks.EnergizedCoreSpellbook.EnergizedCoreSpellbookCurioItemRenderer;
-import net.hazen.hazennstuff.item.curios.Spellbooks.EnergizedCoreSpellbook.EnergizedCoreSpellbookCurioRenderer;
-import net.hazen.hazennstuff.registries.HnSItems;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -99,22 +96,11 @@ public class ElementalSynergies {
                     ESItemRegistry.TITAN_LEGGINGS.get(),
                     ESItemRegistry.TITAN_BOOTS.get());
 
-            // Animation Registry
-            AzIdentityRegistry.register(
-
-                    //Armor
-                    ESItemRegistry.TITAN_HELMET.get(),
-                    ESItemRegistry.TITAN_CHESTPLATE.get(),
-                    ESItemRegistry.TITAN_LEGGINGS.get(),
-                    ESItemRegistry.TITAN_BOOTS.get()
-
-            );
-
             /*
              *** Spellbooks
              */
 
-            //Energized Core Spellbook
+            // Grimoire of Corruption
             AzArmorRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
             CuriosRendererRegistry.register(
                     ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(), GrimoireOfCorruptionSpellbookCurioRenderer::new

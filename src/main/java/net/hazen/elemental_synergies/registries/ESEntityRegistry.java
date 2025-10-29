@@ -1,7 +1,7 @@
 package net.hazen.elemental_synergies.registries;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageEntity;
+import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;

@@ -1,9 +1,7 @@
 package net.hazen.elemental_synergies.setup;
 
-import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
+import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
 import net.hazen.elemental_synergies.registries.ESEntityRegistry;
-import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

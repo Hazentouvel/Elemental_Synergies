@@ -1,9 +1,8 @@
-package net.hazen.elemental_synergies.Items.Armor.Maledictus;
+package net.hazen.elemental_synergies.Items.Armor.Scylla;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.hazennstuff.HazenNStuff;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -13,16 +12,16 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 
-public class MaledictusArmorLayer extends GeoRenderLayer<MaledictusArmorItem> {
+public class ScyllaArmorSnakeLayer extends GeoRenderLayer<ScyllaArmorItem> {
     private static final ResourceLocation LAYER = ResourceLocation.fromNamespaceAndPath(
             ElementalSynergies.MOD_ID,
-            "textures/armor/maledictus_armor_ghost_layer.png");
+            "textures/armor/scylla_armor_snakes.png");
 
-    public MaledictusArmorLayer(GeoRenderer<MaledictusArmorItem> entityRenderer) {
+    public ScyllaArmorSnakeLayer(GeoRenderer<ScyllaArmorItem> entityRenderer) {
         super(entityRenderer);
     }
 
-    public void render(PoseStack poseStack, MaledictusArmorItem animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
+    public void render(PoseStack poseStack, ScyllaArmorItem animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
         RenderType glowRenderType = RenderType.eyes(LAYER);
 
         this.getRenderer()

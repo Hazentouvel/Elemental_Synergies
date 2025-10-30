@@ -9,6 +9,8 @@ import net.hazen.elemental_synergies.Items.Armor.Aerospec.Mage.AerospecMageArmor
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.CloudmasterArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.Crown.CloudmasterCrownArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.Hat.CloudmasterHatArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.Maledictus.MaledictusArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.Scylla.ScyllaArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Titan.Azurelib.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Titan.Geckolib.GeckolibTitanArmorItem;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
@@ -213,6 +215,60 @@ public class ESItemRegistry {
     ));
 
 
+    // Maledictus Armor Set
+    public static final DeferredHolder<Item, Item> MALEDICTUS_HELMET = ITEMS.register("maledictus_helmet", () -> new MaledictusArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> MALEDICTUS_CHESTPLATE = ITEMS.register("maledictus_chestplate", () -> new MaledictusArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> MALEDICTUS_LEGGINGS = ITEMS.register("maledictus_leggings", () -> new MaledictusArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+
+    public static final DeferredHolder<Item, Item> MALEDICTUS_BOOTS = ITEMS.register("scylla_boots", () -> new MaledictusArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+
+    // Geckolib Titan Armor Set
+    public static final DeferredHolder<Item, Item> SCYLLA_HELMET = ITEMS.register("scylla_helmet", () -> new ScyllaArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> SCYLLA_CHESTPLATE = ITEMS.register("scylla_chestplate", () -> new ScyllaArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> SCYLLA_LEGGINGS = ITEMS.register("scylla_leggings", () -> new ScyllaArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+
+    public static final DeferredHolder<Item, Item> SCYLLA_BOOTS = ITEMS.register("scylla_boots", () -> new ScyllaArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+
 
     /*
     *** Azurelib
@@ -220,7 +276,7 @@ public class ESItemRegistry {
 
 
 
-    //Cloudmaster Armor Set
+    //Titan Armor Set
     public static final DeferredHolder<Item, Item> TITAN_HELMET = ITEMS.register("titan_helmet", () -> new TitanArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())

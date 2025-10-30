@@ -54,6 +54,18 @@ public class ESCreativeModeTabs {
                         //output.accept(ESItemRegistry.GECKOLIB_TITAN_LEGGINGS.get());
                         //output.accept(ESItemRegistry.GECKOLIB_TITAN_BOOTS.get());
 
+                        //Maledictus Armor
+                        output.accept(ESItemRegistry.MALEDICTUS_HELMET.get());
+                        output.accept(ESItemRegistry.MALEDICTUS_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.MALEDICTUS_LEGGINGS.get());
+                        output.accept(ESItemRegistry.MALEDICTUS_BOOTS.get());
+
+                        //Scylla Armor
+                        output.accept(ESItemRegistry.SCYLLA_HELMET.get());
+                        output.accept(ESItemRegistry.SCYLLA_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.SCYLLA_LEGGINGS.get());
+                        output.accept(ESItemRegistry.SCYLLA_BOOTS.get());
+
 
                         /*
                         *** Weapons

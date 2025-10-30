@@ -1,5 +1,7 @@
 package net.hazen.elemental_synergies.Items.Armor;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
+import com.github.L_Ender.cataclysm.init.ModSounds;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.minecraft.Util;
@@ -48,6 +50,14 @@ public class ESArmorMaterials {
             40,
             SoundEvents.ARMOR_EQUIP_LEATHER,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            2,
+            0.1F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> MALEDICTUS = register("maledictus",
+            esPureArtifactArmorMap(),
+            40,
+            ModSounds.MALEDICTUS_IDLE,
+            () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
             2,
             0.1F);
 

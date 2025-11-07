@@ -9,10 +9,12 @@ import net.hazen.elemental_synergies.Items.Armor.Aerospec.Mage.AerospecMageArmor
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.CloudmasterArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.Crown.CloudmasterCrownArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Cloudmaster.Hat.CloudmasterHatArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.Ignis.IgnisArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Maledictus.MaledictusArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Scylla.ScyllaArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Titan.Azurelib.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.Titan.Geckolib.GeckolibTitanArmorItem;
+import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
 import net.hazen.elemental_synergies.Items.staves.ArcaneMace.ArcaneMaceItem;
 import net.hazen.elemental_synergies.rarity.AeromancyRarity;
@@ -96,6 +98,10 @@ public class ESItemRegistry {
     /*
     *** Curios
      */
+
+    // Gauntlets of Ignis
+    public static final DeferredItem <GauntletsOfIgnis> GAUNLETS_OF_IGNIS = ITEMS.register("gauntlets_of_ignis", GauntletsOfIgnis::new);
+
 
     //Grimoire of Corruption
     public static final DeferredItem <GrimoireOfCorruptionSpellbook> GRIMOIRE_OF_CORRUPTION = ITEMS.register("grimoire_of_corruption", GrimoireOfCorruptionSpellbook::new);
@@ -235,14 +241,14 @@ public class ESItemRegistry {
     ));
 
 
-    public static final DeferredHolder<Item, Item> MALEDICTUS_BOOTS = ITEMS.register("scylla_boots", () -> new MaledictusArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+    public static final DeferredHolder<Item, Item> MALEDICTUS_BOOTS = ITEMS.register("maledictus_boots", () -> new MaledictusArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
             .fireResistant()
     ));
 
 
-    // Geckolib Titan Armor Set
+    // Scylla Armor Set
     public static final DeferredHolder<Item, Item> SCYLLA_HELMET = ITEMS.register("scylla_helmet", () -> new ScyllaArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
@@ -263,6 +269,32 @@ public class ESItemRegistry {
 
 
     public static final DeferredHolder<Item, Item> SCYLLA_BOOTS = ITEMS.register("scylla_boots", () -> new ScyllaArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    // Ignis Armor Set
+    public static final DeferredHolder<Item, Item> IGNIS_HELMET = ITEMS.register("ignis_helmet", () -> new IgnisArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> IGNIS_CHESTPLATE = ITEMS.register("ignis_chestplate", () -> new IgnisArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+    public static final DeferredHolder<Item, Item> IGNIS_LEGGINGS = ITEMS.register("ignis_leggings", () -> new IgnisArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+            .fireResistant()
+    ));
+
+
+    public static final DeferredHolder<Item, Item> IGNIS_BOOTS = ITEMS.register("ignis_boots", () -> new IgnisArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
             .fireResistant()

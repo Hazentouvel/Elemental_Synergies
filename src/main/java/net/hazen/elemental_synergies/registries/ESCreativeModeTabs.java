@@ -66,6 +66,12 @@ public class ESCreativeModeTabs {
                         output.accept(ESItemRegistry.SCYLLA_LEGGINGS.get());
                         output.accept(ESItemRegistry.SCYLLA_BOOTS.get());
 
+                        // Ignis Armor
+                        output.accept(ESItemRegistry.IGNIS_HELMET.get());
+                        output.accept(ESItemRegistry.IGNIS_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.IGNIS_LEGGINGS.get());
+                        output.accept(ESItemRegistry.IGNIS_BOOTS.get());
+
 
                         /*
                         *** Weapons
@@ -90,6 +96,8 @@ public class ESCreativeModeTabs {
 
                         //Arcane Mace
                         output.accept(ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
+
+                        output.accept(ESItemRegistry.GAUNLETS_OF_IGNIS.get());
 
 
 

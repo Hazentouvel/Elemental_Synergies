@@ -8,6 +8,8 @@ import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRe
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.Items.Armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.Items.Armor.Titan.Azurelib.TitanArmorRenderer;
+import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
+import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
 import net.hazen.elemental_synergies.registries.ESCreativeModeTabs;
@@ -104,6 +106,12 @@ public class ElementalSynergies {
             AzArmorRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
             CuriosRendererRegistry.register(
                     ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(), GrimoireOfCorruptionSpellbookCurioRenderer::new
+            );
+
+            // Gauntlets of Ignis
+            AzArmorRendererRegistry.register(GauntletsOfIgnisItemRenderer::new, ESItemRegistry.GAUNLETS_OF_IGNIS.get());
+            CuriosRendererRegistry.register(
+                    ESItemRegistry.GAUNLETS_OF_IGNIS.get(), GauntletsOfIgnisCurioRenderer::new
             );
 
             // Animation Registry

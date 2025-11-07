@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.Armor.Maledictus;
+package net.hazen.elemental_synergies.Items.Armor.Ignis;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
@@ -25,12 +25,12 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
-    public MaledictusArmorItem(Type type, Properties settings) {
+public class IgnisArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
+    public IgnisArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.MALEDICTUS, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.ICE_SPELL_POWER, .2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
         );
     }
@@ -52,7 +52,7 @@ public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements
     @Override
     @OnlyIn(Dist.CLIENT)
     public GeoArmorRenderer<?> supplyRenderer() {
-        return new MaledictusArmorRenderer(new MaledictusArmorModel());
+        return new IgnisArmorRenderer(new IgnisArmorModel());
     }
 
     @Override
@@ -69,9 +69,9 @@ public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements
     }
 
     private boolean isWearingFullSet(Player player) {
-        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof MaledictusArmorItem &&
-                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof MaledictusArmorItem &&
-                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof MaledictusArmorItem &&
-                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof MaledictusArmorItem;
+        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof IgnisArmorItem &&
+                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof IgnisArmorItem &&
+                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof IgnisArmorItem &&
+                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof IgnisArmorItem;
     }
 }

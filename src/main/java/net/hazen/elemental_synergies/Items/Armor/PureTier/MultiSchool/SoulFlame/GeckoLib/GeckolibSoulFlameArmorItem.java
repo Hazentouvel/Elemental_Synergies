@@ -1,12 +1,14 @@
-package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Geckolib;
+package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.GeckoLib;
 
-import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
+import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
+import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.Armor.Geckolib.SoulFlame.GeckolibSoulFlameArmorModel;
 import net.hazen.hazennstuff.Item.HnSUtilities.HnSArmorMaterials;
 import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
@@ -19,25 +21,35 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.List;
 
-public class GeckolibTitanArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
-    public GeckolibTitanArmorItem(Type type, Properties settings) {
+public class GeckolibSoulFlameArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
+    public GeckolibSoulFlameArmorItem(Type type, Properties settings) {
         super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
                 AttributeRegistry.FIRE_SPELL_POWER,
-                GGAttributes.GEO_SPELL_POWER
+                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
         ));
     }
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {
         var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
         ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
-        MalumCompat .addArcaneResonance(attributes, group);
+        MalumCompat.addArcaneResonance(attributes, group);
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();
+    }
+
+
+    // Just supply the armor model here; you don't have to worry about making a new renderer
+    // ISS already has a custom renderer used for armor models
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public GeoArmorRenderer<?> supplyRenderer() {
+        return new GenericCustomArmorRenderer<>(new GeckolibSoulFlameArmorModel());
     }
 
     @Override
@@ -54,15 +66,9 @@ public class GeckolibTitanArmorItem extends ImbuableGeckolibHnSArmorItem impleme
     }
 
     private boolean isWearingFullSet(Player player) {
-        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof TitanArmorItem &&
-                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof TitanArmorItem &&
-                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof TitanArmorItem &&
-                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof TitanArmorItem;
-    }
-
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public GeoArmorRenderer<?> supplyRenderer() {
-        return new GenericCustomArmorRenderer<>(new GeckolibTitanArmorModel());
+        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem;
     }
 }

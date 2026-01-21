@@ -1,16 +1,13 @@
 package net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec;
 
 import com.snackpirate.aeromancy.spells.AASpells;
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.elemental_synergies.Extensions.ImbuableESArmorItemGeckolib;
-import net.hazen.hazennstuff.compat.ArsNoveauCompat;
-import net.hazen.hazennstuff.compat.MalumCompat;
+import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
 import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -18,14 +15,11 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.List;
 
-public class AerospecArmorItem extends ImbuableESArmorItemGeckolib implements IDisableJacket {
+public class AerospecArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public AerospecArmorItem(Type type, Properties settings) {
-        // Add in your armor tier + additional attributes for your item
-        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
-                new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AASpells.Attributes.WIND_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-        );
+        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings, pureTier(
+                AASpells.Attributes.WIND_SPELL_POWER
+        ));
     }
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {

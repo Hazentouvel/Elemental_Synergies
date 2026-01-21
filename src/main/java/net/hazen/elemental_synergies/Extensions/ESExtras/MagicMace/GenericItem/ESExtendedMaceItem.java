@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Registries.ESExtras.MagicMace.GenericItem;
+package net.hazen.elemental_synergies.Extensions.ESExtras.MagicMace.GenericItem;
 
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;

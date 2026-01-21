@@ -6,7 +6,7 @@ import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainerMutable;
 import io.redspace.ironsspellbooks.api.spells.SpellData;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
-import net.hazen.elemental_synergies.Registries.ESExtras.MagicMace.CastingItem.ESMaceStaffItem;
+import net.hazen.elemental_synergies.Extensions.ESExtras.MagicMace.CastingItem.ESMaceStaffItem;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Arrays;

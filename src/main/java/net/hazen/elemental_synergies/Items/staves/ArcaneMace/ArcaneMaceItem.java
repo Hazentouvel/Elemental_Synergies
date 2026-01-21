@@ -5,7 +5,6 @@ import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
-import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Items.staves.ESImbuableMaceStaffItem;
 import net.hazen.elemental_synergies.Items.staves.ESStaffTier;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -96,10 +95,10 @@ public class ArcaneMaceItem extends ESImbuableMaceStaffItem implements GeoItem {
             ItemStack mainHand = caster.getMainHandItem();
             ItemStack offHand = caster.getOffhandItem();
 
-            boolean usingKnives = mainHand.getItem() instanceof ArcaneMaceItem ||
+            boolean usingArcaneMace = mainHand.getItem() instanceof ArcaneMaceItem ||
                     offHand.getItem() instanceof ArcaneMaceItem;
 
-            if (usingKnives) {
+            if (usingArcaneMace) {
                 event.addLevels(1);
             }
         }

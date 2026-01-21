@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Registries.ESExtras.MagicMace.CastingItem;
+package net.hazen.elemental_synergies.Extensions.ESExtras.MagicMace.CastingItem;
 
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import net.minecraft.util.Unit;

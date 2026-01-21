@@ -12,7 +12,7 @@ import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmast
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.MaledictusArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Scylla.ScyllaArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Azurelib.TitanArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Geckolib.GeckolibTitanArmorItem;
 import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;

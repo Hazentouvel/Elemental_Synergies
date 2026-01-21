@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Azurelib;
+package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan;
 
 import mod.azure.azurelib.common.internal.client.util.RenderUtils;
 import mod.azure.azurelib.rewrite.model.AzBakedModel;

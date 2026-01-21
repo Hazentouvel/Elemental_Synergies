@@ -1,19 +1,17 @@
-package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Azurelib;
+package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan;
 
 import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.elemental_synergies.Extensions.ImbuableESArmorItem;
-import net.hazen.hazennstuff.compat.ArsNoveauCompat;
-import net.hazen.hazennstuff.compat.MalumCompat;
-import net.hazen.hazennstuff.registries.HnSEffects;
+import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableHnSArmorItem;
+import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -23,17 +21,15 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class TitanArmorItem extends ImbuableESArmorItem implements IDisableJacket {
+public class TitanArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     // This is your class where you will setup the AzCommands/Animations you wish to play
     public final ESDispatcher dispatcher;
 
     public TitanArmorItem(ArmorItem.Type type, Item.Properties settings) {
-        super(ESArmorMaterials.GEOMANCY_MATERIAL, type, settings,
-                new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(GGAttributes.GEO_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-        );
+        super(ESArmorMaterials.GEOMANCY_MATERIAL, type, settings, pureTierMulti(
+                AttributeRegistry.FIRE_SPELL_POWER,
+                GGAttributes.GEO_SPELL_POWER
+        ));
         this.dispatcher = new ESDispatcher();
     }
 

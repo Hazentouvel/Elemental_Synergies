@@ -2,15 +2,10 @@ package net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
-import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
-import net.hazen.hazennstuff.item.dispatcher.HnSItemDispatcher;
-import net.hazen.hazennstuff.rarity.FlamingRarity;
-import net.hazen.hazennstuff.registries.HnSAttributeRegistry;
+import net.hazen.hazennstuff.Rarity.HnSRarities;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -20,7 +15,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 import top.theillusivec4.curios.api.SlotContext;
 
 
@@ -32,7 +26,7 @@ public class GauntletsOfIgnis extends CurioBaseItem {
                 .equipment()
                 .stacksTo(1)
                 .fireResistant()
-                .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+                .rarity(HnSRarities.FIRE_RARITY.getValue())
         );
 
         this.dispatcher = new ESDispatcher();

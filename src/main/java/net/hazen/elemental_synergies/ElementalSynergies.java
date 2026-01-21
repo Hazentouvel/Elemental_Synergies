@@ -7,7 +7,7 @@ import mod.azure.azurelib.rewrite.render.armor.AzArmorRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Azurelib.TitanArmorRenderer;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
 import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
 import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
 import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;

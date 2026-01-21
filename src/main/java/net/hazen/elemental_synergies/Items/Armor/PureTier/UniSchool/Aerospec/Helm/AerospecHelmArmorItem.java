@@ -8,11 +8,10 @@ import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.AerospecArmorItem;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.elemental_synergies.Extensions.ImbuableESArmorItemGeckolib;
-import net.hazen.hazennstuff.compat.ArsNoveauCompat;
-import net.hazen.hazennstuff.compat.EndersSpellsAndStuffCompat;
-import net.hazen.hazennstuff.compat.MalumCompat;
-import net.hazen.hazennstuff.registries.HnSEffects;
+import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
+import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,7 +31,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.List;
 
-public class AerospecHelmArmorItem extends ImbuableESArmorItemGeckolib implements IDisableJacket {
+public class AerospecHelmArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public AerospecHelmArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
         super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings,
@@ -50,7 +49,6 @@ public class AerospecHelmArmorItem extends ImbuableESArmorItemGeckolib implement
         MalumCompat.addArcaneResonance(attributes, group);
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
-        EndersSpellsAndStuffCompat.addSpellbladeSpellPower(attributes, group);
         return attributes.build().modifiers();
     }
 

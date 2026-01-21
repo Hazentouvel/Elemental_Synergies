@@ -7,6 +7,7 @@ import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.HnSUtilities.HnSArmorMaterials;
 import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -27,12 +29,10 @@ import java.util.List;
 
 public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public MaledictusArmorItem(Type type, Properties settings) {
-        // Add in your armor tier + additional attributes for your item
-        super(ESArmorMaterials.MALEDICTUS, type, settings,
-                new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.ICE_SPELL_POWER, .2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-        );
+        super(ESArmorMaterials.MALEDICTUS, type, settings, paragonTierMulti(
+                AttributeRegistry.ICE_SPELL_POWER,
+                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+        ));
     }
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 

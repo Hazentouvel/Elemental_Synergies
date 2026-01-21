@@ -1,12 +1,12 @@
-package net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis;
+package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
-import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
-import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
+import net.hazen.hazennstuff.Item.HnSUtilities.HnSArmorMaterials;
+import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -15,22 +15,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.renderer.GeoArmorRenderer;
-import software.bernie.geckolib.util.GeckoLibUtil;
+import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 
 import java.util.List;
 
-public class IgnisArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
-    public IgnisArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.IGNIS, type, settings, pureTier(
-                AttributeRegistry.FIRE_SPELL_POWER
+public class SoulFlameArmorItem extends ImbuableHnSArmorItem implements IDisableHat {
+
+    public SoulFlameArmorItem(Type type, Properties settings) {
+        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
+                AttributeRegistry.FIRE_SPELL_POWER,
+                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
         ));
     }
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {
         var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
@@ -39,15 +35,6 @@ public class IgnisArmorItem extends ImbuableGeckolibHnSArmorItem implements IDis
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();
-    }
-
-
-    // Just supply the armor model here; you don't have to worry about making a new renderer
-    // ISS already has a custom renderer used for armor models
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public GeoArmorRenderer<?> supplyRenderer() {
-        return new IgnisArmorRenderer(new IgnisArmorModel());
     }
 
     @Override
@@ -64,9 +51,9 @@ public class IgnisArmorItem extends ImbuableGeckolibHnSArmorItem implements IDis
     }
 
     private boolean isWearingFullSet(Player player) {
-        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof IgnisArmorItem &&
-                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof IgnisArmorItem &&
-                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof IgnisArmorItem &&
-                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof IgnisArmorItem;
+        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof SoulFlameArmorItem;
     }
 }

@@ -24,50 +24,65 @@ public class ESArmorMaterials {
     private static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, ElementalSynergies.MOD_ID);
 
     /*
-    *** Pure Armor Sets
+    *** Pure Tier
      */
-
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> AEROMANCY_MATERIAL = register("aeromancy",
             esPureArmorMap(),
             40,
-            SoundEvents.ARMOR_EQUIP_LEATHER,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            2,
-            0.1F);
+            3,
+            1F);
 
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> GEOMANCY_MATERIAL = register("geomancy",
             esPureArmorMap(),
             40,
-            SoundEvents.ARMOR_EQUIP_LEATHER,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            2,
-            0.1F);
+            3,
+            1F);
+
+    /*
+    *** Paragon Tier ***************************************************************************************************
+     */
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> PURE_ARTIFACT_MATERIAL = register("pure_artifact",
             esPureArtifactArmorMap(),
             40,
-            SoundEvents.ARMOR_EQUIP_LEATHER,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            2,
-            0.1F);
+            4,
+            2F);
+
+    /*
+    *** Boss
+     */
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> MALEDICTUS = register("maledictus",
             esPureArtifactArmorMap(),
             40,
             ModSounds.MALEDICTUS_IDLE,
             () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
-            2,
-            0.1F);
+            4,
+            2F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> IGNIS = register("ignis",
             esPureArtifactArmorMap(),
             40,
             ModSounds.IGNIS_AMBIENT,
             () -> Ingredient.of(ModItems.IGNITIUM_INGOT.get()),
-            2,
-            0.1F);
+            4,
+            2F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> SCYLLA = register("scylla",
+            esPureArtifactArmorMap(),
+            40,
+            ModSounds.SCYLLA_HURT,
+            () -> Ingredient.of(ModItems.ESSENCE_OF_THE_STORM.get()),
+            4,
+            2F);
 
 
     private static DeferredHolder<ArmorMaterial, ArmorMaterial> register(

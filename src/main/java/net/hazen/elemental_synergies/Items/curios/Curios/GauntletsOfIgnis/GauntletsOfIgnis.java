@@ -1,30 +1,48 @@
 package net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis;
 
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
+import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
 import net.hazen.hazennstuff.item.dispatcher.HnSItemDispatcher;
+import net.hazen.hazennstuff.rarity.FlamingRarity;
 import net.hazen.hazennstuff.registries.HnSAttributeRegistry;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
+import top.theillusivec4.curios.api.SlotContext;
 
 
-public class GauntletsOfIgnis extends SpellBook {
-    public final HnSItemDispatcher dispatcher;
+public class GauntletsOfIgnis extends CurioBaseItem {
+    public final ESDispatcher dispatcher;
+
     public GauntletsOfIgnis() {
-        super(10);
-        this.withSpellbookAttributes(new AttributeContainer[]{
-                new AttributeContainer(HnSAttributeRegistry.SHADOW_MAGIC_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(MFTEAttributeRegistries.SPIRIT_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(AttributeRegistry.MAX_MANA, (double)200.0F, AttributeModifier.Operation.ADD_VALUE)
+        super(ItemPropertiesHelper
+                .equipment()
+                .stacksTo(1)
+                .fireResistant()
+                .rarity(FlamingRarity.FLAMING_RARITY_PROXY.getValue())
+        );
 
-        });
+        this.dispatcher = new ESDispatcher();
+    }
 
-        this.dispatcher = new HnSItemDispatcher();
+    @Override
+    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+        Multimap<Holder<Attribute>, AttributeModifier> attr = LinkedHashMultimap.create();
+        attr.put(Attributes.ARMOR, new AttributeModifier(id, 4f, AttributeModifier.Operation.ADD_VALUE));
+        return attr;
     }
 
     @Override
@@ -33,5 +51,10 @@ public class GauntletsOfIgnis extends SpellBook {
         {
             dispatcher.idle(player, stack);
         }
+    }
+
+    @Override
+    public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
+        return true;
     }
 }

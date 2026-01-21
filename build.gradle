@@ -133,8 +133,15 @@ configurations {
 
 dependencies {
 
+    /*
+    *** Main Dependencies **********************************************************************************************
+     */
+
+    //Hazen 'n Stuff
+    implementation "curse.maven:hazennstuff-1231627:7481909"
+
     //Iron's Spells 'n Spellbooks
-    implementation "curse.maven:iss-855414:6932556"
+    implementation "curse.maven:iss-855414:7402503"
     implementation "curse.maven:geckolib-388172:6304958"
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
@@ -145,41 +152,90 @@ dependencies {
     compileOnly "curse.maven:apotheosis-${apotheosis_version}"
 
     //Ace Utils
-    implementation "curse.maven:ace_utils-1299492:6925303"
+    implementation "curse.maven:ace_utils-1299492:7465123"
 
     //AzureLib
-    implementation "curse.maven:azurelib-817423:7007247"
+    implementation "mod.azure.azurelib:azurelib-neo-${minecraft_version}:${azurelib_version}"
+
+    /*
+    *** Compat Mods
+     */
+
+    //Cataclysm Spellbooks
+    implementation "curse.maven:cataclysm_spellbooks-1099461:7358841"
+    implementation "curse.maven:l_enders_cataclysm-551586:6906997"
+    implementation "curse.maven:lionfish-1001614:6168249"
+
+    //SnackPirate's Aeromancy Additions
+    implementation "curse.maven:snackpirates_aeromancy_additions-1160104:7263416"
+    implementation "curse.maven:expandability-465066:5428824"
+
+    //Magic From The East
+    implementation "curse.maven:magic_from_the_east-1224162:7385201"
+
+    //Familiar Lib
+    implementation "curse.maven:alshanexs_familiars-1171602:7468728"
+    implementation "curse.maven:familiar_lib-1316458:7468713"
+
+    //Ender's Spells and Stuff: Requiem
+    implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
+
+    //Discerning the Eldritch
+    implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
+    implementation "curse.maven:soul_fire_d-662413:7364962"
+    implementation "curse.maven:prometheus-1365195:7364871"
+    implementation "curse.maven:cobweb-968456:7186943"
+
+    //GTBC's Geomancy+
+    implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"
+    implementation "curse.maven:mowzies-mobs-250498:6700443"
+    implementation "curse.maven:gtbcs-spelllib-1194714:7385455"
+
+    /*
+    *** Runtime Only ***************************************************************************************************
+     */
 
     //JEI
     compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
     runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
 
-    //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7103087"
+    // Embeddium
+    localRuntime "curse.maven:embeddium-908741:6118392"
 
-    //Cataclysm Spellbooks
-    implementation "curse.maven:cataclysm_spellbooks-1099461:6925079"
-    implementation "curse.maven:l_enders_cataclysm-551586:6906997"
-    implementation "curse.maven:lionfish-1001614:6168249"
+    //Jade
+    localRuntime "curse.maven:jade-324717:6853386"
 
-    //SnackPirate's Aeromancy Additions
-    implementation "curse.maven:snackpirates_aeromancy_additions-1160104:6781033"
-    implementation "curse.maven:expandability-465066:5428824"
+    // MmmMmmMmm
+    localRuntime "curse.maven:mmm-225738:6826533"
+    localRuntime "curse.maven:moonlight_lib-499980:6814741"
 
-    //Magic From The East
-    implementation "curse.maven:magic_from_the_east-1224162:6864551"
+    /*
+    *** Optional Dependencies ******************************************************************************************
+     */
 
-    //Familiar Lib
-    implementation "curse.maven:familiar_lib-1316458:6824093"
+    // Obscuria's Tooltips
+    localRuntime "curse.maven:obscurias_tooltips-715660:7315944"
+    localRuntime "curse.maven:fragmentum-1123977:7315935"
 
-    //Ender's Spells and Stuff
-    //implementation "curse.maven:enders_spells_and_stuff-1140215:6903947"
+    //Better Combat
+    localRuntime "curse.maven:better-combat-by-daedelus-639842:7348161"
+    localRuntime "curse.maven:cloth-config-348521:5623420"
 
-    //GTBC's Geomancy+
-    implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"
-    implementation "curse.maven:mowzies-mobs-250498:6700443"
-    implementation "curse.maven:gtbcs-spelllib-1194714:7041582"
+    //Ars Nouveau
+    localRuntime "curse.maven:ars_nouveau-401955:6827634"
+    compileOnly "curse.maven:ars_nouveau-401955:6827634"
+
+    //Malum
+    localRuntime "curse.maven:malum-484064:6655805"
+    compileOnly "curse.maven:malum-484064:6655805"
+
+    localRuntime "curse.maven:lodestone-616457:6630047"
+    compileOnly "curse.maven:lodestone-616457:6630047"
+
+    // Iron's Gems 'n Jewelry
+    localRuntime "curse.maven:irons_gems_n_jewelry-1101111:7358426"
+    localRuntime "curse.maven:atlas_api-1145462:6880789"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

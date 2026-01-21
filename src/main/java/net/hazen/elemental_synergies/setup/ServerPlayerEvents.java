@@ -1,11 +1,12 @@
 package net.hazen.elemental_synergies.setup;
 
 import com.snackpirate.aeromancy.data.AADamageTypes;
+import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import net.hazen.elemental_synergies.registries.ESEffectRegistry;
-import net.hazen.elemental_synergies.registries.ESItemRegistry;
+import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
+import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -45,12 +46,12 @@ public class ServerPlayerEvents {
                             return;
                         }
 
-                        target.addEffect(new MobEffectInstance(ESEffectRegistry.WIND_SHEAR, 60, 1));
+                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 1));
 
                         int cooldownTicks = Utils.applyCooldownReduction(40, player);
                         player.getCooldowns().addCooldown(helmet, cooldownTicks);
                     } else {
-                        target.addEffect(new MobEffectInstance(ESEffectRegistry.WIND_SHEAR, 60, 1));
+                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 1));
                     }
                 }
             }

@@ -1,7 +1,7 @@
 package net.hazen.elemental_synergies.setup;
 
 import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
-import net.hazen.elemental_synergies.registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

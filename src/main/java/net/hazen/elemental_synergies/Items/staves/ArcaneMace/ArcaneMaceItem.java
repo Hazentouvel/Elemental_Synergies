@@ -80,7 +80,7 @@ public class ArcaneMaceItem extends ESImbuableMaceStaffItem implements GeoItem {
         });
     }
 
-    @EventBusSubscriber(modid = ElementalSynergies.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(value = Dist.CLIENT)
     public class SpellEvents {
 
         @SubscribeEvent

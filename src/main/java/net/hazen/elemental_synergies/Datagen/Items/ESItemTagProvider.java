@@ -2,7 +2,7 @@ package net.hazen.elemental_synergies.Datagen.Items;
 
 import io.redspace.ironsspellbooks.util.ModTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.registries.ESItemRegistry;
+import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.datagen.HnSTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

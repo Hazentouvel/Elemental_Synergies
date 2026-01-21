@@ -3,6 +3,7 @@ package net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorrupti
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
 import net.hazen.hazennstuff.item.dispatcher.HnSItemDispatcher;
 import net.hazen.hazennstuff.registries.HnSAttributeRegistry;
 import net.minecraft.world.entity.Entity;
@@ -14,7 +15,7 @@ import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 
 
 public class GrimoireOfCorruptionSpellbook extends SpellBook {
-    public final HnSItemDispatcher dispatcher;
+    public final ESDispatcher dispatcher;
     public GrimoireOfCorruptionSpellbook() {
         super(10);
         this.withSpellbookAttributes(new AttributeContainer[]{
@@ -24,7 +25,7 @@ public class GrimoireOfCorruptionSpellbook extends SpellBook {
 
         });
 
-        this.dispatcher = new HnSItemDispatcher();
+        this.dispatcher = new ESDispatcher();
     }
 
     @Override

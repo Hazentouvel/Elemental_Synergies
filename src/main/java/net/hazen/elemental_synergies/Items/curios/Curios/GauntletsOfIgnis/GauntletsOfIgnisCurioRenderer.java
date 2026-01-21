@@ -42,7 +42,7 @@ public class GauntletsOfIgnisCurioRenderer implements ICurioRenderer {
 
         curioRenderer.prepForRender(entity, stack, EquipmentSlot.BODY, (HumanoidModel<?>) renderLayerParent.getModel());
 
-        matrixStack.translate(0D, -1.75D, 2D); // x = sideways, y = up/down, z = forward/back
+        matrixStack.translate(0D, -0.5D, 0.5D); // x = sideways, y = up/down, z = forward/back
 
         AzBakedModel model = curioRenderer.provider().provideBakedModel(stack);
         ResourceLocation textureLocation = GauntletsOfIgnisItemRenderer.TEX;

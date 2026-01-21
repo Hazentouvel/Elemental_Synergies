@@ -4,7 +4,7 @@ import com.gametechbc.gtbcs_geomancy_plus.init.GGItems;
 import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.registries.ESItemRegistry;
+import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.registries.HnSItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

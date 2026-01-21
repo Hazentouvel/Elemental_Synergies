@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.setup;
+package net.hazen.elemental_synergies.Setup;
 
 import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageEntity;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;

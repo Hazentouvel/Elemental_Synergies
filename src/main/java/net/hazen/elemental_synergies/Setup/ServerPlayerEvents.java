@@ -1,11 +1,10 @@
-package net.hazen.elemental_synergies.setup;
+package net.hazen.elemental_synergies.Setup;
 
 import com.snackpirate.aeromancy.data.AADamageTypes;
 import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;

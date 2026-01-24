@@ -1,12 +1,12 @@
-package net.hazen.elemental_synergies.Items.staves.ArcaneMace;
+package net.hazen.elemental_synergies.Items.Staves.ArcaneMace;
 
 import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
-import net.hazen.elemental_synergies.Items.staves.ESImbuableMaceStaffItem;
-import net.hazen.elemental_synergies.Items.staves.ESStaffTier;
+import net.hazen.elemental_synergies.Items.Staves.ESImbuableMaceStaffItem;
+import net.hazen.elemental_synergies.Items.Staves.ESStaffTier;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

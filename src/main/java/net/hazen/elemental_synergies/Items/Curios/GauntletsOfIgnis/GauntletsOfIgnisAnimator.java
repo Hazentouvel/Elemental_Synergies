@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis;
+package net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis;
 
 import mod.azure.azurelib.common.animation.controller.AzAnimationController;
 import mod.azure.azurelib.common.animation.controller.AzAnimationControllerContainer;

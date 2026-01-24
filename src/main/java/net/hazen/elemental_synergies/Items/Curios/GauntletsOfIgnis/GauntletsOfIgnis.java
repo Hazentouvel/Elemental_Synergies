@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis;
+package net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;

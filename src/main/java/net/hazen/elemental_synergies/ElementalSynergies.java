@@ -9,10 +9,10 @@ import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRe
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
-import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
-import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
-import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
-import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
+import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
+import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
+import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
+import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
 import net.hazen.elemental_synergies.Registries.ESCreativeModeTabs;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;

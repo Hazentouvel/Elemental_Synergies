@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption;
+package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

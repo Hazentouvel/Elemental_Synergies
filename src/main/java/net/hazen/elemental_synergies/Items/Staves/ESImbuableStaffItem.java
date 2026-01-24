@@ -1,22 +1,22 @@
-package net.hazen.elemental_synergies.Items.staves;
+package net.hazen.elemental_synergies.Items.Staves;
 
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainerMutable;
 import io.redspace.ironsspellbooks.api.spells.SpellData;
+import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
-import net.hazen.elemental_synergies.Extensions.ESExtras.MagicMace.CastingItem.ESMaceStaffItem;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ESImbuableMaceStaffItem extends ESMaceStaffItem implements IPresetSpellContainer {
+public class ESImbuableStaffItem extends StaffItem implements IPresetSpellContainer {
     List<SpellData> spellData = null;
     SpellDataRegistryHolder[] spellDataRegistryHolders;
 
-    public ESImbuableMaceStaffItem(Properties properties, SpellDataRegistryHolder[] spellDataRegistryHolders) {
+    public ESImbuableStaffItem(Properties properties, SpellDataRegistryHolder[] spellDataRegistryHolders) {
         super(properties);
         this.spellDataRegistryHolders = spellDataRegistryHolders;
     }

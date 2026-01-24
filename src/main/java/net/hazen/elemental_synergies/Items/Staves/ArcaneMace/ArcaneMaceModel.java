@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.staves.ArcaneMace;
+package net.hazen.elemental_synergies.Items.Staves.ArcaneMace;
 
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.hazen.elemental_synergies.ElementalSynergies;

@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.staves;
+package net.hazen.elemental_synergies.Items.Staves;
 
 import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;

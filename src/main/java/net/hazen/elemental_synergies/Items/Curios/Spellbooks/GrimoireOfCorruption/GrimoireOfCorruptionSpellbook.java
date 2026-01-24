@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption;
+package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.SpellBook;

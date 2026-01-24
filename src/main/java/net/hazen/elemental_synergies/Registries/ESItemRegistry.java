@@ -14,9 +14,9 @@ import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.Mal
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Scylla.ScyllaArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Geckolib.GeckolibTitanArmorItem;
-import net.hazen.elemental_synergies.Items.curios.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
-import net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
-import net.hazen.elemental_synergies.Items.staves.ArcaneMace.ArcaneMaceItem;
+import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
+import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
+import net.hazen.elemental_synergies.Items.Staves.ArcaneMace.ArcaneMaceItem;
 import net.hazen.elemental_synergies.Extensions.ESRarities;
 import net.hazen.hazennstuff.Rarity.HnSRarities;
 import net.minecraft.core.component.DataComponents;

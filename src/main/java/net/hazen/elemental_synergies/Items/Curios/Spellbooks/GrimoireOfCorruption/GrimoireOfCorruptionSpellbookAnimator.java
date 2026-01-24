@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Items.curios.Spellbooks.GrimoireOfCorruption;
+package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption;
 
 import mod.azure.azurelib.common.animation.controller.AzAnimationController;
 import mod.azure.azurelib.common.animation.controller.AzAnimationControllerContainer;

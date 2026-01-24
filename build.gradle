@@ -155,7 +155,7 @@ dependencies {
     implementation "curse.maven:ace_utils-1299492:7465123"
 
     //AzureLib
-    implementation "mod.azure.azurelib:azurelib-neo-${minecraft_version}:${azurelib_version}"
+    implementation "curse.maven:azurelib-817423:7119590"
 
     /*
     *** Compat Mods

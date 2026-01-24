@@ -2,8 +2,9 @@ package net.hazen.elemental_synergies;
 
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
-import mod.azure.azurelib.rewrite.animation.cache.AzIdentityRegistry;
-import mod.azure.azurelib.rewrite.render.armor.AzArmorRendererRegistry;
+import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
+import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
+import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
@@ -103,13 +104,13 @@ public class ElementalSynergies {
              */
 
             // Grimoire of Corruption
-            AzArmorRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
+            AzItemRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
             CuriosRendererRegistry.register(
                     ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(), GrimoireOfCorruptionSpellbookCurioRenderer::new
             );
 
             // Gauntlets of Ignis
-            AzArmorRendererRegistry.register(GauntletsOfIgnisItemRenderer::new, ESItemRegistry.GAUNLETS_OF_IGNIS.get());
+            AzItemRendererRegistry.register(GauntletsOfIgnisItemRenderer::new, ESItemRegistry.GAUNLETS_OF_IGNIS.get());
             CuriosRendererRegistry.register(
                     ESItemRegistry.GAUNLETS_OF_IGNIS.get(), GauntletsOfIgnisCurioRenderer::new
             );

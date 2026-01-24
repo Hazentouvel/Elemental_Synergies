@@ -155,7 +155,7 @@ dependencies {
     implementation "curse.maven:ace_utils-1299492:7465123"
 
     //AzureLib
-    implementation "curse.maven:azurelib-817423:7119590"
+    implementation "curse.maven:azurelib-817423:7371539"
 
     /*
     *** Compat Mods

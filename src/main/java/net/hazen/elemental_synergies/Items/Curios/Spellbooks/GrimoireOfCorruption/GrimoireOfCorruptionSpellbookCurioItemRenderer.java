@@ -1,12 +1,14 @@
 package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption;
 
+import mod.azure.azurelib.common.render.armor.AzArmorRenderer;
+import mod.azure.azurelib.common.render.armor.AzArmorRendererConfig;
 import mod.azure.azurelib.common.render.item.AzItemRenderer;
 import mod.azure.azurelib.common.render.item.AzItemRendererConfig;
 import mod.azure.azurelib.common.render.layer.AzAutoGlowingLayer;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.minecraft.resources.ResourceLocation;
 
-public class GrimoireOfCorruptionSpellbookCurioItemRenderer extends AzItemRenderer {
+public class GrimoireOfCorruptionSpellbookCurioItemRenderer extends AzArmorRenderer {
     public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
             ElementalSynergies.MOD_ID,
             "geo/curios/grimoire_of_corruption.geo.json"
@@ -19,7 +21,7 @@ public class GrimoireOfCorruptionSpellbookCurioItemRenderer extends AzItemRender
 
     public GrimoireOfCorruptionSpellbookCurioItemRenderer() {
         super(
-                AzItemRendererConfig.builder(GEO, TEX)
+                AzArmorRendererConfig.builder(GEO, TEX)
                         .setAnimatorProvider(GrimoireOfCorruptionSpellbookAnimator::new)
                         .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()

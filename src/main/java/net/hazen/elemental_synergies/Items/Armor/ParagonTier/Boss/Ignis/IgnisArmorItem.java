@@ -25,7 +25,7 @@ import java.util.List;
 
 public class IgnisArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public IgnisArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.IGNIS, type, settings, pureTier(
+        super(ESArmorMaterials.IGNIS, type, settings, paragonTier(
                 AttributeRegistry.FIRE_SPELL_POWER
         ));
     }

@@ -17,7 +17,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 public class CloudmasterArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public CloudmasterArmorItem(ArmorItem.Type type, Item.Properties settings) {
         // Add in your armor tier + additional attributes for your item
-        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings, paragonTier(
+        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings, pureTier(
                 AASpells.Attributes.WIND_SPELL_POWER
         ));
     }

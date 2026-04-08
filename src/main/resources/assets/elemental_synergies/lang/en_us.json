@@ -35,11 +35,63 @@
   "item.elemental_synergies.geckolib_titan_leggings": "Titan Leggings",
   "item.elemental_synergies.geckolib_titan_boots": "Titan Boots",
 
+  "item.elemental_synergies.soul_flame_helmet": "Soul Flame Mask",
+  "item.elemental_synergies.soul_flame_chestplate": "Soul Flame Chestplate",
+  "item.elemental_synergies.soul_flame_leggings": "Soul Flame Leggings",
+  "item.elemental_synergies.soul_flame_boots": "Soul Flame Boots",
+
+  "item.elemental_synergies.geckolib_soul_flame_helmet": "Soul Flame Mask",
+  "item.elemental_synergies.geckolib_soul_flame_chestplate": "Soul Flame Chestplate",
+  "item.elemental_synergies.geckolib_soul_flame_leggings": "Soul Flame Leggings",
+  "item.elemental_synergies.geckolib_soul_flame_boots": "Soul Flame Boots",
+
+  "item.elemental_synergies.ignis_helmet": "Ignis Helmet",
+  "item.elemental_synergies.ignis_chestplate": "Ignis Chestplate",
+  "item.elemental_synergies.ignis_leggings": "Ignis Leggings",
+  "item.elemental_synergies.ignis_boots": "Ignis Boots",
+
+  "item.elemental_synergies.scylla_helmet": "Scylla Helmet",
+  "item.elemental_synergies.scylla_chestplate": "Scylla Chestplate",
+  "item.elemental_synergies.scylla_leggings": "Scylla Leggings",
+  "item.elemental_synergies.scylla_boots": "Scylla Boots",
+
+  "item.elemental_synergies.maledictus_helmet": "Maledictus Helmet",
+  "item.elemental_synergies.maledictus_chestplate": "Maledictus Chestplate",
+  "item.elemental_synergies.maledictus_leggings": "Maledictus Leggings",
+  "item.elemental_synergies.maledictus_boots": "Maledictus Boots",
+
+  "item.elemental_synergies.exo_mech_helmet": "Exo Mech Helmet",
+  "item.elemental_synergies.exo_mech_chestplate": "Exo Mech Chestplate",
+  "item.elemental_synergies.exo_mech_leggings": "Exo Mech Leggings",
+  "item.elemental_synergies.exo_mech_boots": "Exo Mech Boots",
+
+  "item.elemental_synergies.geckolib_exo_mech_helmet": "Exo Mech Helmet",
+  "item.elemental_synergies.geckolib_exo_mech_chestplate": "Exo Mech Chestplate",
+  "item.elemental_synergies.geckolib_exo_mech_leggings": "Exo Mech Leggings",
+  "item.elemental_synergies.geckolib_exo_mech_boots": "Exo Mech Boots",
+
+  "item.elemental_synergies.cataclysm_helmet": "Cataclysm Helmet",
+  "item.elemental_synergies.cataclysm_chestplate": "Cataclysm Chestplate",
+  "item.elemental_synergies.cataclysm_leggings": "Cataclysm Leggings",
+  "item.elemental_synergies.cataclysm_boots": "Cataclysm Boots",
+
+  "item.elemental_synergies.geckolib_cataclysm_helmet": "Cataclysm Helmet",
+  "item.elemental_synergies.geckolib_cataclysm_chestplate": "Cataclysm Chestplate",
+  "item.elemental_synergies.geckolib_cataclysm_leggings": "Cataclysm Leggings",
+  "item.elemental_synergies.geckolib_cataclysm_boots": "Cataclysm Boots",
+
+  "item.elemental_synergies.onyx_helmet": "Onyx Hood",
+  "item.elemental_synergies.onyx_chestplate": "Onyx Chestplate",
+  "item.elemental_synergies.onyx_leggings": "Onyx Leggings",
+  "item.elemental_synergies.onyx_boots": "Onyx Boots",
+
   "item.elemental_synergies.arcane_mace": "Arcane Mace",
   "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
 
 
   "item.elemental_synergies.grimoire_of_corruption": "Grimoire of Corruption",
+
+  "item.elemental_synergies.gauntlets_of_ignis": "Gauntlets of Ignis",
 
 
   "creativetab.elemental_synergies.synergized_materials": "Synergized Materials",

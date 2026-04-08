@@ -2,6 +2,11 @@ package net.hazen.elemental_synergies.Registries;
 
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Onyx.OnyxArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.Geckolib.GeckolibCataclysmArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.GeckoLib.GeckolibSoulFlameArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.AerospecArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Crown.AerospecCrownArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Helm.AerospecHelmArmorItem;
@@ -14,6 +19,8 @@ import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.Mal
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Scylla.ScyllaArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Geckolib.GeckolibTitanArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.ExoMechArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.Geckolib.GeckolibExoMechArmorItem;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
 import net.hazen.elemental_synergies.Items.Staves.ArcaneMace.ArcaneMaceItem;
@@ -100,7 +107,7 @@ public class ESItemRegistry {
      */
 
     // Gauntlets of Ignis
-    public static final DeferredItem <GauntletsOfIgnis> GAUNLETS_OF_IGNIS = ITEMS.register("gauntlets_of_ignis", GauntletsOfIgnis::new);
+    public static final DeferredItem <GauntletsOfIgnis> GAUNTLETS_OF_IGNIS = ITEMS.register("gauntlets_of_ignis", GauntletsOfIgnis::new);
 
 
     //Grimoire of Corruption
@@ -110,7 +117,7 @@ public class ESItemRegistry {
 
 
 
-    /***
+    /*
      * Geckolib
      */
 
@@ -119,24 +126,28 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(86))
     ));
 
     public static final DeferredHolder<Item, Item> CLOUDMASTER_HAT = ITEMS.register("cloudmaster_hat", () -> new CloudmasterHatArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(86))
     ));
 
     public static final DeferredHolder<Item, Item> CLOUDMASTER_CHESTPLATE = ITEMS.register("cloudmaster_chestplate", () -> new CloudmasterArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(86))
     ));
 
     public static final DeferredHolder<Item, Item> CLOUDMASTER_LEGGINGS = ITEMS.register("cloudmaster_leggings", () -> new CloudmasterArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(86))
     ));
 
 
@@ -144,6 +155,7 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(86))
     ));
 
 
@@ -153,36 +165,42 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_HELM = ITEMS.register("aerospec_helm", () -> new AerospecHelmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_HAT = ITEMS.register("aerospec_hat", () -> new AerospecMageArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_CHESTPLATE = ITEMS.register("aerospec_chestplate", () -> new AerospecArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_ROBES = ITEMS.register("aerospec_robes", () -> new AerospecMageArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_LEGGINGS = ITEMS.register("aerospec_leggings", () -> new AerospecArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
 
@@ -190,34 +208,7 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
-    ));
-
-
-
-    // Geckolib Titan Armor Set
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_HELMET = ITEMS.register("geckolib_titan_helmet", () -> new GeckolibTitanArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HnSRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_CHESTPLATE = ITEMS.register("geckolib_titan_chestplate", () -> new GeckolibTitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HnSRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_LEGGINGS = ITEMS.register("geckolib_titan_leggings", () -> new GeckolibTitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HnSRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-    ));
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_BOOTS = ITEMS.register("geckolib_titan_boots", () -> new GeckolibTitanArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HnSRarities.FIRE_RARITY.getValue())
-            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
 
@@ -226,18 +217,21 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> MALEDICTUS_CHESTPLATE = ITEMS.register("maledictus_chestplate", () -> new MaledictusArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> MALEDICTUS_LEGGINGS = ITEMS.register("maledictus_leggings", () -> new MaledictusArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
 
@@ -245,6 +239,7 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
 
@@ -253,18 +248,21 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> SCYLLA_CHESTPLATE = ITEMS.register("scylla_chestplate", () -> new ScyllaArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> SCYLLA_LEGGINGS = ITEMS.register("scylla_leggings", () -> new ScyllaArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
 
@@ -272,6 +270,7 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     // Ignis Armor Set
@@ -279,18 +278,21 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> IGNIS_CHESTPLATE = ITEMS.register("ignis_chestplate", () -> new IgnisArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
     public static final DeferredHolder<Item, Item> IGNIS_LEGGINGS = ITEMS.register("ignis_leggings", () -> new IgnisArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
 
@@ -298,13 +300,38 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
+    ));
+
+    // Onyx Armor Set
+    public static final DeferredHolder<Item, Item> ONYX_HELMET = ITEMS.register("onyx_helmet", () -> new OnyxArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.ENDER_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
+    ));
+
+    public static final DeferredHolder<Item, Item> ONYX_CHESTPLATE = ITEMS.register("onyx_chestplate", () -> new OnyxArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.ENDER_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
+    ));
+
+    public static final DeferredHolder<Item, Item> ONYX_LEGGINGS = ITEMS.register("onyx_leggings", () -> new OnyxArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.ENDER_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
     ));
 
 
-
-    /*
-    *** Azurelib
-     */
+    public static final DeferredHolder<Item, Item> ONYX_BOOTS = ITEMS.register("onyx_boots", () -> new OnyxArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.ENDER_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(96))
+    ));
 
 
 
@@ -313,18 +340,21 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> TITAN_CHESTPLATE = ITEMS.register("titan_chestplate", () -> new TitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
     public static final DeferredHolder<Item, Item> TITAN_LEGGINGS = ITEMS.register("titan_leggings", () -> new TitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
 
@@ -332,6 +362,235 @@ public class ESItemRegistry {
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    //*** Geckolib ***
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_HELMET = ITEMS.register("geckolib_titan_helmet", () -> new GeckolibTitanArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_CHESTPLATE = ITEMS.register("geckolib_titan_chestplate", () -> new GeckolibTitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_LEGGINGS = ITEMS.register("geckolib_titan_leggings", () -> new GeckolibTitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_BOOTS = ITEMS.register("geckolib_titan_boots", () -> new GeckolibTitanArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    // Cataclysm Armor Set
+    public static final DeferredHolder<Item, Item> CATACLYSM_HELMET = ITEMS.register("cataclysm_helmet", () -> new CataclysmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> CATACLYSM_CHESTPLATE = ITEMS.register("cataclysm_chestplate", () -> new CataclysmArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> CATACLYSM_LEGGINGS = ITEMS.register("cataclysm_leggings", () -> new CataclysmArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> CATACLYSM_BOOTS = ITEMS.register("cataclysm_boots", () -> new CataclysmArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    //*** Geckolib ***
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_HELMET = ITEMS.register("geckolib_cataclysm_helmet", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_CHESTPLATE = ITEMS.register("geckolib_cataclysm_chestplate", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_LEGGINGS = ITEMS.register("geckolib_cataclysm_leggings", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_BOOTS = ITEMS.register("geckolib_cataclysm_boots", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    // Cataclysm Armor Set
+    public static final DeferredHolder<Item, Item> EXO_MECH_HELMET = ITEMS.register("exo_mech_helmet", () -> new ExoMechArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> EXO_MECH_CHESTPLATE = ITEMS.register("exo_mech_chestplate", () -> new ExoMechArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> EXO_MECH_LEGGINGS = ITEMS.register("exo_mech_leggings", () -> new ExoMechArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> EXO_MECH_BOOTS = ITEMS.register("exo_mech_boots", () -> new ExoMechArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    //*** Geckolib ***
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_HELMET = ITEMS.register("geckolib_exo_mech_helmet", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_CHESTPLATE = ITEMS.register("geckolib_exo_mech_chestplate", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_LEGGINGS = ITEMS.register("geckolib_exo_mech_leggings", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_BOOTS = ITEMS.register("geckolib_exo_mech_boots", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+    //Soul Flame
+
+    public static final DeferredHolder<Item, Item> SOUL_FLAME_HELMET = ITEMS.register("soul_flame_helmet", () -> new SoulFlameArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> SOUL_FLAME_CHESTPLATE = ITEMS.register("soul_flame_chestplate", () -> new SoulFlameArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> SOUL_FLAME_LEGGINGS = ITEMS.register("soul_flame_leggings", () -> new SoulFlameArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+
+    public static final DeferredHolder<Item, Item> SOUL_FLAME_BOOTS = ITEMS.register("soul_flame_boots", () -> new SoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+
+
+    //*** GeckoLib ***
+
+
+
+    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_HELMET = ITEMS.register("geckolib_soul_flame_helmet", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_CHESTPLATE = ITEMS.register("geckolib_soul_flame_chestplate", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_LEGGINGS = ITEMS.register("geckolib_soul_flame_leggings", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_BOOTS = ITEMS.register("geckolib_soul_flame_boots", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));
 
 

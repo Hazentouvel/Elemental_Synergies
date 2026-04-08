@@ -138,7 +138,7 @@ dependencies {
      */
 
     //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7481909"
+    implementation "curse.maven:hazennstuff-1231627:7889949"
 
     //Iron's Spells 'n Spellbooks
     implementation "curse.maven:iss-855414:7402503"
@@ -152,7 +152,7 @@ dependencies {
     compileOnly "curse.maven:apotheosis-${apotheosis_version}"
 
     //Ace Utils
-    implementation "curse.maven:ace_utils-1299492:7465123"
+    implementation "curse.maven:ace_utils-1299492:7787705"
 
     //AzureLib
     implementation "curse.maven:azurelib-817423:7371539"

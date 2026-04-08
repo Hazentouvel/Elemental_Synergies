@@ -4,7 +4,7 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
-import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
+import net.hazen.hazennstuff.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Rarity.HnSRarities;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +19,7 @@ import top.theillusivec4.curios.api.SlotContext;
 
 
 public class GauntletsOfIgnis extends CurioBaseItem {
-    public final ESDispatcher dispatcher;
+    public final HnSDispatcher dispatcher;
 
     public GauntletsOfIgnis() {
         super(ItemPropertiesHelper
@@ -29,7 +29,7 @@ public class GauntletsOfIgnis extends CurioBaseItem {
                 .rarity(HnSRarities.FIRE_RARITY.getValue())
         );
 
-        this.dispatcher = new ESDispatcher();
+        this.dispatcher = new HnSDispatcher();
     }
 
     @Override

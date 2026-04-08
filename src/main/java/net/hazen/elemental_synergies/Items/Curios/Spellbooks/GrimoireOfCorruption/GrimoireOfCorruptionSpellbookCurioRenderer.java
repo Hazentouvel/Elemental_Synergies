@@ -2,7 +2,7 @@ package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorrupti
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import mod.azure.azurelib.rewrite.model.AzBakedModel;
+import mod.azure.azurelib.common.model.AzBakedModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -44,7 +44,7 @@ public class GrimoireOfCorruptionSpellbookCurioRenderer implements ICurioRendere
 
         matrixStack.translate(-0.5D, -1.75D, -0.54D); // x = sideways, y = up/down, z = forward/back
 
-        AzBakedModel model = curioRenderer.provider().provideBakedModel(stack);
+        AzBakedModel model = curioRenderer.provider().provideBakedModel(entity, stack);
         ResourceLocation textureLocation = GrimoireOfCorruptionSpellbookCurioItemRenderer.TEX;
         RenderType renderType = RenderType.entityCutout(textureLocation);
         VertexConsumer buffer = renderTypeBuffer.getBuffer(renderType);

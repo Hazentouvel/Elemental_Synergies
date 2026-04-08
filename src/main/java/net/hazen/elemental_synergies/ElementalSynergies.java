@@ -4,11 +4,13 @@ import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
 import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
 import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
-import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorRenderer;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.ExoMechArmorRenderer;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
@@ -64,9 +66,6 @@ public class ElementalSynergies {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
-    }
-
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
@@ -76,6 +75,30 @@ public class ElementalSynergies {
     public static ResourceLocation id(@NotNull String path)
     {
         return ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, path);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+        // Animation Registry
+        AzIdentityRegistry.register(
+
+                //Armor
+
+                //ESItemRegistry.GABRIEL_ULTRAKILL_HELMET.get(),
+                //ESItemRegistry.GABRIEL_ULTRAKILL_CHESTPLATE.get(),
+                //ESItemRegistry.GABRIEL_ULTRAKILL_LEGGINGS.get(),
+                //ESItemRegistry.GABRIEL_ULTRAKILL_BOOTS.get(),
+
+                // Weapons
+
+
+                // Staves
+
+                // Curios
+
+                ESItemRegistry.GAUNTLETS_OF_IGNIS.get()
+
+        );
     }
 
     @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
@@ -92,27 +115,48 @@ public class ElementalSynergies {
 
             // Armor Rendering Registry
 
-            //Arbitrium Robes
+            //Titan Armor
             AzArmorRendererRegistry.register(TitanArmorRenderer::new,
                     ESItemRegistry.TITAN_HELMET.get(),
                     ESItemRegistry.TITAN_CHESTPLATE.get(),
                     ESItemRegistry.TITAN_LEGGINGS.get(),
                     ESItemRegistry.TITAN_BOOTS.get());
 
+            //Soul Flame Armor
+            AzArmorRendererRegistry.register(SoulFlameArmorRenderer::new,
+                    ESItemRegistry.SOUL_FLAME_HELMET.get(),
+                    ESItemRegistry.SOUL_FLAME_CHESTPLATE.get(),
+                    ESItemRegistry.SOUL_FLAME_LEGGINGS.get(),
+                    ESItemRegistry.SOUL_FLAME_BOOTS.get());
+
+            // Exo Mech Armor
+            AzArmorRendererRegistry.register(ExoMechArmorRenderer::new,
+                    ESItemRegistry.EXO_MECH_HELMET.get(),
+                    ESItemRegistry.EXO_MECH_CHESTPLATE.get(),
+                    ESItemRegistry.EXO_MECH_LEGGINGS.get(),
+                    ESItemRegistry.EXO_MECH_BOOTS.get());
+
+            //Cataclysm Armor
+            AzArmorRendererRegistry.register(CataclysmArmorRenderer::new,
+                    ESItemRegistry.CATACLYSM_HELMET.get(),
+                    ESItemRegistry.CATACLYSM_CHESTPLATE.get(),
+                    ESItemRegistry.CATACLYSM_LEGGINGS.get(),
+                    ESItemRegistry.CATACLYSM_BOOTS.get());
+
             /*
              *** Spellbooks
              */
 
             // Grimoire of Corruption
-            AzItemRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
+            AzArmorRendererRegistry.register(GrimoireOfCorruptionSpellbookCurioItemRenderer::new, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
             CuriosRendererRegistry.register(
                     ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(), GrimoireOfCorruptionSpellbookCurioRenderer::new
             );
 
             // Gauntlets of Ignis
-            AzItemRendererRegistry.register(GauntletsOfIgnisItemRenderer::new, ESItemRegistry.GAUNLETS_OF_IGNIS.get());
+            AzArmorRendererRegistry.register(GauntletsOfIgnisItemRenderer::new, ESItemRegistry.GAUNTLETS_OF_IGNIS.get());
             CuriosRendererRegistry.register(
-                    ESItemRegistry.GAUNLETS_OF_IGNIS.get(), GauntletsOfIgnisCurioRenderer::new
+                    ESItemRegistry.GAUNTLETS_OF_IGNIS.get(), GauntletsOfIgnisCurioRenderer::new
             );
 
             // Animation Registry
@@ -123,9 +167,24 @@ public class ElementalSynergies {
                     ESItemRegistry.TITAN_LEGGINGS.get(),
                     ESItemRegistry.TITAN_BOOTS.get(),
 
+                    ESItemRegistry.SOUL_FLAME_HELMET.get(),
+                    ESItemRegistry.SOUL_FLAME_CHESTPLATE.get(),
+                    ESItemRegistry.SOUL_FLAME_LEGGINGS.get(),
+                    ESItemRegistry.SOUL_FLAME_BOOTS.get(),
+
+                    ESItemRegistry.CATACLYSM_HELMET.get(),
+                    ESItemRegistry.CATACLYSM_CHESTPLATE.get(),
+                    ESItemRegistry.CATACLYSM_LEGGINGS.get(),
+                    ESItemRegistry.CATACLYSM_BOOTS.get(),
+
+                    ESItemRegistry.EXO_MECH_HELMET.get(),
+                    ESItemRegistry.EXO_MECH_CHESTPLATE.get(),
+                    ESItemRegistry.EXO_MECH_LEGGINGS.get(),
+                    ESItemRegistry.EXO_MECH_BOOTS.get(),
+
 
                     ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(),
-                    ESItemRegistry.GAUNLETS_OF_IGNIS.get()
+                    ESItemRegistry.GAUNTLETS_OF_IGNIS.get()
 
             );
 

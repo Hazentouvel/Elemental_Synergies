@@ -28,7 +28,7 @@ import java.util.List;
 public class CloudmasterHatArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public CloudmasterHatArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
-        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings, paragonTier(
+        super(ESArmorMaterials.AEROMANCY_MATERIAL, type, settings, pureTier(
                 AASpells.Attributes.WIND_SPELL_POWER
         ));
     }

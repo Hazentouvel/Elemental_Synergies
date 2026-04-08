@@ -5,13 +5,15 @@ import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.hazennstuff.registries.HnSItems;
+import net.hazen.hazennstuff.HazenNStuff;
+import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.warphan.iss_magicfromtheeast.registries.MFTEItemRegistries;
@@ -33,10 +35,10 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern(" Z ")
                 .pattern("BSB")
                 .pattern(" Z ")
-                .define('S', HnSItems.ZENALITE_INGOT.get())
+                .define('S', HnSItemRegistry.ZENALITE_INGOT.get())
                 .define('Z', ESItemRegistry.ZEPHYR_ESSENCE.get())
                 .define('B', Items.BREEZE_ROD)
-                .unlockedBy("has_zenalite_ingot", has(HnSItems.ZENALITE_INGOT.get()))
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/materials/aerialite_fragment"));
 
 
@@ -50,7 +52,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("SMS")
                 .pattern("RZR")
                 .pattern(" A ")
-                .define('S', HnSItems.STEEL_INGOT.get())
+                .define('S', HnSItemRegistry.STEEL_INGOT.get())
                 .define('Z', ESItemRegistry.ZEPHYR_ESSENCE.get())
                 .define('A', AAItems.AIR_STAFF.get())
                 .define('R', AAItems.WIND_RUNE.get())
@@ -68,8 +70,8 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern(" CS")
                 .pattern("RAR")
                 .pattern("SR ")
-                .define('S', HnSItems.STEEL_INGOT.get())
-                .define('R', HnSItems.SHADOW_RUNE.get())
+                .define('S', HnSItemRegistry.STEEL_INGOT.get())
+                .define('R', HnSItemRegistry.SHADOW_RUNE.get())
                 .define('A', MFTEItemRegistries.RITUAL_ORIHON.get())
                 .define('C', ItemTags.CANDLES)
                 .unlockedBy("has_ritual_orihon", has(MFTEItemRegistries.RITUAL_ORIHON.get()))
@@ -86,7 +88,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("CPC")
                 .pattern("   ")
                 .define('C', ESItemRegistry.AERIALITE_INGOT.get())
-                .define('R', HnSItems.MELEE_RUNE.get())
+                .define('R', HnSItemRegistry.MELEE_RUNE.get())
                 .define('P', Items.NETHERITE_HELMET)
                 .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/aerospec/aerospec_helm"));
@@ -96,7 +98,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("CPC")
                 .pattern("   ")
                 .define('C', ESItemRegistry.AERIALITE_INGOT.get())
-                .define('R', HnSItems.ARCHERY_RUNE.get())
+                .define('R', HnSItemRegistry.ARCHERY_RUNE.get())
                 .define('P', Items.NETHERITE_HELMET)
                 .unlockedBy("has_aerialite_ingot", has(ESItemRegistry.AERIALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/aerospec/aerospec_crown"));
@@ -221,49 +223,87 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("FCG")
                 .pattern("ZNZ")
                 .pattern("   ")
-                .define('Z', HnSItems.ZENALITE_INGOT.get())
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
                 .define('C', ESItemRegistry.CLUSTER.get())
                 .define('F', ItemRegistry.FIRE_RUNE.get())
                 .define('G', GGItems.GEO_RUNE.get())
                 .define('N', ItemRegistry.NETHERITE_MAGE_HELMET.get())
-                .unlockedBy("has_zenalite_ingot", has(HnSItems.ZENALITE_INGOT.get()))
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_helm"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.TITAN_CHESTPLATE.get())
                 .pattern("CNC")
                 .pattern("FZG")
                 .pattern("ZZZ")
-                .define('Z', HnSItems.ZENALITE_INGOT.get())
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
                 .define('C', ESItemRegistry.CLUSTER.get())
                 .define('F', ItemRegistry.FIRE_RUNE.get())
                 .define('G', GGItems.GEO_RUNE.get())
                 .define('N', ItemRegistry.NETHERITE_MAGE_CHESTPLATE.get())
-                .unlockedBy("has_zenalite_ingot", has(HnSItems.ZENALITE_INGOT.get()))
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_chestplate"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.TITAN_LEGGINGS.get())
                 .pattern("FNG")
                 .pattern("Z Z")
                 .pattern("C C")
-                .define('Z', HnSItems.ZENALITE_INGOT.get())
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
                 .define('C', ESItemRegistry.CLUSTER.get())
                 .define('F', ItemRegistry.FIRE_RUNE.get())
                 .define('G', GGItems.GEO_RUNE.get())
                 .define('N', ItemRegistry.NETHERITE_MAGE_LEGGINGS.get())
-                .unlockedBy("has_zenalite_ingot", has(HnSItems.ZENALITE_INGOT.get()))
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_leggings"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.TITAN_BOOTS.get())
                 .pattern("FZG")
                 .pattern("CNC")
                 .pattern("   ")
-                .define('Z', HnSItems.ZENALITE_INGOT.get())
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
                 .define('C', ESItemRegistry.CLUSTER.get())
                 .define('F', ItemRegistry.FIRE_RUNE.get())
                 .define('G', GGItems.GEO_RUNE.get())
                 .define('N', ItemRegistry.NETHERITE_MAGE_BOOTS.get())
-                .unlockedBy("has_zenalite_ingot", has(HnSItems.ZENALITE_INGOT.get()))
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_boots"));
+
+
+        //Soul Flame Armor
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
+                        Ingredient.of(HnSItemRegistry.BLAZEBORNE_HELMET.get()),
+                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        RecipeCategory.COMBAT,
+                        ESItemRegistry.SOUL_FLAME_HELMET.get())
+                .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_helmet"));
+
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
+                        Ingredient.of(HnSItemRegistry.BLAZEBORNE_CHESTPLATE.get()),
+                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        RecipeCategory.COMBAT,
+                        ESItemRegistry.SOUL_FLAME_CHESTPLATE.get())
+                .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_chestplate"));
+
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
+                        Ingredient.of(HnSItemRegistry.BLAZEBORNE_LEGGINGS.get()),
+                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        RecipeCategory.COMBAT,
+                        ESItemRegistry.SOUL_FLAME_LEGGINGS.get())
+                .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_leggings"));
+
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
+                        Ingredient.of(HnSItemRegistry.BLAZEBORNE_BOOTS.get()),
+                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        RecipeCategory.COMBAT,
+                        ESItemRegistry.SOUL_FLAME_BOOTS.get())
+                .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_boots"));
 
 
 

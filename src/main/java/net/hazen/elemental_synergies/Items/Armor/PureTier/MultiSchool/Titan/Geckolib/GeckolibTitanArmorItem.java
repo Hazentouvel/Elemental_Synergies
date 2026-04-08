@@ -4,6 +4,8 @@ import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorModel;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
@@ -25,7 +27,7 @@ import java.util.List;
 
 public class GeckolibTitanArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public GeckolibTitanArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 GGAttributes.GEO_SPELL_POWER
         ));
@@ -63,6 +65,6 @@ public class GeckolibTitanArmorItem extends ImbuableGeckolibHnSArmorItem impleme
     @Override
     @OnlyIn(Dist.CLIENT)
     public GeoArmorRenderer<?> supplyRenderer() {
-        return new GenericCustomArmorRenderer<>(new GeckolibTitanArmorModel());
+        return new GeckolibTitanArmorRenderer(new GeckolibTitanArmorModel());
     }
 }

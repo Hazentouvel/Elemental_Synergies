@@ -1,16 +1,67 @@
 {
   "entries": [
-
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_AQUA",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "AQUA_RARITY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_ABYSSAL",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "ABYSSAL_RARITY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_OCCULT",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "OCCULT_RARITY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_SPELLBLADE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "SPELLBLADE_RARITY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_GEOMANCY",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "GEOMANCY_RARITY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ELEMENTAL_SYNERGIES_RARITY_SOUND",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "SOUND_RARITY"
+      }
+    },
     {
       "enum": "net/minecraft/world/item/Rarity",
       "name": "ELEMENTAL_SYNERGIES_RARITY_AEROMANCY",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/rarity/AeromancyRarity",
-        "field": "AEROMANCY_RARITY_PROXY"
+        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "field": "AEROMANCY_RARITY"
       }
     }
-
-
   ]
 }

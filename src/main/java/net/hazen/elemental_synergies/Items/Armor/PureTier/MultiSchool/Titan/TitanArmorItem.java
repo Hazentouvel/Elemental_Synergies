@@ -3,10 +3,11 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan;
 import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import net.hazen.elemental_synergies.Dispatcher.ESDispatcher;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
+import net.hazen.hazennstuff.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.Item.HnSUtilities.HnSArmorMaterials;
 import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -23,14 +24,14 @@ import java.util.List;
 
 public class TitanArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     // This is your class where you will setup the AzCommands/Animations you wish to play
-    public final ESDispatcher dispatcher;
+    public final HnSDispatcher dispatcher;
 
     public TitanArmorItem(ArmorItem.Type type, Item.Properties settings) {
-        super(ESArmorMaterials.GEOMANCY_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 GGAttributes.GEO_SPELL_POWER
         ));
-        this.dispatcher = new ESDispatcher();
+        this.dispatcher = new HnSDispatcher();
     }
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {

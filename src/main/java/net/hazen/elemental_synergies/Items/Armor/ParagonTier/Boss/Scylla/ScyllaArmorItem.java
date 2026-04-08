@@ -4,6 +4,7 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.acetheeldritchking.cataclysm_spellbooks.registries.CSAttributeRegistry;
 import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
@@ -30,8 +31,9 @@ import java.util.List;
 
 public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public ScyllaArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.SCYLLA, type, settings, pureTier(
-                CSAttributeRegistry.ABYSSAL_MAGIC_POWER
+        super(ESArmorMaterials.SCYLLA, type, settings, paragonTierMulti(
+                CSAttributeRegistry.ABYSSAL_MAGIC_POWER,
+                ASAttributeRegistry.HYDRO_MAGIC_POWER
         ));
     }
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

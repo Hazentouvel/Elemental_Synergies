@@ -2,8 +2,8 @@ package net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import mod.azure.azurelib.rewrite.model.AzBakedModel;
 import net.minecraft.client.model.EntityModel;
+import mod.azure.azurelib.common.model.AzBakedModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -44,7 +44,7 @@ public class GauntletsOfIgnisCurioRenderer implements ICurioRenderer {
 
         matrixStack.translate(0D, -0.5D, 0.5D); // x = sideways, y = up/down, z = forward/back
 
-        AzBakedModel model = curioRenderer.provider().provideBakedModel(stack);
+        AzBakedModel model = curioRenderer.provider().provideBakedModel(entity, stack);
         ResourceLocation textureLocation = GauntletsOfIgnisItemRenderer.TEX;
         RenderType renderType = RenderType.entityCutout(textureLocation);
         VertexConsumer buffer = renderTypeBuffer.getBuffer(renderType);

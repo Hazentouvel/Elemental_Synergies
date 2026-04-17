@@ -1,13 +1,10 @@
 package net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmaster;
 
 import com.snackpirate.aeromancy.spells.AASpells;
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
+import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;

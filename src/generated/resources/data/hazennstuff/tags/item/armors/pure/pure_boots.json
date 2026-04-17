@@ -1,0 +1,18 @@
+{
+  "values": [
+    "elemental_synergies:aerospec_boots",
+    "elemental_synergies:cloudmaster_boots",
+    "elemental_synergies:titan_boots",
+    "elemental_synergies:geckolib_titan_boots",
+    "elemental_synergies:soul_flame_boots",
+    "elemental_synergies:geckolib_soul_flame_boots",
+    "elemental_synergies:exo_mech_boots",
+    "elemental_synergies:geckolib_exo_mech_boots",
+    "elemental_synergies:cataclysm_boots",
+    "elemental_synergies:geckolib_cataclysm_boots",
+    "elemental_synergies:onyx_boots",
+    "elemental_synergies:ignis_boots",
+    "elemental_synergies:scylla_boots",
+    "elemental_synergies:maledictus_boots"
+  ]
+}

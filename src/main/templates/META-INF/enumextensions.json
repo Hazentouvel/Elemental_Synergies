@@ -5,7 +5,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_AQUA",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "AQUA_RARITY"
       }
     },
@@ -14,7 +14,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_ABYSSAL",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "ABYSSAL_RARITY"
       }
     },
@@ -23,7 +23,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_OCCULT",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "OCCULT_RARITY"
       }
     },
@@ -32,7 +32,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_SPELLBLADE",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "SPELLBLADE_RARITY"
       }
     },
@@ -41,7 +41,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_GEOMANCY",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "GEOMANCY_RARITY"
       }
     },
@@ -50,7 +50,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_SOUND",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "SOUND_RARITY"
       }
     },
@@ -59,7 +59,7 @@
       "name": "ELEMENTAL_SYNERGIES_RARITY_AEROMANCY",
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
-        "class": "net/hazen/elemental_synergies/Extensions/ESRarities",
+        "class": "net/hazen/elemental_synergies/ESUtilities/ESRarities",
         "field": "AEROMANCY_RARITY"
       }
     }

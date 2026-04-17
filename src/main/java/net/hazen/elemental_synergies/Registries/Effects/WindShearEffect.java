@@ -1,8 +1,8 @@
 package net.hazen.elemental_synergies.Registries.Effects;
 
 import com.snackpirate.aeromancy.data.AADamageTypes;
-import io.redspace.ironsspellbooks.effect.MagicMobEffect;
 import io.redspace.ironsspellbooks.effect.ISyncedMobEffect;
+import io.redspace.ironsspellbooks.effect.MagicMobEffect;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "iss_magicfromtheeast:bottle_of_souls"
+  },
+  "base": {
+    "item": "hazennstuff:blazeborne_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:soul_flame_leggings"
+  },
+  "template": {
+    "item": "hazennstuff:flaming_template"
+  }
+}

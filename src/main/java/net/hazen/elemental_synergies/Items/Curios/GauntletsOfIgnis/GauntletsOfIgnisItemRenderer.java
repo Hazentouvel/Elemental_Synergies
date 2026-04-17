@@ -2,8 +2,6 @@ package net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis;
 
 import mod.azure.azurelib.common.render.armor.AzArmorRenderer;
 import mod.azure.azurelib.common.render.armor.AzArmorRendererConfig;
-import mod.azure.azurelib.common.render.item.AzItemRenderer;
-import mod.azure.azurelib.common.render.item.AzItemRendererConfig;
 import mod.azure.azurelib.common.render.layer.AzAutoGlowingLayer;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.minecraft.resources.ResourceLocation;

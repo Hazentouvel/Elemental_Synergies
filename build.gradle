@@ -138,24 +138,27 @@ dependencies {
      */
 
     //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7889949"
+    implementation "curse.maven:hazennstuff-1231627:7936694"
 
     //Iron's Spells 'n Spellbooks
-    implementation "curse.maven:iss-855414:7402503"
+    implementation "curse.maven:iss-855414:7907341"
+    implementation "curse.maven:iss-1492763:7907336"
     implementation "curse.maven:geckolib-388172:6304958"
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
-
     //Apothic Attributes
     implementation "curse.maven:apothic-attributes-898963:6302334"
     implementation "curse.maven:placebo-283644:6337156"
     compileOnly "curse.maven:apotheosis-${apotheosis_version}"
-
     //Ace Utils
     implementation "curse.maven:ace_utils-1299492:7787705"
 
+    // Photon
+    //implementation "curse.maven:photon-871522:6911487"
+    //implementation "curse.maven:ldlib-626676:6911394"
+
     //AzureLib
-    implementation "curse.maven:azurelib-817423:7371539"
+    implementation "curse.maven:azurelib-817423:7935743"
 
     /*
     *** Compat Mods
@@ -174,17 +177,20 @@ dependencies {
     implementation "curse.maven:magic_from_the_east-1224162:7385201"
 
     //Familiar Lib
-    implementation "curse.maven:alshanexs_familiars-1171602:7468728"
-    implementation "curse.maven:familiar_lib-1316458:7468713"
+    //implementation "curse.maven:alshanexs_familiars-1171602:7934150"
+    //implementation "curse.maven:familiar_lib-1316458:7931283"
+
+    // Tunes 'n Tomes
+    //implementation "curse.maven:tunes_n_tomes-1509193:7920232"
 
     //Ender's Spells and Stuff: Requiem
-    implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
+    //implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
 
     //Discerning the Eldritch
-    implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
-    implementation "curse.maven:soul_fire_d-662413:7364962"
-    implementation "curse.maven:prometheus-1365195:7364871"
-    implementation "curse.maven:cobweb-968456:7186943"
+    //implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
+    //implementation "curse.maven:soul_fire_d-662413:7364962"
+    //implementation "curse.maven:prometheus-1365195:7364871"
+    //implementation "curse.maven:cobweb-968456:7186943"
 
     //GTBC's Geomancy+
     implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"
@@ -207,16 +213,16 @@ dependencies {
     localRuntime "curse.maven:jade-324717:6853386"
 
     // MmmMmmMmm
-    localRuntime "curse.maven:mmm-225738:6826533"
-    localRuntime "curse.maven:moonlight_lib-499980:6814741"
+    localRuntime "curse.maven:mmm-225738:7206981"
+    localRuntime "curse.maven:moonlight_lib-499980:7669172"
 
     /*
     *** Optional Dependencies ******************************************************************************************
      */
 
     // Obscuria's Tooltips
-    localRuntime "curse.maven:obscurias_tooltips-715660:7315944"
-    localRuntime "curse.maven:fragmentum-1123977:7315935"
+    //localRuntime "curse.maven:obscurias_tooltips-715660:7315944"
+    //localRuntime "curse.maven:fragmentum-1123977:7315935"
 
     //Better Combat
     localRuntime "curse.maven:better-combat-by-daedelus-639842:7348161"
@@ -227,11 +233,11 @@ dependencies {
     compileOnly "curse.maven:ars_nouveau-401955:6827634"
 
     //Malum
-    localRuntime "curse.maven:malum-484064:6655805"
-    compileOnly "curse.maven:malum-484064:6655805"
+    localRuntime "curse.maven:malum-484064:7307339"
+    compileOnly "curse.maven:malum-484064:7307339"
 
-    localRuntime "curse.maven:lodestone-616457:6630047"
-    compileOnly "curse.maven:lodestone-616457:6630047"
+    localRuntime "curse.maven:lodestone-616457:7264731"
+    compileOnly "curse.maven:lodestone-616457:7264731"
 
     // Iron's Gems 'n Jewelry
     localRuntime "curse.maven:irons_gems_n_jewelry-1101111:7358426"

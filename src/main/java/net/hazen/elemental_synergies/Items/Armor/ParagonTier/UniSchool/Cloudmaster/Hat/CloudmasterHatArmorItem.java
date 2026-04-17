@@ -1,19 +1,16 @@
 package net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmaster.Hat;
 
 import com.snackpirate.aeromancy.spells.AASpells;
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
-import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmaster.CloudmasterArmorItem;
-import net.hazen.elemental_synergies.Extensions.ESArmorMaterials;
-import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableGeckolibHnSArmorItem;
+import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

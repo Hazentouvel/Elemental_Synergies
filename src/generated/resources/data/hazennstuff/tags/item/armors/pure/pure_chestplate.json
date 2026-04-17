@@ -1,0 +1,19 @@
+{
+  "values": [
+    "elemental_synergies:aerospec_chestplate",
+    "elemental_synergies:aerospec_robes",
+    "elemental_synergies:cloudmaster_chestplate",
+    "elemental_synergies:titan_chestplate",
+    "elemental_synergies:geckolib_titan_chestplate",
+    "elemental_synergies:soul_flame_chestplate",
+    "elemental_synergies:geckolib_soul_flame_chestplate",
+    "elemental_synergies:exo_mech_chestplate",
+    "elemental_synergies:geckolib_exo_mech_chestplate",
+    "elemental_synergies:cataclysm_chestplate",
+    "elemental_synergies:geckolib_cataclysm_chestplate",
+    "elemental_synergies:onyx_chestplate",
+    "elemental_synergies:ignis_chestplate",
+    "elemental_synergies:scylla_chestplate",
+    "elemental_synergies:maledictus_chestplate"
+  ]
+}

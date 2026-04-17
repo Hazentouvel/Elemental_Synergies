@@ -3,10 +3,9 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
-import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
-import net.hazen.hazennstuff.Item.HnSUtilities.HnSArmorMaterials;
-import net.hazen.hazennstuff.Item.HnSUtilities.ImbuableHnSArmorItem;
+import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
+import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;

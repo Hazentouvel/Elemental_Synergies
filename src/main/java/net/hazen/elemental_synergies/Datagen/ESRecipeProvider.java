@@ -5,7 +5,6 @@ import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

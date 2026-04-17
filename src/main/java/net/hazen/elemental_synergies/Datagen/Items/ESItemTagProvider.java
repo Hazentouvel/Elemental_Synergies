@@ -39,162 +39,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         tag(Tags.Items.ENCHANTABLES)
 
-                /*
-                *** Aeromancy
-                 */
-
-                //Aerospec
-                .add(ESItemRegistry.AEROSPEC_HAT.get())
-                .add(ESItemRegistry.AEROSPEC_CROWN.get())
-                .add(ESItemRegistry.AEROSPEC_HELM.get())
-                .add(ESItemRegistry.AEROSPEC_CHESTPLATE.get())
-                .add(ESItemRegistry.AEROSPEC_ROBES.get())
-                .add(ESItemRegistry.AEROSPEC_LEGGINGS.get())
-                .add(ESItemRegistry.AEROSPEC_BOOTS.get())
-
-                //Cloudmaster Sage
-                .add(ESItemRegistry.CLOUDMASTER_HAT.get())
-                .add(ESItemRegistry.CLOUDMASTER_CROWN.get())
-                .add(ESItemRegistry.CLOUDMASTER_CHESTPLATE.get())
-                .add(ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
-                .add(ESItemRegistry.CLOUDMASTER_BOOTS.get())
-
-                /*
-                *** Geomancy
-                 */
-
-                //Titan
-                .add(ESItemRegistry.TITAN_HELMET.get())
-                .add(ESItemRegistry.TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.TITAN_BOOTS.get())
-
-                //Titan
-                .add(ESItemRegistry.GECKOLIB_TITAN_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_BOOTS.get())
-
-
-                /*
-                *** Weapons/Staves
-                */
-
                 .add(ESItemRegistry.ARCANE_MACE.get())
-        ;
-
-        tag(Tags.Items.ARMORS)
-
-                /*
-                 *** Aeromancy
-                 */
-
-                //Aerospec
-                .add(ESItemRegistry.AEROSPEC_HAT.get())
-                .add(ESItemRegistry.AEROSPEC_CROWN.get())
-                .add(ESItemRegistry.AEROSPEC_HELM.get())
-                .add(ESItemRegistry.AEROSPEC_CHESTPLATE.get())
-                .add(ESItemRegistry.AEROSPEC_ROBES.get())
-                .add(ESItemRegistry.AEROSPEC_LEGGINGS.get())
-                .add(ESItemRegistry.AEROSPEC_BOOTS.get())
-
-                //Cloudmaster Sage
-                .add(ESItemRegistry.CLOUDMASTER_HAT.get())
-                .add(ESItemRegistry.CLOUDMASTER_CROWN.get())
-                .add(ESItemRegistry.CLOUDMASTER_CHESTPLATE.get())
-                .add(ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
-                .add(ESItemRegistry.CLOUDMASTER_BOOTS.get())
-
-                /*
-                 *** Geomancy
-                 */
-
-                //Titan
-                .add(ESItemRegistry.TITAN_HELMET.get())
-                .add(ESItemRegistry.TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.TITAN_BOOTS.get())
-
-                .add(ESItemRegistry.GECKOLIB_TITAN_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_BOOTS.get())
-
-                //Soul Flame Armor
-                .add(ESItemRegistry.SOUL_FLAME_HELMET.get())
-                .add(ESItemRegistry.SOUL_FLAME_CHESTPLATE.get())
-                .add(ESItemRegistry.SOUL_FLAME_LEGGINGS.get())
-                .add(ESItemRegistry.SOUL_FLAME_BOOTS.get())
-
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_BOOTS.get())
-
-                //Exo Mech Armor
-                .add(ESItemRegistry.EXO_MECH_HELMET.get())
-                .add(ESItemRegistry.EXO_MECH_CHESTPLATE.get())
-                .add(ESItemRegistry.EXO_MECH_LEGGINGS.get())
-                .add(ESItemRegistry.EXO_MECH_BOOTS.get())
-
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_BOOTS.get())
-
-                //Cataclysm Armor
-                .add(ESItemRegistry.CATACLYSM_HELMET.get())
-                .add(ESItemRegistry.CATACLYSM_CHESTPLATE.get())
-                .add(ESItemRegistry.CATACLYSM_LEGGINGS.get())
-                .add(ESItemRegistry.CATACLYSM_BOOTS.get())
-
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_BOOTS.get())
-
-                // Ignis
-                .add(ESItemRegistry.IGNIS_HELMET.get())
-                .add(ESItemRegistry.IGNIS_CHESTPLATE.get())
-                .add(ESItemRegistry.IGNIS_LEGGINGS.get())
-                .add(ESItemRegistry.IGNIS_BOOTS.get())
-
-                // Maledictus
-                .add(ESItemRegistry.MALEDICTUS_HELMET.get())
-                .add(ESItemRegistry.MALEDICTUS_CHESTPLATE.get())
-                .add(ESItemRegistry.MALEDICTUS_LEGGINGS.get())
-                .add(ESItemRegistry.MALEDICTUS_BOOTS.get())
-
-                // Scylla
-                .add(ESItemRegistry.SCYLLA_HELMET.get())
-                .add(ESItemRegistry.SCYLLA_CHESTPLATE.get())
-                .add(ESItemRegistry.SCYLLA_LEGGINGS.get())
-                .add(ESItemRegistry.SCYLLA_BOOTS.get())
-
-                // Onyx
-                .add(ESItemRegistry.ONYX_HELMET.get())
-                .add(ESItemRegistry.ONYX_CHESTPLATE.get())
-                .add(ESItemRegistry.ONYX_LEGGINGS.get())
-                .add(ESItemRegistry.ONYX_BOOTS.get())
-        ;
-
-        tag(ItemTags.HEAD_ARMOR)
-                .add(ESItemRegistry.AEROSPEC_HAT.get())
-                .add(ESItemRegistry.AEROSPEC_CROWN.get())
-                .add(ESItemRegistry.CLOUDMASTER_HAT.get())
-                .add(ESItemRegistry.CLOUDMASTER_CROWN.get())
-                .add(ESItemRegistry.TITAN_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_HELMET.get())
-                .add(ESItemRegistry.SOUL_FLAME_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_HELMET.get())
-                .add(ESItemRegistry.EXO_MECH_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_HELMET.get())
-                .add(ESItemRegistry.CATACLYSM_HELMET.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_HELMET.get())
-                .add(ESItemRegistry.ONYX_HELMET.get())
-                .add(ESItemRegistry.IGNIS_HELMET.get())
-                .add(ESItemRegistry.SCYLLA_HELMET.get())
-                .add(ESItemRegistry.MALEDICTUS_HELMET.get())
         ;
 
         tag(HnSTags.PURE_HELMET)
@@ -216,24 +61,6 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.MALEDICTUS_HELMET.get())
         ;
 
-        tag(ItemTags.CHEST_ARMOR)
-                .add(ESItemRegistry.AEROSPEC_CHESTPLATE.get())
-                .add(ESItemRegistry.AEROSPEC_ROBES.get())
-                .add(ESItemRegistry.CLOUDMASTER_CHESTPLATE.get())
-                .add(ESItemRegistry.TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_CHESTPLATE.get())
-                .add(ESItemRegistry.SOUL_FLAME_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_CHESTPLATE.get())
-                .add(ESItemRegistry.EXO_MECH_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_CHESTPLATE.get())
-                .add(ESItemRegistry.CATACLYSM_CHESTPLATE.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_CHESTPLATE.get())
-                .add(ESItemRegistry.ONYX_CHESTPLATE.get())
-                .add(ESItemRegistry.IGNIS_CHESTPLATE.get())
-                .add(ESItemRegistry.SCYLLA_CHESTPLATE.get())
-                .add(ESItemRegistry.MALEDICTUS_CHESTPLATE.get())
-        ;
-
         tag(HnSTags.PURE_CHESTPLATE)
                 .add(ESItemRegistry.AEROSPEC_CHESTPLATE.get())
                 .add(ESItemRegistry.AEROSPEC_ROBES.get())
@@ -253,24 +80,6 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         ;
 
-        tag(ItemTags.LEG_ARMOR)
-                .add(ESItemRegistry.AEROSPEC_LEGGINGS.get())
-                .add(ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
-                .add(ESItemRegistry.TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_LEGGINGS.get())
-                .add(ESItemRegistry.SOUL_FLAME_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_LEGGINGS.get())
-                .add(ESItemRegistry.EXO_MECH_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_LEGGINGS.get())
-                .add(ESItemRegistry.CATACLYSM_LEGGINGS.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_LEGGINGS.get())
-                .add(ESItemRegistry.ONYX_LEGGINGS.get())
-                .add(ESItemRegistry.IGNIS_LEGGINGS.get())
-                .add(ESItemRegistry.SCYLLA_LEGGINGS.get())
-                .add(ESItemRegistry.MALEDICTUS_LEGGINGS.get())
-
-        ;
-
         tag(HnSTags.PURE_LEGGINGS)
                 .add(ESItemRegistry.AEROSPEC_LEGGINGS.get())
                 .add(ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
@@ -287,23 +96,6 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.SCYLLA_LEGGINGS.get())
                 .add(ESItemRegistry.MALEDICTUS_LEGGINGS.get())
 
-        ;
-
-        tag(ItemTags.FOOT_ARMOR)
-                .add(ESItemRegistry.AEROSPEC_BOOTS.get())
-                .add(ESItemRegistry.CLOUDMASTER_BOOTS.get())
-                .add(ESItemRegistry.TITAN_BOOTS.get())
-                .add(ESItemRegistry.GECKOLIB_TITAN_BOOTS.get())
-                .add(ESItemRegistry.SOUL_FLAME_BOOTS.get())
-                .add(ESItemRegistry.GECKOLIB_SOUL_FLAME_BOOTS.get())
-                .add(ESItemRegistry.EXO_MECH_BOOTS.get())
-                .add(ESItemRegistry.GECKOLIB_EXO_MECH_BOOTS.get())
-                .add(ESItemRegistry.CATACLYSM_BOOTS.get())
-                .add(ESItemRegistry.GECKOLIB_CATACLYSM_BOOTS.get())
-                .add(ESItemRegistry.ONYX_BOOTS.get())
-                .add(ESItemRegistry.IGNIS_BOOTS.get())
-                .add(ESItemRegistry.SCYLLA_BOOTS.get())
-                .add(ESItemRegistry.MALEDICTUS_BOOTS.get())
         ;
 
         tag(HnSTags.PURE_BOOTS)

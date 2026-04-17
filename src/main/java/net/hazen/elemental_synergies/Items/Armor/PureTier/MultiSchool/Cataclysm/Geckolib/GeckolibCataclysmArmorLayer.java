@@ -3,7 +3,6 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;

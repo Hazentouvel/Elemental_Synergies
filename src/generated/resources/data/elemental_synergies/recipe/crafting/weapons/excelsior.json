@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "hazennstuff:steel_ingot"
+    },
+    "F": {
+      "item": "hazennstuff:excalibur_fragment"
+    },
+    "R": {
+      "item": "ess_requiem:spellblade_rune"
+    },
+    "W": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    " ZE",
+    "RFZ",
+    "WR "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:excelsior"
+  }
+}

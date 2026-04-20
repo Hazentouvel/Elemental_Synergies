@@ -1,18 +1,23 @@
-// 1.21.1	2026-04-17T00:51:14.0394352	Tags for minecraft:item mod id elemental_synergies
+// 1.21.1	2026-04-18T14:31:47.3537558	Tags for minecraft:item mod id elemental_synergies
 e91f57781caec6d22b648f98659111efc1d4f8d8 data/c/tags/item/enchantables.json
 1c29b944ac7e630ed59d523c1becb58c61b3d482 data/c/tags/item/ingots.json
 504fa5b820d669497419d94875558553edea790b data/c/tags/item/ores.json
-e91f57781caec6d22b648f98659111efc1d4f8d8 data/c/tags/item/tools/mace.json
+307e5f34f30142c318b1fce31a974c9c065da0f0 data/c/tags/item/tools/mace.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/c/tags/item/tools/spear.json
 2a66ef44c283def83ba8711e3846465c25a3b93a data/hazennstuff/tags/item/armors/pure/pure_boots.json
 c7cfaa4b60b39363d46b7b0aefd43f18a5b676c7 data/hazennstuff/tags/item/armors/pure/pure_chestplate.json
 f8b860c33e2ef244dcea427ebbd81c2aa6f7fa90 data/hazennstuff/tags/item/armors/pure/pure_helmet.json
 b12455e9cb9e8140a98de74022994ae438fb0e8d data/hazennstuff/tags/item/armors/pure/pure_leggings.json
+d48949e3955f1d0458870b264e504c02e70e38b6 data/hazennstuff/tags/item/armors/school/school_boots.json
+f01a82b88528391f628388946bdefe1a67f2fdcc data/hazennstuff/tags/item/armors/school/school_chestplate.json
+4866347268e360d37b1ecfc4224df5e8627190ae data/hazennstuff/tags/item/armors/school/school_helmet.json
+352667b5fb83b6906a0878c3d6a822197a1dfb2c data/hazennstuff/tags/item/armors/school/school_leggings.json
 e91f57781caec6d22b648f98659111efc1d4f8d8 data/irons_spellbooks/tags/item/imbue_whitelist.json
 e91f57781caec6d22b648f98659111efc1d4f8d8 data/irons_spellbooks/tags/item/upgrade_whitelist.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/axes.json
-e91f57781caec6d22b648f98659111efc1d4f8d8 data/minecraft/tags/item/enchantable/mace.json
+94bcd5b792861001c53881df268b3543ee3c0fa9 data/minecraft/tags/item/enchantable/durability.json
+307e5f34f30142c318b1fce31a974c9c065da0f0 data/minecraft/tags/item/enchantable/mace.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/mining.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/sharp_weapon.json
+94bcd5b792861001c53881df268b3543ee3c0fa9 data/minecraft/tags/item/enchantable/sharp_weapon.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/pickaxes.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/swords.json
+94bcd5b792861001c53881df268b3543ee3c0fa9 data/minecraft/tags/item/swords.json

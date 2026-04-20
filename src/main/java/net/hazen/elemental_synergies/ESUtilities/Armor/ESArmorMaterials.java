@@ -4,6 +4,7 @@ import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.L_Ender.cataclysm.init.ModSounds;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -57,11 +58,31 @@ public class ESArmorMaterials {
             2F);
 
     /*
+    *** Ascension Tier *************************************************************************************************
+     */
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> ASCENSION_MATERIAL = register("ascension",
+            ascension(),
+            60,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
+            4,
+            2F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> PROVIDENCE_MATERIAL = register("providence",
+            ascension(),
+            70,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
+            6,
+            3F);
+
+    /*
     *** Boss
      */
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> MALEDICTUS = register("maledictus",
-            esPureArtifactArmorMap(),
+            esParagon(),
             40,
             ModSounds.MALEDICTUS_IDLE,
             () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
@@ -69,7 +90,7 @@ public class ESArmorMaterials {
             2F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> IGNIS = register("ignis",
-            esPureArtifactArmorMap(),
+            esParagon(),
             40,
             ModSounds.IGNIS_AMBIENT,
             () -> Ingredient.of(ModItems.IGNITIUM_INGOT.get()),
@@ -77,7 +98,7 @@ public class ESArmorMaterials {
             2F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> SCYLLA = register("scylla",
-            esPureArtifactArmorMap(),
+            esParagon(),
             40,
             ModSounds.SCYLLA_HURT,
             () -> Ingredient.of(ModItems.ESSENCE_OF_THE_STORM.get()),
@@ -109,11 +130,24 @@ public class ESArmorMaterials {
         });
     }
 
+    public static EnumMap<ArmorItem.Type, Integer> esParagon()
+    {
+        return makeArmorMap(6, 11, 9, 6);
+    }
+
+    public static EnumMap<ArmorItem.Type, Integer> ascension()
+    {
+        return makeArmorMap(7, 12, 10, 7);
+    }
+
     public static EnumMap<ArmorItem.Type, Integer> esPureArmorMap()
     {
         return makeArmorMap(5, 10, 8, 5);
     }
-    public static EnumMap<ArmorItem.Type, Integer> esPureArtifactArmorMap(){return makeArmorMap(6, 11, 9, 6);}
+    public static EnumMap<ArmorItem.Type, Integer> esPureArtifactArmorMap()
+    {
+        return makeArmorMap(5, 10, 8, 5);
+    }
 
     public static void register(IEventBus eventBus)
     {

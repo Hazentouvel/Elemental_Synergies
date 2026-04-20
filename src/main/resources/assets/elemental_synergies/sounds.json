@@ -1,0 +1,7 @@
+{
+  "night_state_activate": {
+    "sounds": [
+      "elemental_synergies:night_state_activate"
+    ]
+  }
+}

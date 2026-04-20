@@ -85,6 +85,35 @@
   "item.elemental_synergies.onyx_leggings": "Onyx Leggings",
   "item.elemental_synergies.onyx_boots": "Onyx Boots",
 
+  "item.elemental_synergies.project_sekai_helmet": "Miku's Hair",
+  "item.elemental_synergies.project_sekai_chestplate": "Miku's Uniform",
+  "item.elemental_synergies.project_sekai_leggings": "Miku's Leggings",
+  "item.elemental_synergies.project_sekai_boots": "Miku's Boots",
+
+  "item.elemental_synergies.rotten_girl_helmet": "''Miku's'' Hair",
+  "item.elemental_synergies.rotten_girl_chestplate": "''Miku's'' Uniform",
+  "item.elemental_synergies.rotten_girl_leggings": "''Miku's'' Leggings",
+  "item.elemental_synergies.rotten_girl_boots": "''Miku's'' Boots",
+
+
+  "item.elemental_synergies.synthv2_helmet": "Teto's Hair",
+  "item.elemental_synergies.synthv2_chestplate": "Teto's Uniform",
+  "item.elemental_synergies.synthv2_leggings": "Teto's Leggings",
+  "item.elemental_synergies.synthv2_boots": "Teto's Boots",
+
+
+  "item.elemental_synergies.utau_helmet": "Teto's Hair",
+  "item.elemental_synergies.utau_chestplate": "Teto's Uniform",
+  "item.elemental_synergies.utau_leggings": "Teto's Leggings",
+  "item.elemental_synergies.utau_boots": "Teto's Boots",
+
+  "item.elemental_synergies.neru_helmet": "Neru's Hair",
+  "item.elemental_synergies.neru_chestplate": "Neru's Dress",
+  "item.elemental_synergies.neru_leggings": "Neru's Leggings",
+  "item.elemental_synergies.neru_boots": "Neru's Boots",
+
+  "item.elemental_synergies.excelsior": "Excelsior",
+
   "item.elemental_synergies.arcane_mace": "Arcane Mace",
   "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
 

@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
@@ -17,7 +18,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
+//import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -26,9 +27,9 @@ import java.util.List;
 
 public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public MaledictusArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.MALEDICTUS, type, settings, paragonTierMulti(
-                AttributeRegistry.ICE_SPELL_POWER,
-                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+        super(ESArmorMaterials.MALEDICTUS, type, settings, paragonTier(
+                AttributeRegistry.ICE_SPELL_POWER
+                //MFTEAttributeRegistries.SPIRIT_SPELL_POWER
         ));
     }
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -38,6 +39,7 @@ public class MaledictusArmorItem extends ImbuableGeckolibHnSArmorItem implements
         var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
         ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
         MalumCompat.addArcaneResonance(attributes, group);
+        MFTECompat.addSpiritSpellPower(attributes, group);
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();

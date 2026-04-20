@@ -2,6 +2,8 @@ package net.hazen.elemental_synergies.Setup;
 
 import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
+import net.hazen.hazennstuff.Particle.HnSGenericParticle;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -36,6 +38,8 @@ public class ClientSetup {
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event)
     {
+        event.registerSpriteSet(ESParticleRegistry.HOLY_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
+
 
     }
 

@@ -5,8 +5,8 @@ import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
-import net.hazen.elemental_synergies.Items.Staves.ESImbuableMaceStaffItem;
-import net.hazen.elemental_synergies.Items.Staves.ESStaffTier;
+import net.hazen.elemental_synergies.ESUtilities.Items.ESStaffTier;
+import net.hazen.hazennstuff.HnSUtilities.HnSExtras.MagicMace.CastingItem.HnSImbuableMaceStaffItem;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -22,7 +22,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class ArcaneMaceItem extends ESImbuableMaceStaffItem implements GeoItem {
+public class ArcaneMaceItem extends HnSImbuableMaceStaffItem implements GeoItem {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public ArcaneMaceItem() {

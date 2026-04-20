@@ -5,6 +5,10 @@ import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
+import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
+import io.redspace.ironsspellbooks.effect.ImmolateEffect;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -56,7 +60,4 @@ public class ServerPlayerEvents {
             }
         }
     }
-
-
-
 }

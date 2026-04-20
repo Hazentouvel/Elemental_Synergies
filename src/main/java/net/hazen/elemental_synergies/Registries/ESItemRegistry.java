@@ -3,6 +3,8 @@ package net.hazen.elemental_synergies.Registries;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.ESUtilities.ESRarities;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.AzureLib.ProvidenceArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.GeckolibProvidenceArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.MaledictusArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Onyx.OnyxArmorItem;
@@ -22,9 +24,15 @@ import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Hel
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Mage.AerospecMageArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.ExoMechArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.Geckolib.GeckolibExoMechArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.SchoolTier.Neru.AkitaNeruArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.SchoolTier.ProjectSekai.ProjectSekaiArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.SchoolTier.RottenGirl.RottenGirlArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.SchoolTier.SynthesizerV.SynthV2ArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.SchoolTier.Utau.UtauArmorItem;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
 import net.hazen.elemental_synergies.Items.Staves.ArcaneMace.ArcaneMaceItem;
+import net.hazen.elemental_synergies.Items.Weapons.Generic.Excelsior.Excelsior;
 import net.hazen.hazennstuff.Rarity.HnSRarities;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
@@ -87,6 +95,10 @@ public class ESItemRegistry {
     /*
     *** Weapons
      */
+
+    // Arcane Mace
+    public static final DeferredHolder<Item, Item> EXCELSIOR = ITEMS.register("excelsior", Excelsior::new);
+
 
     /*
     *** Tools
@@ -589,6 +601,145 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_BOOTS = ITEMS.register("geckolib_soul_flame_boots", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    /*
+    *** Ascended
+     */
+
+    // Onyx Armor Set
+    public static final DeferredHolder<Item, Item> PROVIDENCE_HELMET = ITEMS.register("providence_helmet", () -> new ProvidenceArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.HOLY_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+    public static final DeferredHolder<Item, Item> PROVIDENCE_CHESTPLATE = ITEMS.register("providence_chestplate", () -> new ProvidenceArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.HOLY_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+    public static final DeferredHolder<Item, Item> PROVIDENCE_LEGGINGS = ITEMS.register("providence_leggings", () -> new ProvidenceArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.HOLY_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> PROVIDENCE_BOOTS = ITEMS.register("providence_boots", () -> new ProvidenceArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.HOLY_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+
+
+    /*
+    *** Cosmetics
+     */
+
+    //Project Sekai [Marked for Deletion]
+
+    public static final DeferredHolder<Item, Item> PROJECT_SEKAI_HELMET = ITEMS.register("project_sekai_helmet", () -> new ProjectSekaiArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> PROJECT_SEKAI_CHESTPLATE = ITEMS.register("project_sekai_chestplate", () -> new ProjectSekaiArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> PROJECT_SEKAI_LEGGINGS = ITEMS.register("project_sekai_leggings", () -> new ProjectSekaiArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> PROJECT_SEKAI_BOOTS = ITEMS.register("project_sekai_boots", () -> new ProjectSekaiArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    //Rotten Girl [Marked for Deletion]
+
+    public static final DeferredHolder<Item, Item> ROTTEN_GIRL_HELMET = ITEMS.register("rotten_girl_helmet", () -> new RottenGirlArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> ROTTEN_GIRL_CHESTPLATE = ITEMS.register("rotten_girl_chestplate", () -> new RottenGirlArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> ROTTEN_GIRL_LEGGINGS = ITEMS.register("rotten_girl_leggings", () -> new RottenGirlArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> ROTTEN_GIRL_BOOTS = ITEMS.register("rotten_girl_boots", () -> new RottenGirlArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+
+    //Synthesizer V [Marked for Deletion]
+
+    public static final DeferredHolder<Item, Item> SYNTHESIZER_V_HELMET = ITEMS.register("synthv2_helmet", () -> new SynthV2ArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> SYNTHESIZER_V_CHESTPLATE = ITEMS.register("synthv2_chestplate", () -> new SynthV2ArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> SYNTHESIZER_V_LEGGINGS = ITEMS.register("synthv2_leggings", () -> new SynthV2ArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> SYNTHESIZER_V_BOOTS = ITEMS.register("synthv2_boots", () -> new SynthV2ArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    //Utau [Marked for Deletion]
+
+    public static final DeferredHolder<Item, Item> UTAU_HELMET = ITEMS.register("utau_helmet", () -> new UtauArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> UTAU_CHESTPLATE = ITEMS.register("utau_chestplate", () -> new UtauArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> UTAU_LEGGINGS = ITEMS.register("utau_leggings", () -> new UtauArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> UTAU_BOOTS = ITEMS.register("utau_boots", () -> new UtauArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .durability(ArmorItem.Type.BOOTS.getDurability(64))
+    ));
+
+    //Neru [Marked for Deletion]
+
+    public static final DeferredHolder<Item, Item> NERU_HELMET = ITEMS.register("neru_helmet", () -> new AkitaNeruArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .fireResistant()
+            .durability(ArmorItem.Type.HELMET.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> NERU_CHESTPLATE = ITEMS.register("neru_chestplate", () -> new AkitaNeruArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .fireResistant()
+            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> NERU_LEGGINGS = ITEMS.register("neru_leggings", () -> new AkitaNeruArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .fireResistant()
+            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+    ));
+    public static final DeferredHolder<Item, Item> NERU_BOOTS = ITEMS.register("neru_boots", () -> new AkitaNeruArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
     ));

@@ -105,10 +105,58 @@ public class ESCreativeModeTabs {
                         output.accept(ESItemRegistry.ONYX_LEGGINGS.get());
                         output.accept(ESItemRegistry.ONYX_BOOTS.get());
 
+                        /*
+                        *** Ascended Tier
+                         */
+
+                        // Providence Armor
+                        output.accept(ESItemRegistry.PROVIDENCE_HELMET.get());
+                        output.accept(ESItemRegistry.PROVIDENCE_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.PROVIDENCE_LEGGINGS.get());
+                        output.accept(ESItemRegistry.PROVIDENCE_BOOTS.get());
+
+
+                        /*
+                        *** Cosmetics
+                         */
+
+                        // Synthesizer V
+                        output.accept(ESItemRegistry.SYNTHESIZER_V_HELMET.get());
+                        output.accept(ESItemRegistry.SYNTHESIZER_V_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.SYNTHESIZER_V_LEGGINGS.get());
+                        output.accept(ESItemRegistry.SYNTHESIZER_V_BOOTS.get());
+
+                        // Utau
+                        output.accept(ESItemRegistry.UTAU_HELMET.get());
+                        output.accept(ESItemRegistry.UTAU_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.UTAU_LEGGINGS.get());
+                        output.accept(ESItemRegistry.UTAU_BOOTS.get());
+
+                        // Project Sekai
+                        output.accept(ESItemRegistry.PROJECT_SEKAI_HELMET.get());
+                        output.accept(ESItemRegistry.PROJECT_SEKAI_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.PROJECT_SEKAI_LEGGINGS.get());
+                        output.accept(ESItemRegistry.PROJECT_SEKAI_BOOTS.get());
+
+                        // Rotten Girl
+                        output.accept(ESItemRegistry.ROTTEN_GIRL_HELMET.get());
+                        output.accept(ESItemRegistry.ROTTEN_GIRL_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.ROTTEN_GIRL_LEGGINGS.get());
+                        output.accept(ESItemRegistry.ROTTEN_GIRL_BOOTS.get());
+
+                        // Neru
+                        output.accept(ESItemRegistry.NERU_HELMET.get());
+                        output.accept(ESItemRegistry.NERU_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.NERU_LEGGINGS.get());
+                        output.accept(ESItemRegistry.NERU_BOOTS.get());
+
 
                         /*
                         *** Weapons
                          */
+
+                        //Excelsior
+                        output.accept(ESItemRegistry.EXCELSIOR.get());
 
                         /*
                         *** Tools
@@ -117,6 +165,7 @@ public class ESCreativeModeTabs {
                         /*
                         *** Staves
                          */
+
                         //Arcane Mace
                         output.accept(ESItemRegistry.ARCANE_MACE.get());
 

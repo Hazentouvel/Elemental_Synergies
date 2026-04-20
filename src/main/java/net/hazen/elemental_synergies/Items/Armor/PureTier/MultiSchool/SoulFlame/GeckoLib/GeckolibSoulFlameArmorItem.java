@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
@@ -18,16 +19,19 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.List;
 
 public class GeckolibSoulFlameArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public GeckolibSoulFlameArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
-                AttributeRegistry.FIRE_SPELL_POWER,
-                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+//        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
+//                AttributeRegistry.FIRE_SPELL_POWER,
+//                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+//        ));
+
+        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTier(
+                AttributeRegistry.FIRE_SPELL_POWER
         ));
     }
 
@@ -35,6 +39,7 @@ public class GeckolibSoulFlameArmorItem extends ImbuableGeckolibHnSArmorItem imp
         var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
         ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
         MalumCompat.addArcaneResonance(attributes, group);
+        MFTECompat.addSpiritSpellPowerPure(attributes, group);
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();

@@ -4,6 +4,7 @@ import io.redspace.ironsspellbooks.util.ModTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.Datagen.HnSTags;
+import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -40,6 +41,33 @@ public class ESItemTagProvider extends ItemTagsProvider {
         tag(Tags.Items.ENCHANTABLES)
 
                 .add(ESItemRegistry.ARCANE_MACE.get())
+        ;
+
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ESItemRegistry.EXCELSIOR.get())
+        ;
+
+        /*
+         *** Tools and Weapons Tags
+         */
+
+        tag(ItemTags.SWORDS)
+                .add(ESItemRegistry.EXCELSIOR.get())
+        ;
+
+        tag(Tags.Items.TOOLS_MACE)
+                .add(ESItemRegistry.ARCANE_MACE.get())
+        ;
+
+        tag(ItemTags.MACE_ENCHANTABLE)
+                .add(ESItemRegistry.ARCANE_MACE.get())
+        ;
+
+//        tag(Tags.Items.TOOLS_SPEAR)
+//        ;
+
+        tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .add(ESItemRegistry.EXCELSIOR.get())
         ;
 
         tag(HnSTags.PURE_HELMET)
@@ -114,6 +142,38 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.SCYLLA_BOOTS.get())
                 .add(ESItemRegistry.MALEDICTUS_BOOTS.get())
 
+        ;
+
+        tag(HnSTags.SCHOOL_HELMET)
+                .add(ESItemRegistry.SYNTHESIZER_V_HELMET.get())
+                .add(ESItemRegistry.ROTTEN_GIRL_HELMET.get())
+                .add(ESItemRegistry.PROJECT_SEKAI_HELMET.get())
+                .add(ESItemRegistry.NERU_HELMET.get())
+                .add(ESItemRegistry.UTAU_HELMET.get())
+        ;
+
+        tag(HnSTags.SCHOOL_CHESTPLATE)
+                .add(ESItemRegistry.SYNTHESIZER_V_CHESTPLATE.get())
+                .add(ESItemRegistry.ROTTEN_GIRL_CHESTPLATE.get())
+                .add(ESItemRegistry.PROJECT_SEKAI_CHESTPLATE.get())
+                .add(ESItemRegistry.NERU_CHESTPLATE.get())
+                .add(ESItemRegistry.UTAU_CHESTPLATE.get())
+        ;
+
+        tag(HnSTags.SCHOOL_LEGGINGS)
+                .add(ESItemRegistry.SYNTHESIZER_V_LEGGINGS.get())
+                .add(ESItemRegistry.ROTTEN_GIRL_LEGGINGS.get())
+                .add(ESItemRegistry.PROJECT_SEKAI_LEGGINGS.get())
+                .add(ESItemRegistry.NERU_LEGGINGS.get())
+                .add(ESItemRegistry.UTAU_LEGGINGS.get())
+        ;
+
+        tag(HnSTags.SCHOOL_BOOTS)
+                .add(ESItemRegistry.SYNTHESIZER_V_BOOTS.get())
+                .add(ESItemRegistry.ROTTEN_GIRL_BOOTS.get())
+                .add(ESItemRegistry.PROJECT_SEKAI_BOOTS.get())
+                .add(ESItemRegistry.NERU_BOOTS.get())
+                .add(ESItemRegistry.UTAU_BOOTS.get())
         ;
 
         /*

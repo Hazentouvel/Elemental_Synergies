@@ -58,7 +58,7 @@ neoForge {
     }
 
     // This line is optional. Access Transformers are automatically detected
-    // accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -138,12 +138,12 @@ dependencies {
      */
 
     //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7936694"
+    implementation "curse.maven:hazennstuff-1231627:7946060"
 
     //Iron's Spells 'n Spellbooks
     implementation "curse.maven:iss-855414:7907341"
     implementation "curse.maven:iss-1492763:7907336"
-    implementation "curse.maven:geckolib-388172:6304958"
+    implementation "curse.maven:geckolib-388172:7707149"
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
     //Apothic Attributes
@@ -165,8 +165,8 @@ dependencies {
      */
 
     //Cataclysm Spellbooks
-    implementation "curse.maven:cataclysm_spellbooks-1099461:7358841"
-    implementation "curse.maven:l_enders_cataclysm-551586:6906997"
+    implementation "curse.maven:cataclysm_spellbooks-1099461:7703231"
+    implementation "curse.maven:l_enders_cataclysm-551586:7908490"
     implementation "curse.maven:lionfish-1001614:6168249"
 
     //SnackPirate's Aeromancy Additions
@@ -174,23 +174,23 @@ dependencies {
     implementation "curse.maven:expandability-465066:5428824"
 
     //Magic From The East
-    implementation "curse.maven:magic_from_the_east-1224162:7385201"
+    //implementation "curse.maven:magic_from_the_east-1224162:7385201"
 
     //Familiar Lib
     //implementation "curse.maven:alshanexs_familiars-1171602:7934150"
     //implementation "curse.maven:familiar_lib-1316458:7931283"
 
     // Tunes 'n Tomes
-    //implementation "curse.maven:tunes_n_tomes-1509193:7920232"
+    implementation "curse.maven:tunes_n_tomes-1509193:7931973"
 
     //Ender's Spells and Stuff: Requiem
-    //implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
+    implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
 
     //Discerning the Eldritch
     //implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
-    //implementation "curse.maven:soul_fire_d-662413:7364962"
-    //implementation "curse.maven:prometheus-1365195:7364871"
-    //implementation "curse.maven:cobweb-968456:7186943"
+    implementation "curse.maven:soul_fire_d-662413:7364962"
+    implementation "curse.maven:prometheus-1365195:7364871"
+    implementation "curse.maven:cobweb-968456:7186943"
 
     //GTBC's Geomancy+
     implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"

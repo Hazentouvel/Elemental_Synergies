@@ -8,6 +8,7 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.AzureLib.ProvidenceArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
@@ -16,10 +17,7 @@ import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIg
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisItemRenderer;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
-import net.hazen.elemental_synergies.Registries.ESCreativeModeTabs;
-import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
-import net.hazen.elemental_synergies.Registries.ESItemRegistry;
+import net.hazen.elemental_synergies.Registries.*;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -46,6 +44,8 @@ public class ElementalSynergies {
     public ElementalSynergies(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ESFireRegistry.init();
 
         ESItemRegistry.register(modEventBus);
         ESCreativeModeTabs.register(modEventBus);
@@ -82,10 +82,10 @@ public class ElementalSynergies {
 
                 //Armor
 
-                //ESItemRegistry.GABRIEL_ULTRAKILL_HELMET.get(),
-                //ESItemRegistry.GABRIEL_ULTRAKILL_CHESTPLATE.get(),
-                //ESItemRegistry.GABRIEL_ULTRAKILL_LEGGINGS.get(),
-                //ESItemRegistry.GABRIEL_ULTRAKILL_BOOTS.get(),
+                ESItemRegistry.PROVIDENCE_HELMET.get(),
+                ESItemRegistry.PROVIDENCE_CHESTPLATE.get(),
+                ESItemRegistry.PROVIDENCE_LEGGINGS.get(),
+                ESItemRegistry.PROVIDENCE_BOOTS.get(),
 
                 // Weapons
 
@@ -140,6 +140,13 @@ public class ElementalSynergies {
                     ESItemRegistry.CATACLYSM_CHESTPLATE.get(),
                     ESItemRegistry.CATACLYSM_LEGGINGS.get(),
                     ESItemRegistry.CATACLYSM_BOOTS.get());
+
+            //Providence Armor
+            AzArmorRendererRegistry.register(ProvidenceArmorRenderer::new,
+                    ESItemRegistry.PROVIDENCE_HELMET.get(),
+                    ESItemRegistry.PROVIDENCE_CHESTPLATE.get(),
+                    ESItemRegistry.PROVIDENCE_LEGGINGS.get(),
+                    ESItemRegistry.PROVIDENCE_BOOTS.get());
 
             /*
              *** Spellbooks

@@ -3,6 +3,7 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
+import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
@@ -14,16 +15,20 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
-import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
+//import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
 
 import java.util.List;
 
 public class SoulFlameArmorItem extends ImbuableHnSArmorItem implements IDisableHat {
 
     public SoulFlameArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
-                AttributeRegistry.FIRE_SPELL_POWER,
-                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+//        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTierMulti(
+//                AttributeRegistry.FIRE_SPELL_POWER,
+//                MFTEAttributeRegistries.SPIRIT_SPELL_POWER
+//        ));
+
+        super(HnSArmorMaterials.SOUL_FLAME_MATERIAL, type, settings, pureTier(
+                AttributeRegistry.FIRE_SPELL_POWER
         ));
     }
 
@@ -31,6 +36,7 @@ public class SoulFlameArmorItem extends ImbuableHnSArmorItem implements IDisable
         var group = EquipmentSlotGroup.bySlot(getEquipmentSlot());
         ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
         MalumCompat.addArcaneResonance(attributes, group);
+        MFTECompat.addSpiritSpellPowerPure(attributes, group);
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();

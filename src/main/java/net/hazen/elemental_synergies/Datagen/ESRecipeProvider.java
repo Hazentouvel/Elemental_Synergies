@@ -3,8 +3,10 @@ package net.hazen.elemental_synergies.Datagen;
 import com.gametechbc.gtbcs_geomancy_plus.init.GGItems;
 import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
+import net.ender.ess_requiem.registries.GGItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
+import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -15,7 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import net.warphan.iss_magicfromtheeast.registries.MFTEItemRegistries;
+//import net.warphan.iss_magicfromtheeast.registries.MFTEItemRegistries;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -45,6 +47,18 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
         *** Weapons
          */
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.EXCELSIOR.get(), 1)
+                .pattern(" ZE")
+                .pattern("RFZ")
+                .pattern("WR ")
+                .define('F', HnSItemRegistry.EXCALIBUR_FRAGMENT.get())
+                .define('W', ItemRegistry.WEAPON_PARTS.get())
+                .define('E', HnSItemRegistry.STEEL_INGOT)
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT)
+                .define('R', GGItemRegistry.SPELLBLADE_RUNE)
+                .unlockedBy("has_excalibur_fragment", has(HnSItemRegistry.EXCALIBUR_FRAGMENT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/weapons/excelsior"));
+
 
         //Arcane Mace
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ESItemRegistry.ARCANE_MACE.get())
@@ -64,6 +78,8 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
         *** Curios
          */
 
+        /*
+
         //Temporary Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get())
                 .pattern(" CS")
@@ -76,6 +92,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_ritual_orihon", has(MFTEItemRegistries.RITUAL_ORIHON.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/curios/grimoire_of_corruption"));
 
+        */
 
         /*
         *** Aeromancy
@@ -266,6 +283,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_boots"));
 
+        /*
 
         //Soul Flame Armor
         SmithingTransformRecipeBuilder.smithing(
@@ -304,6 +322,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_boots"));
 
+         */
 
 
 

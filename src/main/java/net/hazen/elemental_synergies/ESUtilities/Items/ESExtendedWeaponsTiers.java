@@ -6,6 +6,8 @@ import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
+import net.ender.ess_requiem.registries.GGAttributeRegistry;
+import net.hazen.hazennstuff.Compat.ESSRCompat;
 import net.hazen.hazennstuff.Datagen.HnSTags;
 import net.hazen.hazennstuff.HnSUtilities.Item.HnSExtendedWeaponsTiers;
 import net.hazen.hazennstuff.Registries.HnSAttributeRegistry;
@@ -33,7 +35,10 @@ public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
-            new AttributeContainer(AttributeRegistry.ICE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(GGAttributeRegistry.BLADE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_SHRED, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.CRIT_CHANCE, .15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
             new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)
     );
 

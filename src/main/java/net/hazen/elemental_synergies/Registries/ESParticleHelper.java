@@ -10,6 +10,8 @@ import org.joml.Vector3f;
 public class ESParticleHelper {
 
     public static final ParticleOptions HOLY_EMBER_PARTICLE = ESParticleRegistry.HOLY_EMBER_PARTICLE.get();
+    public static final ParticleOptions HOLY_NIGHT_EMBER_PARTICLE = ESParticleRegistry.HOLY_NIGHT_EMBER_PARTICLE.get();
+
     public static final ParticleOptions HOLY_IMPACT = new BlastwaveParticleOptions(new Vector3f(1F, 1F, 0.6F), 3.0F);
 
 }

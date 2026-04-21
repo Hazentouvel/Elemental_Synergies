@@ -8,6 +8,7 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.elemental_synergies.ESUtilities.Animations.ESDispatcher;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
+import net.hazen.elemental_synergies.Particle.HolyNightFlameExplosionParticlesPacket;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
@@ -97,8 +98,8 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements Keybind
 
         if (entity instanceof Player player) {
             if (level.isClientSide) {
-                if (this.type == Type.HELMET && player.getItemBySlot(EquipmentSlot.HEAD) == stack && ModKeybind.HELMET_KEY_ABILITY.consumeClick()) {
-                    PacketDistributor.sendToServer(new MessageArmorKey(EquipmentSlot.HEAD.ordinal(), player.getId(), 5), new CustomPacketPayload[0]);
+                if (this.type == Type.CHESTPLATE && player.getItemBySlot(EquipmentSlot.CHEST) == stack && ModKeybind.CHESTPLATE_KEY_ABILITY.consumeClick()) {
+                    PacketDistributor.sendToServer(new MessageArmorKey(EquipmentSlot.CHEST.ordinal(), player.getId(), 5), new CustomPacketPayload[0]);
                     this.onKeyPacket(player, stack, 5);
                 }
                 return;
@@ -143,10 +144,10 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements Keybind
 
     public void onKeyPacket(Player player, ItemStack itemStack, int Type) {
         if (player != null) {
-            if (Type == 5 && !player.getCooldowns().isOnCooldown((Item) ESItemRegistry.PROVIDENCE_HELMET.get())) {
+            if (Type == 5 && !player.getCooldowns().isOnCooldown((Item) ESItemRegistry.PROVIDENCE_CHESTPLATE.get())) {
                 // Give MOON_STATE effect instead of NIGHT_STATE
                 player.addEffect(new MobEffectInstance(ESEffectRegistry.NIGHT_STATE, 800, 0, true, true, true));
-                player.getCooldowns().addCooldown((Item) ESItemRegistry.PROVIDENCE_HELMET.get(), 300);
+                player.getCooldowns().addCooldown((Item) ESItemRegistry.PROVIDENCE_CHESTPLATE.get(), 300);
 
                 // Server-side: spawn particles and play activation sound
                 if (player.level() instanceof ServerLevel serverLevel) {
@@ -154,30 +155,17 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements Keybind
                     double y = player.getY() + player.getEyeHeight() * 0.5D;
                     double z = player.getZ();
 
-                    // Central impact particle
-                    serverLevel.sendParticles(ESParticleHelper.HOLY_IMPACT, x, y, z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
-
-                    // Emit ember particles in a radial outward pattern
-                    int count = 40;
-                    double radius = 0.6D;
-                    double speed = 0.15D;
-                    for (int i = 0; i < count; i++) {
-                        double angle = 2 * Math.PI * i / count;
-                        double px = x + Math.cos(angle) * radius;
-                        double pz = z + Math.sin(angle) * radius;
-                        double py = y + (serverLevel.random.nextDouble() - 0.5D) * 0.4D;
-
-                        // velocity pointing away from player center
-                        double vx = Math.cos(angle) * speed;
-                        double vz = Math.sin(angle) * speed;
-                        double vy = 0.02D + serverLevel.random.nextDouble() * 0.05D;
-
-                        // Use addParticle so we can specify velocity per particle
-                        serverLevel.addParticle(HnSParticleHelper.COSMIC_EMBER_PARTICLE, px, py, pz, vx, vy, vz);
-                    }
+                    PacketDistributor.sendToPlayersTrackingEntity(
+                            player,
+                            new HolyNightFlameExplosionParticlesPacket(
+                                    player.position().add(0.0D, player.getEyeHeight() * 0.5D, 0.0D),
+                                    2.0F
+                            ),
+                            new CustomPacketPayload[0]
+                    );
 
                     try {
-                        serverLevel.playSound(null, x, y, z, ESSounds.NIGHT_STATE_ACTIVATE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                        serverLevel.playSound(null, x, y, z, ESSounds.NIGHT_STATE_ACTIVATE.get(), SoundSource.PLAYERS, 1.5F, 1.0F);
                     } catch (Exception ignored) {
                     }
                 }

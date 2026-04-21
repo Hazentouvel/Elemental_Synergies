@@ -9,18 +9,18 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-public class HolyFlameExplosionParticlesPacket implements CustomPacketPayload {
+public class HolyNightFlameExplosionParticlesPacket implements CustomPacketPayload {
     private final Vec3 pos1;
     private final float radius;
-    public static final Type<HolyFlameExplosionParticlesPacket> TYPE = new Type(ResourceLocation.fromNamespaceAndPath("elemental_synergies", "holy_flame_explosion_particles"));
-    public static final StreamCodec<RegistryFriendlyByteBuf, HolyFlameExplosionParticlesPacket> STREAM_CODEC = CustomPacketPayload.codec(HolyFlameExplosionParticlesPacket::write, HolyFlameExplosionParticlesPacket::new);
+    public static final Type<HolyNightFlameExplosionParticlesPacket> TYPE = new Type(ResourceLocation.fromNamespaceAndPath("elemental_synergies", "holy_night_flame_explosion_particles"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, HolyNightFlameExplosionParticlesPacket> STREAM_CODEC = CustomPacketPayload.codec(HolyNightFlameExplosionParticlesPacket::write, HolyNightFlameExplosionParticlesPacket::new);
 
-    public HolyFlameExplosionParticlesPacket(Vec3 pos1, float radius) {
+    public HolyNightFlameExplosionParticlesPacket(Vec3 pos1, float radius) {
         this.pos1 = pos1;
         this.radius = radius;
     }
 
-    public HolyFlameExplosionParticlesPacket(FriendlyByteBuf buf) {
+    public HolyNightFlameExplosionParticlesPacket(FriendlyByteBuf buf) {
         this.pos1 = buf.readVec3();
         this.radius = buf.readFloat();
     }
@@ -30,8 +30,8 @@ public class HolyFlameExplosionParticlesPacket implements CustomPacketPayload {
         buf.writeFloat(this.radius);
     }
 
-    public static void handle(HolyFlameExplosionParticlesPacket packet, IPayloadContext context) {
-        context.enqueueWork(() -> ESClientSpellCastHelper.handleClientboundHolyFlameExplosion(packet.pos1, packet.radius));
+    public static void handle(HolyNightFlameExplosionParticlesPacket packet, IPayloadContext context) {
+        context.enqueueWork(() -> ESClientSpellCastHelper.handleClientboundHolyNightFlameExplosion(packet.pos1, packet.radius));
     }
 
     public Type<? extends CustomPacketPayload> type() {

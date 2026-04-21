@@ -24,6 +24,8 @@ public class ESParticleRegistry {
     // Holy Ember Particle
     public static final Supplier<SimpleParticleType> HOLY_EMBER_PARTICLE = PARTICLE_TYPES.register("holy_ember_particle",
             () -> new SimpleParticleType(false));
+    public static final Supplier<SimpleParticleType> HOLY_NIGHT_EMBER_PARTICLE = PARTICLE_TYPES.register("holy_night_ember_particle",
+            () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus)
     {

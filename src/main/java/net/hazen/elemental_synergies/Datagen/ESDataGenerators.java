@@ -34,5 +34,7 @@ public class ESDataGenerators {
 //        generator.addProvider(event.includeClient(), new HnSBlockStateProvider(packOutput, existingFileHelper));
 //
 //        generator.addProvider(event.includeServer(), new HnSDatapackProvider(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeServer(), new ESDatapackProvider(packOutput, lookupProvider));
     }
 }

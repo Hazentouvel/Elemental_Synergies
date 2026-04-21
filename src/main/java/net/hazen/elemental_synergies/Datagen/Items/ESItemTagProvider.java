@@ -1,6 +1,7 @@
 package net.hazen.elemental_synergies.Datagen.Items;
 
 import io.redspace.ironsspellbooks.util.ModTags;
+import net.hazen.elemental_synergies.Datagen.ESTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.Datagen.HnSTags;
@@ -68,6 +69,26 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(ESItemRegistry.EXCELSIOR.get())
+        ;
+
+        tag(HnSTags.PURE_HELMET)
+                .add(ESItemRegistry.ONYX_HELMET.get())
+        ;
+
+        tag(ESTags.ASCENSION_HELMET)
+                .add(ESItemRegistry.PROVIDENCE_HELMET.get())
+        ;
+
+        tag(ESTags.ASCENSION_CHESTPLATE)
+                .add(ESItemRegistry.PROVIDENCE_CHESTPLATE.get())
+        ;
+
+        tag(ESTags.ASCENSION_LEGGINGS)
+                .add(ESItemRegistry.PROVIDENCE_LEGGINGS.get())
+        ;
+
+        tag(ESTags.ASCENSION_BOOTS)
+                .add(ESItemRegistry.PROVIDENCE_BOOTS.get())
         ;
 
         tag(HnSTags.PURE_HELMET)

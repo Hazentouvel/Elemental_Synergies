@@ -8,6 +8,7 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
+import net.hazen.elemental_synergies.ESUtilities.ESEnchantmentEffects;
 import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.AzureLib.ProvidenceArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
@@ -45,6 +46,7 @@ public class ElementalSynergies {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ESEnchantmentEffects.register(modEventBus);
         ESItemRegistry.register(modEventBus);
         ESCreativeModeTabs.register(modEventBus);
         ESArmorMaterials.register(modEventBus);

@@ -11,7 +11,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT)
-public class ClientSetup {
+public class ESClientSetup {
 
 
     @SubscribeEvent

@@ -19,10 +19,10 @@ public class ProvidenceArmorRenderer extends AzArmorRenderer {
 
     private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
             ElementalSynergies.MOD_ID,
-            "textures/armor/base_providence_armor.png"
+            "textures/armor/providence_armor.png"
     );
     private static final Map<String, ResourceLocation> NIGHT = Map.of(
-            "night", ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/base_providence_night_armor.png")
+            "night", ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/providence_night_armor.png")
     );
 
     public ProvidenceArmorRenderer() {

@@ -15,6 +15,7 @@ import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSAttributeRegistry;
 import net.hazen.hazennstuff.Registries.HnSEffects;
+import net.hazen.hazennstuff.Registries.HnSParticleHelper;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -153,9 +154,27 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements Keybind
                     double y = player.getY() + player.getEyeHeight() * 0.5D;
                     double z = player.getZ();
 
-                    serverLevel.sendParticles(ESParticleHelper.HOLY_IMPACT, x, y, z, 1, 0.5D, 0.5D, 0.5D, 0.0D);
+                    // Central impact particle
+                    serverLevel.sendParticles(ESParticleHelper.HOLY_IMPACT, x, y, z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
 
-                    serverLevel.sendParticles(ESParticleHelper.HOLY_EMBER_PARTICLE, x, y, z, 40, 0.7D, 0.7D, 0.7D, 0.15D);
+                    // Emit ember particles in a radial outward pattern
+                    int count = 40;
+                    double radius = 0.6D;
+                    double speed = 0.15D;
+                    for (int i = 0; i < count; i++) {
+                        double angle = 2 * Math.PI * i / count;
+                        double px = x + Math.cos(angle) * radius;
+                        double pz = z + Math.sin(angle) * radius;
+                        double py = y + (serverLevel.random.nextDouble() - 0.5D) * 0.4D;
+
+                        // velocity pointing away from player center
+                        double vx = Math.cos(angle) * speed;
+                        double vz = Math.sin(angle) * speed;
+                        double vy = 0.02D + serverLevel.random.nextDouble() * 0.05D;
+
+                        // Use addParticle so we can specify velocity per particle
+                        serverLevel.addParticle(HnSParticleHelper.COSMIC_EMBER_PARTICLE, px, py, pz, vx, vy, vz);
+                    }
 
                     try {
                         serverLevel.playSound(null, x, y, z, ESSounds.NIGHT_STATE_ACTIVATE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);

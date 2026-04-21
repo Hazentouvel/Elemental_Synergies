@@ -5,12 +5,9 @@ import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
-import io.redspace.ironsspellbooks.effect.ImmolateEffect;
-import io.redspace.ironsspellbooks.registries.ItemRegistry;
-import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -20,11 +17,31 @@ import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 @EventBusSubscriber
-public class ServerPlayerEvents {
-    public ServerPlayerEvents() {
+public class ESServerPlayerEvents {
+    public ESServerPlayerEvents() {
     }
+
+    private static boolean isWearingFullProvidenceSet(LivingEntity entity) {
+        return entity.getItemBySlot(EquipmentSlot.HEAD).getItem() == ESItemRegistry.PROVIDENCE_HELMET.get()
+                && entity.getItemBySlot(EquipmentSlot.CHEST).getItem() == ESItemRegistry.PROVIDENCE_CHESTPLATE.get()
+                && entity.getItemBySlot(EquipmentSlot.LEGS).getItem() == ESItemRegistry.PROVIDENCE_LEGGINGS.get()
+                && entity.getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.PROVIDENCE_BOOTS.get();
+    }
+
+
+    @SubscribeEvent
+    public static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
+        LivingEntity livingEntity = event.getEntity();
+
+        if ((livingEntity instanceof ServerPlayer || livingEntity instanceof IMagicEntity) && isWearingFullProvidenceSet(livingEntity) && event.getSource().is(DamageTypeTags.IS_FIRE)) {
+            livingEntity.clearFire();
+            event.setCanceled(true);
+        }
+    }
+
 
     @SubscribeEvent
     public static void onBeforeDamageTaken(LivingDamageEvent.Pre event) {

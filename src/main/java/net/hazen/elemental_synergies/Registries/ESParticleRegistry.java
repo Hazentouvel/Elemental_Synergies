@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 public class ESParticleRegistry {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(Registries.PARTICLE_TYPE, ElementalSynergies.MOD_ID);
 
-    // Eldritch Soul Particle
+    // Holy Ember Particle
     public static final Supplier<SimpleParticleType> HOLY_EMBER_PARTICLE = PARTICLE_TYPES.register("holy_ember_particle",
             () -> new SimpleParticleType(false));
 

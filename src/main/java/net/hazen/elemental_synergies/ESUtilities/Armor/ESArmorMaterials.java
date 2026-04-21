@@ -34,7 +34,7 @@ public class ESArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             3,
-            1F);
+            0.15F);
 
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> GEOMANCY_MATERIAL = register("geomancy",
@@ -43,7 +43,7 @@ public class ESArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             3,
-            1F);
+            0.15F);
 
     /*
     *** Paragon Tier ***************************************************************************************************
@@ -55,7 +55,7 @@ public class ESArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             4,
-            2F);
+            0.15F);
 
     /*
     *** Ascension Tier *************************************************************************************************
@@ -67,7 +67,7 @@ public class ESArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
             4,
-            2F);
+            0.20F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> PROVIDENCE_MATERIAL = register("providence",
             ascension(),
@@ -75,7 +75,7 @@ public class ESArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
             6,
-            3F);
+            0.25F);
 
     /*
     *** Boss
@@ -87,7 +87,7 @@ public class ESArmorMaterials {
             ModSounds.MALEDICTUS_IDLE,
             () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
             4,
-            2F);
+            0.25F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> IGNIS = register("ignis",
             esParagon(),
@@ -95,7 +95,7 @@ public class ESArmorMaterials {
             ModSounds.IGNIS_AMBIENT,
             () -> Ingredient.of(ModItems.IGNITIUM_INGOT.get()),
             4,
-            2F);
+            0.25F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> SCYLLA = register("scylla",
             esParagon(),
@@ -103,7 +103,7 @@ public class ESArmorMaterials {
             ModSounds.SCYLLA_HURT,
             () -> Ingredient.of(ModItems.ESSENCE_OF_THE_STORM.get()),
             4,
-            2F);
+            0.25F);
 
 
     private static DeferredHolder<ArmorMaterial, ArmorMaterial> register(

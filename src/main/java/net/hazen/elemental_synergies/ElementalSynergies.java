@@ -45,14 +45,15 @@ public class ElementalSynergies {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        ESFireRegistry.init();
-
         ESItemRegistry.register(modEventBus);
         ESCreativeModeTabs.register(modEventBus);
         ESArmorMaterials.register(modEventBus);
 
 
         ESEffectRegistry.register(modEventBus);
+
+        ESSounds.register(modEventBus);
+        ESParticleRegistry.register(modEventBus);
 
 
         ESEntityRegistry.register(modEventBus);
@@ -77,6 +78,7 @@ public class ElementalSynergies {
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(ESFireRegistry::init);
         // Animation Registry
         AzIdentityRegistry.register(
 

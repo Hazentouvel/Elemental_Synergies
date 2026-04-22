@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage;
+package net.hazen.elemental_synergies.Entities.Mobs.wizards.Good.CloudmasterSage;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;

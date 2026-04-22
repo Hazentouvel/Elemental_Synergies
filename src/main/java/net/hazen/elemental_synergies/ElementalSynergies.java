@@ -19,6 +19,7 @@ import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIg
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioItemRenderer;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbookCurioRenderer;
 import net.hazen.elemental_synergies.Registries.*;
+import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -57,8 +58,9 @@ public class ElementalSynergies {
         ESSounds.register(modEventBus);
         ESParticleRegistry.register(modEventBus);
 
-
         ESEntityRegistry.register(modEventBus);
+
+        ESSpellRegistries.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);
@@ -97,6 +99,8 @@ public class ElementalSynergies {
                 // Staves
 
                 // Curios
+
+                ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get(),
 
                 ESItemRegistry.GAUNTLETS_OF_IGNIS.get()
 

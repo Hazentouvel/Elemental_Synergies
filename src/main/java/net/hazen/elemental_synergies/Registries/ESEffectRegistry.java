@@ -50,6 +50,38 @@ public class ESEffectRegistry {
                     AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
+    public static final DeferredHolder<MobEffect, MobEffect> BRIMSTONE_STATE = MOB_EFFECTS.register("brimstone_state", () -> new NightStateEffect(MobEffectCategory.BENEFICIAL, 3311322)
+            .addAttributeModifier(AttributeRegistry.SPELL_RESIST,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.SPELL_RES_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ASAttributeRegistry.SPELL_RES_PENETRATION,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.REND_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.ARMOR_SHRED,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.REND_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.ARMOR_PIERCE,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.REND_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.CRIT_DAMAGE,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.CRIT_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.CRIT_CHANCE,
+                    ElementalSynergies.id("brimstone_state"),
+                    NightStateEffect.CRIT_PER_LEVEL,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
+
     public static final DeferredHolder<MobEffect, MobEffect> WIND_SHEAR = MOB_EFFECTS.register("wind_shear",
             () -> new WindShearEffect(MobEffectCategory.HARMFUL, 0xa3b6ff));
 

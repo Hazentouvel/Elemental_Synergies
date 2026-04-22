@@ -1,19 +1,18 @@
 package net.hazen.elemental_synergies.ESUtilities;
 
 import net.alshanex.tunes_n_tomes.registry.TAttributeRegistry;
-import net.hazen.elemental_synergies.Datagen.ESEnchantmentTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Enchantments.LightningStrikerEnchantmentEffect;
+import net.hazen.hazennstuff.Datagen.HnSEnchantmentTags;
+import net.hazen.hazennstuff.Datagen.HnSTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
@@ -50,15 +49,14 @@ public class ESEnchantments {
         );
 
         register(context, MELODIC_ATTUNEMENT, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+                        items.getOrThrow(HnSTags.ENCHANTED_SPELLBOOK),
                         5,
                         2,
                         Enchantment.dynamicCost(5, 7),
                         Enchantment.dynamicCost(25, 7),
                         2,
                         EquipmentSlotGroup.MAINHAND))
-                .exclusiveWith(enchantments.getOrThrow(ESEnchantmentTags.SPELLBOOK_EXCLUSIVE))
+                .exclusiveWith(enchantments.getOrThrow(HnSEnchantmentTags.SPELLBOOK_EXCLUSIVE))
                 .withEffect(
                         EnchantmentEffectComponents.ATTRIBUTES,
                         new EnchantmentAttributeEffect(

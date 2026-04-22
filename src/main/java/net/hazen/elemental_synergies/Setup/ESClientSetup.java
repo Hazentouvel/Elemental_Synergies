@@ -1,6 +1,8 @@
 package net.hazen.elemental_synergies.Setup;
 
-import net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
+import net.hazen.elemental_synergies.ESUtilities.Tooltips.ESSpellTooltip;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblastRenderer;
+import net.hazen.elemental_synergies.Entities.Mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
 import net.hazen.hazennstuff.Particle.HnSGenericParticle;
@@ -8,6 +10,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT)
@@ -20,6 +23,7 @@ public class ESClientSetup {
         /*
         *** Spells
          */
+        event.registerEntityRenderer(ESEntityRegistry.BRIMSTONE_HELLBLAST.get(), BrimstoneHellblastRenderer::new);
 
 
         /*
@@ -39,8 +43,11 @@ public class ESClientSetup {
     public static void registerParticles(RegisterParticleProvidersEvent event)
     {
         event.registerSpriteSet(ESParticleRegistry.HOLY_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
+    }
 
-
+    @SubscribeEvent
+    public static void onRegisterTooltipComponents(RegisterClientTooltipComponentFactoriesEvent event) {
+        event.register(ESSpellTooltip.ESSpellTooltipData.class, ESSpellTooltip::new);
     }
 
 }

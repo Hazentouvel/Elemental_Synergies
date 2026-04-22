@@ -4,7 +4,7 @@ import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.ESUtilities.ESRarities;
 import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.AzureLib.ProvidenceArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.GeckolibProvidenceArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas.SupremeCalamitasArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.MaledictusArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Onyx.OnyxArmorItem;
@@ -609,7 +609,7 @@ public class ESItemRegistry {
     *** Ascended
      */
 
-    // Onyx Armor Set
+    // Providence Armor Set
     public static final DeferredHolder<Item, Item> PROVIDENCE_HELMET = ITEMS.register("providence_helmet", () -> new ProvidenceArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.HOLY_RARITY.getValue())
@@ -635,6 +635,36 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> PROVIDENCE_BOOTS = ITEMS.register("providence_boots", () -> new ProvidenceArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HnSRarities.HOLY_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+    // Calamitas Armor Set
+    public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_HELMET = ITEMS.register("supreme_calamitas_helmet", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+    public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_CHESTPLATE = ITEMS.register("supreme_calamitas_chestplate", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+    public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_LEGGINGS = ITEMS.register("supreme_calamitas_leggings", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
+            .fireResistant()
+            .durability(ArmorItem.Type.BOOTS.getDurability(128))
+    ));
+
+
+    public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_BOOTS = ITEMS.register("supreme_calamitas_boots", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
+            .equipment(1)
+            .rarity(HnSRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
     ));

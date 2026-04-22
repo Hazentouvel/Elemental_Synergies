@@ -1,4 +1,4 @@
-package net.hazen.elemental_synergies.Entity.mobs.wizards.Good.CloudmasterSage;
+package net.hazen.elemental_synergies.Entities.Mobs.wizards.Good.CloudmasterSage;
 
 
 import com.mojang.blaze3d.vertex.PoseStack;

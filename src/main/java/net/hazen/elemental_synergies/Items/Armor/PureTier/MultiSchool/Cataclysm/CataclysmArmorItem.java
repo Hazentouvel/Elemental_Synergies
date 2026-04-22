@@ -3,9 +3,9 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
-import net.hazen.hazennstuff.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
+import net.hazen.hazennstuff.HnSUtilities.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
@@ -20,15 +20,12 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class CataclysmArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
-    // This is your class where you will setup the AzCommands/Animations you wish to play
-    public final HnSDispatcher dispatcher;
 
     public CataclysmArmorItem(Type type, Properties settings) {
         super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 ASAttributeRegistry.TECHNOMANCY_MAGIC_POWER
         ));
-        this.dispatcher = new HnSDispatcher();
     }
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {

@@ -115,6 +115,12 @@ public class ESCreativeModeTabs {
                         output.accept(ESItemRegistry.PROVIDENCE_LEGGINGS.get());
                         output.accept(ESItemRegistry.PROVIDENCE_BOOTS.get());
 
+                        // Providence Armor
+                        output.accept(ESItemRegistry.SUPREME_CALAMITAS_HELMET.get());
+                        output.accept(ESItemRegistry.SUPREME_CALAMITAS_CHESTPLATE.get());
+                        output.accept(ESItemRegistry.SUPREME_CALAMITAS_LEGGINGS.get());
+                        output.accept(ESItemRegistry.SUPREME_CALAMITAS_BOOTS.get());
+
 
                         /*
                         *** Cosmetics

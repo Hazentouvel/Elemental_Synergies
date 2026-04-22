@@ -4,7 +4,7 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
-import net.hazen.hazennstuff.Animations.HnSDispatcher;
+import net.hazen.hazennstuff.HnSUtilities.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Rarity.HnSRarities;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;

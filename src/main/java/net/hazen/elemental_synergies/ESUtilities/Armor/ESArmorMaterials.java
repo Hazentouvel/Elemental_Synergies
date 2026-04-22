@@ -33,7 +33,7 @@ public class ESArmorMaterials {
             40,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            3,
+            4,
             0.15F);
 
 
@@ -42,7 +42,7 @@ public class ESArmorMaterials {
             40,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
-            3,
+            4,
             0.15F);
 
     /*
@@ -66,7 +66,7 @@ public class ESArmorMaterials {
             60,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
-            4,
+            5,
             0.20F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> PROVIDENCE_MATERIAL = register("providence",
@@ -86,7 +86,7 @@ public class ESArmorMaterials {
             40,
             ModSounds.MALEDICTUS_IDLE,
             () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
-            4,
+            5,
             0.25F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> IGNIS = register("ignis",
@@ -94,7 +94,7 @@ public class ESArmorMaterials {
             40,
             ModSounds.IGNIS_AMBIENT,
             () -> Ingredient.of(ModItems.IGNITIUM_INGOT.get()),
-            4,
+            5,
             0.25F);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> SCYLLA = register("scylla",
@@ -102,7 +102,7 @@ public class ESArmorMaterials {
             40,
             ModSounds.SCYLLA_HURT,
             () -> Ingredient.of(ModItems.ESSENCE_OF_THE_STORM.get()),
-            4,
+            5,
             0.25F);
 
 

@@ -138,7 +138,7 @@ dependencies {
      */
 
     //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7946060"
+    implementation "curse.maven:hazennstuff-1231627:7961677"
 
     //Iron's Spells 'n Spellbooks
     implementation "curse.maven:iss-855414:7907341"
@@ -158,7 +158,7 @@ dependencies {
     //implementation "curse.maven:ldlib-626676:6911394"
 
     //AzureLib
-    implementation "curse.maven:azurelib-817423:7935743"
+    implementation "curse.maven:azurelib-817423:7961057"
 
     /*
     *** Compat Mods

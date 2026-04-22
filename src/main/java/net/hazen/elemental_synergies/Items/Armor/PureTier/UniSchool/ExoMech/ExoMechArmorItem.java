@@ -2,7 +2,6 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech;
 
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
-import net.hazen.hazennstuff.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
@@ -20,13 +19,11 @@ import java.util.List;
 
 public class ExoMechArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     // This is your class where you will setup the AzCommands/Animations you wish to play
-    public final HnSDispatcher dispatcher;
 
     public ExoMechArmorItem(Type type, Properties settings) {
         super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTier(
                 ASAttributeRegistry.TECHNOMANCY_MAGIC_POWER
         ));
-        this.dispatcher = new HnSDispatcher();
     }
 
     public List<ItemAttributeModifiers.Entry> createExtraAttributes() {

@@ -3,7 +3,7 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
-import net.hazen.hazennstuff.Animations.HnSDispatcher;
+import net.hazen.hazennstuff.HnSUtilities.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;

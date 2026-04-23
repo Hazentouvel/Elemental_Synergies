@@ -3,7 +3,7 @@ package net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorrupti
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.hazennstuff.Animations.HnSDispatcher;
+import net.hazen.hazennstuff.HnSUtilities.Animations.HnSDispatcher;
 import net.hazen.hazennstuff.Registries.HnSAttributeRegistry;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

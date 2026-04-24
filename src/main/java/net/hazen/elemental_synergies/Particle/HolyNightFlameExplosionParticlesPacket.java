@@ -31,7 +31,7 @@ public class HolyNightFlameExplosionParticlesPacket implements CustomPacketPaylo
     }
 
     public static void handle(HolyNightFlameExplosionParticlesPacket packet, IPayloadContext context) {
-        context.enqueueWork(() -> ESClientSpellCastHelper.handleClientboundHolyNightFlameExplosion(packet.pos1, packet.radius));
+        context.enqueueWork(() -> ESClientSpellCastHelper.holyNightExplosion(packet.pos1, packet.radius));
     }
 
     public Type<? extends CustomPacketPayload> type() {

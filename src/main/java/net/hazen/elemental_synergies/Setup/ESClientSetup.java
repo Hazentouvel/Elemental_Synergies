@@ -1,8 +1,8 @@
 package net.hazen.elemental_synergies.Setup;
 
 import net.hazen.elemental_synergies.ESUtilities.Tooltips.ESSpellTooltip;
+import net.hazen.elemental_synergies.Entities.Mobs.Wizards.CloudmasterSageRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblastRenderer;
-import net.hazen.elemental_synergies.Entities.Mobs.wizards.Good.CloudmasterSage.CloudmasterSageRenderer;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
 import net.hazen.hazennstuff.Particle.HnSGenericParticle;
@@ -43,6 +43,8 @@ public class ESClientSetup {
     public static void registerParticles(RegisterParticleProvidersEvent event)
     {
         event.registerSpriteSet(ESParticleRegistry.HOLY_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
+        event.registerSpriteSet(ESParticleRegistry.HOLY_NIGHT_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
+        event.registerSpriteSet(ESParticleRegistry.BRIMSTONE_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
     }
 
     @SubscribeEvent

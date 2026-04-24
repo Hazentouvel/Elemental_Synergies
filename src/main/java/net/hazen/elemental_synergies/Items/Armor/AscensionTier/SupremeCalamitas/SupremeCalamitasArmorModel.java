@@ -20,14 +20,14 @@ public class SupremeCalamitasArmorModel extends DefaultedEntityGeoModel<SupremeC
 
     @Override
     public ResourceLocation getTextureResource(SupremeCalamitasArmorItem animatable) {
-        ResourceLocation dayTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/supreme_calamitas_armor.png");
-        ResourceLocation nightTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/supreme_calamitas_hood_armor.png");
+        ResourceLocation normalTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/supreme_calamitas_armor.png");
+        ResourceLocation brimstoneStateTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/supreme_calamitas_hood_armor.png");
 
         Player player = Minecraft.getInstance().player;
         if (player != null && player.hasEffect(ESEffectRegistry.BRIMSTONE_STATE)) {
-            return nightTex;
+            return brimstoneStateTex;
         }
-        return dayTex;
+        return normalTex;
     }
 
     @Override

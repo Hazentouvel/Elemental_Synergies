@@ -1,0 +1,56 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 7,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "holyBlast",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-12, 0, -12], "size": [24, 24, 24], "uv": [0, 208]},
+						{"origin": [-13, -1, -13], "size": [26, 0, 36], "uv": [-36, 36]},
+						{"origin": [-13, 25, -13], "size": [26, 0, 36], "uv": [-36, 36]},
+						{"origin": [-13, -1, -13], "size": [26, 26, 0], "uv": [132, 30]},
+						{"origin": [13, -1, -13], "size": [0, 26, 36], "uv": [60, -6]},
+						{"origin": [-13, -1, -13], "size": [0, 26, 36], "uv": [60, -6]},
+						{"origin": [0, 0.5, 12], "size": [0, 23, 32], "uv": [96, 201]},
+						{"origin": [0, 0.5, 12], "size": [0, 23, 32], "pivot": [0, 12.5, 28], "rotation": [0, 0, -90], "uv": [96, 201]}
+					]
+				},
+				{
+					"name": "fire",
+					"parent": "holyBlast",
+					"pivot": [0, 12, 0],
+					"cubes": [
+						{"origin": [-15, -3, -15.25], "size": [30, 30, 0], "uv": [132, 0]},
+						{"origin": [-15, -3, -15.25], "size": [0, 30, 36], "uv": [60, -36]},
+						{"origin": [15, -3, -15.25], "size": [0, 30, 36], "uv": [60, -36]},
+						{"origin": [-15, 27, -15.25], "size": [30, 0, 36], "uv": [-36, 0]},
+						{"origin": [-15, -3, -15.25], "size": [30, 0, 36], "uv": [-36, 0]}
+					]
+				},
+				{
+					"name": "fireRotate",
+					"parent": "fire",
+					"pivot": [0, 12, 0.25],
+					"rotation": [0, 0, 45],
+					"cubes": [
+						{"origin": [-15, -3, -15], "size": [30, 30, 0], "uv": [132, 0]},
+						{"origin": [-15, -3, -15], "size": [0, 30, 36], "uv": [60, -36]},
+						{"origin": [15, -3, -15], "size": [0, 30, 36], "uv": [60, -36]},
+						{"origin": [-15, 27, -15], "size": [30, 0, 36], "uv": [-36, 0]},
+						{"origin": [-15, -3, -15], "size": [30, 0, 36], "uv": [-36, 0]}
+					]
+				}
+			]
+		}
+	]
+}

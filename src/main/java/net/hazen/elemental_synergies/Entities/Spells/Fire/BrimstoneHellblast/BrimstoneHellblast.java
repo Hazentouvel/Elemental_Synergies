@@ -5,9 +5,11 @@ import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.config.ServerConfigs;
 import io.redspace.ironsspellbooks.damage.DamageSources;
+import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import io.redspace.ironsspellbooks.network.particles.FieryExplosionParticlesPacket;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
+import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.hazennstuff.Registries.HnSSounds;
@@ -17,6 +19,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -97,14 +100,25 @@ public class BrimstoneHellblast extends AbstractMagicProjectile implements GeoEn
             List<Entity> entities = this.level.getEntities(this, this.getBoundingBox().inflate((double)explosionRadius));
             Vec3 losPoint = Utils.raycastForBlock(this.level, this.position(), this.position().add((double)0.0F, (double)2.0F, (double)0.0F), Fluid.NONE).getLocation();
 
-            for(Entity entity : entities) {
+            for (Entity entity : entities) {
                 double distanceSqr = entity.distanceToSqr(hitResult.getLocation());
-                if (distanceSqr < (double)explosionRadiusSqr && this.canHitEntity(entity) && Utils.hasLineOfSight(this.level, losPoint, entity.getBoundingBox().getCenter(), true)) {
-                    double p = (double)1.0F - distanceSqr / (double)explosionRadiusSqr;
-                    float damage = (float)((double)this.damage * p);
-                    DamageSources.applyDamage(entity, damage, ((AbstractSpell) ESSpellRegistries.BRIMSTONE_HELLBLAST.get()).getDamageSource(this, this.getOwner()));
+
+                if (distanceSqr < (double) explosionRadiusSqr
+                        && this.canHitEntity(entity)
+                        && Utils.hasLineOfSight(this.level, losPoint, entity.getBoundingBox().getCenter(), true)) {
+
+                    double p = 0.5F - distanceSqr / (double) explosionRadiusSqr;
+                    float totalDamage = (float) ((double) this.damage * p);
+
+                    float oneThird = totalDamage / 3.0F;
+                    float otherThird = totalDamage - (2 * oneThird);
+
+                    DamageSources.applyDamage(entity, oneThird, ((AbstractSpell) ESSpellRegistries.BRIMSTONE_HELLBLAST.get()).getDamageSource(this, this.getOwner()));
+                    DamageSources.applyDamage(entity, otherThird, (DamageSource) DamageSources.getHolderFromResource(entity, ASDamageTypes.RITUAL_MAGIC));
+                    DamageSources.applyDamage(entity, otherThird, (DamageSource) DamageSources.getHolderFromResource(entity, ISSDamageTypes.BLOOD_MAGIC));
                 }
             }
+
 
             if ((Boolean)ServerConfigs.SPELL_GREIFING.get()) {
                 Explosion explosion = new Explosion(this.level, (Entity)null, ((AbstractSpell) ESSpellRegistries.BRIMSTONE_HELLBLAST.get()).getDamageSource(this, this.getOwner()), (ExplosionDamageCalculator)null, this.getX(), this.getY(), this.getZ(), this.getExplosionRadius() / 2.0F, true,
@@ -118,7 +132,7 @@ public class BrimstoneHellblast extends AbstractMagicProjectile implements GeoEn
                 }
             }
 
-            PacketDistributor.sendToPlayersTrackingEntity(this, new FieryExplosionParticlesPacket(hitResult.getLocation().subtract(this.getDeltaMovement().scale((double)0.5F)), this.getExplosionRadius()), new CustomPacketPayload[0]);
+            PacketDistributor.sendToPlayersTrackingEntity(this, new FieryExplosionParticlesPacket(hitResult.getLocation().subtract(this.getDeltaMovement().scale((double)0F)), this.getExplosionRadius()), new CustomPacketPayload[0]);
             this.playSound((SoundEvent)HnSSounds.BRIMSTONE_HELLBLAST_IMPACT.value(), 4.0F, (1.0F + (this.level.random.nextFloat() - this.level.random.nextFloat()) * 0.2F) * 0.7F);
             this.discard();
         }

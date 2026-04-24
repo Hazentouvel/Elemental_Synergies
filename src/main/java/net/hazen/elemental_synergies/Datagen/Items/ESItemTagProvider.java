@@ -1,6 +1,7 @@
 package net.hazen.elemental_synergies.Datagen.Items;
 
 import io.redspace.ironsspellbooks.util.ModTags;
+import net.acetheeldritchking.cataclysm_spellbooks.registries.ItemRegistries;
 import net.hazen.elemental_synergies.Datagen.ESTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
@@ -48,6 +49,11 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.EXCELSIOR.get())
         ;
 
+
+        tag(HnSTags.FIRE_SPELLBOOK)
+                .add(ItemRegistries.IGNIS_SPELL_BOOK.get())
+        ;
+
         /*
          *** Tools and Weapons Tags
          */
@@ -71,7 +77,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.EXCELSIOR.get())
         ;
 
-        tag(HnSTags.PURE_HELMET)
+        tag(HnSTags.ENDER_MASK)
                 .add(ESItemRegistry.ONYX_HELMET.get())
         ;
 

@@ -5,6 +5,7 @@ import com.github.L_Ender.cataclysm.init.ModSounds;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
+import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -76,6 +77,15 @@ public class ESArmorMaterials {
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
             6,
             0.25F);
+
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> CALAMITAS_MATERIAL = register("calamitas",
+            esParagon(),
+            20,
+            HnSSounds.CALAMITAS_EQUIP,
+            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            4,
+            0.15F);
 
     /*
     *** Boss

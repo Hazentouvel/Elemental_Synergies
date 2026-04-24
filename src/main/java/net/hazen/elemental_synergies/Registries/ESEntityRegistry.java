@@ -1,8 +1,9 @@
 package net.hazen.elemental_synergies.Registries;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.elemental_synergies.Entities.Mobs.Wizards.CloudmasterSageEntity;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblast;
-import net.hazen.elemental_synergies.Entities.Mobs.wizards.Good.CloudmasterSage.CloudmasterSageEntity;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.HolyBlast.HolyBlast;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -25,6 +26,14 @@ public class ESEntityRegistry {
                     .sized(1f, 1f)
                     .clientTrackingRange(4)
                     .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "brimstone_hellblast").toString())
+            );
+
+    // Holy Blast
+    public static final DeferredHolder<EntityType<?>, EntityType<HolyBlast>> HOLY_BLAST =
+            ENTITIES.register("holy_blast", () -> EntityType.Builder.<HolyBlast>of(HolyBlast::new, MobCategory.MISC)
+                    .sized(1f, 1f)
+                    .clientTrackingRange(4)
+                    .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "holy_blast").toString())
             );
 
     /*

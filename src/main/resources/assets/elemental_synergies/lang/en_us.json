@@ -139,6 +139,12 @@
 
   "material.elemental_synergies.aerialite": "Aerialite",
 
+  "entity.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
+
+  "spell.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
+
+  "spell.elemental_synergies.brimstone_hellblast.guide": "A Calamity Mod Reference ''The Brimstone Witch's signiture spell. Cast upon your foes a skull engulfed in brimstone flames, scaling off of the power of fire and blood, and leave your foes in ashes.''",
+
   "effect.elemental_synergies.wind_shear": "Wind Shear",
   "effect.elemental_synergies.wind_shear.description": "Inflicts damage over time."
 }

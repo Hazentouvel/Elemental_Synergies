@@ -1,9 +1,11 @@
 package net.hazen.elemental_synergies.Datagen.Items;
 
+import net.hazen.elemental_synergies.Datagen.ESTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -18,10 +20,11 @@ public class ESBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        //Mining Tags
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                //.add(HnSItems.HnSBlocks.ZENALITE_ABYSSLATE_ORE.get())
+        tag(ESTags.Blocks.HOLY_FIRE_SURVIVES_ON)
+                .add(Blocks.SAND)
         ;
+
+
 
     }
 }

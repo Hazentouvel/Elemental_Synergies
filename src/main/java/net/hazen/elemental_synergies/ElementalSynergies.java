@@ -49,29 +49,22 @@ public class ElementalSynergies {
 
         ESEnchantmentEffects.register(modEventBus);
         ESItemRegistry.register(modEventBus);
+        ESBlockRegistry.register(modEventBus);
         ESCreativeModeTabs.register(modEventBus);
-        ESArmorMaterials.register(modEventBus);
-
-
         ESEffectRegistry.register(modEventBus);
-
         ESSounds.register(modEventBus);
         ESParticleRegistry.register(modEventBus);
-
         ESEntityRegistry.register(modEventBus);
-
         ESSpellRegistries.register(modEventBus);
-
+        ESArmorMaterials.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
 
@@ -82,7 +75,8 @@ public class ElementalSynergies {
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork(ESFireRegistry::init);
+        //event.enqueueWork(ESFireRegistry::init);
+
         // Animation Registry
         AzIdentityRegistry.register(
 

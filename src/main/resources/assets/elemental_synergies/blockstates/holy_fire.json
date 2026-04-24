@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "elemental_synergies:block/holy_fire_floor"
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_floor"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "elemental_synergies:block/holy_fire_side"
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side"
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt"
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 90
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 90
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 90
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 180
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 180
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 180
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 270
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side",
+          "y": 270
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 270
+        },
+        {
+          "model": "elemental_synergies:block/holy_fire_side_alt",
+          "y": 270
+        }
+      ]
+    }
+  ]
+}

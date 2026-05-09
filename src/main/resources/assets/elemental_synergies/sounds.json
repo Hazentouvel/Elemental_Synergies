@@ -3,5 +3,25 @@
     "sounds": [
       "elemental_synergies:night_state_activate"
     ]
+  },
+  "brimflame_bolt_impact": {
+    "sounds": [
+      "elemental_synergies:brimflame_bolt_impact"
+    ]
+  },
+  "brimflame_bolt_cast": {
+    "sounds": [
+      "elemental_synergies:brimflame_bolt_cast"
+    ]
+  },
+  "holy_blast_impact": {
+    "sounds": [
+      "elemental_synergies:holy_blast_impact"
+    ]
+  },
+  "holy_blast_cast": {
+    "sounds": [
+      "elemental_synergies:holy_blast_cast"
+    ]
   }
 }

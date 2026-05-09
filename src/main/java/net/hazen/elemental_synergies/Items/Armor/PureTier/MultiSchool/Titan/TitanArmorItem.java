@@ -25,7 +25,7 @@ public class TitanArmorItem extends ImbuableHnSArmorItem implements IDisableJack
     // This is your class where you will setup the AzCommands/Animations you wish to play
 
     public TitanArmorItem(ArmorItem.Type type, Item.Properties settings) {
-        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierDual(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 GGAttributes.GEO_SPELL_POWER
         ));

@@ -22,7 +22,7 @@ import java.util.List;
 public class CataclysmArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
 
     public CataclysmArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierDual(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 ASAttributeRegistry.TECHNOMANCY_MAGIC_POWER
         ));

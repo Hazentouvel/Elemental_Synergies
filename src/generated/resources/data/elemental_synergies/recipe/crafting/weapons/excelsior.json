@@ -24,6 +24,21 @@
     "WR "
   ],
   "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [
+          {
+            "id": "ess_requiem:sword_stance",
+            "index": 0,
+            "level": 10,
+            "locked": true
+          }
+        ],
+        "maxSpells": 1,
+        "mustEquip": false,
+        "spellWheel": true
+      }
+    },
     "count": 1,
     "id": "elemental_synergies:excelsior"
   }

@@ -14,6 +14,19 @@ import net.minecraft.world.level.block.Block;
 
 public class ESTags {
 
+    //Profane Sub-School Focus
+    public static final TagKey<Item> PROFANE_FOCUS = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "focus/profane_focus").toString()));
+
+    //Soul Flame Sub-School Focus
+    public static final TagKey<Item> SOUL_FLAME_FOCUS = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "focus/soul_flame_focus").toString()));
+
+    //Brimstone Sub-School Focus
+    public static final TagKey<Item> BRIMSTONE_FOCUS = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "focus/brimstone_focus").toString()));
+
+
     public static final TagKey<Item> ASCENSION_HELMET = ItemTags
             .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "armors/ascension_helmet").toString()));
     public static final TagKey<Item> ASCENSION_CHESTPLATE = ItemTags
@@ -35,6 +48,13 @@ public class ESTags {
 
         public static final TagKey<EntityType<?>> HOLY_FIRE_IMMUNE =
                 TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "fire/abyssal_fire_immune"));
+
+
+        public static final TagKey<EntityType<?>> MIDAS_TOUCHED_IMMUNE =
+                TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "mob_effects/midas_touched_immune"));
+
+
+
     }
 
     public static class Spells {

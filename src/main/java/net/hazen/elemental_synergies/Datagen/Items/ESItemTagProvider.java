@@ -7,6 +7,7 @@ import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.hazennstuff.Datagen.HnSTags;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
+import net.hazen.hazentouvelib.Datagen.HLTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -50,7 +51,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
         ;
 
 
-        tag(HnSTags.FIRE_SPELLBOOK)
+        tag(HLTags.FIRE_SPELLBOOK)
                 .add(ItemRegistries.IGNIS_SPELL_BOOK.get())
         ;
 
@@ -77,7 +78,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.EXCELSIOR.get())
         ;
 
-        tag(HnSTags.ENDER_MASK)
+        tag(HLTags.ENDER_MASK)
                 .add(ESItemRegistry.ONYX_HELMET.get())
         ;
 
@@ -97,7 +98,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.PROVIDENCE_BOOTS.get())
         ;
 
-        tag(HnSTags.PURE_HELMET)
+        tag(HLTags.PURE_HELMET)
                 .add(ESItemRegistry.AEROSPEC_HAT.get())
                 .add(ESItemRegistry.AEROSPEC_CROWN.get())
                 .add(ESItemRegistry.CLOUDMASTER_HAT.get())
@@ -116,7 +117,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.MALEDICTUS_HELMET.get())
         ;
 
-        tag(HnSTags.PURE_CHESTPLATE)
+        tag(HLTags.PURE_CHESTPLATE)
                 .add(ESItemRegistry.AEROSPEC_CHESTPLATE.get())
                 .add(ESItemRegistry.AEROSPEC_ROBES.get())
                 .add(ESItemRegistry.CLOUDMASTER_CHESTPLATE.get())
@@ -135,7 +136,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         ;
 
-        tag(HnSTags.PURE_LEGGINGS)
+        tag(HLTags.PURE_LEGGINGS)
                 .add(ESItemRegistry.AEROSPEC_LEGGINGS.get())
                 .add(ESItemRegistry.CLOUDMASTER_LEGGINGS.get())
                 .add(ESItemRegistry.TITAN_LEGGINGS.get())
@@ -153,7 +154,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         ;
 
-        tag(HnSTags.PURE_BOOTS)
+        tag(HLTags.PURE_BOOTS)
                 .add(ESItemRegistry.AEROSPEC_BOOTS.get())
                 .add(ESItemRegistry.CLOUDMASTER_BOOTS.get())
                 .add(ESItemRegistry.TITAN_BOOTS.get())
@@ -171,7 +172,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
 
         ;
 
-        tag(HnSTags.SCHOOL_HELMET)
+        tag(HLTags.SCHOOL_HELMET)
                 .add(ESItemRegistry.SYNTHESIZER_V_HELMET.get())
                 .add(ESItemRegistry.ROTTEN_GIRL_HELMET.get())
                 .add(ESItemRegistry.PROJECT_SEKAI_HELMET.get())
@@ -179,7 +180,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.UTAU_HELMET.get())
         ;
 
-        tag(HnSTags.SCHOOL_CHESTPLATE)
+        tag(HLTags.SCHOOL_CHESTPLATE)
                 .add(ESItemRegistry.SYNTHESIZER_V_CHESTPLATE.get())
                 .add(ESItemRegistry.ROTTEN_GIRL_CHESTPLATE.get())
                 .add(ESItemRegistry.PROJECT_SEKAI_CHESTPLATE.get())
@@ -187,7 +188,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.UTAU_CHESTPLATE.get())
         ;
 
-        tag(HnSTags.SCHOOL_LEGGINGS)
+        tag(HLTags.SCHOOL_LEGGINGS)
                 .add(ESItemRegistry.SYNTHESIZER_V_LEGGINGS.get())
                 .add(ESItemRegistry.ROTTEN_GIRL_LEGGINGS.get())
                 .add(ESItemRegistry.PROJECT_SEKAI_LEGGINGS.get())
@@ -195,7 +196,7 @@ public class ESItemTagProvider extends ItemTagsProvider {
                 .add(ESItemRegistry.UTAU_LEGGINGS.get())
         ;
 
-        tag(HnSTags.SCHOOL_BOOTS)
+        tag(HLTags.SCHOOL_BOOTS)
                 .add(ESItemRegistry.SYNTHESIZER_V_BOOTS.get())
                 .add(ESItemRegistry.ROTTEN_GIRL_BOOTS.get())
                 .add(ESItemRegistry.PROJECT_SEKAI_BOOTS.get())

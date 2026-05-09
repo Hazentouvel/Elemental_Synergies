@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "elemental_synergies:holy_burn",
+    "elemental_synergies:vulnerability_hex",
+    "elemental_synergies:brimstone_burn"
+  ]
+}

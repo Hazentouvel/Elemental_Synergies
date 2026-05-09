@@ -5,6 +5,7 @@ import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Enchantments.LightningStrikerEnchantmentEffect;
 import net.hazen.hazennstuff.Datagen.HnSEnchantmentTags;
 import net.hazen.hazennstuff.Datagen.HnSTags;
+import net.hazen.hazentouvelib.Datagen.HLTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -49,7 +50,7 @@ public class ESEnchantments {
         );
 
         register(context, MELODIC_ATTUNEMENT, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(HnSTags.ENCHANTED_SPELLBOOK),
+                        items.getOrThrow(HLTags.ENCHANTED_SPELLBOOK),
                         5,
                         2,
                         Enchantment.dynamicCost(5, 7),

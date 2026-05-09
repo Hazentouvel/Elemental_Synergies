@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#elemental_synergies:focus/brimstone_focus",
+    "#elemental_synergies:focus/profane_focus",
+    "#elemental_synergies:focus/soul_flame_focus"
+  ]
+}

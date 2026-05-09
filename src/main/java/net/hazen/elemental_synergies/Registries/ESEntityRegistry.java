@@ -2,8 +2,12 @@ package net.hazen.elemental_synergies.Registries;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Entities.Mobs.Wizards.CloudmasterSageEntity;
-import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblast;
-import net.hazen.elemental_synergies.Entities.Spells.Fire.HolyBlast.HolyBlast;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SoulFlame.SoulflameBolt.SoulflameBolt;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimflameBolt.BrimflameBolt;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimstoneHellblast.BrimstoneHellblast;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyBlast;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyFire.HolyFlame;
+import net.hazen.elemental_synergies.Entities.Weapons.Violence.Violence;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -23,7 +27,7 @@ public class ESEntityRegistry {
     // Brimstone Hellblast
     public static final DeferredHolder<EntityType<?>, EntityType<BrimstoneHellblast>> BRIMSTONE_HELLBLAST =
             ENTITIES.register("brimstone_hellblast", () -> EntityType.Builder.<BrimstoneHellblast>of(BrimstoneHellblast::new, MobCategory.MISC)
-                    .sized(1f, 1f)
+                    .sized(2f, 2f)
                     .clientTrackingRange(4)
                     .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "brimstone_hellblast").toString())
             );
@@ -31,10 +35,47 @@ public class ESEntityRegistry {
     // Holy Blast
     public static final DeferredHolder<EntityType<?>, EntityType<HolyBlast>> HOLY_BLAST =
             ENTITIES.register("holy_blast", () -> EntityType.Builder.<HolyBlast>of(HolyBlast::new, MobCategory.MISC)
-                    .sized(1f, 1f)
+                    .sized(2.5f, 2.5f)
                     .clientTrackingRange(4)
                     .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "holy_blast").toString())
             );
+
+    // Holy Flame
+    public static final DeferredHolder<EntityType<?>, EntityType<HolyFlame>> HOLY_FLAME =
+            ENTITIES.register("holy_flame", () -> EntityType.Builder.<HolyFlame>of(HolyFlame::new, MobCategory.MISC)
+                    .sized(1f, 1f)
+                    .clientTrackingRange(4)
+                    .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "holy_flame").toString())
+            );
+
+    // Brimflame Bolt
+    public static final DeferredHolder<EntityType<?>, EntityType<BrimflameBolt>> BRIMFLAME_BOLT =
+            ENTITIES.register("brimflame_bolt", () -> EntityType.Builder.<BrimflameBolt>of(BrimflameBolt::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "brimflame_bolt").toString()));
+
+    // Soulflame Bolt
+    public static final DeferredHolder<EntityType<?>, EntityType<SoulflameBolt>> SOULFLAME_BOLT =
+            ENTITIES.register("soulflame_bolt", () -> EntityType.Builder.<SoulflameBolt>of(SoulflameBolt::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "soulflame_bolt").toString()));
+
+
+
+    /*
+    *** Weapons
+     */
+
+
+    // Soulflame Bolt
+    public static final DeferredHolder<EntityType<?>, EntityType<Violence>> VIOLENCE =
+            ENTITIES.register("violence", () -> EntityType.Builder.<Violence>of(Violence::new, MobCategory.MISC)
+                    .sized(1f, 1.5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "violence").toString()));
+
 
     /*
      *** Entities

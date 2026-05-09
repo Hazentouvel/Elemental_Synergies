@@ -164,6 +164,12 @@ public class ESCreativeModeTabs {
                         //Excelsior
                         output.accept(ESItemRegistry.EXCELSIOR.get());
 
+                        //Catastrophe
+                        output.accept(ESItemRegistry.CATASTROPHE.get());
+
+                        //Violence
+                        output.accept(ESItemRegistry.VIOLENCE.get());
+
                         /*
                         *** Tools
                          */
@@ -202,6 +208,9 @@ public class ESCreativeModeTabs {
                         output.accept(ESItemRegistry.AERIALITE_FRAGMENT.get());
                         output.accept(ESItemRegistry.AERIALITE_INGOT.get());
                         output.accept(ESItemRegistry.CLUSTER.get());
+                        output.accept(ESItemRegistry.BRIMSTONE_DEBRIS.get());
+                        output.accept(ESItemRegistry.ECTOPLASM.get());
+                        output.accept(ESItemRegistry.DIVINE_GEODE.get());
 
                     })
                     .build());

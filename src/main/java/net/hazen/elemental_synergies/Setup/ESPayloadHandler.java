@@ -1,6 +1,7 @@
 package net.hazen.elemental_synergies.Setup;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.elemental_synergies.Particle.BrimstoneExplosionParticlesPacket;
 import net.hazen.elemental_synergies.Particle.HolyFlameExplosionParticlesPacket;
 import net.hazen.elemental_synergies.Particle.HolyNightFlameExplosionParticlesPacket;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,6 +19,7 @@ public class ESPayloadHandler {
 
         payloadRegistrar.playToClient(HolyFlameExplosionParticlesPacket.TYPE, HolyFlameExplosionParticlesPacket.STREAM_CODEC, HolyFlameExplosionParticlesPacket::handle);
         payloadRegistrar.playToClient(HolyNightFlameExplosionParticlesPacket.TYPE, HolyNightFlameExplosionParticlesPacket.STREAM_CODEC, HolyNightFlameExplosionParticlesPacket::handle);
+        payloadRegistrar.playToClient(BrimstoneExplosionParticlesPacket.TYPE, BrimstoneExplosionParticlesPacket.STREAM_CODEC, BrimstoneExplosionParticlesPacket::handle);
 
     }
 }

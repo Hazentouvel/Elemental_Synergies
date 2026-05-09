@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "elemental_synergies:invulnerability_hex",
+    "elemental_synergies:night_wither",
+    "elemental_synergies:brimstone_burn"
+  ]
+}

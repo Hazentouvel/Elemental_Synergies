@@ -2,17 +2,24 @@ package net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
+import io.redspace.ironsspellbooks.util.MinecraftInstanceHelper;
+import net.acetheeldritchking.discerning_the_eldritch.registries.DTEDataComponentRegistry;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MFTECompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.HnSArmorMaterials;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 //import net.warphan.iss_magicfromtheeast.registries.MFTEAttributeRegistries;
@@ -60,5 +67,28 @@ public class SoulFlameArmorItem extends ImbuableHnSArmorItem implements IDisable
                 player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof SoulFlameArmorItem &&
                 player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof SoulFlameArmorItem &&
                 player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof SoulFlameArmorItem;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+
+        Integer stacks = stack.get(DTEDataComponentRegistry.SOUL_FIRE_STACKS);
+
+
+        if (this.type == Type.CHESTPLATE) {
+            if (stacks != null) {
+                tooltip.add(
+                        Component.literal("Soul Fire Stacks: " + stacks)
+                                .withStyle(ChatFormatting.BLUE)
+                                .withStyle(ChatFormatting.BOLD)
+                );
+            } else {
+                tooltip.add(
+                        Component.literal("Soul Fire Stacks: 0")
+                                .withStyle(ChatFormatting.DARK_GRAY)
+                );
+            }
+        }
     }
 }

@@ -26,7 +26,7 @@ import java.util.List;
 
 public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public ScyllaArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.SCYLLA, type, settings, paragonTierMulti(
+        super(ESArmorMaterials.SCYLLA, type, settings, paragonTierDual(
                 CSAttributeRegistry.ABYSSAL_MAGIC_POWER,
                 ASAttributeRegistry.HYDRO_MAGIC_POWER
         ));

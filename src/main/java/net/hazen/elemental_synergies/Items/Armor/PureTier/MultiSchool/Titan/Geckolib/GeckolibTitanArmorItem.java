@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GeckolibTitanArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public GeckolibTitanArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierDual(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 GGAttributes.GEO_SPELL_POWER
         ));

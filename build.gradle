@@ -138,11 +138,13 @@ dependencies {
      */
 
     //Hazen 'n Stuff
-    implementation "curse.maven:hazennstuff-1231627:7974061"
+    implementation "curse.maven:hazennstuff-1231627:8051219"
+    //HazentouveLib
+    implementation "curse.maven:hazentouvelib-1528722:8044060"
 
     //Iron's Spells 'n Spellbooks
-    implementation "curse.maven:iss-855414:7907341"
-    implementation "curse.maven:iss-1492763:7907336"
+    implementation "curse.maven:irons_spells_n_spellbooks-855414:7907341"
+    implementation "curse.maven:irons_lib-1492763:7907336"
     implementation "curse.maven:geckolib-388172:7707149"
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
@@ -187,10 +189,10 @@ dependencies {
     implementation "curse.maven:enders_spells_and_stuff_requiem-1336977:7470396"
 
     //Discerning the Eldritch
-    //implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
-    //implementation "curse.maven:soul_fire_d-662413:7364962"
-    //implementation "curse.maven:prometheus-1365195:7364871"
-    //implementation "curse.maven:cobweb-968456:7186943"
+    implementation "curse.maven:discerning_the_eldritch-1143065:7469786"
+    implementation "curse.maven:soul_fire_d-662413:7364962"
+    implementation "curse.maven:prometheus-1365195:7364871"
+    implementation "curse.maven:cobweb-968456:7186943"
 
     //GTBC's Geomancy+
     implementation "curse.maven:gtbc_geomancy_plus-1352485:7041615"

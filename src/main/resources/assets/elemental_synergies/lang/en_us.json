@@ -1,8 +1,17 @@
 {
+  "school.elemental_synergies.brimstone": "Brimstone",
+  "school.elemental_synergies.profane": "Profane",
+  "school.elemental_synergies.soul_flame": "\u3999 Soul Flame \u3999",
+
+
   "item.elemental_synergies.zephyr_essence": "Zephyr Essence",
   "item.elemental_synergies.aerialite_fragment": "Aerialite Fragment",
   "item.elemental_synergies.aerialite_ingot": "Aerialite Ingot",
   "item.elemental_synergies.cluster": "Cluster",
+
+  "item.elemental_synergies.brimstone_debris": "Brimstone Debris",
+  "item.elemental_synergies.divine_geode": "Divine Geode",
+  "item.elemental_synergies.ectoplasm": "Ectoplasm",
 
 
 
@@ -123,6 +132,9 @@
   "item.elemental_synergies.neru_boots": "Neru's Boots",
 
   "item.elemental_synergies.excelsior": "Excelsior",
+  "item.elemental_synergies.excelsior.desc": "Inflicts Midas Touched upon hit.",
+  "item.elemental_synergies.catastrophe": "Catastrophe",
+  "item.elemental_synergies.violence": "Violence",
 
   "item.elemental_synergies.arcane_mace": "Arcane Mace",
   "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
@@ -140,10 +152,38 @@
   "material.elemental_synergies.aerialite": "Aerialite",
 
   "entity.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
+  "entity.elemental_synergies.holy_blast": "Holy Blast",
+  "entity.elemental_synergies.holy_flame": "Holy Flame",
+  "entity.elemental_synergies.soulflame_bolt": "Soulflame Bolt",
+  "entity.elemental_synergies.brimflame_bolt": "Brimflame Bolt",
+
+  "entity.elemental_synergies.violence": "Violence",
 
   "spell.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
+  "spell.elemental_synergies.holy_blast": "Holy Blast",
+  "spell.elemental_synergies.soulflame_bolt": "Soulflame Bolt",
+  "spell.elemental_synergies.brimflame_bolt": "Brimflame Bolt",
 
   "spell.elemental_synergies.brimstone_hellblast.guide": "A Calamity Mod Reference ''The Brimstone Witch's signiture spell. Cast upon your foes a skull engulfed in brimstone flames, scaling off of the power of fire and blood, and leave your foes in ashes.''",
+  "spell.elemental_synergies.holy_blast.guide": "A Calamity Mod Reference ''Fire a powerful holy blast, scaling off of Holy and Fire spell power. Upon impact, it will burst into Holy Flames.''",
+
+  "effect.elemental_synergies.night_state": "Night State",
+  "effect.elemental_synergies.night_state.description": "Enhances your abilities.",
+
+  "effect.elemental_synergies.brimstone_state": "Brimstone State",
+  "effect.elemental_synergies.brimstone_state.description": "Enhances your abilities.",
+
+  "effect.elemental_synergies.vulnerability_hex": "Vulnerability Hex",
+  "effect.elemental_synergies.vulnerability_hex.description": "Inflicts damage over time as you're weaked and slowned.",
+
+  "effect.elemental_synergies.night_wither": "Night Wither",
+  "effect.elemental_synergies.night_wither.description": "Inflicts damage over time.",
+
+  "effect.elemental_synergies.brimstone_flames": "Brimstone Flames",
+  "effect.elemental_synergies.brimstone_flames.description": "Burns you over time.",
+
+  "effect.elemental_synergies.holy_flames": "Holy Flames",
+  "effect.elemental_synergies.holy_flames.description": "Burns you over time.",
 
   "effect.elemental_synergies.wind_shear": "Wind Shear",
   "effect.elemental_synergies.wind_shear.description": "Inflicts damage over time."

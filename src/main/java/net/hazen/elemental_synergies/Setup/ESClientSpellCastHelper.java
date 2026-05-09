@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.particle.BlastwaveParticleOptions;
 import io.redspace.ironsspellbooks.util.MinecraftInstanceHelper;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
+import net.hazen.hazennstuff.Registries.HnSParticleHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -47,7 +48,7 @@ public class ESClientSpellCastHelper {
                 Vec3 posOffset = Utils.getRandomVec3((double)1.0F).scale((double)(radius * 0.4F));
                 Vec3 motion = posOffset.normalize().scale((double)(speed * 0.5F));
                 motion = motion.add(Utils.getRandomVec3((double)0.25F));
-                level.addParticle(ParticleHelper.ENDER_SPARKS, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
+                level.addParticle(HnSParticleHelper.ICHOR_TRAIL, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
                 level.addParticle(ESParticleHelper.HOLY_EMBER_PARTICLE, x + posOffset.x * (double)0.5F, y + posOffset.y * (double)0.5F, z + posOffset.z * (double)0.5F, motion.x, motion.y, motion.z);
             }
 
@@ -67,7 +68,7 @@ public class ESClientSpellCastHelper {
             double x = pos.x;
             double y = pos.y;
             double z = pos.z;
-            level.addParticle(new BlastwaveParticleOptions(new Vector3f(0.57F, 0.84F, 0.74F), radius + 2.0F), x, y, z, (double)0.0F, (double)0.0F, (double)0.0F);
+            level.addParticle(new BlastwaveParticleOptions(new Vector3f(0.35F, 0.6F, 0.5F), radius + 2.0F), x, y, z, (double)0.0F, (double)0.0F, (double)0.0F);
             int c = (int)(6.28 * (double)radius) * 2;
             float step = 360.0F / (float)c * ((float)Math.PI / 180F);
             float speed = (0.06F + 0.01F * radius) * 2.0F;
@@ -93,7 +94,7 @@ public class ESClientSpellCastHelper {
                 Vec3 posOffset = Utils.getRandomVec3((double)1.0F).scale((double)(radius * 0.4F));
                 Vec3 motion = posOffset.normalize().scale((double)(speed * 0.5F));
                 motion = motion.add(Utils.getRandomVec3((double)0.25F));
-                level.addParticle(ParticleHelper.ENDER_SPARKS, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
+                level.addParticle(ESParticleHelper.HOLY_NIGHT_SPARKS, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
                 level.addParticle(ESParticleHelper.HOLY_NIGHT_EMBER_PARTICLE, x + posOffset.x * (double)0.5F, y + posOffset.y * (double)0.5F, z + posOffset.z * (double)0.5F, motion.x, motion.y, motion.z);
             }
 
@@ -113,7 +114,7 @@ public class ESClientSpellCastHelper {
             double x = pos.x;
             double y = pos.y;
             double z = pos.z;
-            level.addParticle(new BlastwaveParticleOptions(new Vector3f(0.35F, 0.6F, 0.5F), radius + 0.5F), x, y, z, (double)0.0F, (double)0.0F, (double)0.0F);
+            level.addParticle(new BlastwaveParticleOptions(new Vector3f(0.9F, 0.31F, 0.31F), radius + 0.5F), x, y, z, (double)0.0F, (double)0.0F, (double)0.0F);
             int c = (int)(6.28 * (double)radius) * 2;
             float step = 360.0F / (float)c * ((float)Math.PI / 180F);
             float speed = (0.06F + 0.01F * radius) * 2.0F;
@@ -139,7 +140,7 @@ public class ESClientSpellCastHelper {
                 Vec3 posOffset = Utils.getRandomVec3((double)1.0F).scale((double)(radius * 0.4F));
                 Vec3 motion = posOffset.normalize().scale((double)(speed * 0.5F));
                 motion = motion.add(Utils.getRandomVec3((double)0.25F));
-                level.addParticle(ParticleHelper.ENDER_SPARKS, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
+                level.addParticle(ESParticleHelper.BRIMSTONE_SPARKS, true, x + posOffset.x, y + posOffset.y, z + posOffset.z, motion.x, motion.y, motion.z);
                 level.addParticle(ESParticleHelper.BRIMSTONE_EMBER_PARTICLE, x + posOffset.x * (double)0.5F, y + posOffset.y * (double)0.5F, z + posOffset.z * (double)0.5F, motion.x, motion.y, motion.z);
             }
 

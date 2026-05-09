@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GeckolibCataclysmArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     public GeckolibCataclysmArmorItem(Type type, Properties settings) {
-        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierMulti(
+        super(HnSArmorMaterials.PURE_ARMOR_TIER_MATERIAL, type, settings, pureTierDual(
                 AttributeRegistry.FIRE_SPELL_POWER,
                 ASAttributeRegistry.TECHNOMANCY_MAGIC_POWER
         ));

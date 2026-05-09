@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "elemental_synergies:vulnerability_hex",
+    "elemental_synergies:night_wither",
+    "elemental_synergies:holy_burn",
+    "elemental_synergies:brimstone_burn"
+  ]
+}

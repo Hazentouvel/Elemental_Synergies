@@ -19,8 +19,25 @@ public class ESSounds {
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, ElementalSynergies.MOD_ID);
 
 
+
+    /*
+    *** Providence
+     */
     // Night State Activate
     public static DeferredHolder<SoundEvent, SoundEvent> NIGHT_STATE_ACTIVATE = registerSoundEvent("night_state_activate");
+
+    //
+    public static DeferredHolder<SoundEvent, SoundEvent> HOLY_BLAST_IMPACT = registerSoundEvent("holy_blast_impact");
+    public static DeferredHolder<SoundEvent, SoundEvent> HOLY_BLAST_CAST = registerSoundEvent("holy_blast_cast");
+
+
+    /*
+    *** Calamitas
+     */
+
+    // Brimflame Bolt
+    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_IMPACT = registerSoundEvent("brimflame_impact");
+    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_CAST = registerSoundEvent("brimflame_cast");
 
 
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name)

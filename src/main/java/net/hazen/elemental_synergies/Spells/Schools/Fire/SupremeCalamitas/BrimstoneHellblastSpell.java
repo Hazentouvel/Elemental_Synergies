@@ -9,8 +9,9 @@ import io.redspace.ironsspellbooks.api.spells.CastType;
 import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
+import net.hazen.elemental_synergies.ESUtilities.SubSchools.ESSubSchoolRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblast;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimstoneHellblast.BrimstoneHellblast;
 import net.hazen.elemental_synergies.Spells.AbstractSpells.CalamitasSpells;
 import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.minecraft.ChatFormatting;
@@ -54,7 +55,7 @@ public class BrimstoneHellblastSpell extends CalamitasSpells {
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.EPIC)
-            .setSchoolResource(SchoolRegistry.FIRE_RESOURCE)
+            .setSchoolResource(ESSubSchoolRegistry.BRIMSTONE_RESOURCE)
             .setMaxLevel(5)
             .setCooldownSeconds(25)
             .build();
@@ -111,11 +112,11 @@ public class BrimstoneHellblastSpell extends CalamitasSpells {
         double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
         double bloodPower = caster.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
         double occultPower = caster.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
-        return (float)(5.0 * getSpellPower(spellLevel, caster) * ((0.5 * firePower ) + (0.5 * bloodPower) + (0.5 * occultPower)));
+        return (float)(7.0 * getSpellPower(spellLevel, caster) * ((0.5 * firePower ) + (0.5 * bloodPower) + (0.5 * occultPower)));
     }
 
 
     public int getRadius(int spellLevel, LivingEntity caster) {
-        return 1 + (int) getSpellPower(spellLevel, caster);
+        return 4;
     }
 }

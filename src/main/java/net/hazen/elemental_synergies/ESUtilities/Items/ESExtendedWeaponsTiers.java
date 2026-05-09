@@ -4,14 +4,10 @@ import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
-import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.ender.ess_requiem.registries.GGAttributeRegistry;
-import net.hazen.hazennstuff.Compat.ESSRCompat;
-import net.hazen.hazennstuff.Datagen.HnSTags;
-import net.hazen.hazennstuff.HnSUtilities.Item.HnSExtendedWeaponsTiers;
-import net.hazen.hazennstuff.Registries.HnSAttributeRegistry;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
+import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -25,7 +21,7 @@ import java.util.function.Supplier;
 public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
 
     /*
-     *** Ice
+     *** Spellblade
      */
 
     public static ESExtendedWeaponsTiers EXCELSIOR = new ESExtendedWeaponsTiers(
@@ -42,6 +38,43 @@ public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)
     );
 
+    /*
+     *** Occult
+     */
+
+    public static ESExtendedWeaponsTiers CATASTROPHE = new ESExtendedWeaponsTiers(
+            8064,
+            9,
+            -1F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
+            new AttributeContainer(ASAttributeRegistry.RITUAL_MAGIC_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_SHRED, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.CRIT_CHANCE, .15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+    /*
+    *** Multi Schools
+     */
+
+    public static ESExtendedWeaponsTiers VIOLENCE = new ESExtendedWeaponsTiers(
+            8064,
+            9,
+            -1F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
+            new AttributeContainer(ASAttributeRegistry.GOLIATH_SLAYER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(HLAttributeRegistry.SHADOW_SPELL_POWER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ASAttributeRegistry.RITUAL_MAGIC_POWER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_SHRED, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
+
     //private final int level;
     int uses;
     float damage;
@@ -51,7 +84,7 @@ public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
     Supplier<Ingredient> repairIngredient;
     AttributeContainer[] attributes;
 
-    private ESExtendedWeaponsTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
+    public ESExtendedWeaponsTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
         this.uses = uses;
         this.damage = damage;
         this.speed = speed;

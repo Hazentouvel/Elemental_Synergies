@@ -4,13 +4,17 @@ import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import com.snackpirate.aeromancy.data.AADamageTypes;
 import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
-import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
+import net.acetheeldritchking.discerning_the_eldritch.registries.DTEDataComponentRegistry;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.ProvidenceArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas.SupremeCalamitasArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.GeckoLib.GeckolibSoulFlameArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorItem;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.hazennstuff.Registries.HnSAttributeRegistry;
+import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,10 +22,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 @EventBusSubscriber
@@ -30,17 +37,85 @@ public class ESServerPlayerEvents {
     }
 
     private static boolean isWearingFullProvidenceSet(LivingEntity entity) {
-        return entity.getItemBySlot(EquipmentSlot.HEAD).getItem() == ESItemRegistry.PROVIDENCE_HELMET.get()
-                && entity.getItemBySlot(EquipmentSlot.CHEST).getItem() == ESItemRegistry.PROVIDENCE_CHESTPLATE.get()
-                && entity.getItemBySlot(EquipmentSlot.LEGS).getItem() == ESItemRegistry.PROVIDENCE_LEGGINGS.get()
-                && entity.getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.PROVIDENCE_BOOTS.get();
+        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof ProvidenceArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof ProvidenceArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof ProvidenceArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof ProvidenceArmorItem;
     }
 
     private static boolean isWearingFullSupremeCalamitasSet(LivingEntity entity) {
-        return entity.getItemBySlot(EquipmentSlot.HEAD).getItem() == ESItemRegistry.PROVIDENCE_HELMET.get()
-                && entity.getItemBySlot(EquipmentSlot.CHEST).getItem() == ESItemRegistry.PROVIDENCE_CHESTPLATE.get()
-                && entity.getItemBySlot(EquipmentSlot.LEGS).getItem() == ESItemRegistry.PROVIDENCE_LEGGINGS.get()
-                && entity.getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.PROVIDENCE_BOOTS.get();
+        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof SupremeCalamitasArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof SupremeCalamitasArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof SupremeCalamitasArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof SupremeCalamitasArmorItem;
+    }
+
+    private static boolean isWearingFullSoulFlame(LivingEntity entity) {
+        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof SoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof SoulFlameArmorItem;
+    }
+
+    private static boolean isWearingFullSoulFlameGeckolib(LivingEntity entity) {
+        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem;
+    }
+
+
+    @SubscribeEvent
+    public static void onLivingDeath(LivingDeathEvent event) {
+        LivingEntity dead = event.getEntity();
+
+        // determine the true attacker (handle projectiles/owned entities)
+        Entity rawSource = event.getSource().getEntity();
+        if (rawSource == null) return;
+
+        LivingEntity attacker = null;
+        // direct living attacker
+        if (rawSource instanceof LivingEntity le) attacker = le;
+        else {
+            // projectile-like attacker: try to resolve owner
+            try {
+                if (rawSource instanceof net.minecraft.world.entity.projectile.Projectile proj) {
+                    Entity owner = proj.getOwner();
+                    if (owner instanceof LivingEntity oLe) attacker = oLe;
+                }
+            } catch (Exception ignored) {}
+            // try generic owner getter (some entities expose getOwner())
+            if (attacker == null) {
+                try {
+                    java.lang.reflect.Method m = rawSource.getClass().getMethod("getOwner");
+                    Object owner = m.invoke(rawSource);
+                    if (owner instanceof LivingEntity oLe) attacker = oLe;
+                } catch (Exception ignored) {
+                }
+            }
+        }
+
+        if (attacker == null) return;
+        if (attacker.level().isClientSide()) return;
+        if (dead == attacker) return;
+
+        // Grant a soul fire stack if the killer is wearing either the regular SoulFlame full set
+        // or the Geckolib SoulFlame full set. Previously this required both to be true which
+        // prevented the stacks from being granted.
+        if (!isWearingFullSoulFlame(attacker) && !isWearingFullSoulFlameGeckolib(attacker)) return;
+
+        // Choose the chest slot item (could be either implementation) and ensure we only
+        // increment when the chest piece is one of the SoulFlame items.
+        ItemStack chest = attacker.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot());
+        boolean isPureChest = chest.getItem() instanceof SoulFlameArmorItem;
+        boolean isGeckoChest = chest.getItem() instanceof GeckolibSoulFlameArmorItem;
+
+        if (!isPureChest && !isGeckoChest) return;
+
+        Integer stacks = chest.get(DTEDataComponentRegistry.SOUL_FIRE_STACKS);
+        if (stacks == null) stacks = 0;
+
+        chest.set(DTEDataComponentRegistry.SOUL_FIRE_STACKS, stacks + 1);
     }
 
 
@@ -52,16 +127,14 @@ public class ESServerPlayerEvents {
             livingEntity.clearFire();
             event.setCanceled(true);
         }
+
+
     }
 
 
     @SubscribeEvent
     public static void onBeforeDamageTaken(LivingDamageEvent.Pre event) {
         LivingEntity target = event.getEntity();
-
-        if (target instanceof IMagicEntity || target instanceof ServerPlayer) {
-            MagicData magicData = MagicData.getPlayerMagicData(target);
-        }
 
         if (event.getSource().is(AADamageTypes.WIND_MAGIC)) {
             Entity attackerEntity = event.getSource().getEntity();
@@ -91,17 +164,17 @@ public class ESServerPlayerEvents {
     }
 
     @EventBusSubscriber
-    public static class SupremeCalamitasHitEffects {
+    public static class setBonuses {
 
         @SubscribeEvent
-        public static void onLivingDamage(LivingDamageEvent.Post event) {
+        public static void providenceSetBonus(LivingDamageEvent.Post event) {
 
             LivingEntity target = event.getEntity();
             Entity sourceEntity = event.getSource().getEntity();
 
             if (!(sourceEntity instanceof LivingEntity attacker)) return;
 
-            if (!isWearingFullSupremeCalamitasSet(attacker)) return;
+            if (!isWearingFullProvidenceSet(attacker)) return;
 
             if (attacker.level().isClientSide) return;
 
@@ -116,129 +189,43 @@ public class ESServerPlayerEvents {
             int amplifier = 0;
 
             try {
-                double totalPercent = 0.0;
-
-                // Helper to normalize attribute → percent
-                java.util.function.Function<Double, Double> normalize = val -> {
-                    if (val <= 0.0) return 0.0;
-                    if (val < 10.0) return val * 100.0; // multiplier → percent
-                    return val; // already percent
-                };
-
-                double fire = 0.0;
-                double blood = 0.0;
-                double shadow = 0.0;
-                double ritual = 0.0;
-
+                double attrVal = 0.0;
+                // Sum multiple spell power attributes (HOLY, GEO, RADIANCE) if available
                 try {
-                    fire = attacker.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
-                } catch (Exception ignored) {}
-                try {
-                    blood = attacker.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
-                } catch (Exception ignored) {}
-                try {
-                    shadow = attacker.getAttributeValue(HnSAttributeRegistry.SHADOW_SPELL_POWER);
-                } catch (Exception ignored) {}
-                try {
-                    ritual = attacker.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
-                } catch (Exception ignored) {}
-
-                totalPercent += normalize.apply(fire);
-                totalPercent += normalize.apply(blood);
-                totalPercent += normalize.apply(shadow);
-                totalPercent += normalize.apply(ritual);
-
-                // 🔥 1 amplifier per 200%
-                amplifier = (int)Math.floor(totalPercent / 200.0);
-
-                // Prevent negative just in case
-                amplifier = Math.max(0, amplifier);
-
-            } catch (Throwable t) {
-                amplifier = 0;
-            }
-
-            boolean inSoulState = attacker.hasEffect(ESEffectRegistry.BRIMSTONE_STATE);
-
-            if (inSoulState) {
-                target.addEffect(new MobEffectInstance(ESEffectRegistry.VULNERABILITY_HEX, 100, amplifier, false, true, true));
-            } else {
-                target.addEffect(new MobEffectInstance(ESEffectRegistry.BRIMSTONE_FLAMES, 100, amplifier, false, true, true));
-            }
-        }
-    }
-
-    @EventBusSubscriber
-    public static class ProvidenceHitEffects {
-
-        @SubscribeEvent
-        public static void onLivingDamage(LivingDamageEvent.Post event) {
-
-            LivingEntity target = event.getEntity();
-            Entity sourceEntity = event.getSource().getEntity();
-
-            if (!(sourceEntity instanceof LivingEntity attacker)) return;
-
-            if (!isWearingFullSupremeCalamitasSet(attacker)) return;
-
-            if (attacker.level().isClientSide) return;
-
-            Item head = attacker.getItemBySlot(EquipmentSlot.HEAD).getItem();
-            if (attacker instanceof Player player) {
-                if (player.getCooldowns().isOnCooldown(head)) {
-                    return;
+                    attrVal += attacker.getAttributeValue(AttributeRegistry.HOLY_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
                 }
-                player.getCooldowns().addCooldown(head, 300);
-            }
-
-            int amplifier = 0;
-
-            try {
-                double totalPercent = 0.0;
-
-                // Helper to normalize attribute → percent
-                java.util.function.Function<Double, Double> normalize = val -> {
-                    if (val <= 0.0) return 0.0;
-                    if (val < 10.0) return val * 100.0; // multiplier → percent
-                    return val; // already percent
-                };
-
-                double fire = 0.0;
-                double holy = 0.0;
-                double radiance = 0.0;
-                double geo = 0.0;
-
                 try {
-                    fire = attacker.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
-                } catch (Exception ignored) {}
+                    attrVal += attacker.getAttributeValue(GGAttributes.GEO_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
                 try {
-                    holy = attacker.getAttributeValue(AttributeRegistry.HOLY_SPELL_POWER);
-                } catch (Exception ignored) {}
+                    attrVal += attacker.getAttributeValue(HLAttributeRegistry.RADIANCE_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
                 try {
-                    radiance = attacker.getAttributeValue(HnSAttributeRegistry.RADIANCE_SPELL_POWER);
-                } catch (Exception ignored) {}
-                try {
-                    geo = attacker.getAttributeValue(GGAttributes.GEO_SPELL_POWER);
-                } catch (Exception ignored) {}
+                    attrVal += attacker.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
 
-                totalPercent += normalize.apply(fire);
-                totalPercent += normalize.apply(holy);
-                totalPercent += normalize.apply(radiance);
-                totalPercent += normalize.apply(geo);
+                double percent;
+                if (attrVal <= 0.0) {
+                    percent = 0.0;
+                } else if (attrVal < 10.0) {
+                    percent = attrVal * 100.0;
+                } else {
+                    percent = attrVal;
+                }
 
-                // 🔥 1 amplifier per 200%
-                amplifier = (int)Math.floor(totalPercent / 200.0);
-
-                // Prevent negative just in case
-                amplifier = Math.max(0, amplifier);
-
+                int fullHundreds = (int)Math.floor(percent / 200.0);
+                amplifier = Math.max(0, fullHundreds - 1);
             } catch (Throwable t) {
                 amplifier = 0;
             }
 
-            boolean inSoulState = attacker.hasEffect(ESEffectRegistry.NIGHT_STATE);
+            boolean inNightState = attacker.hasEffect(ESEffectRegistry.NIGHT_STATE);
 
-            if (inSoulState) {
+            if (inNightState) {
                 target.addEffect(new MobEffectInstance(ESEffectRegistry.NIGHT_WITHER, 100, amplifier, false, true, true));
             } else {
                 target.addEffect(new MobEffectInstance(ESEffectRegistry.HOLY_FLAMES, 100, amplifier, false, true, true));
@@ -246,4 +233,70 @@ public class ESServerPlayerEvents {
         }
     }
 
+
+        @SubscribeEvent
+        public static void supremeCalamitasSetBonus(LivingDamageEvent.Post event) {
+
+            LivingEntity target = event.getEntity();
+            Entity sourceEntity = event.getSource().getEntity();
+
+            if (!(sourceEntity instanceof LivingEntity attacker)) return;
+
+            if (!isWearingFullSupremeCalamitasSet(attacker)) return;
+
+            if (attacker.level().isClientSide) return;
+
+            Item head = attacker.getItemBySlot(EquipmentSlot.HEAD).getItem();
+            if (attacker instanceof Player player) {
+                if (player.getCooldowns().isOnCooldown(head)) {
+                    return;
+                }
+                player.getCooldowns().addCooldown(head, 300);
+            }
+
+            int amplifier = 0;
+
+            try {
+                double attrVal = 0.0;
+                // Sum multiple spell power attributes (HOLY, GEO, RADIANCE) if available
+                try {
+                    attrVal += attacker.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
+                try {
+                    attrVal += attacker.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
+                try {
+                    attrVal += attacker.getAttributeValue(HLAttributeRegistry.SHADOW_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
+                try {
+                    attrVal += attacker.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
+                } catch (IllegalArgumentException ex) {
+                }
+
+                double percent;
+                if (attrVal <= 0.0) {
+                    percent = 0.0;
+                } else if (attrVal < 10.0) {
+                    percent = attrVal * 100.0;
+                } else {
+                    percent = attrVal;
+                }
+
+                int fullHundreds = (int)Math.floor(percent / 200.0);
+                amplifier = Math.max(0, fullHundreds - 1);
+            } catch (Throwable t) {
+                amplifier = 0;
+            }
+
+            boolean inBrimstoneState = attacker.hasEffect(ESEffectRegistry.BRIMSTONE_STATE);
+
+            if (inBrimstoneState) {
+                target.addEffect(new MobEffectInstance(ESEffectRegistry.VULNERABILITY_HEX, 100, amplifier, false, true, true));
+            } else {
+                target.addEffect(new MobEffectInstance(ESEffectRegistry.BRIMSTONE_FLAMES, 100, amplifier, false, true, true));
+            }
+    }
 }

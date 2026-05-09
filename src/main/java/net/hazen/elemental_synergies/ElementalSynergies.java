@@ -9,7 +9,8 @@ import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRe
 import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.ESUtilities.ESEnchantmentEffects;
-import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.AzureLib.ProvidenceArmorRenderer;
+import net.hazen.elemental_synergies.ESUtilities.SubSchools.ESSubSchoolRegistry;
+import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.ProvidenceArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
@@ -57,6 +58,7 @@ public class ElementalSynergies {
         ESEntityRegistry.register(modEventBus);
         ESSpellRegistries.register(modEventBus);
         ESArmorMaterials.register(modEventBus);
+        ESSubSchoolRegistry.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 

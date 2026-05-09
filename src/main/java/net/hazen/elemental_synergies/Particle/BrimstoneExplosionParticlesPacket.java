@@ -12,7 +12,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 public class BrimstoneExplosionParticlesPacket implements CustomPacketPayload {
     private final Vec3 pos1;
     private final float radius;
-    public static final Type<BrimstoneExplosionParticlesPacket> TYPE = new Type(ResourceLocation.fromNamespaceAndPath("elemental_synergies", "holy_flame_explosion_particles"));
+    public static final Type<BrimstoneExplosionParticlesPacket> TYPE = new Type(ResourceLocation.fromNamespaceAndPath("elemental_synergies", "brimstone_explosion_particles"));
     public static final StreamCodec<RegistryFriendlyByteBuf, BrimstoneExplosionParticlesPacket> STREAM_CODEC = CustomPacketPayload.codec(BrimstoneExplosionParticlesPacket::write, BrimstoneExplosionParticlesPacket::new);
 
     public BrimstoneExplosionParticlesPacket(Vec3 pos1, float radius) {

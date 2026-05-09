@@ -2,7 +2,12 @@ package net.hazen.elemental_synergies.Setup;
 
 import net.hazen.elemental_synergies.ESUtilities.Tooltips.ESSpellTooltip;
 import net.hazen.elemental_synergies.Entities.Mobs.Wizards.CloudmasterSageRenderer;
-import net.hazen.elemental_synergies.Entities.Spells.Fire.BrimstoneHellblast.BrimstoneHellblastRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SoulFlame.SoulflameBolt.SoulflameBoltRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimflameBolt.BrimflameBoltRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimstoneHellblast.BrimstoneHellblastRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyBlastRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyFire.HolyFlameRenderer;
+import net.hazen.elemental_synergies.Entities.Weapons.Violence.ViolenceRenderer;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
 import net.hazen.hazennstuff.Particle.HnSGenericParticle;
@@ -23,8 +28,26 @@ public class ESClientSetup {
         /*
         *** Spells
          */
-        event.registerEntityRenderer(ESEntityRegistry.BRIMSTONE_HELLBLAST.get(), BrimstoneHellblastRenderer::new);
 
+
+        //Soulflame
+        event.registerEntityRenderer(ESEntityRegistry.SOULFLAME_BOLT.get(), SoulflameBoltRenderer::new);
+
+
+        //Supreme Calamitas
+        event.registerEntityRenderer(ESEntityRegistry.BRIMSTONE_HELLBLAST.get(), BrimstoneHellblastRenderer::new);
+        event.registerEntityRenderer(ESEntityRegistry.BRIMFLAME_BOLT.get(), BrimflameBoltRenderer::new);
+
+        //Providence
+        event.registerEntityRenderer(ESEntityRegistry.HOLY_BLAST.get(), HolyBlastRenderer::new);
+        event.registerEntityRenderer(ESEntityRegistry.HOLY_FLAME.get(), HolyFlameRenderer::new);
+
+
+        /*
+        *** Weapons
+         */
+
+        event.registerEntityRenderer(ESEntityRegistry.VIOLENCE.get(), ViolenceRenderer::new);
 
         /*
         *** Entities

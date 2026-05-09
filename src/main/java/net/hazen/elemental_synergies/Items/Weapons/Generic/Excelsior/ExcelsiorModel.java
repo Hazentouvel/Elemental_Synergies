@@ -9,7 +9,7 @@ import software.bernie.geckolib.model.DefaultedItemGeoModel;
 
 public class ExcelsiorModel extends DefaultedItemGeoModel<Excelsior> {
     public ExcelsiorModel() {
-        super(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, ""));
+        super(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, ""));
     }
 
     @Override

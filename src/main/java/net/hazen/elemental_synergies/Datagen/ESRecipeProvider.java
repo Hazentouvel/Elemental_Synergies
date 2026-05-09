@@ -3,6 +3,7 @@ package net.hazen.elemental_synergies.Datagen;
 import com.gametechbc.gtbcs_geomancy_plus.init.GGItems;
 import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
+import net.acetheeldritchking.discerning_the_eldritch.registries.ItemRegistries;
 import net.ender.ess_requiem.registries.GGItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
@@ -29,6 +30,39 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
+
+
+        // Brimstone Debris
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ESItemRegistry.BRIMSTONE_DEBRIS.get())
+                .requires(HnSItemRegistry.NIGHTMARE_FUEL.get())
+                .requires(ItemRegistries.SHARD_OF_MALICE.get())
+                .requires(ItemRegistry.BLOOD_VIAL.get())
+                .requires(ItemRegistry.CINDER_ESSENCE.get())
+                .unlockedBy("has_cinder_essence", has(ItemRegistry.CINDER_ESSENCE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/focus/brimstone_debris"));
+
+
+
+        // Divine Geode
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ESItemRegistry.DIVINE_GEODE.get())
+                .requires(HnSItemRegistry.NETHER_STAR_FRAGMENT.get())
+                .requires(ESItemRegistry.CLUSTER.get())
+                .requires(ItemRegistry.DIVINE_PEARL.get())
+                .requires(ItemRegistry.CINDER_ESSENCE.get())
+                .unlockedBy("has_cinder_essence", has(ItemRegistry.CINDER_ESSENCE.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/focus/divine_geode"));
+
+
+
+        //
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ESItemRegistry.ECTOPLASM.get())
+                .requires(HnSItemRegistry.NIGHTMARE_FUEL.get())
+                .requires(ItemRegistries.SOUL_EMBER.get())
+                .requires(Items.SOUL_SAND)
+                .requires(Items.BLAZE_POWDER)
+                .unlockedBy("has_soul_ember", has(ItemRegistries.SOUL_EMBER.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/focus/ectoplasm"));
+
 
 
         //Temporary Recipe

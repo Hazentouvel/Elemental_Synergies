@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hazennstuff:nightmare_fuel"
+    },
+    {
+      "item": "discerning_the_eldritch:shard_of_malice"
+    },
+    {
+      "item": "irons_spellbooks:blood_vial"
+    },
+    {
+      "item": "irons_spellbooks:cinder_essence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:brimstone_debris"
+  }
+}

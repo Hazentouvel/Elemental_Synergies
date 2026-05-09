@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hazennstuff:nether_star_fragment"
+    },
+    {
+      "item": "elemental_synergies:cluster"
+    },
+    {
+      "item": "irons_spellbooks:divine_pearl"
+    },
+    {
+      "item": "irons_spellbooks:cinder_essence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:divine_geode"
+  }
+}

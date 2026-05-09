@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hazennstuff:nightmare_fuel"
+    },
+    {
+      "item": "discerning_the_eldritch:soul_ember"
+    },
+    {
+      "item": "minecraft:soul_sand"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:ectoplasm"
+  }
+}

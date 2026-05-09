@@ -69,22 +69,18 @@ public class ESServerPlayerEvents {
     public static void onLivingDeath(LivingDeathEvent event) {
         LivingEntity dead = event.getEntity();
 
-        // determine the true attacker (handle projectiles/owned entities)
         Entity rawSource = event.getSource().getEntity();
         if (rawSource == null) return;
 
         LivingEntity attacker = null;
-        // direct living attacker
         if (rawSource instanceof LivingEntity le) attacker = le;
         else {
-            // projectile-like attacker: try to resolve owner
             try {
                 if (rawSource instanceof net.minecraft.world.entity.projectile.Projectile proj) {
                     Entity owner = proj.getOwner();
                     if (owner instanceof LivingEntity oLe) attacker = oLe;
                 }
             } catch (Exception ignored) {}
-            // try generic owner getter (some entities expose getOwner())
             if (attacker == null) {
                 try {
                     java.lang.reflect.Method m = rawSource.getClass().getMethod("getOwner");
@@ -99,18 +95,13 @@ public class ESServerPlayerEvents {
         if (attacker.level().isClientSide()) return;
         if (dead == attacker) return;
 
-        // Grant a soul fire stack if the killer is wearing either the regular SoulFlame full set
-        // or the Geckolib SoulFlame full set. Previously this required both to be true which
-        // prevented the stacks from being granted.
         if (!isWearingFullSoulFlame(attacker) && !isWearingFullSoulFlameGeckolib(attacker)) return;
 
-        // Choose the chest slot item (could be either implementation) and ensure we only
-        // increment when the chest piece is one of the SoulFlame items.
         ItemStack chest = attacker.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot());
-        boolean isPureChest = chest.getItem() instanceof SoulFlameArmorItem;
-        boolean isGeckoChest = chest.getItem() instanceof GeckolibSoulFlameArmorItem;
+        boolean isChestplate = chest.getItem() instanceof SoulFlameArmorItem;
+        boolean isGeckolibChestplate = chest.getItem() instanceof GeckolibSoulFlameArmorItem;
 
-        if (!isPureChest && !isGeckoChest) return;
+        if (!isChestplate && !isGeckolibChestplate) return;
 
         Integer stacks = chest.get(DTEDataComponentRegistry.SOUL_FIRE_STACKS);
         if (stacks == null) stacks = 0;

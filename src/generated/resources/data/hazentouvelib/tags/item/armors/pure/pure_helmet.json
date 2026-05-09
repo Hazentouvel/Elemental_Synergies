@@ -1,0 +1,20 @@
+{
+  "values": [
+    "elemental_synergies:aerospec_hat",
+    "elemental_synergies:aerospec_crown",
+    "elemental_synergies:cloudmaster_hat",
+    "elemental_synergies:cloudmaster_crown",
+    "elemental_synergies:titan_helmet",
+    "elemental_synergies:geckolib_titan_helmet",
+    "elemental_synergies:soul_flame_helmet",
+    "elemental_synergies:geckolib_soul_flame_helmet",
+    "elemental_synergies:exo_mech_helmet",
+    "elemental_synergies:geckolib_exo_mech_helmet",
+    "elemental_synergies:cataclysm_helmet",
+    "elemental_synergies:geckolib_cataclysm_helmet",
+    "elemental_synergies:onyx_helmet",
+    "elemental_synergies:ignis_helmet",
+    "elemental_synergies:scylla_helmet",
+    "elemental_synergies:maledictus_helmet"
+  ]
+}

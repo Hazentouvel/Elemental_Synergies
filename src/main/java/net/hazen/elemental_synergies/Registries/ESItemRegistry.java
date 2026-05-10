@@ -40,6 +40,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.component.Unbreakable;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -213,6 +214,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_HELM = ITEMS.register("aerospec_helm", () -> new AerospecHelmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
@@ -220,6 +222,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_HAT = ITEMS.register("aerospec_hat", () -> new AerospecMageArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
@@ -227,6 +230,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_CHESTPLATE = ITEMS.register("aerospec_chestplate", () -> new AerospecArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -234,6 +238,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_ROBES = ITEMS.register("aerospec_robes", () -> new AerospecMageArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -241,6 +246,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> AEROSPEC_LEGGINGS = ITEMS.register("aerospec_leggings", () -> new AerospecArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -248,6 +254,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -256,6 +263,7 @@ public class ESItemRegistry {
             .rarity(ESRarities.AEROMANCY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -388,6 +396,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> TITAN_CHESTPLATE = ITEMS.register("titan_chestplate", () -> new TitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -395,6 +404,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> TITAN_LEGGINGS = ITEMS.register("titan_leggings", () -> new TitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -402,6 +412,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -410,6 +421,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -422,6 +434,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_CHESTPLATE = ITEMS.register("geckolib_titan_chestplate", () -> new GeckolibTitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -429,6 +442,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_LEGGINGS = ITEMS.register("geckolib_titan_leggings", () -> new GeckolibTitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -436,6 +450,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -444,6 +459,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -454,6 +470,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> CATACLYSM_CHESTPLATE = ITEMS.register("cataclysm_chestplate", () -> new CataclysmArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -461,6 +478,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> CATACLYSM_LEGGINGS = ITEMS.register("cataclysm_leggings", () -> new CataclysmArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -468,6 +486,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -476,6 +495,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -488,6 +508,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_CHESTPLATE = ITEMS.register("geckolib_cataclysm_chestplate", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -495,6 +516,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_LEGGINGS = ITEMS.register("geckolib_cataclysm_leggings", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -502,6 +524,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -510,6 +533,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -520,6 +544,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> EXO_MECH_CHESTPLATE = ITEMS.register("exo_mech_chestplate", () -> new ExoMechArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -527,6 +552,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> EXO_MECH_LEGGINGS = ITEMS.register("exo_mech_leggings", () -> new ExoMechArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -534,6 +560,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -542,6 +569,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -554,6 +582,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_CHESTPLATE = ITEMS.register("geckolib_exo_mech_chestplate", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -561,6 +590,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_LEGGINGS = ITEMS.register("geckolib_exo_mech_leggings", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -568,6 +598,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -576,6 +607,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -586,6 +618,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> SOUL_FLAME_CHESTPLATE = ITEMS.register("soul_flame_chestplate", () -> new SoulFlameArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -593,6 +626,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> SOUL_FLAME_LEGGINGS = ITEMS.register("soul_flame_leggings", () -> new SoulFlameArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -600,6 +634,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> SOUL_FLAME_BOOTS = ITEMS.register("soul_flame_boots", () -> new SoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
@@ -607,6 +642,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 
@@ -620,24 +656,28 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_CHESTPLATE = ITEMS.register("geckolib_soul_flame_chestplate", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_LEGGINGS = ITEMS.register("geckolib_soul_flame_leggings", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_BOOTS = ITEMS.register("geckolib_soul_flame_boots", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     /*
@@ -715,18 +755,22 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> PROJECT_SEKAI_HELMET = ITEMS.register("project_sekai_helmet", () -> new ProjectSekaiArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> PROJECT_SEKAI_CHESTPLATE = ITEMS.register("project_sekai_chestplate", () -> new ProjectSekaiArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> PROJECT_SEKAI_LEGGINGS = ITEMS.register("project_sekai_leggings", () -> new ProjectSekaiArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> PROJECT_SEKAI_BOOTS = ITEMS.register("project_sekai_boots", () -> new ProjectSekaiArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     //Rotten Girl [Marked for Deletion]
@@ -734,18 +778,22 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> ROTTEN_GIRL_HELMET = ITEMS.register("rotten_girl_helmet", () -> new RottenGirlArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> ROTTEN_GIRL_CHESTPLATE = ITEMS.register("rotten_girl_chestplate", () -> new RottenGirlArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> ROTTEN_GIRL_LEGGINGS = ITEMS.register("rotten_girl_leggings", () -> new RottenGirlArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> ROTTEN_GIRL_BOOTS = ITEMS.register("rotten_girl_boots", () -> new RottenGirlArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     //Synthesizer V [Marked for Deletion]
@@ -753,18 +801,22 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> SYNTHESIZER_V_HELMET = ITEMS.register("synthv2_helmet", () -> new SynthV2ArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> SYNTHESIZER_V_CHESTPLATE = ITEMS.register("synthv2_chestplate", () -> new SynthV2ArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> SYNTHESIZER_V_LEGGINGS = ITEMS.register("synthv2_leggings", () -> new SynthV2ArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> SYNTHESIZER_V_BOOTS = ITEMS.register("synthv2_boots", () -> new SynthV2ArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     //Utau [Marked for Deletion]
@@ -772,18 +824,22 @@ public class ESItemRegistry {
     public static final DeferredHolder<Item, Item> UTAU_HELMET = ITEMS.register("utau_helmet", () -> new UtauArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> UTAU_CHESTPLATE = ITEMS.register("utau_chestplate", () -> new UtauArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> UTAU_LEGGINGS = ITEMS.register("utau_leggings", () -> new UtauArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> UTAU_BOOTS = ITEMS.register("utau_boots", () -> new UtauArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     //Neru [Marked for Deletion]
@@ -792,21 +848,25 @@ public class ESItemRegistry {
             .equipment(1)
             .fireResistant()
             .durability(ArmorItem.Type.HELMET.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> NERU_CHESTPLATE = ITEMS.register("neru_chestplate", () -> new AkitaNeruArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
             .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> NERU_LEGGINGS = ITEMS.register("neru_leggings", () -> new AkitaNeruArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
             .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
     public static final DeferredHolder<Item, Item> NERU_BOOTS = ITEMS.register("neru_boots", () -> new AkitaNeruArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(64))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
 

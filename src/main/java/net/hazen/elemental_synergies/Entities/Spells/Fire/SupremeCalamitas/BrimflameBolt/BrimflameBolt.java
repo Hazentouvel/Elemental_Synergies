@@ -11,6 +11,7 @@ import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.hazennstuff.Registries.HnSSounds;
@@ -113,7 +114,7 @@ public class BrimflameBolt extends AbstractMagicProjectile {
                     double y = baseY + axis1.y * c + axis2.y * s;
                     double z = baseZ + axis1.z * c + axis2.z * s;
                     Vec3 jitter = Utils.getRandomVec3((double)0.05F);
-                    this.level.addParticle(ParticleHelper.EMBERS, true, x, y, z, jitter.x, jitter.y, jitter.z);
+                    this.level.addParticle(ESParticleHelper.BRIMSTONE_EMBER_PARTICLE, true, x, y, z, jitter.x, jitter.y, jitter.z);
                 }
 
             }

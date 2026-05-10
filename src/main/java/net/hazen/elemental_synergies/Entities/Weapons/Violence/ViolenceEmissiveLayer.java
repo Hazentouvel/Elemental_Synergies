@@ -22,7 +22,7 @@ public class ViolenceEmissiveLayer extends GeoRenderLayer<Violence> {
 
     public void render(PoseStack poseStack, Violence animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
         if (!animatable.isInvisible()) {
-            ResourceLocation frameTexture = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/spells/violence_glowmask.png");
+            ResourceLocation frameTexture = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/items/weapons/violence_glowmask.png");
             RenderType emissiveType = glowRenderType(frameTexture);
             VertexConsumer vertexConsumer = bufferSource.getBuffer(emissiveType);
             poseStack.pushPose();

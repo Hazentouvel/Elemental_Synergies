@@ -1,9 +1,6 @@
 package net.hazen.elemental_synergies.Entities.Weapons.Violence;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyBlast;
-import net.hazen.elemental_synergies.Items.Weapons.Generic.Excelsior.Excelsior;
-import net.hazen.hazennstuff.HazenNStuff;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

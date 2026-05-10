@@ -109,9 +109,6 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybi
         if (!player.hasEffect(HnSEffects.MAGE_SET_BONUS)) {
             player.addEffect(new MobEffectInstance(HnSEffects.MAGE_SET_BONUS, 320, 0, false, false, false));
         }
-        if (!player.hasEffect(HnSEffects.TYRANTS_GRACE_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.TYRANTS_GRACE_EFFECT, 320, 0, false, false, true));
-        }
     }
 
     private boolean isWearingFullSet(Player player) {

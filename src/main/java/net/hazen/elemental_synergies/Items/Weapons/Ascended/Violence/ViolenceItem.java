@@ -8,6 +8,7 @@ import net.hazen.elemental_synergies.Entities.Weapons.Violence.Violence;
 import net.hazen.hazennstuff.HnSUtilities.Item.HnSExtendedWeaponsTiers;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow.Pickup;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Unbreakable;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -44,9 +46,9 @@ public class ViolenceItem extends ExtendedSwordItem implements GeoItem {
                         .rarity((Rarity) ESRarities.OCCULT_RARITY.getValue())
                         .attributes(
                                 ExtendedSwordItem.createAttributes(
-                                        ESExtendedWeaponsTiers.VIOLENCE
-                                )
+                                        ESExtendedWeaponsTiers.VIOLENCE)
                         )
+                        .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
         );
     }
 
@@ -66,10 +68,6 @@ public class ViolenceItem extends ExtendedSwordItem implements GeoItem {
             player.startUsingItem(hand);
             return InteractionResultHolder.consume(itemstack);
         }
-    }
-
-    public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-        return super.supportsEnchantment(stack, enchantment) || enchantment.is(Enchantments.LOYALTY) || enchantment.is(Enchantments.CHANNELING);
     }
 
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft) {

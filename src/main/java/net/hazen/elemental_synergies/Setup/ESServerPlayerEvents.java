@@ -50,65 +50,6 @@ public class ESServerPlayerEvents {
                 entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof SupremeCalamitasArmorItem;
     }
 
-    private static boolean isWearingFullSoulFlame(LivingEntity entity) {
-        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof SoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof SoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof SoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof SoulFlameArmorItem;
-    }
-
-    private static boolean isWearingFullSoulFlameGeckolib(LivingEntity entity) {
-        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem &&
-                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibSoulFlameArmorItem;
-    }
-
-
-    @SubscribeEvent
-    public static void onLivingDeath(LivingDeathEvent event) {
-        LivingEntity dead = event.getEntity();
-
-        Entity rawSource = event.getSource().getEntity();
-        if (rawSource == null) return;
-
-        LivingEntity attacker = null;
-        if (rawSource instanceof LivingEntity le) attacker = le;
-        else {
-            try {
-                if (rawSource instanceof net.minecraft.world.entity.projectile.Projectile proj) {
-                    Entity owner = proj.getOwner();
-                    if (owner instanceof LivingEntity oLe) attacker = oLe;
-                }
-            } catch (Exception ignored) {}
-            if (attacker == null) {
-                try {
-                    java.lang.reflect.Method m = rawSource.getClass().getMethod("getOwner");
-                    Object owner = m.invoke(rawSource);
-                    if (owner instanceof LivingEntity oLe) attacker = oLe;
-                } catch (Exception ignored) {
-                }
-            }
-        }
-
-        if (attacker == null) return;
-        if (attacker.level().isClientSide()) return;
-        if (dead == attacker) return;
-
-        if (!isWearingFullSoulFlame(attacker) && !isWearingFullSoulFlameGeckolib(attacker)) return;
-
-        ItemStack chest = attacker.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot());
-        boolean isChestplate = chest.getItem() instanceof SoulFlameArmorItem;
-        boolean isGeckolibChestplate = chest.getItem() instanceof GeckolibSoulFlameArmorItem;
-
-        if (!isChestplate && !isGeckolibChestplate) return;
-
-        Integer stacks = chest.get(DTEDataComponentRegistry.SOUL_FIRE_STACKS);
-        if (stacks == null) stacks = 0;
-
-        chest.set(DTEDataComponentRegistry.SOUL_FIRE_STACKS, stacks + 1);
-    }
-
 
     @SubscribeEvent
     public static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {

@@ -44,7 +44,7 @@ public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
 
     public static ESExtendedWeaponsTiers CATASTROPHE = new ESExtendedWeaponsTiers(
             8064,
-            9,
+            11,
             -1F,
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
@@ -61,8 +61,8 @@ public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
 
     public static ESExtendedWeaponsTiers VIOLENCE = new ESExtendedWeaponsTiers(
             8064,
-            9,
-            -1F,
+            12,
+            -2.6F,
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),

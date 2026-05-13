@@ -1,4 +1,7 @@
 {
+  "item.elemental_synergies.full_set.description": "While wearing the full set",
+
+
   "school.elemental_synergies.brimstone": "Brimstone",
   "school.elemental_synergies.profane": "Profane",
   "school.elemental_synergies.soul_flame": "\u3999 Soul Flame \u3999",
@@ -12,6 +15,35 @@
   "item.elemental_synergies.brimstone_debris": "Brimstone Debris",
   "item.elemental_synergies.divine_geode": "Divine Geode",
   "item.elemental_synergies.ectoplasm": "Ectoplasm",
+
+
+
+  "item.elemental_synergies.scylla_helmet.description": "Gills",
+  "item.elemental_synergies.scylla_boots.description": "Water Walker",
+
+
+  "item.elemental_synergies.maledictus_helmet.ability": "Gills",
+  "item.elemental_synergies.maledictus_helmet.description": "Gills",
+
+
+  "item.elemental_synergies.ignis_passive.description": "While in Soul State, your attacks inflict Soul Flames on hit.",
+  "item.elemental_synergies.ignis_ability.description": "Press %s to knock back mobs and inflict Soul Flames and Blazing Brand onto them.",
+  "item.elemental_synergies.ignis_ability.description2": " Press %s to also go into Soul State.",
+
+  "item.elemental_synergies.supreme_calamitas_passive.description": "Inflicts Brimstone Flames on hit. While in Brimstone State, inflicts Vulnerability Hex.",
+  "item.elemental_synergies.supreme_calamitas_ability.description": "Press %s to go into Brimstone State for 1 minute.",
+
+  "item.elemental_synergies.providence_passive.description": "Inflicts Holy Flames on hit. While in Night State, inflicts Night Wither.",
+  "item.elemental_synergies.providence_ability.description": "Press %s to go into Night State for 1 minute.",
+
+  "item.elemental_synergies.soul_flame_passive.description": "Your attacks inflict Soul Flames on hit.",
+
+  "item.elemental_synergies.providence_affinity.description": "+1 to all Profane Spells",
+  "item.elemental_synergies.ignis_affinity.description": "+1 to all Ignis Spells",
+  "item.elemental_synergies.maledictus_affinity.description": "+1 to all Maledictus Spells",
+  "item.elemental_synergies.scylla_affinity.description": "+1 to all Aqua Spells",
+  "item.elemental_synergies.supreme_calamitas_affinity.description": "+1 to all Brimstone Spells",
+  "item.elemental_synergies.soul_flame_affinity.description": "+1 to all Soul Flame Spells",
 
 
 
@@ -135,9 +167,14 @@
   "item.elemental_synergies.excelsior.desc": "Inflicts Midas Touched upon hit.",
   "item.elemental_synergies.catastrophe": "Catastrophe",
   "item.elemental_synergies.violence": "Violence",
+  "item.elemental_synergies.violence.desc": "Throw a piercing weapon that inflicts Vulnerability Hex at your foes and returns to you. Scales off of Fire, Blood, Shadow, and Ritual spell power.",
 
   "item.elemental_synergies.arcane_mace": "Arcane Mace",
   "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
+
+  "item.elemental_synergies.supreme_shield": "Supreme Shield",
+  "item.elemental_synergies.supreme_shield.desc": "Pressing %s while holding the shield will cause you to dash forward.",
+  "item.elemental_synergies.supreme_shield2.desc": "If the target hits a wall, it will take increased damage and be temporarily stunned.",
 
 
   "item.elemental_synergies.grimoire_of_corruption": "Grimoire of Corruption",
@@ -167,6 +204,9 @@
   "spell.elemental_synergies.brimstone_hellblast.guide": "A Calamity Mod Reference ''The Brimstone Witch's signiture spell. Cast upon your foes a skull engulfed in brimstone flames, scaling off of the power of fire and blood, and leave your foes in ashes.''",
   "spell.elemental_synergies.holy_blast.guide": "A Calamity Mod Reference ''Fire a powerful holy blast, scaling off of Holy and Fire spell power. Upon impact, it will burst into Holy Flames.''",
 
+  "effect.elemental_synergies.ignis_soul_state": "Soul State",
+  "effect.elemental_synergies.ignis_soul_state.description": "Enhances your abilities.",
+
   "effect.elemental_synergies.night_state": "Night State",
   "effect.elemental_synergies.night_state.description": "Enhances your abilities.",
 
@@ -186,5 +226,8 @@
   "effect.elemental_synergies.holy_flames.description": "Burns you over time.",
 
   "effect.elemental_synergies.wind_shear": "Wind Shear",
-  "effect.elemental_synergies.wind_shear.description": "Inflicts damage over time."
+  "effect.elemental_synergies.wind_shear.description": "Inflicts damage over time.",
+
+  "effect.elemental_synergies.midas_touched": "Midas Touched",
+  "effect.elemental_synergies.midas_touched.description": "You feel your body being envoloped by gold, if your health is below 25%, your body will give in and petrify you into pure gold."
 }

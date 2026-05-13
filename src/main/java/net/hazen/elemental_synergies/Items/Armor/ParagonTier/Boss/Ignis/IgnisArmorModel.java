@@ -2,7 +2,10 @@ package net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis;
 
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.hazen.elemental_synergies.ElementalSynergies;
+import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 
 public class IgnisArmorModel extends DefaultedEntityGeoModel<IgnisArmorItem> {
@@ -18,7 +21,14 @@ public class IgnisArmorModel extends DefaultedEntityGeoModel<IgnisArmorItem> {
 
     @Override
     public ResourceLocation getTextureResource(IgnisArmorItem animatable) {
-        return ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/ignis_armor.png");
+        ResourceLocation normalTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/ignis_armor.png");
+        ResourceLocation soulStateTex = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "textures/armor/ignis_soul_armor.png");
+
+        Player player = Minecraft.getInstance().player;
+        if (player != null && player.hasEffect(ESEffectRegistry.IGNIS_SOUL_STATE)) {
+            return soulStateTex;
+        }
+        return normalTex;
     }
 
     @Override

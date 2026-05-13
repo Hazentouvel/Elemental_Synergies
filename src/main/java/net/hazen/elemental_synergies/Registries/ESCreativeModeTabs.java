@@ -46,40 +46,24 @@ public class ESCreativeModeTabs {
                         output.accept(ESItemRegistry.TITAN_CHESTPLATE.get());
                         output.accept(ESItemRegistry.TITAN_LEGGINGS.get());
                         output.accept(ESItemRegistry.TITAN_BOOTS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_TITAN_HELMET.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_TITAN_CHESTPLATE.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_TITAN_LEGGINGS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_TITAN_BOOTS.get());
 
                         //Soul Flame Armor
                         output.accept(ESItemRegistry.SOUL_FLAME_HELMET.get());
                         output.accept(ESItemRegistry.SOUL_FLAME_CHESTPLATE.get());
                         output.accept(ESItemRegistry.SOUL_FLAME_LEGGINGS.get());
                         output.accept(ESItemRegistry.SOUL_FLAME_BOOTS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_SOUL_FLAME_HELMET.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_SOUL_FLAME_CHESTPLATE.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_SOUL_FLAME_LEGGINGS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_SOUL_FLAME_BOOTS.get());
 
                         //Soul Flame Armor
                         output.accept(ESItemRegistry.CATACLYSM_HELMET.get());
                         output.accept(ESItemRegistry.CATACLYSM_CHESTPLATE.get());
                         output.accept(ESItemRegistry.CATACLYSM_LEGGINGS.get());
                         output.accept(ESItemRegistry.CATACLYSM_BOOTS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_CATACLYSM_HELMET.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_CATACLYSM_CHESTPLATE.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_CATACLYSM_LEGGINGS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_CATACLYSM_BOOTS.get());
 
                         //Soul Flame Armor
                         output.accept(ESItemRegistry.EXO_MECH_HELMET.get());
                         output.accept(ESItemRegistry.EXO_MECH_CHESTPLATE.get());
                         output.accept(ESItemRegistry.EXO_MECH_LEGGINGS.get());
                         output.accept(ESItemRegistry.EXO_MECH_BOOTS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_EXO_MECH_HELMET.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_EXO_MECH_CHESTPLATE.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_EXO_MECH_LEGGINGS.get());
-                        //output.accept(ESItemRegistry.GECKOLIB_EXO_MECH_BOOTS.get());
 
                         //Maledictus Armor
                         output.accept(ESItemRegistry.MALEDICTUS_HELMET.get());
@@ -169,6 +153,12 @@ public class ESCreativeModeTabs {
 
                         //Violence
                         output.accept(ESItemRegistry.VIOLENCE.get());
+
+                        /*
+                        *** Shields
+                         */
+                        // Supreme Shield
+                        output.accept(ESItemRegistry.SUPREME_SHIELD.get());
 
                         /*
                         *** Tools

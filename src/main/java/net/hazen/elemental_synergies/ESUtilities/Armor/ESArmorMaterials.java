@@ -94,7 +94,7 @@ public class ESArmorMaterials {
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> MALEDICTUS = register("maledictus",
             esParagon(),
             40,
-            ModSounds.MALEDICTUS_IDLE,
+            ModSounds.MALEDICTUS_HURT,
             () -> Ingredient.of(ModItems.CURSIUM_INGOT.get()),
             5,
             0.25F);
@@ -102,7 +102,7 @@ public class ESArmorMaterials {
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> IGNIS = register("ignis",
             esParagon(),
             40,
-            ModSounds.IGNIS_AMBIENT,
+            ModSounds.IGNIS_HURT,
             () -> Ingredient.of(ModItems.IGNITIUM_INGOT.get()),
             5,
             0.25F);

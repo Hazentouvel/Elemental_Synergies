@@ -12,6 +12,7 @@ import javax.annotation.Nullable;
 
 import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
+import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
@@ -269,25 +270,22 @@ public class Violence extends AbstractArrow implements GeoEntity {
             double ritualPower = livingOwner.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
             double shadowPower = livingOwner.getAttributeValue(HLAttributeRegistry.SHADOW_SPELL_POWER);
 
-            bonus += (int)Math.floor(firePower / 0.2);
-            bonus += (int)Math.floor(bloodPower / 0.2);
-            bonus += (int)Math.floor(ritualPower / 0.2);
-            bonus += (int)Math.floor(shadowPower / 0.2);
+            bonus += (int)Math.floor(firePower + bloodPower + ritualPower + shadowPower/ 0.2);
         }
 
         double computedTotal = baseHalf + bonus;
 
-        double each = computedTotal / 2.0D;
+        double each = computedTotal / 1.5D;
         double remainder = computedTotal - each * 4.0D;
 
         // Create DamageSources for each type
-        Holder<net.minecraft.world.damagesource.DamageType> ritualHolder = DamageSources.getHolderFromResource(victim, ASDamageTypes.RITUAL_MAGIC);
+        Holder<DamageType> ritualHolder = DamageSources.getHolderFromResource(victim, ASDamageTypes.RITUAL_MAGIC);
         DamageSource ritual = victim.level().damageSources().source(ritualHolder.unwrapKey().orElseThrow(), this.getOwner());
 
-        Holder<net.minecraft.world.damagesource.DamageType> bloodHolder = DamageSources.getHolderFromResource(victim, ISSDamageTypes.BLOOD_MAGIC);
+        Holder<DamageType> bloodHolder = DamageSources.getHolderFromResource(victim, ISSDamageTypes.BLOOD_MAGIC);
         DamageSource blood = victim.level().damageSources().source(bloodHolder.unwrapKey().orElseThrow(), this.getOwner());
 
-        Holder<net.minecraft.world.damagesource.DamageType> fireHolder = DamageSources.getHolderFromResource(victim, ISSDamageTypes.FIRE_MAGIC);
+        Holder<DamageType> fireHolder = DamageSources.getHolderFromResource(victim, ISSDamageTypes.FIRE_MAGIC);
         DamageSource fire = victim.level().damageSources().source(fireHolder.unwrapKey().orElseThrow(), this.getOwner());
 
         // For shadow damage we attempt to reuse ritual if a specific holder isn't available.
@@ -328,7 +326,7 @@ public class Violence extends AbstractArrow implements GeoEntity {
                 this.doPostHurtEffects(livingentity);
             }
 
-            this.playSound(SoundEvents.TRIDENT_HIT, 1.0F, 0.7F);
+            this.playSound(ESSounds.VIOLENCE_IMPACT.get(), 1.5F, 1F);
         }
     }
 

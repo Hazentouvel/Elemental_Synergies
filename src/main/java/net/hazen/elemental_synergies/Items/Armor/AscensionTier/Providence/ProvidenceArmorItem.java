@@ -12,16 +12,19 @@ import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESSounds;
+import net.hazen.elemental_synergies.Spells.AbstractSpells.ProfaneSpells;
 import net.hazen.elemental_synergies.Spells.AbstractSpells.ProvidenceSpells;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableHnSArmorItem;
+import net.hazen.hazennstuff.Item.Armor.Dedicated.ArbitriumRobes.AzureLib.ArbitriumRobesArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.hazen.hazentouvelib.Items.Armor.HLKeybindArmor;
 import net.hazen.hazentouvelib.Items.Armor.HLMessageArmorKey;
 import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.hazen.hazentouvelib.Registries.HLKeybinds;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -48,7 +51,7 @@ import java.util.List;
 
 public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybindArmor {
     public ProvidenceArmorItem(Type type, Properties settings) {
-        super(ESArmorMaterials.ASCENSION_MATERIAL, type, settings,
+        super(ESArmorMaterials.PROVIDENCE_MATERIAL, type, settings,
                 new AttributeContainer[]{
                         new AttributeContainer(AttributeRegistry.MAX_MANA, (double)500.0F, AttributeModifier.Operation.ADD_VALUE),
                         new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
@@ -71,23 +74,62 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybi
 
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+        if (this.type == Type.HELMET) {
+            tooltipComponents.add(Component.translatable("item.elemental_synergies.full_set.description")
+                    .withStyle(ChatFormatting.WHITE)
+            );
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("item.elemental_synergies.providence_passive.description")
+                        .withStyle(ChatFormatting.DARK_PURPLE)
+                );
+            } else {
+                tooltipComponents.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+            }
+        }
 
-        tooltipComponents.add(Component.translatable("item.hazennstuff.tyros.description")
-                .withStyle(Style.EMPTY.withColor(15881518).withItalic(true)));
 
-        tooltipComponents.add(Component.translatable("item.hazennstuff.tyros_affinity.description")
+        if (this.type == Type.CHESTPLATE) {
+            tooltipComponents.add(Component.translatable("item.elemental_synergies.full_set.description")
+                    .withStyle(ChatFormatting.WHITE)
+            );
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("item.elemental_synergies.providence_ability.description", new Object[]{HLKeybinds.ABILITY_1.getTranslatedKeyMessage()})
+                        .withStyle(ChatFormatting.YELLOW)
+                );
+            } else {
+                tooltipComponents.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+            }
+        }
+
+        tooltipComponents.add(Component.translatable("item.elemental_synergies.providence_affinity.description")
                 .withStyle(Style.EMPTY
                         .withColor(ChatFormatting.YELLOW)
                 ));
-
-        tooltipComponents.add(Component.translatable("tooltip.irons_spellbooks.passive_ability_no_cooldown",
-                new Object[]{Component.literal(Utils.timeFromTicks((float)Utils.applyCooldownReduction(20, MinecraftInstanceHelper.getPlayer()), 1)).withStyle(ChatFormatting.AQUA)}).withStyle(ChatFormatting.DARK_PURPLE));
-        tooltipComponents.add(Component.literal(" ").append(Component.translatable(this.getDescriptionId() + ".desc")).withStyle(ChatFormatting.LIGHT_PURPLE));
-        tooltipComponents.add(Component.literal(" ").append(Component.translatable(this.getDescriptionId() + ".immolate.desc", new Object[]{Component.literal(Utils.stringTruncation(ImmolateEffect.damageFor(MinecraftInstanceHelper.getPlayer()), 1)).withStyle(ChatFormatting.RED)})).withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        if (entity instanceof Player player) {
+            if (!level.isClientSide) {
+                boolean isFlying = player.isFallFlying();
+                player.getArmorSlots().forEach((wornArmor) -> {
+                    if (wornArmor != null && wornArmor.getItem() instanceof ArbitriumRobesArmorItem) {
+                        if (isFlying) {
+                            this.dispatcher.flight(player, wornArmor);
+                        } else {
+                            this.dispatcher.idle(player, wornArmor);
+                        }
+                    }
+
+                });
+                if (this.isWearingFullSet(player) && !player.hasEffect(HnSEffects.MAGE_SET_BONUS)) {
+                    this.evaluateArmorEffects(player);
+                }
+
+                return;
+            }
+        }
+
         if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
             evaluateArmorEffects(player);
         }
@@ -160,7 +202,7 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybi
             LivingEntity caster = event.getEntity();
             if (caster == null) return;
 
-            if (!(event.getSpell() instanceof ProvidenceSpells)) return;
+            if (!(event.getSpell() instanceof ProfaneSpells)) return;
 
             boolean fullSet =
                     caster.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ProvidenceArmorItem &&
@@ -186,6 +228,9 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybi
             double speed = player.getDeltaMovement().length();
             if (speed > 0.65 || player.getXRot() > 35.0f) {
                 dispatcher.diving(player, stack);
+            }
+            else {
+                dispatcher.idle(player, stack);
             }
         }
         return true;

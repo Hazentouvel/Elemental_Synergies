@@ -13,17 +13,13 @@ import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmast
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmaster.Crown.CloudmasterCrownArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.UniSchool.Cloudmaster.Hat.CloudmasterHatArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.Geckolib.GeckolibCataclysmArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.GeckoLib.GeckolibSoulFlameArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.Geckolib.GeckolibTitanArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.MultiSchool.SoulFlame.SoulFlameArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.AerospecArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Crown.AerospecCrownArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Helm.AerospecHelmArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.Aerospec.Mage.AerospecMageArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.ExoMechArmorItem;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.Geckolib.GeckolibExoMechArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.Neru.AkitaNeruArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.ProjectSekai.ProjectSekaiArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.RottenGirl.RottenGirlArmorItem;
@@ -31,10 +27,11 @@ import net.hazen.elemental_synergies.Items.Armor.SchoolTier.SynthesizerV.SynthV2
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.Utau.UtauArmorItem;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
+import net.hazen.elemental_synergies.Items.Shields.SupremeShield.SupremeShield;
 import net.hazen.elemental_synergies.Items.Staves.ArcaneMace.ArcaneMaceItem;
 import net.hazen.elemental_synergies.Items.Weapons.Ascended.Catastrophe.Catastrophe;
 import net.hazen.elemental_synergies.Items.Weapons.Ascended.Violence.ViolenceItem;
-import net.hazen.elemental_synergies.Items.Weapons.Generic.Excelsior.Excelsior;
+import net.hazen.elemental_synergies.Items.Weapons.Ascended.Excelsior.Excelsior;
 import net.hazen.hazentouvelib.Rarities.HLRarities;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
@@ -134,6 +131,21 @@ public class ESItemRegistry {
 
     // Violence
     public static final DeferredHolder<Item, Item> VIOLENCE = ITEMS.register("violence", ViolenceItem::new);
+
+
+
+    /*
+    *** Shields
+     */
+
+    public static final DeferredItem<Item> SUPREME_SHIELD = ITEMS.register("supreme_shield",
+            () -> new SupremeShield((new Item.Properties())
+                    .stacksTo(1)
+                    .rarity(Rarity.EPIC)
+                    .fireResistant()
+                    .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+            )
+    );
 
 
     /*
@@ -426,44 +438,6 @@ public class ESItemRegistry {
 
 
 
-    //*** Geckolib ***
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_HELMET = ITEMS.register("geckolib_titan_helmet", () -> new GeckolibTitanArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_CHESTPLATE = ITEMS.register("geckolib_titan_chestplate", () -> new GeckolibTitanArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_LEGGINGS = ITEMS.register("geckolib_titan_leggings", () -> new GeckolibTitanArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_TITAN_BOOTS = ITEMS.register("geckolib_titan_boots", () -> new GeckolibTitanArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
-
     // Cataclysm Armor Set
     public static final DeferredHolder<Item, Item> CATACLYSM_HELMET = ITEMS.register("cataclysm_helmet", () -> new CataclysmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
@@ -491,44 +465,6 @@ public class ESItemRegistry {
 
 
     public static final DeferredHolder<Item, Item> CATACLYSM_BOOTS = ITEMS.register("cataclysm_boots", () -> new CataclysmArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
-
-    //*** Geckolib ***
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_HELMET = ITEMS.register("geckolib_cataclysm_helmet", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_CHESTPLATE = ITEMS.register("geckolib_cataclysm_chestplate", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_LEGGINGS = ITEMS.register("geckolib_cataclysm_leggings", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_CATACLYSM_BOOTS = ITEMS.register("geckolib_cataclysm_boots", () -> new GeckolibCataclysmArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
@@ -573,44 +509,6 @@ public class ESItemRegistry {
     ));
 
 
-
-    //*** Geckolib ***
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_HELMET = ITEMS.register("geckolib_exo_mech_helmet", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_CHESTPLATE = ITEMS.register("geckolib_exo_mech_chestplate", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_LEGGINGS = ITEMS.register("geckolib_exo_mech_leggings", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_EXO_MECH_BOOTS = ITEMS.register("geckolib_exo_mech_boots", () -> new GeckolibExoMechArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
-
     //Soul Flame
 
     public static final DeferredHolder<Item, Item> SOUL_FLAME_HELMET = ITEMS.register("soul_flame_helmet", () -> new SoulFlameArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
@@ -646,40 +544,6 @@ public class ESItemRegistry {
     ));
 
 
-
-    //*** GeckoLib ***
-
-
-
-    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_HELMET = ITEMS.register("geckolib_soul_flame_helmet", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.HELMET.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_CHESTPLATE = ITEMS.register("geckolib_soul_flame_chestplate", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.CHESTPLATE.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_LEGGINGS = ITEMS.register("geckolib_soul_flame_leggings", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.LEGGINGS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-    public static final DeferredHolder<Item, Item> GECKOLIB_SOUL_FLAME_BOOTS = ITEMS.register("geckolib_soul_flame_boots", () -> new GeckolibSoulFlameArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
-            .equipment(1)
-            .rarity(HLRarities.FIRE_RARITY.getValue())
-            .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(64))
-            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
-    ));
-
     /*
     *** Ascended
      */
@@ -690,6 +554,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.HOLY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
     public static final DeferredHolder<Item, Item> PROVIDENCE_CHESTPLATE = ITEMS.register("providence_chestplate", () -> new ProvidenceArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -697,6 +563,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.HOLY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
     public static final DeferredHolder<Item, Item> PROVIDENCE_LEGGINGS = ITEMS.register("providence_leggings", () -> new ProvidenceArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -704,6 +572,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.HOLY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
 
@@ -712,6 +582,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.HOLY_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
     // Calamitas Armor Set
@@ -720,6 +592,7 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
     ));
 
     public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_CHESTPLATE = ITEMS.register("supreme_calamitas_chestplate", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
@@ -727,6 +600,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
     public static final DeferredHolder<Item, Item> SUPREME_CALAMITAS_LEGGINGS = ITEMS.register("supreme_calamitas_leggings", () -> new SupremeCalamitasArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
@@ -734,6 +609,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
 
@@ -742,6 +619,8 @@ public class ESItemRegistry {
             .rarity(HLRarities.FIRE_RARITY.getValue())
             .fireResistant()
             .durability(ArmorItem.Type.BOOTS.getDurability(128))
+            .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
+
     ));
 
 

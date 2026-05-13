@@ -1,13 +1,18 @@
 package net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas;
 
+import com.github.L_Ender.cataclysm.init.ModKeybind;
 import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.util.Utils;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
+import net.hazen.elemental_synergies.Spells.AbstractSpells.BrimstoneSpells;
+import net.hazen.elemental_synergies.Spells.AbstractSpells.CalamitasSpells;
 import net.hazen.elemental_synergies.Spells.AbstractSpells.ProvidenceSpells;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
@@ -19,6 +24,7 @@ import net.hazen.hazentouvelib.Items.Armor.HLMessageArmorKey;
 import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.hazen.hazentouvelib.Registries.HLKeybinds;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -45,7 +51,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.List;
 
-public class SupremeCalamitasArmorItem extends ImbuableGeckolibHnSArmorItem implements HLKeybindArmor {
+public class SupremeCalamitasArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, HLKeybindArmor {
     public SupremeCalamitasArmorItem(Type type, Properties settings) {
         super(ESArmorMaterials.CALAMITAS_MATERIAL, type, settings,
                 new AttributeContainer[]{
@@ -70,10 +76,34 @@ public class SupremeCalamitasArmorItem extends ImbuableGeckolibHnSArmorItem impl
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
 
-        tooltipComponents.add(Component.translatable("item.hazennstuff.tyros.description")
-                .withStyle(Style.EMPTY.withColor(15881518).withItalic(true)));
 
-        tooltipComponents.add(Component.translatable("item.hazennstuff.tyros_affinity.description")
+        if (this.type == Type.HELMET) {
+            tooltipComponents.add(Component.translatable("item.elemental_synergies.full_set.description")
+                    .withStyle(ChatFormatting.WHITE)
+            );
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("item.elemental_synergies.supreme_calamitas_passive.description")
+                        .withStyle(ChatFormatting.DARK_PURPLE)
+                );
+            } else {
+                tooltipComponents.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+            }
+        }
+
+        if (this.type == Type.CHESTPLATE) {
+            tooltipComponents.add(Component.translatable("item.elemental_synergies.full_set.description")
+                    .withStyle(ChatFormatting.WHITE)
+            );
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("item.elemental_synergies.supreme_calamitas_ability.description", new Object[]{HLKeybinds.ABILITY_1.getTranslatedKeyMessage()})
+                        .withStyle(ChatFormatting.YELLOW)
+                );
+            } else {
+                tooltipComponents.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+            }
+        }
+
+        tooltipComponents.add(Component.translatable("item.elemental_synergies.supreme_calamitas_affinity.description")
                 .withStyle(Style.EMPTY
                         .withColor(ChatFormatting.YELLOW)
                 ));
@@ -154,10 +184,9 @@ public class SupremeCalamitasArmorItem extends ImbuableGeckolibHnSArmorItem impl
             LivingEntity caster = event.getEntity();
             if (caster == null) return;
 
-            if (!(event.getSpell() instanceof ProvidenceSpells)) return;
+            if (!(event.getSpell() instanceof BrimstoneSpells)) return;
 
-            boolean fullSet =
-                    caster.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof SupremeCalamitasArmorItem &&
+            boolean fullSet = caster.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof SupremeCalamitasArmorItem &&
                             caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof SupremeCalamitasArmorItem &&
                             caster.getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof SupremeCalamitasArmorItem &&
                             caster.getItemBySlot(EquipmentSlot.FEET).getItem() instanceof SupremeCalamitasArmorItem;

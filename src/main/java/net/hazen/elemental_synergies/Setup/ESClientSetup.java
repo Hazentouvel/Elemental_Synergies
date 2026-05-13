@@ -68,6 +68,11 @@ public class ESClientSetup {
         event.registerSpriteSet(ESParticleRegistry.HOLY_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
         event.registerSpriteSet(ESParticleRegistry.HOLY_NIGHT_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
         event.registerSpriteSet(ESParticleRegistry.BRIMSTONE_EMBER_PARTICLE.get(), HnSGenericParticle.Provider::new);
+
+        event.registerSpriteSet(ESParticleRegistry.BRIMSTONE_EXPLOSION_PARTICLE.get(), HnSGenericParticle.Provider::new);
+        event.registerSpriteSet(ESParticleRegistry.SOUL_FLAME_EXPLOSION_PARTICLE.get(), HnSGenericParticle.Provider::new);
+        event.registerSpriteSet(ESParticleRegistry.HOLY_NIGHT_EXPLOSION_PARTICLE.get(), HnSGenericParticle.Provider::new);
+        event.registerSpriteSet(ESParticleRegistry.HOLY_EXPLOSION_PARTICLE.get(), HnSGenericParticle.Provider::new);
     }
 
     @SubscribeEvent

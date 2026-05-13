@@ -36,6 +36,7 @@ import java.util.Optional;
 public class HolyBlastSpell extends ProvidenceSpells {
     private final ResourceLocation spellId = ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "holy_blast");
     private boolean isRecast;
+    private int recastStage = 1;
 
     @Override
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
@@ -77,26 +78,54 @@ public class HolyBlastSpell extends ProvidenceSpells {
 
     @Override
     public CastType getCastType() {
-        return isRecast ? CastType.INSTANT : CastType.LONG;
+        return recastStage == 1 ? CastType.LONG : CastType.INSTANT;
     }
 
     @Override
     public AnimationHolder getCastStartAnimation() {
-        return isRecast
-                ? SpellAnimations.ANIMATION_INSTANT_CAST
-                : SpellAnimations.ANIMATION_CHARGED_CAST;
+        // First cast = long charge animation
+        if (recastStage == 1) {
+            return SpellAnimations.ANIMATION_CHARGED_CAST;
+        }
+        // Recasts = instant animation
+        return null;
+    }
+
+    @Override
+    public AnimationHolder getCastFinishAnimation() {
+        // Recasts = instant animation
+        return SpellAnimations.ANIMATION_INSTANT_CAST;
     }
 
     @Override
     public Optional<SoundEvent> getCastStartSound() {
-        return isRecast
-                ? Optional.of(SoundRegistry.FIREBALL_START.get())
-                : Optional.of(ESSounds.HOLY_BLAST_CAST.get());
+        return recastStage == 1 ? Optional.of(SoundRegistry.FIREBALL_START.get()) : Optional.of(ESSounds.HOLY_BLAST_CAST.get());
     }
 
     @Override
     public boolean canBeInterrupted(@Nullable Player player) {
             return true;
+    }
+
+    @Override
+    public boolean checkPreCastConditions(Level level, int spellLevel, LivingEntity entity, MagicData playerMagicData) {
+
+        if (playerMagicData != null && playerMagicData.getPlayerRecasts() != null) {
+
+            int remaining = playerMagicData.getPlayerRecasts()
+                    .getRemainingRecastsForSpell(spellId.toString());
+
+            if (remaining <= 0 || remaining >= 3) {
+                recastStage = 1;
+            } else {
+                recastStage = 2;
+            }
+
+        } else {
+            recastStage = 1;
+        }
+
+        return super.checkPreCastConditions(level, spellLevel, entity, playerMagicData);
     }
 
 
@@ -112,6 +141,9 @@ public class HolyBlastSpell extends ProvidenceSpells {
 
     @Override
     public Optional<SoundEvent> getCastFinishSound() {
+        if (recastStage == 1) {
+            return Optional.of(ESSounds.HOLY_BLAST_CAST.get());
+        }
         return Optional.empty();
     }
 
@@ -156,7 +188,7 @@ public class HolyBlastSpell extends ProvidenceSpells {
         }
         double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
         double holyPower = caster.getAttributeValue(AttributeRegistry.HOLY_SPELL_POWER);
-        return (float)(12 + 7.0 * getSpellPower(spellLevel, caster) * ((0.75 * firePower ) + (0.75 * holyPower)));
+        return (float)(15 + 7.0 * getSpellPower(spellLevel, caster) * ((0.75 * firePower ) + (0.75 * holyPower)));
     }
 
 

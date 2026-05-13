@@ -21,6 +21,16 @@ import java.util.function.Supplier;
 public class ESParticleRegistry {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(Registries.PARTICLE_TYPE, ElementalSynergies.MOD_ID);
 
+    // Explosion Particles
+    public static final Supplier<SimpleParticleType> BRIMSTONE_EXPLOSION_PARTICLE = PARTICLE_TYPES.register("brimstone_explosion",
+            () -> new SimpleParticleType(false));
+    public static final Supplier<SimpleParticleType> HOLY_EXPLOSION_PARTICLE = PARTICLE_TYPES.register("holy_explosion",
+            () -> new SimpleParticleType(false));
+    public static final Supplier<SimpleParticleType> HOLY_NIGHT_EXPLOSION_PARTICLE = PARTICLE_TYPES.register("holy_night_explosion",
+            () -> new SimpleParticleType(false));
+    public static final Supplier<SimpleParticleType> SOUL_FLAME_EXPLOSION_PARTICLE = PARTICLE_TYPES.register("soul_flame_explosion",
+            () -> new SimpleParticleType(false));
+
     // Brimstone Ember Particle
     public static final Supplier<SimpleParticleType> BRIMSTONE_EMBER_PARTICLE = PARTICLE_TYPES.register("brimstone_ember_particle",
             () -> new SimpleParticleType(false));

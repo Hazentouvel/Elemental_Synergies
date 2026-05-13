@@ -1,33 +1,50 @@
 package net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Scylla;
 
+import com.github.L_Ender.cataclysm.init.ModKeybind;
+import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.acetheeldritchking.cataclysm_spellbooks.registries.CSAttributeRegistry;
+import net.acetheeldritchking.cataclysm_spellbooks.spells.ice.AbstractMaledictusSpell;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus.MaledictusArmorItem;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
+import net.hazen.hazennstuff.Spells.AbstractSpells.HydroSpells;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import javax.management.Attribute;
 import java.util.List;
 
 public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket, IDisableHat {
     public ScyllaArmorItem(Type type, Properties settings) {
         super(ESArmorMaterials.SCYLLA, type, settings, paragonTierDual(
-                CSAttributeRegistry.ABYSSAL_MAGIC_POWER,
+                AttributeRegistry.LIGHTNING_SPELL_POWER,
                 ASAttributeRegistry.HYDRO_MAGIC_POWER
         ));
     }
@@ -41,6 +58,34 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
         ArsNoveauCompat.addManaRegen(attributes, group);
         ArsNoveauCompat.addMaxMana(attributes, group);
         return attributes.build().modifiers();
+    }
+
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flags) {
+        if (this.type == Type.HELMET) {
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_helmet.ability")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+        } else if (this.type == Type.CHESTPLATE) {
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc2")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc3")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+        } else if (this.type == Type.LEGGINGS) {
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings.desc")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings.desc2")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+        } else if (this.type == Type.BOOTS) {
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_boots.desc")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+        }
+
+        tooltip.add(Component.translatable("item.elemental_synergies.scylla_affinity.description")
+                .withStyle(Style.EMPTY
+                        .withColor(ChatFormatting.YELLOW)
+                ));
+
     }
 
 
@@ -57,11 +102,22 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
         if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
             evaluateArmorEffects(player);
         }
+        if (entity instanceof Player player && !level.isClientSide() && isHelmet(player)) {
+            waterBreathing(player);
+        }
+
+
     }
 
     private void evaluateArmorEffects(Player player) {
         if (!player.hasEffect(HnSEffects.MAGE_SET_BONUS)) {
             player.addEffect(new MobEffectInstance(HnSEffects.MAGE_SET_BONUS, 320, 0, false, false, false));
+        }
+    }
+
+    private void waterBreathing(Player player) {
+        if (!player.hasEffect(MobEffects.WATER_BREATHING)) {
+            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0, false, false, false));
         }
     }
 
@@ -71,4 +127,30 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
                 player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof ScyllaArmorItem &&
                 player.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof ScyllaArmorItem;
     }
+    private boolean isHelmet(Player player) {
+        return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof ScyllaArmorItem;
+    }
+
+    @EventBusSubscriber(value = Dist.CLIENT)
+    public static class SpellEvents {
+
+        @SubscribeEvent
+        public static void onModifySpellLevel(ModifySpellLevelEvent event) {
+            LivingEntity caster = event.getEntity();
+            if (caster == null) return;
+
+            if (!(event.getSpell() instanceof HydroSpells)) return;
+
+            boolean fullSet = caster.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ScyllaArmorItem &&
+                    caster.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ScyllaArmorItem &&
+                    caster.getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof ScyllaArmorItem &&
+                    caster.getItemBySlot(EquipmentSlot.FEET).getItem() instanceof ScyllaArmorItem;
+
+            if (fullSet) {
+                event.addLevels(1);
+            }
+        }
+    }
+
+
 }

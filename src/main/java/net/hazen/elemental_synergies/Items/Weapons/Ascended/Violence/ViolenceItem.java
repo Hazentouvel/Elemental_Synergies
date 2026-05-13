@@ -1,14 +1,18 @@
 package net.hazen.elemental_synergies.Items.Weapons.Ascended.Violence;
 
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
+import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.elemental_synergies.ESUtilities.ESRarities;
 import net.hazen.elemental_synergies.ESUtilities.Items.ESExtendedWeaponsTiers;
 import net.hazen.elemental_synergies.Entities.Weapons.Violence.Violence;
 import net.hazen.hazennstuff.HnSUtilities.Item.HnSExtendedWeaponsTiers;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -26,12 +30,14 @@ import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class ViolenceItem extends ExtendedSwordItem implements GeoItem {
@@ -50,6 +56,17 @@ public class ViolenceItem extends ExtendedSwordItem implements GeoItem {
                         )
                         .component(DataComponents.UNBREAKABLE, new Unbreakable(false))
         );
+    }
+
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull Item.@NotNull TooltipContext context, @NotNull List<Component> lines, @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, context, lines, flag);
+        lines.add(Component.translatable("item.hazennstuff.calamity.description").withStyle(new ChatFormatting[]{ChatFormatting.WHITE, ChatFormatting.ITALIC}));
+
+        if (Screen.hasShiftDown()) {
+            lines.add(Component.translatable("item.elemental_synergies.violence.desc").withStyle(new ChatFormatting[]{ChatFormatting.DARK_RED, ChatFormatting.ITALIC}));
+        } else {
+            lines.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+        }
     }
 
     public UseAnim getUseAnimation(ItemStack stack) {

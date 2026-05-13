@@ -112,7 +112,8 @@ public class BrimstoneHellblastSpell extends CalamitasSpells {
         double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
         double bloodPower = caster.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
         double occultPower = caster.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
-        return (float)(7.0 * getSpellPower(spellLevel, caster) * ((0.5 * firePower ) + (0.5 * bloodPower) + (0.5 * occultPower)));
+        return (float)(10 + 5.0 * getSpellPower(spellLevel, caster) * (firePower + bloodPower + occultPower)
+        );
     }
 
 

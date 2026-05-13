@@ -12,7 +12,7 @@ import net.hazen.elemental_synergies.ESUtilities.ESEnchantmentEffects;
 import net.hazen.elemental_synergies.ESUtilities.SubSchools.ESSubSchoolRegistry;
 import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.ProvidenceArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Cataclysm.CataclysmArmorRenderer;
-import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.MultiSchool.SoulFlame.SoulFlameArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.MultiSchool.Titan.TitanArmorRenderer;
 import net.hazen.elemental_synergies.Items.Armor.PureTier.UniSchool.ExoMech.ExoMechArmorRenderer;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnisCurioRenderer;
@@ -62,7 +62,7 @@ public class ElementalSynergies {
 
         NeoForge.EVENT_BUS.register(this);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, ESConfig.SPEC, String.format("%s-common.toml", "elemental_synergies"));
     }
 
     @SubscribeEvent

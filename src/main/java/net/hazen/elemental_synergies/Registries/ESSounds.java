@@ -1,18 +1,12 @@
 package net.hazen.elemental_synergies.Registries;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.hazennstuff.HazenNStuff;
-import net.hazen.hazennstuff.Registries.HnSSounds;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.common.util.DeferredSoundType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 public class ESSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
@@ -23,8 +17,18 @@ public class ESSounds {
     /*
     *** Providence
      */
+
     // Night State Activate
     public static DeferredHolder<SoundEvent, SoundEvent> NIGHT_STATE_ACTIVATE = registerSoundEvent("night_state_activate");
+
+    /*
+    *** Maledictus
+     */
+
+    // Maledictus Armor Revive
+    public static DeferredHolder<SoundEvent, SoundEvent> MALEDICTUS_ARMOR_REVIVE = registerSoundEvent("maledictus_armor_revive");
+
+    public static DeferredHolder<SoundEvent, SoundEvent> DODGE = registerSoundEvent("dodge");
 
     //
     public static DeferredHolder<SoundEvent, SoundEvent> HOLY_BLAST_IMPACT = registerSoundEvent("holy_blast_impact");
@@ -36,8 +40,15 @@ public class ESSounds {
      */
 
     // Brimflame Bolt
-    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_IMPACT = registerSoundEvent("brimflame_impact");
-    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_CAST = registerSoundEvent("brimflame_cast");
+    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_BOLT_IMPACT = registerSoundEvent("brimflame_bolt_impact");
+    public static DeferredHolder<SoundEvent, SoundEvent> BRIMFLAME_BOLT_CAST = registerSoundEvent("brimflame_bolt_cast");
+
+
+    /*
+    *** Weapons
+     */
+
+    public static DeferredHolder<SoundEvent, SoundEvent> VIOLENCE_IMPACT = registerSoundEvent("violence_impact");
 
 
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name)

@@ -1,7 +1,6 @@
 package net.hazen.elemental_synergies.Items.Weapons.Ascended.Catastrophe;
 
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.Items.Weapons.Generic.Excelsior.Excelsior;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedItemGeoModel;
 

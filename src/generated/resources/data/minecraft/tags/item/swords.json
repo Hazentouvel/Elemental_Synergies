@@ -1,5 +1,10 @@
 {
   "values": [
-    "elemental_synergies:excelsior"
+    "elemental_synergies:arcane_mace",
+    "elemental_synergies:violence",
+    "elemental_synergies:catastrophe",
+    "elemental_synergies:excelsior",
+    "elemental_synergies:violence",
+    "elemental_synergies:catastrophe"
   ]
 }

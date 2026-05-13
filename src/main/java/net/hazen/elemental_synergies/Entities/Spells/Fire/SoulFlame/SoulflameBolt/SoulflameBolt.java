@@ -65,9 +65,8 @@ public class SoulflameBolt extends AbstractMagicProjectile {
         Entity target = entityHitResult.getEntity();
 
 //        float totalDamage = this.damage;
-//        float half = totalDamage / 2.0F;
 //        DamageSource shadowSource = new DamageSource(DamageSources.getHolderFromResource(target, MFTE.SPIRIT_MAGIC));
-//        DamageSources.applyDamage(target, half, shadowSource);
+//        DamageSources.applyDamage(target, totalDamage, shadowSource);
 //        DamageSources.applyDamage(target, totalDamage - half, ((AbstractSpell) ESSpellRegistries.SOULFLAME_BOLT.get()).getDamageSource(this, this.getOwner()));
 
         DamageSources.applyDamage(target, this.getDamage(), (ESSpellRegistries.SOULFLAME_BOLT.get()).getDamageSource(this, this.getOwner()));
@@ -118,4 +117,5 @@ public class SoulflameBolt extends AbstractMagicProjectile {
             }
         }
     }
+
 }

@@ -1,5 +1,6 @@
 package net.hazen.elemental_synergies.Enchantments;
 
+import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.mojang.serialization.MapCodec;
 import net.hazen.hazennstuff.Registries.HnSEntityRegistry;
 import net.minecraft.server.level.ServerLevel;
@@ -16,14 +17,31 @@ public class LightningStrikerEnchantmentEffect implements EnchantmentEntityEffec
 
     @Override
     public void apply(ServerLevel pLevel, int pEnchantmentLevel, EnchantedItemInUse pItem, Entity pEntity, Vec3 pOrigin) {
-        if(pEnchantmentLevel == 1)
-        {
-            EntityType.LIGHTNING_BOLT.spawn(pLevel, pEntity.getOnPos(), MobSpawnType.TRIGGERED);
+        if (pEnchantmentLevel >= 1) {
+            ModEntities.BOLT_STRIKE.get().spawn(pLevel, pEntity.getOnPos(), MobSpawnType.TRIGGERED);
         }
-        if(pEnchantmentLevel == 2)
-        {
-            EntityType.LIGHTNING_BOLT.spawn(pLevel, pEntity.getOnPos(), MobSpawnType.TRIGGERED);
-            EntityType.LIGHTNING_BOLT.spawn(pLevel, pEntity.getOnPos(), MobSpawnType.TRIGGERED);
+        if (pEnchantmentLevel >= 2) {
+            ModEntities.LIGHTNING_AREA_EFFECT.get().spawn(pLevel, pEntity.getOnPos(), MobSpawnType.TRIGGERED);
+        }
+        if (pEnchantmentLevel >= 3) {
+
+            int radius = 3;
+
+            int[][] offsets = {
+                    { radius, 0},
+                    {-radius, 0},
+                    {0,  radius},
+                    {0, -radius},
+
+                    { radius,  radius},
+                    { radius, -radius},
+                    {-radius,  radius},
+                    {-radius, -radius}
+            };
+
+            for (int[] offset : offsets) {
+                ModEntities.BOLT_STRIKE.get().spawn(pLevel, pEntity.getOnPos().offset(offset[0], 0, offset[1]), MobSpawnType.TRIGGERED);
+            }
         }
     }
 

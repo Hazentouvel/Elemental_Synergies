@@ -9,6 +9,11 @@ import org.joml.Vector3f;
 
 public class ESParticleHelper {
 
+    public static final ParticleOptions BRIMSTONE_EXPLOSION_PARTICLE = ESParticleRegistry.BRIMSTONE_EXPLOSION_PARTICLE.get();
+    public static final ParticleOptions HOLY_EXPLOSION_PARTICLE = ESParticleRegistry.HOLY_EXPLOSION_PARTICLE.get();
+    public static final ParticleOptions HOLY_NIGHT_EXPLOSION_PARTICLE = ESParticleRegistry.HOLY_NIGHT_EXPLOSION_PARTICLE.get();
+    public static final ParticleOptions SOUL_FLAME_EXPLOSION_PARTICLE = ESParticleRegistry.SOUL_FLAME_EXPLOSION_PARTICLE.get();
+
     public static final ParticleOptions BRIMSTONE_EMBER_PARTICLE = ESParticleRegistry.BRIMSTONE_EMBER_PARTICLE.get();
 
     public static final ParticleOptions HOLY_EMBER_PARTICLE = ESParticleRegistry.HOLY_EMBER_PARTICLE.get();

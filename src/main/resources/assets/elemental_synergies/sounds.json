@@ -23,5 +23,20 @@
     "sounds": [
       "elemental_synergies:holy_blast_cast"
     ]
+  },
+  "violence_impact": {
+    "sounds": [
+      "elemental_synergies:violence_impact"
+    ]
+  },
+  "maledictus_armor_revive": {
+    "sounds": [
+      "elemental_synergies:maledictus_armor_revive"
+    ]
+  },
+  "dodge": {
+    "sounds": [
+      "elemental_synergies:dodge"
+    ]
   }
 }

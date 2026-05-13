@@ -10,6 +10,7 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.hazen.elemental_synergies.Particle.HolyFlameExplosionParticlesPacket;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyFire.HolyFlame;
@@ -80,14 +81,14 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
             double x = Mth.lerp((double)f, d0, this.getX() + vec3.x);
             double y = Mth.lerp((double)f, d1, this.getY() + vec3.y);
             double z = Mth.lerp((double)f, d2, this.getZ() + vec3.z);
-            this.level.addParticle(ParticleHelper.FIERY_SMOKE, true, x - random.x, y + (double)(this.getBbHeight() * 0.5F) - random.y, z - random.z, (double)0.0F, (double)0.0F, (double)0.0F);
+            this.level.addParticle(ESParticleHelper.HOLY_EXPLOSION_PARTICLE, true, x - random.x, y + (double)(this.getBbHeight() * 0.5F) - random.y, z - random.z, (double)0.0F, (double)0.0F, (double)0.0F);
         }
 
     }
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(this.level, ParticleHelper.FIERY_SMOKE, x, y, z, 5, .1, .1, .1, .25, true);
+        MagicManager.spawnParticles(this.level, ESParticleHelper.HOLY_EXPLOSION_PARTICLE, x, y, z, 5, .1, .1, .1, .25, true);
     }
 
     @Override
@@ -101,7 +102,7 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
 
     @Override
     protected void doImpactSound(Holder<SoundEvent> sound) {
-        level.playSound(null, getX(), getY(), getZ(), sound, SoundSource.NEUTRAL, 1.5f, 1.0f);
+        level.playSound(null, getX(), getY(), getZ(), sound, SoundSource.NEUTRAL, 0.75f, 1.0f);
     }
 
     protected void onHit(HitResult hitResult) {
@@ -122,19 +123,14 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
                     double p = 0.5F - distanceSqr / (double) explosionRadiusSqr;
                     float totalDamage = (float) ((double) this.damage * p);
 
-                    float firstHalf = totalDamage / 2.0F;
-                    float secondHalf = totalDamage - firstHalf;
-
                     DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(entity, ISSDamageTypes.HOLY_MAGIC));
-                    DamageSources.applyDamage(entity, secondHalf, holyMagic);
+                    DamageSources.applyDamage(entity, totalDamage, holyMagic);
 
-                    DamageSources.applyDamage(entity, firstHalf, ((AbstractSpell) ESSpellRegistries.HOLY_BLAST.get()).getDamageSource(this, this.getOwner()));
+                    DamageSources.applyDamage(entity, totalDamage, ((AbstractSpell) ESSpellRegistries.HOLY_BLAST.get()).getDamageSource(this, this.getOwner()));
                 }
             }
 
-            // Spawn HolyFlame projectiles outward from the impact point
             try {
-                // base 2-4 flames
                 int base = this.level.random.nextInt(3) + 2;
                 int count = Math.min(10, base + this.spellLevel);
 
@@ -183,7 +179,7 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
                         Explosion.BlockInteraction.DESTROY,
                         ParticleTypes.EXPLOSION,
                         ParticleTypes.EXPLOSION_EMITTER,
-                        HnSSounds.BRIMSTONE_HELLBLAST_IMPACT);
+                        ESSounds.HOLY_BLAST_IMPACT);
                 if (!((ExplosionEvent.Start)NeoForge.EVENT_BUS.post(new ExplosionEvent.Start(this.level, explosion))).isCanceled()) {
                     explosion.explode();
                     explosion.finalizeExplosion(false);
@@ -191,7 +187,7 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
             }
 
             PacketDistributor.sendToPlayersTrackingEntity(this, new HolyFlameExplosionParticlesPacket(hitResult.getLocation().subtract(this.getDeltaMovement().scale((double)0F)), this.getExplosionRadius()), new CustomPacketPayload[0]);
-            this.playSound((SoundEvent)HnSSounds.BRIMSTONE_HELLBLAST_IMPACT.value(), 4.0F, (1.0F + (this.level.random.nextFloat() - this.level.random.nextFloat()) * 0.2F) * 0.7F);
+            this.playSound((SoundEvent)ESSounds.HOLY_BLAST_IMPACT.value(), 3.0F, (1.0F + (this.level.random.nextFloat() - this.level.random.nextFloat()) * 0.2F) * 0.7F);
             this.discard();
         }
 

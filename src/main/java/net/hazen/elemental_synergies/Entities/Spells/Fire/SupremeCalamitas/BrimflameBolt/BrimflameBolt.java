@@ -1,26 +1,18 @@
 package net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimflameBolt;
 
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
-import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
-import io.redspace.ironsspellbooks.registries.EntityRegistry;
-import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
-import net.hazen.hazennstuff.Registries.HnSSounds;
-import net.hazen.hazennstuff.Spells.HnSSpellRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -51,7 +43,7 @@ public class BrimflameBolt extends AbstractMagicProjectile {
     }
 
     public Optional<Holder<SoundEvent>> getImpactSound() {
-        return Optional.of(ESSounds.BRIMFLAME_IMPACT);
+        return Optional.of(ESSounds.BRIMFLAME_BOLT_IMPACT);
     }
 
     protected void doImpactSound(Holder<SoundEvent> sound) {

@@ -83,6 +83,38 @@ public class ESEffectRegistry {
                     AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
+    public static final DeferredHolder<MobEffect, MobEffect> IGNIS_SOUL_STATE = MOB_EFFECTS.register("ignis_soul_state", () -> new GenericHazenEffect(MobEffectCategory.BENEFICIAL, 3311322)
+            .addAttributeModifier(AttributeRegistry.SPELL_RESIST,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    -0.15F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ASAttributeRegistry.SPELL_RES_PENETRATION,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    0.1F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.ARMOR_SHRED,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    0.1F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.ARMOR_PIERCE,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    0.1F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.CRIT_DAMAGE,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    0.15F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+
+            .addAttributeModifier(ALObjects.Attributes.CRIT_CHANCE,
+                    ElementalSynergies.id("ignis_soul_state"),
+                    0.15F,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
+
     public static final DeferredHolder<MobEffect, MobEffect> VULNERABILITY_HEX = MOB_EFFECTS.register("vulnerability_hex", () -> new VulnerabilityHexEffect(MobEffectCategory.HARMFUL, 3311322)
             .addAttributeModifier(Attributes.ATTACK_DAMAGE,
                     ElementalSynergies.id("vulnerability_hex"),

@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 
 import static net.acetheeldritchking.aces_spell_utils.utils.ASUtils.isValidUnlockItemInInventory;
 
-public abstract class ProvidenceSpells extends AbstractSpell {
+public abstract class ProvidenceSpells extends ProfaneSpells {
 
     @Override
     public Component getLockedMessage() {

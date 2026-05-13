@@ -8,6 +8,7 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import mod.azure.azurelib.core.utils.MathHelper;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
+import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.minecraft.core.Holder;
@@ -133,12 +134,12 @@ public class HolyFlame extends AbstractMagicProjectile implements GeoEntity {
 
     @Override
     public Optional<Holder<SoundEvent>> getImpactSound() {
-        return Optional.of(HnSSounds.BRIMSTONE_HELLBLAST_IMPACT);
+        return Optional.of(ESSounds.HOLY_BLAST_IMPACT);
     }
 
     @Override
     protected void doImpactSound(Holder<SoundEvent> sound) {
-        level.playSound(null, getX(), getY(), getZ(), sound, SoundSource.NEUTRAL, 1.5f, 1.0f);
+        level.playSound(null, getX(), getY(), getZ(), sound, SoundSource.NEUTRAL, 0.5f, 1.0f);
     }
 
     protected void onHitBlock(BlockHitResult blockHitResult) {
@@ -151,13 +152,12 @@ public class HolyFlame extends AbstractMagicProjectile implements GeoEntity {
         // Dual School Damage
         var target = entityHitResult.getEntity();
         float totalDamage = this.damage;
-        float half = totalDamage / 2.0F;
         // Apply holy damage
         DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(target, ISSDamageTypes.HOLY_MAGIC));
-        DamageSources.applyDamage(target, half, holyMagic);
+        DamageSources.applyDamage(target, totalDamage, holyMagic);
 
         // Apply Applies spell damage
-        DamageSources.applyDamage(target, totalDamage - half, (ESSpellRegistries.HOLY_BLAST.get()).getDamageSource(this, this.getOwner()));
+        DamageSources.applyDamage(target, totalDamage, (ESSpellRegistries.HOLY_BLAST.get()).getDamageSource(this, this.getOwner()));
 
         this.discard();
     }

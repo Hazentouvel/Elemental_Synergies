@@ -111,9 +111,6 @@ public class BrimstoneHellblast extends AbstractMagicProjectile implements GeoEn
                     double p = 0.5F - distanceSqr / (double) explosionRadiusSqr;
                     float totalDamage = (float) ((double) this.damage * p);
 
-                    float oneThird = totalDamage / 3.0F;
-                    float otherThird = totalDamage - (2 * oneThird);
-
                     Holder<DamageType> ritualHolder =
                             DamageSources.getHolderFromResource(entity, ASDamageTypes.RITUAL_MAGIC);
 
@@ -130,9 +127,9 @@ public class BrimstoneHellblast extends AbstractMagicProjectile implements GeoEn
                             this.getOwner()
                     );
 
-                    DamageSources.applyDamage(entity, oneThird, (ESSpellRegistries.BRIMSTONE_HELLBLAST.get()).getDamageSource(this, this.getOwner()));
-                    DamageSources.applyDamage(entity, otherThird, ritual);
-                    DamageSources.applyDamage(entity, otherThird, blood);
+                    DamageSources.applyDamage(entity, totalDamage, (ESSpellRegistries.BRIMSTONE_HELLBLAST.get()).getDamageSource(this, this.getOwner()));
+                    DamageSources.applyDamage(entity, totalDamage, ritual);
+                    DamageSources.applyDamage(entity, totalDamage, blood);
                 }
             }
 

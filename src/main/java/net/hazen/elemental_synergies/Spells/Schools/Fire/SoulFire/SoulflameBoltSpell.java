@@ -87,6 +87,6 @@ public class SoulflameBoltSpell extends AbstractSpell {
     }
 
     private float getDamage(int spellLevel, LivingEntity entity) {
-        return this.getSpellPower(spellLevel, entity) * 0.5F;
+        return 5.0F + (this.getSpellPower(spellLevel, entity) * 0.4F);
     }
 }

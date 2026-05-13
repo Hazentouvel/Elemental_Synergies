@@ -30,7 +30,7 @@ public class Catastrophe extends ExtendedSwordItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        //controllerRegistrar.add(animationController);
+        controllerRegistrar.add(animationController);
     }
 
     // Animations and stuff

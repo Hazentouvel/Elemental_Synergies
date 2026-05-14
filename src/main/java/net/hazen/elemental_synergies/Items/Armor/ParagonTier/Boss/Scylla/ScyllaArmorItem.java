@@ -16,6 +16,7 @@ import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
 import net.hazen.hazennstuff.Spells.AbstractSpells.HydroSpells;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -64,6 +65,18 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
         if (this.type == Type.HELMET) {
             tooltip.add(Component.translatable("item.elemental_synergies.scylla_helmet.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_helmet2.description")
+                    .withStyle(ChatFormatting.DARK_PURPLE));
+            tooltip.add(Component.translatable("item.elemental_synergies.full_set.description")
+                    .withStyle(ChatFormatting.WHITE)
+            );
+            if (Screen.hasShiftDown()) {
+                tooltip.add(Component.translatable("item.elemental_synergies.scylla_passive.description")
+                        .withStyle(ChatFormatting.DARK_PURPLE)
+                );
+            } else {
+                tooltip.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));
+            }
         } else if (this.type == Type.CHESTPLATE) {
             tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));

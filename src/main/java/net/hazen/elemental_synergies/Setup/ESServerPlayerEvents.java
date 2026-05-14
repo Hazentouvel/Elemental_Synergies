@@ -575,6 +575,22 @@ public class ESServerPlayerEvents {
         ESCompatAttribute.addAwakenedWeaponAttributes(event);
         ESCompatAttribute.addCoralStaffAttributes(event);
         ESCompatAttribute.addBloomStoneAttributes(event);
+        ESCompatAttribute.addIceCrystalAttributes(event);
+        ESCompatAttribute.addCoralAttributes(event);
+        ESCompatAttribute.addKhopeshAttributes(event);
+        ESCompatAttribute.addGauntletOfGuardAttributes(event);
+        ESCompatAttribute.addGauntletOfBulwarkAttributes(event);
+        ESCompatAttribute.addGauntletOfMaelstromAttributes(event);
+        ESCompatAttribute.addMeatShredderAttributes(event);
+        ESCompatAttribute.addImmolatorAttributes(event);
+        ESCompatAttribute.addTidalClawsAttributes(event);
+        ESCompatAttribute.addInfernalForgeAttributes(event);
+        ESCompatAttribute.addVoidForgeAttributes(event);
+        ESCompatAttribute.addVoidCoreAttributes(event);
+        ESCompatAttribute.addAstrapeAttributes(event);
+        ESCompatAttribute.addAncientSpearAttributes(event);
+        ESCompatAttribute.addCeranusAttributes(event);
+        ESCompatAttribute.addBrontesAttributes(event);
     }
     
 }

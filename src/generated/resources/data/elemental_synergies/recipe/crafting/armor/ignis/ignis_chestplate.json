@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "elemental_synergies:soul_flame_chestplate"
+    },
+    "I": {
+      "item": "cataclysm:ignitium_ingot"
+    },
+    "S": {
+      "item": "cataclysm:ignitium_upgrade_smithing_template"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "ZIZ",
+    "ZAZ",
+    "ZSZ"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 1,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:ignis_chestplate"
+  }
+}

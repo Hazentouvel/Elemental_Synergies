@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "elemental_synergies:ignis_helmet"
+    },
+    "C": {
+      "item": "hazennstuff:catalyst"
+    },
+    "D": {
+      "item": "elemental_synergies:brimstone_debris"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "ZAZ",
+    "DCD",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:supreme_calamitas_helmet"
+  }
+}

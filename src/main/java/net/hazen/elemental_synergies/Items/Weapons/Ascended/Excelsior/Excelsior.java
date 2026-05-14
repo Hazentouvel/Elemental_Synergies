@@ -87,12 +87,12 @@ public class Excelsior extends MagicSwordItem implements GeoItem {
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {
-            private SupremeShieldRenderer renderer;
+            private ExcelsiorRenderer renderer;
 
             @Override
             public BlockEntityWithoutLevelRenderer getGeoItemRenderer() {
                 if (this.renderer == null)
-                    this.renderer = new SupremeShieldRenderer();
+                    this.renderer = new ExcelsiorRenderer();
 
                 return this.renderer;
             }

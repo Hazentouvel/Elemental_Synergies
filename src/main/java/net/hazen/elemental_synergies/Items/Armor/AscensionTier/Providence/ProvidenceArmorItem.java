@@ -94,7 +94,7 @@ public class ProvidenceArmorItem extends ImbuableHnSArmorItem implements HLKeybi
             );
             if (Screen.hasShiftDown()) {
                 tooltipComponents.add(Component.translatable("item.elemental_synergies.providence_ability.description", new Object[]{HLKeybinds.ABILITY_1.getTranslatedKeyMessage()})
-                        .withStyle(ChatFormatting.YELLOW)
+                        .withStyle(ChatFormatting.DARK_PURPLE)
                 );
             } else {
                 tooltipComponents.add(Component.translatable("item.discerning_the_eldritch.more_details").withStyle(ChatFormatting.GRAY));

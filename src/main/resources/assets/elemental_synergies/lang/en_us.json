@@ -19,11 +19,22 @@
 
 
   "item.elemental_synergies.scylla_helmet.description": "Gills",
+  "item.elemental_synergies.scylla_helmet2.description": "Allows breathing underwater",
+
+  "item.elemental_synergies.scylla_chestplate.description": "Toaster in Bathtub",
+  "item.elemental_synergies.scylla_chestplate_passive1.description": "All hydro spells inflict the Wet effect.",
+  "item.elemental_synergies.scylla_chestplate_passive2.description": "Upon hitting lightning spells onto mobs with the Wet effect, they will start a chain lightning reaction.",
+
+  "item.elemental_synergies.scylla_leggings.description": "Them Scylla Thighs",
+  "item.elemental_synergies.scylla_leggings_passive.description": "You can swim faster underwater.",
+
   "item.elemental_synergies.scylla_boots.description": "Water Walker",
 
+  "item.elemental_synergies.scylla_passive.description": "Upon a lightning spell hitting the ground, the ground is electrified (this scales off of lightning spell power.)",
 
-  "item.elemental_synergies.maledictus_helmet.ability": "Gills",
-  "item.elemental_synergies.maledictus_helmet.description": "Gills",
+
+  "item.elemental_synergies.maledictus_helmet.ability": "Phantasmal Gaze",
+  "item.elemental_synergies.maledictus_helmet.description": "Press %s to inflict Guided onto mobs around you.",
 
 
   "item.elemental_synergies.ignis_passive.description": "While in Soul State, your attacks inflict Soul Flames on hit.",
@@ -173,8 +184,9 @@
   "item.elemental_synergies.arcane_mace.desc": "Used as both a staff and a mace.",
 
   "item.elemental_synergies.supreme_shield": "Supreme Shield",
-  "item.elemental_synergies.supreme_shield.desc": "Pressing %s while holding the shield will cause you to dash forward.",
-  "item.elemental_synergies.supreme_shield2.desc": "If the target hits a wall, it will take increased damage and be temporarily stunned.",
+  "item.elemental_synergies.supreme_shield.desc": "Crouching while holding the shield will cause you to dash forward.",
+  "item.elemental_synergies.supreme_shield2.desc": "Damage scales off of Fire, Blood, Shadow, and Ritual.",
+  "item.elemental_synergies.supreme_shield3.desc": "If the target hits a wall, it will take increased damage and be temporarily stunned.",
 
 
   "item.elemental_synergies.grimoire_of_corruption": "Grimoire of Corruption",

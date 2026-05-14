@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "hazennstuff:crystal_arachnid_leggings"
+    },
+    "I": {
+      "item": "cataclysm:cursium_ingot"
+    },
+    "S": {
+      "item": "cataclysm:cursium_upgrade_smithing_template"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "ZIZ",
+    "ZAZ",
+    "ZSZ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:maledictus_leggings"
+  }
+}

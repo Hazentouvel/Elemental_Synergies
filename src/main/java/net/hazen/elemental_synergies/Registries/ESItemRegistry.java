@@ -89,7 +89,7 @@ public class ESItemRegistry {
 
     );
 
-    // Brimstone Debri
+    // Brimstone Debris
     public static final DeferredItem<Item> BRIMSTONE_DEBRIS = ITEMS.register("brimstone_debris",
             () -> new Item(new Item
                     .Properties()

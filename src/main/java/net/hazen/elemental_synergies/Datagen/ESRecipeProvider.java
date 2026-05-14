@@ -1,6 +1,7 @@
 package net.hazen.elemental_synergies.Datagen;
 
 import com.gametechbc.gtbcs_geomancy_plus.init.GGItems;
+import com.github.L_Ender.cataclysm.init.ModItems;
 import com.snackpirate.aeromancy.item.AAItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.discerning_the_eldritch.registries.ItemRegistries;
@@ -92,6 +93,24 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('R', GGItemRegistry.SPELLBLADE_RUNE)
                 .unlockedBy("has_excalibur_fragment", has(HnSItemRegistry.EXCALIBUR_FRAGMENT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/weapons/excelsior"));
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.VIOLENCE.get(), 1)
+                .pattern("ZSI")
+                .pattern("BTS")
+                .pattern("WBZ")
+                .define('T', ItemRegistry.TWILIGHT_GALE.get())
+                .define('W', ItemRegistry.WEAPON_PARTS.get())
+                .define('I', ModItems.IGNITIUM_INGOT)
+                .define('S', ItemRegistries.ELDRITCH_SOUL_SHARD.get())
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT)
+                .define('B', ESItemRegistry.BRIMSTONE_DEBRIS)
+                .unlockedBy("has_excalibur_fragment", has(HnSItemRegistry.EXCALIBUR_FRAGMENT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/weapons/violence"));
+
+        /*
+         *** Shields
+         */
 
 
         //Arcane Mace
@@ -317,13 +336,12 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/titan/titan_boots"));
 
-        /*
 
         //Soul Flame Armor
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
                         Ingredient.of(HnSItemRegistry.BLAZEBORNE_HELMET.get()),
-                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        Ingredient.of(ESItemRegistry.ECTOPLASM.get()),
                         RecipeCategory.COMBAT,
                         ESItemRegistry.SOUL_FLAME_HELMET.get())
                 .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
@@ -332,7 +350,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
                         Ingredient.of(HnSItemRegistry.BLAZEBORNE_CHESTPLATE.get()),
-                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        Ingredient.of(ESItemRegistry.ECTOPLASM.get()),
                         RecipeCategory.COMBAT,
                         ESItemRegistry.SOUL_FLAME_CHESTPLATE.get())
                 .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
@@ -341,7 +359,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
                         Ingredient.of(HnSItemRegistry.BLAZEBORNE_LEGGINGS.get()),
-                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        Ingredient.of(ESItemRegistry.ECTOPLASM.get()),
                         RecipeCategory.COMBAT,
                         ESItemRegistry.SOUL_FLAME_LEGGINGS.get())
                 .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
@@ -350,15 +368,252 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(HnSItemRegistry.FLAMING_TEMPLATE.get()),
                         Ingredient.of(HnSItemRegistry.BLAZEBORNE_BOOTS.get()),
-                        Ingredient.of(MFTEItemRegistries.BOTTLE_OF_SOULS.get()),
+                        Ingredient.of(ESItemRegistry.ECTOPLASM.get()),
                         RecipeCategory.COMBAT,
                         ESItemRegistry.SOUL_FLAME_BOOTS.get())
                 .unlocks("has_flaming_template", has(HnSItemRegistry.FLAMING_TEMPLATE.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "smithing/armor/soul_flame/soul_flame_boots"));
 
+
+        /*
+         *** Paragon
          */
 
+        //Providence Armor
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SCYLLA_HELMET.get())
+                .pattern("LRL")
+                .pattern("EAE")
+                .pattern("   ")
+                .define('R', HnSItemRegistry.HYDRO_RUNE.get())
+                .define('L', ModItems.LACRIMA.get())
+                .define('E', ModItems.ESSENCE_OF_THE_STORM.get())
+                .define('A', HnSItemRegistry.ELDER_GUARDIAN_HELMET.get())
+                .unlockedBy("has_essence_of_the_storm", has(ModItems.ESSENCE_OF_THE_STORM.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/scylla/scylla_helm"));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SCYLLA_CHESTPLATE.get())
+                .pattern("L L")
+                .pattern("EAE")
+                .pattern(" R ")
+                .define('R', HnSItemRegistry.HYDRO_RUNE.get())
+                .define('L', ModItems.LACRIMA.get())
+                .define('E', ModItems.ESSENCE_OF_THE_STORM.get())
+                .define('A', HnSItemRegistry.ELDER_GUARDIAN_CHESTPLATE.get())
+                .unlockedBy("has_essence_of_the_storm", has(ModItems.ESSENCE_OF_THE_STORM.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/scylla/scylla_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SCYLLA_LEGGINGS.get())
+                .pattern("LRL")
+                .pattern("EAE")
+                .pattern("   ")
+                .define('R', HnSItemRegistry.HYDRO_RUNE.get())
+                .define('L', ModItems.LACRIMA.get())
+                .define('E', ModItems.ESSENCE_OF_THE_STORM.get())
+                .define('A', HnSItemRegistry.ELDER_GUARDIAN_LEGGINGS.get())
+                .unlockedBy("has_essence_of_the_storm", has(ModItems.ESSENCE_OF_THE_STORM.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/scylla/scylla_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SCYLLA_BOOTS.get())
+                .pattern("LRL")
+                .pattern("EAE")
+                .pattern("   ")
+                .define('R', HnSItemRegistry.HYDRO_RUNE.get())
+                .define('L', ModItems.LACRIMA.get())
+                .define('E', ModItems.ESSENCE_OF_THE_STORM.get())
+                .define('A', HnSItemRegistry.ELDER_GUARDIAN_BOOTS.get())
+                .unlockedBy("has_essence_of_the_storm", has(ModItems.ESSENCE_OF_THE_STORM.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/scylla/scylla_boots"));
+
+
+        //Ignis Armor
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.IGNIS_HELMET.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern(" S ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.IGNITIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.IGNITIUM_INGOT.get())
+                .define('A', ESItemRegistry.SOUL_FLAME_HELMET.get())
+                .unlockedBy("has_ignitium", has(ModItems.IGNITIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/ignis/ignis_helm"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.IGNIS_CHESTPLATE.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern("ZSZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.IGNITIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.IGNITIUM_INGOT.get())
+                .define('A', ESItemRegistry.SOUL_FLAME_CHESTPLATE.get())
+                .unlockedBy("has_ignitium", has(ModItems.IGNITIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/ignis/ignis_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.IGNIS_LEGGINGS.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern("ZSZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.IGNITIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.IGNITIUM_INGOT.get())
+                .define('A', ESItemRegistry.SOUL_FLAME_LEGGINGS.get())
+                .unlockedBy("has_ignitium", has(ModItems.IGNITIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/ignis/ignis_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.IGNIS_BOOTS.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern(" S ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.IGNITIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.IGNITIUM_INGOT.get())
+                .define('A', ESItemRegistry.SOUL_FLAME_BOOTS.get())
+                .unlockedBy("has_ignitium", has(ModItems.IGNITIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/ignis/ignis_boots"));
+
+
+        //Maledictus Armor
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.MALEDICTUS_HELMET.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern(" S ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.CURSIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.CURSIUM_INGOT.get())
+                .define('A', HnSItemRegistry.CRYSTAL_ARACHNID_HELMET.get())
+                .unlockedBy("has_cursium", has(ModItems.CURSIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/maledictus/maledictus_helm"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.MALEDICTUS_CHESTPLATE.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern("ZSZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.CURSIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.CURSIUM_INGOT.get())
+                .define('A', HnSItemRegistry.CRYSTAL_ARACHNID_CHESTPLATE.get())
+                .unlockedBy("has_cursium", has(ModItems.CURSIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/maledictus/maledictus_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.MALEDICTUS_LEGGINGS.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern("ZSZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.CURSIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.CURSIUM_INGOT.get())
+                .define('A', HnSItemRegistry.CRYSTAL_ARACHNID_LEGGINGS.get())
+                .unlockedBy("has_cursium", has(ModItems.CURSIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/maledictus/maledictus_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.MALEDICTUS_BOOTS.get())
+                .pattern("ZIZ")
+                .pattern("ZAZ")
+                .pattern(" S ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('S', ModItems.CURSIUM_UPGARDE_SMITHING_TEMPLATE.get())
+                .define('I', ModItems.CURSIUM_INGOT.get())
+                .define('A', HnSItemRegistry.CRYSTAL_ARACHNID_BOOTS.get())
+                .unlockedBy("has_cursium", has(ModItems.CURSIUM_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/maledictus/maledictus_boots"));
+
+
+        /*
+         *** Ascended
+         */
+
+        //Providence Armor
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.PROVIDENCE_HELMET.get())
+                .pattern("ZAZ")
+                .pattern("DCD")
+                .pattern("   ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.DIVINE_GEODE.get())
+                .define('A', ESItemRegistry.IGNIS_HELMET.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/providence/providence_helm"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.PROVIDENCE_CHESTPLATE.get())
+                .pattern("DCD")
+                .pattern("ZAZ")
+                .pattern("ZEZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.DIVINE_GEODE.get())
+                .define('E', Items.ELYTRA)
+                .define('A', ESItemRegistry.IGNIS_CHESTPLATE.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/providence/providence_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.PROVIDENCE_LEGGINGS.get())
+                .pattern("DAD")
+                .pattern("ZCZ")
+                .pattern("Z Z")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.DIVINE_GEODE.get())
+                .define('A', ESItemRegistry.IGNIS_LEGGINGS.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/providence/providence_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.PROVIDENCE_BOOTS.get())
+                .pattern("DCD")
+                .pattern("ZAZ")
+                .pattern("   ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.DIVINE_GEODE.get())
+                .define('A', ESItemRegistry.IGNIS_BOOTS.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/providence/providence_boots"));
+
+
+        //Supreme Calamitas Armor
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SUPREME_CALAMITAS_HELMET.get())
+                .pattern("ZAZ")
+                .pattern("DCD")
+                .pattern("   ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.BRIMSTONE_DEBRIS.get())
+                .define('A', ESItemRegistry.IGNIS_HELMET.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/supreme_calamitas/supreme_calamitas_helm"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SUPREME_CALAMITAS_CHESTPLATE.get())
+                .pattern("DCD")
+                .pattern("ZAZ")
+                .pattern("ZZZ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.BRIMSTONE_DEBRIS.get())
+                .define('A', ESItemRegistry.IGNIS_CHESTPLATE.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/supreme_calamitas/supreme_calamitas_chestplate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SUPREME_CALAMITAS_LEGGINGS.get())
+                .pattern("DAD")
+                .pattern("ZCZ")
+                .pattern("Z Z")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.BRIMSTONE_DEBRIS.get())
+                .define('A', ESItemRegistry.IGNIS_LEGGINGS.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/supreme_calamitas/supreme_calamitas_leggings"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ESItemRegistry.SUPREME_CALAMITAS_BOOTS.get())
+                .pattern("DCD")
+                .pattern("ZAZ")
+                .pattern("   ")
+                .define('Z', HnSItemRegistry.ZENALITE_INGOT.get())
+                .define('C', HnSItemRegistry.CATALYST.get())
+                .define('D', ESItemRegistry.BRIMSTONE_DEBRIS.get())
+                .define('A', ESItemRegistry.IGNIS_BOOTS.get())
+                .unlockedBy("has_zenalite_ingot", has(HnSItemRegistry.ZENALITE_INGOT.get()))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "crafting/armor/supreme_calamitas/supreme_calamitas_boots"));
+
+        /*
 
         List<ItemLike> AERIALITE_SMELTABLES = List.of(
                 ESItemRegistry.AERIALITE_FRAGMENT);
@@ -378,5 +633,7 @@ public class ESRecipeProvider extends RecipeProvider implements IConditionBuilde
                 0.25f,
                 100,
                 "aerialite_ingot");
+
+         */
     }
 }

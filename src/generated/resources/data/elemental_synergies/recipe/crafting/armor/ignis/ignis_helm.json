@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "elemental_synergies:soul_flame_helmet"
+    },
+    "I": {
+      "item": "cataclysm:ignitium_ingot"
+    },
+    "S": {
+      "item": "cataclysm:ignitium_upgrade_smithing_template"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "ZIZ",
+    "ZAZ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:ignis_helmet"
+  }
+}

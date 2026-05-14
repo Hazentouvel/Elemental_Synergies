@@ -62,22 +62,22 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
 
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flags) {
         if (this.type == Type.HELMET) {
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_helmet.ability")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_helmet.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
         } else if (this.type == Type.CHESTPLATE) {
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc2")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate_passive1.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate.desc3")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_chestplate_passive2.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
         } else if (this.type == Type.LEGGINGS) {
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings.desc")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings.desc2")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_leggings_passive.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
         } else if (this.type == Type.BOOTS) {
-            tooltip.add(Component.translatable("item.elemental_synergies.scylla_boots.desc")
+            tooltip.add(Component.translatable("item.elemental_synergies.scylla_boots.description")
                     .withStyle(ChatFormatting.DARK_PURPLE));
         }
 
@@ -105,6 +105,9 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
         if (entity instanceof Player player && !level.isClientSide() && isHelmet(player)) {
             waterBreathing(player);
         }
+        if (entity instanceof Player player && !level.isClientSide() && isLeggings(player)) {
+            dolphinsGrace(player);
+        }
 
 
     }
@@ -121,6 +124,12 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
         }
     }
 
+    private void dolphinsGrace(Player player) {
+        if (!player.hasEffect(MobEffects.DOLPHINS_GRACE)) {
+            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0, false, false, false));
+        }
+    }
+
     private boolean isWearingFullSet(Player player) {
         return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof ScyllaArmorItem &&
                 player.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof ScyllaArmorItem &&
@@ -129,6 +138,9 @@ public class ScyllaArmorItem extends ImbuableGeckolibHnSArmorItem implements IDi
     }
     private boolean isHelmet(Player player) {
         return player.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof ScyllaArmorItem;
+    }
+    private boolean isLeggings(Player player) {
+        return player.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof ScyllaArmorItem;
     }
 
     @EventBusSubscriber(value = Dist.CLIENT)

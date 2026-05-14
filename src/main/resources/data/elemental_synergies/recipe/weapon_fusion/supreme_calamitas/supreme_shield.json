@@ -1,0 +1,12 @@
+{
+    "type": "cataclysm:weapon_fusion",
+    "base": {
+        "item": "cataclysm:bulwark_of_the_flame"
+    },
+    "addition": {
+        "item": "elemental_synergies:brimstone_debris"
+    },
+    "result": {
+        "id": "elemental_synergies:supreme_shield"
+    }
+}

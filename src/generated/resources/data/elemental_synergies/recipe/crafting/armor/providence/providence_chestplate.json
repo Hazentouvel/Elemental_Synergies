@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "elemental_synergies:ignis_chestplate"
+    },
+    "C": {
+      "item": "hazennstuff:catalyst"
+    },
+    "D": {
+      "item": "elemental_synergies:divine_geode"
+    },
+    "E": {
+      "item": "minecraft:elytra"
+    },
+    "Z": {
+      "item": "hazennstuff:zenalite_ingot"
+    }
+  },
+  "pattern": [
+    "DCD",
+    "ZAZ",
+    "ZEZ"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [],
+        "maxSpells": 1,
+        "mustEquip": true,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "elemental_synergies:providence_chestplate"
+  }
+}

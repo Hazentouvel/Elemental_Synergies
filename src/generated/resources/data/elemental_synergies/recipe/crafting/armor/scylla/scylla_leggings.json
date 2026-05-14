@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "hazennstuff:elder_guardian_leggings"
+    },
+    "E": {
+      "item": "cataclysm:essence_of_the_storm"
+    },
+    "L": {
+      "item": "cataclysm:lacrima"
+    },
+    "R": {
+      "item": "hazennstuff:hydro_rune"
+    }
+  },
+  "pattern": [
+    "LRL",
+    "EAE",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elemental_synergies:scylla_leggings"
+  }
+}

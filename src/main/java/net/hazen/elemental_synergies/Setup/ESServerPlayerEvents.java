@@ -1,6 +1,8 @@
 package net.hazen.elemental_synergies.Setup;
 
 import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
+import com.github.L_Ender.cataclysm.client.particle.Options.CircleLightningParticleOptions;
+import com.github.L_Ender.cataclysm.entity.effect.Lightning_Area_Effect_Entity;
 import com.github.L_Ender.cataclysm.init.ModEffect;
 import com.github.L_Ender.cataclysm.init.ModParticle;
 import com.github.L_Ender.lionfishapi.server.event.StandOnFluidEvent;
@@ -9,12 +11,18 @@ import com.snackpirate.aeromancy.spells.AASpells;
 import io.redspace.ironsspellbooks.api.entity.IMagicEntity;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.util.Utils;
+import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
+import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
+import io.redspace.ironsspellbooks.entity.spells.ChainLightning;
 import it.crystalnest.prometheus.api.FireManager;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
+import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
+import net.acetheeldritchking.cataclysm_spellbooks.registries.CSDamageTypes;
 import net.hazen.elemental_synergies.ESUtilities.ESCompatAttribute;
 import net.hazen.elemental_synergies.Items.Armor.AscensionTier.Providence.ProvidenceArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas.SupremeCalamitasArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
+import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Scylla.ScyllaArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.ParagonTier.MultiSchool.SoulFlame.SoulFlameArmorItem;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
@@ -23,7 +31,6 @@ import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -31,13 +38,17 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -73,6 +84,13 @@ public class ESServerPlayerEvents {
                 entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof IgnisArmorItem &&
                 entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof IgnisArmorItem &&
                 entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof IgnisArmorItem;
+    }
+
+    private static boolean isWearingFullScyllaSet(LivingEntity entity) {
+        return entity.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof ScyllaArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof ScyllaArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof ScyllaArmorItem &&
+                entity.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof ScyllaArmorItem;
     }
 
 
@@ -119,16 +137,91 @@ public class ESServerPlayerEvents {
                             return;
                         }
 
-                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 1));
+                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 0));
 
                         int cooldownTicks = Utils.applyCooldownReduction(40, player);
                         player.getCooldowns().addCooldown(helmet, cooldownTicks);
                     } else {
-                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 1));
+                        target.addEffect(new MobEffectInstance(AASpells.MobEffects.BREATHLESS, 60, 0));
                     }
                 }
             }
         }
+        if (event.getSource().is(ASDamageTypes.HYDRO_MAGIC) || event.getSource().is(CSDamageTypes.ABYSSAL_MAGIC)) {
+            Entity attackerEntity = event.getSource().getEntity();
+
+            if (attackerEntity instanceof LivingEntity livingAttacker) {
+                Item chestplate = livingAttacker.getItemBySlot(EquipmentSlot.CHEST).getItem();
+
+                boolean scyllaChestplate = chestplate == ESItemRegistry.SCYLLA_CHESTPLATE.get();
+
+                if (scyllaChestplate) {
+                    if (livingAttacker instanceof Player player) {
+                        if (player.getCooldowns().isOnCooldown(chestplate)) {
+                            return;
+                        }
+
+                        target.addEffect(new MobEffectInstance(ModEffect.EFFECTWETNESS, 60, 0));
+
+                    } else {
+                        target.addEffect(new MobEffectInstance(ModEffect.EFFECTWETNESS, 60, 0));
+                    }
+                }
+            }
+        }
+        if (event.getSource().is(ISSDamageTypes.LIGHTNING_MAGIC)) {
+            Entity attackerEntity = event.getSource().getEntity();
+
+            if (attackerEntity instanceof LivingEntity livingAttacker) {
+                Item chestplate = livingAttacker.getItemBySlot(EquipmentSlot.CHEST).getItem();
+
+                boolean scyllaChestplate = chestplate == ESItemRegistry.SCYLLA_CHESTPLATE.get();
+
+                if (scyllaChestplate && target.hasEffect(ModEffect.EFFECTWETNESS)) {
+
+                    if (!livingAttacker.level().isClientSide()
+                            && target.level() instanceof ServerLevel serverLevel) {
+
+                        if (livingAttacker instanceof Player player) {
+                            if (player.getCooldowns().isOnCooldown(chestplate)) {
+                                return;
+                            }
+
+                            player.getCooldowns().addCooldown(chestplate, 120);
+                        }
+
+                        ChainLightning chainLightning =
+                                new ChainLightning(serverLevel, livingAttacker, target);
+
+                        float lightningPower = 1.0F;
+
+                        try {
+                            lightningPower = (float) livingAttacker.getAttributeValue(AttributeRegistry.LIGHTNING_SPELL_POWER);
+                        } catch (Exception ignored) {
+                        }
+
+                        float chainDamage = 5.0F + (event.getNewDamage() * lightningPower);
+
+                        chainLightning.setDamage(chainDamage);
+
+                        chainLightning.range = 6.0F;
+                        chainLightning.maxConnections = 6;
+                        chainLightning.maxConnectionsPerWave = 2;
+
+                        serverLevel.addFreshEntity(chainLightning);
+
+                        Vec3 center = target.position().add(0, target.getBbHeight() * 0.5F, 0);
+                        // Circle lightning burst
+                        serverLevel.sendParticles(
+                                new CircleLightningParticleOptions(1.5F, 89, 180, 180), center.x, center.y, center.z, 2, 0, 0, 0, 0);
+                    }
+
+                }
+
+            }
+        }
+
+
     }
 
     @SubscribeEvent
@@ -376,6 +469,82 @@ public class ESServerPlayerEvents {
             FireManager.setOnFire(target, soulFireTicks / 20f, FireManager.SOUL_FIRE_TYPE);
         }
 
+        @SubscribeEvent
+        public static void scyllaSetBonus(ProjectileImpactEvent event) {
+            if (!(event.getProjectile() instanceof Projectile projectile)) {
+                return;
+            }
+
+            if (!(event.getRayTraceResult() instanceof BlockHitResult blockHitResult)) {
+                return;
+            }
+
+            Entity owner = projectile.getOwner();
+
+            if (!(owner instanceof LivingEntity livingOwner)) {
+                return;
+            }
+
+            // MUST be full Scylla set
+            if (!isWearingFullScyllaSet(livingOwner)) {
+                return;
+            }
+
+            // Must be ISS magic projectile
+            if (!(projectile instanceof AbstractMagicProjectile)) {
+                return;
+            }
+
+            if (!(projectile.level() instanceof ServerLevel serverLevel)) {
+                return;
+            }
+
+            // Helmet cooldown item
+            Item helmet = livingOwner.getItemBySlot(EquipmentSlot.HEAD).getItem();
+
+            // Cooldown check
+            if (livingOwner instanceof Player player) {
+
+                if (player.getCooldowns().isOnCooldown(helmet)) {
+                    return;
+                }
+
+                // 4 second cooldown
+                player.getCooldowns().addCooldown(helmet, 80);
+            }
+
+            Vec3 pos = blockHitResult.getLocation();
+
+            // Spawn lightning area effect
+            Lightning_Area_Effect_Entity areaEffect =
+                    new Lightning_Area_Effect_Entity(serverLevel, pos.x, pos.y, pos.z);
+
+            areaEffect.setOwner(livingOwner);
+
+            areaEffect.setRadius(4.0F);
+            areaEffect.setRadiusOnUse(-0.5F);
+            areaEffect.setWaitTime(8);
+            areaEffect.setDuration(40);
+            areaEffect.setRadiusPerTick(-areaEffect.getRadius() / areaEffect.getDuration());
+
+            float lightningPower = 1.0F;
+
+            try {
+                lightningPower = (float) livingOwner.getAttributeValue(
+                        AttributeRegistry.LIGHTNING_SPELL_POWER
+                );
+            } catch (Exception ignored) {
+            }
+
+            areaEffect.setDamage(4.0F + (1F * lightningPower));
+
+            serverLevel.addFreshEntity(areaEffect);
+
+            Vec3 center = pos.add(0, 0.15F, 0);
+
+            serverLevel.sendParticles(
+                    new CircleLightningParticleOptions(1.5F, 89, 180, 180), center.x, center.y, center.z, 2, 0, 0, 0, 0);
+        }
 
     }
 

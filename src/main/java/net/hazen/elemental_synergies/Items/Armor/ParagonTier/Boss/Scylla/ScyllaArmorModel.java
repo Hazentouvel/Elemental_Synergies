@@ -22,7 +22,7 @@ public class ScyllaArmorModel extends DefaultedEntityGeoModel<ScyllaArmorItem> {
 
     @Override
     public ResourceLocation getAnimationResource(ScyllaArmorItem animatable) {
-        return ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "animations/armor/scylla_armor.json");
+        return ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "animations/armor/scylla_armor.animation.json");
     }
 }
 

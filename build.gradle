@@ -140,7 +140,7 @@ dependencies {
     //Hazen 'n Stuff
     implementation "curse.maven:hazennstuff-1231627:8051219"
     //HazentouveLib
-    implementation "curse.maven:hazentouvelib-1528722:8044060"
+    implementation "curse.maven:hazentouvelib-1528722:8083746"
 
     //Iron's Spells 'n Spellbooks
     implementation "curse.maven:irons_spells_n_spellbooks-855414:7907341"

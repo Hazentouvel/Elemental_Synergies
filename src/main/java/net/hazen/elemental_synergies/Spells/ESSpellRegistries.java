@@ -2,10 +2,12 @@ package net.hazen.elemental_synergies.Spells;
 
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.hazen.elemental_synergies.ElementalSynergies;
-import net.hazen.elemental_synergies.Spells.Schools.Fire.Providence.HolyBlastSpell;
+import net.hazen.elemental_synergies.Spells.Schools.Holy.Providence.HolyBlastSpell;
 import net.hazen.elemental_synergies.Spells.Schools.Fire.SoulFire.SoulflameBoltSpell;
 import net.hazen.elemental_synergies.Spells.Schools.Fire.SupremeCalamitas.BrimflameBoltSpell;
 import net.hazen.elemental_synergies.Spells.Schools.Fire.SupremeCalamitas.BrimstoneHellblastSpell;
+import net.hazen.elemental_synergies.Spells.Schools.Hydro.Scylla.SpearsOfAcropolisSpell;
+import net.hazen.elemental_synergies.Spells.Schools.Hydro.Scylla.TidalWaveSpell;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -35,6 +37,15 @@ public class ESSpellRegistries {
 
     //Holy Blast
     public static final Supplier<AbstractSpell> HOLY_BLAST = registerSpell(new HolyBlastSpell());
+
+    /*
+    *** Hydro
+     */
+
+    //Spears of Acropolis
+    public static final Supplier<AbstractSpell> SPEARS_OF_ACROPOLIS = registerSpell(new SpearsOfAcropolisSpell());
+    //Tidal Wave
+    public static final Supplier<AbstractSpell> TIDAL_WAVE = registerSpell(new TidalWaveSpell());
 
 
     public static void register(IEventBus eventBus)

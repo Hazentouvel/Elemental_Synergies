@@ -123,7 +123,7 @@ public class HolyBlast extends AbstractMagicProjectile implements GeoEntity {
                     double p = 0.5F - distanceSqr / (double) explosionRadiusSqr;
                     float totalDamage = (float) ((double) this.damage * p);
 
-                    DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(entity, ISSDamageTypes.HOLY_MAGIC));
+                    DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(entity, ISSDamageTypes.FIRE_MAGIC));
                     DamageSources.applyDamage(entity, totalDamage, holyMagic);
 
                     DamageSources.applyDamage(entity, totalDamage, ((AbstractSpell) ESSpellRegistries.HOLY_BLAST.get()).getDamageSource(this, this.getOwner()));

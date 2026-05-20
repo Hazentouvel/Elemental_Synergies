@@ -3,8 +3,10 @@ package net.hazen.elemental_synergies.Setup;
 import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
 import com.github.L_Ender.cataclysm.client.particle.Options.CircleLightningParticleOptions;
 import com.github.L_Ender.cataclysm.entity.effect.Lightning_Area_Effect_Entity;
+import com.github.L_Ender.cataclysm.entity.effect.Lightning_Storm_Entity;
 import com.github.L_Ender.cataclysm.init.ModEffect;
 import com.github.L_Ender.cataclysm.init.ModParticle;
+import com.github.L_Ender.cataclysm.util.CMDamageTypes;
 import com.github.L_Ender.lionfishapi.server.event.StandOnFluidEvent;
 import com.snackpirate.aeromancy.data.AADamageTypes;
 import com.snackpirate.aeromancy.spells.AASpells;
@@ -32,6 +34,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -147,7 +150,7 @@ public class ESServerPlayerEvents {
                 }
             }
         }
-        if (event.getSource().is(ASDamageTypes.HYDRO_MAGIC) || event.getSource().is(CSDamageTypes.ABYSSAL_MAGIC)) {
+        if (event.getSource().is(ASDamageTypes.HYDRO_MAGIC) || event.getSource().is(CSDamageTypes.ABYSSAL_MAGIC) || event.getSource().is(CMDamageTypes.PLAYER_CERAUNUS)) {
             Entity attackerEntity = event.getSource().getEntity();
 
             if (attackerEntity instanceof LivingEntity livingAttacker) {
@@ -169,7 +172,7 @@ public class ESServerPlayerEvents {
                 }
             }
         }
-        if (event.getSource().is(ISSDamageTypes.LIGHTNING_MAGIC)) {
+        if (event.getSource().is(ISSDamageTypes.LIGHTNING_MAGIC) || event.getSource().is(CMDamageTypes.LIGHTNING) || event.getSource().is(DamageTypeTags.IS_LIGHTNING)) {
             Entity attackerEntity = event.getSource().getEntity();
 
             if (attackerEntity instanceof LivingEntity livingAttacker) {
@@ -190,8 +193,7 @@ public class ESServerPlayerEvents {
                             player.getCooldowns().addCooldown(chestplate, 120);
                         }
 
-                        ChainLightning chainLightning =
-                                new ChainLightning(serverLevel, livingAttacker, target);
+                        ChainLightning chainLightning = new ChainLightning(serverLevel, livingAttacker, target);
 
                         float lightningPower = 1.0F;
 
@@ -204,6 +206,11 @@ public class ESServerPlayerEvents {
 
                         chainLightning.setDamage(chainDamage);
 
+                        Vec3 targetPos = target.position();
+
+                        Lightning_Storm_Entity lightningStorm = new Lightning_Storm_Entity(serverLevel, targetPos.x, targetPos.y, targetPos.z, 0.0F, 8, chainDamage, 0.02F, livingAttacker, 2.5F);
+                        serverLevel.addFreshEntity(lightningStorm);
+
                         chainLightning.range = 6.0F;
                         chainLightning.maxConnections = 6;
                         chainLightning.maxConnectionsPerWave = 2;
@@ -211,10 +218,9 @@ public class ESServerPlayerEvents {
                         serverLevel.addFreshEntity(chainLightning);
 
                         Vec3 center = target.position().add(0, target.getBbHeight() * 0.5F, 0);
-                        // Circle lightning burst
-                        serverLevel.sendParticles(
-                                new CircleLightningParticleOptions(1.5F, 89, 180, 180), center.x, center.y, center.z, 2, 0, 0, 0, 0);
-                    }
+
+
+                       }
 
                 }
 
@@ -470,80 +476,76 @@ public class ESServerPlayerEvents {
         }
 
         @SubscribeEvent
-        public static void scyllaSetBonus(ProjectileImpactEvent event) {
-            if (!(event.getProjectile() instanceof Projectile projectile)) {
+        public static void scyllaLightningBonus(ProjectileImpactEvent event) {
+            if (!(event.getRayTraceResult() instanceof BlockHitResult blockHit)) {
                 return;
             }
-
-            if (!(event.getRayTraceResult() instanceof BlockHitResult blockHitResult)) {
+            Projectile projectile = event.getProjectile();
+            if (!(projectile instanceof AbstractMagicProjectile magicProjectile)) {
+                return;
+            }
+            DamageSource damageSource = magicProjectile.damageSources().source(
+                    ISSDamageTypes.LIGHTNING_MAGIC,
+                    magicProjectile,
+                    magicProjectile.getOwner()
+            );
+            if (!damageSource.is(ISSDamageTypes.LIGHTNING_MAGIC) || !damageSource.is(DamageTypeTags.IS_LIGHTNING) || !damageSource.is(CMDamageTypes.LIGHTNING)) {
                 return;
             }
 
             Entity owner = projectile.getOwner();
 
-            if (!(owner instanceof LivingEntity livingOwner)) {
+            if (!(owner instanceof LivingEntity livingAttacker)) {
                 return;
             }
 
-            // MUST be full Scylla set
-            if (!isWearingFullScyllaSet(livingOwner)) {
+            if (!isWearingFullScyllaSet(livingAttacker)) {
                 return;
             }
 
-            // Must be ISS magic projectile
-            if (!(projectile instanceof AbstractMagicProjectile)) {
+            if (!(livingAttacker.level() instanceof ServerLevel serverLevel)) {
                 return;
             }
 
-            if (!(projectile.level() instanceof ServerLevel serverLevel)) {
-                return;
-            }
+            Item helmet = livingAttacker.getItemBySlot(EquipmentSlot.HEAD).getItem();
 
-            // Helmet cooldown item
-            Item helmet = livingOwner.getItemBySlot(EquipmentSlot.HEAD).getItem();
-
-            // Cooldown check
-            if (livingOwner instanceof Player player) {
+            if (livingAttacker instanceof Player player) {
 
                 if (player.getCooldowns().isOnCooldown(helmet)) {
                     return;
                 }
 
-                // 4 second cooldown
                 player.getCooldowns().addCooldown(helmet, 80);
             }
 
-            Vec3 pos = blockHitResult.getLocation();
+            Vec3 pos = blockHit.getLocation();
 
-            // Spawn lightning area effect
-            Lightning_Area_Effect_Entity areaEffect =
-                    new Lightning_Area_Effect_Entity(serverLevel, pos.x, pos.y, pos.z);
+            float lightningPower = 1.0F;
 
-            areaEffect.setOwner(livingOwner);
+            try {
+                lightningPower = (float) livingAttacker.getAttributeValue(
+                        AttributeRegistry.LIGHTNING_SPELL_POWER
+                );
+            } catch (Exception ignored) {
+            }
 
+            float damage = 4.0F + lightningPower;
+
+            Lightning_Area_Effect_Entity areaEffect = new Lightning_Area_Effect_Entity(serverLevel, pos.x, pos.y, pos.z);
+
+            areaEffect.setOwner(livingAttacker);
             areaEffect.setRadius(4.0F);
             areaEffect.setRadiusOnUse(-0.5F);
             areaEffect.setWaitTime(8);
             areaEffect.setDuration(40);
             areaEffect.setRadiusPerTick(-areaEffect.getRadius() / areaEffect.getDuration());
 
-            float lightningPower = 1.0F;
-
-            try {
-                lightningPower = (float) livingOwner.getAttributeValue(
-                        AttributeRegistry.LIGHTNING_SPELL_POWER
-                );
-            } catch (Exception ignored) {
-            }
-
-            areaEffect.setDamage(4.0F + (1F * lightningPower));
-
             serverLevel.addFreshEntity(areaEffect);
 
-            Vec3 center = pos.add(0, 0.15F, 0);
+            // Lightning storm
+            Lightning_Storm_Entity lightningStorm = new Lightning_Storm_Entity(serverLevel, pos.x, pos.y, pos.z, 0.0F, 8, damage, 0.02F, livingAttacker, 2.5F);
 
-            serverLevel.sendParticles(
-                    new CircleLightningParticleOptions(1.5F, 89, 180, 180), center.x, center.y, center.z, 2, 0, 0, 0, 0);
+            serverLevel.addFreshEntity(lightningStorm);
         }
 
     }

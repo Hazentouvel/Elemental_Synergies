@@ -38,5 +38,25 @@
     "sounds": [
       "elemental_synergies:dodge"
     ]
+  },
+  "lightning_spear_cast": {
+    "sounds": [
+      "elemental_synergies:lightning_spear_cast"
+    ]
+  },
+  "lightning_spear_fire": {
+    "sounds": [
+      "elemental_synergies:lightning_spear_fire"
+    ]
+  },
+  "water_spear_cast": {
+    "sounds": [
+      "elemental_synergies:water_spear_cast"
+    ]
+  },
+  "water_spear_fire": {
+    "sounds": [
+      "elemental_synergies:water_spear_fire"
+    ]
   }
 }

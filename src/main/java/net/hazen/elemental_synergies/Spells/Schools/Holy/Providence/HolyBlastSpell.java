@@ -1,9 +1,8 @@
-package net.hazen.elemental_synergies.Spells.Schools.Fire.Providence;
+package net.hazen.elemental_synergies.Spells.Schools.Holy.Providence;
 
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
 import io.redspace.ironsspellbooks.api.spells.CastType;
 import io.redspace.ironsspellbooks.api.spells.SpellAnimations;
@@ -17,7 +16,6 @@ import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyBlast;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.AbstractSpells.ProvidenceSpells;
-import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -188,7 +186,7 @@ public class HolyBlastSpell extends ProvidenceSpells {
         }
         double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
         double holyPower = caster.getAttributeValue(AttributeRegistry.HOLY_SPELL_POWER);
-        return (float)(15 + 7.0 * getSpellPower(spellLevel, caster) * ((0.75 * firePower ) + (0.75 * holyPower)));
+        return (float)(15 + 7.0 * getSpellPower(spellLevel, caster) * (firePower + (0.75 * holyPower)));
     }
 
 

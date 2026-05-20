@@ -7,10 +7,13 @@ import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.Brimf
 import net.hazen.elemental_synergies.Entities.Spells.Fire.SupremeCalamitas.BrimstoneHellblast.BrimstoneHellblastRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyBlastRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyFire.HolyFlameRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.WaterSpearMagicProjectileRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.LightningSpearMagicProjectileRenderer;
 import net.hazen.elemental_synergies.Entities.Weapons.Violence.ViolenceRenderer;
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
 import net.hazen.hazennstuff.Particle.HnSGenericParticle;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -41,6 +44,11 @@ public class ESClientSetup {
         //Providence
         event.registerEntityRenderer(ESEntityRegistry.HOLY_BLAST.get(), HolyBlastRenderer::new);
         event.registerEntityRenderer(ESEntityRegistry.HOLY_FLAME.get(), HolyFlameRenderer::new);
+
+        // Scylla
+        event.registerEntityRenderer(ESEntityRegistry.WATER_SPEAR.get(), WaterSpearMagicProjectileRenderer::new);
+        event.registerEntityRenderer(ESEntityRegistry.LIGHTNING_SPEAR.get(), LightningSpearMagicProjectileRenderer::new);
+        event.registerEntityRenderer(ESEntityRegistry.TIDAL_WAVE_STOMP.get(), NoopRenderer::new);
 
 
         /*

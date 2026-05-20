@@ -30,6 +30,15 @@ public class ESSounds {
 
     public static DeferredHolder<SoundEvent, SoundEvent> DODGE = registerSoundEvent("dodge");
 
+    /*
+    *** Scylla
+     */
+
+    public static DeferredHolder<SoundEvent, SoundEvent> WATER_SPEAR_CAST = registerSoundEvent("water_spear_cast");
+    public static DeferredHolder<SoundEvent, SoundEvent> WATER_SPEAR_FIRE = registerSoundEvent("water_spear_fire");
+    public static DeferredHolder<SoundEvent, SoundEvent> LIGHTNING_SPEAR_CAST = registerSoundEvent("lightning_spear_cast");
+    public static DeferredHolder<SoundEvent, SoundEvent> LIGHTNING_SPEAR_FIRE = registerSoundEvent("lightning_spear_fire");
+
     //
     public static DeferredHolder<SoundEvent, SoundEvent> HOLY_BLAST_IMPACT = registerSoundEvent("holy_blast_impact");
     public static DeferredHolder<SoundEvent, SoundEvent> HOLY_BLAST_CAST = registerSoundEvent("holy_blast_cast");

@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-13T17:39:15.5910137	Tags for minecraft:item mod id elemental_synergies
+// 1.21.1	2026-05-18T17:09:08.6440809	Tags for minecraft:item mod id elemental_synergies
 f36afee919fee14cd4284571856af37d05901cca data/c/tags/item/enchantables.json
 1c29b944ac7e630ed59d523c1becb58c61b3d482 data/c/tags/item/ingots.json
 504fa5b820d669497419d94875558553edea790b data/c/tags/item/ores.json
@@ -8,6 +8,9 @@ c0f08abdf7ba155710fa1e04e9bfdf45ac5fb964 data/c/tags/item/tools/spear.json
 ed39440b2e442ca7b1bfa14b0d878a4f7521a75d data/elemental_synergies/tags/item/armors/ascension_chestplate.json
 aa47670e6ad2f49714a8687918c57415c02e279a data/elemental_synergies/tags/item/armors/ascension_helmet.json
 8961b11fe1fb3d57a473dac355c84cfec1756850 data/elemental_synergies/tags/item/armors/ascension_leggings.json
+6a38983fec0f059597c89a893d9fbe1e44855984 data/elemental_synergies/tags/item/curios/hydro_enhancing_curio.json
+b6bc5ec4ac9c3411e86f13144cfc5d2e7045018d data/elemental_synergies/tags/item/curios/hydro_normalizing_curio.json
+dba8f811ecbef74efcfc71791ea794bc058e7b17 data/elemental_synergies/tags/item/curios/lightning_enhancing_curio.json
 e52a91be83b48986b7c02f753893943dd022bc67 data/hazentouvelib/tags/item/armors/paragon/paragon_boots.json
 144cb83de294d02fc99e4fb7abc5ba9f01f61924 data/hazentouvelib/tags/item/armors/paragon/paragon_chestplate.json
 10230cb9e1edcc9e069895d4c0ea165f716c7427 data/hazentouvelib/tags/item/armors/paragon/paragon_helmet.json

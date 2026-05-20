@@ -25,6 +25,9 @@ import net.hazen.elemental_synergies.Items.Armor.SchoolTier.ProjectSekai.Project
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.RottenGirl.RottenGirlArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.SynthesizerV.SynthV2ArmorItem;
 import net.hazen.elemental_synergies.Items.Armor.SchoolTier.Utau.UtauArmorItem;
+import net.hazen.elemental_synergies.Items.Curios.Charms.LunarShardCurio;
+import net.hazen.elemental_synergies.Items.Curios.Charms.RingOfAcropolisCurio;
+import net.hazen.elemental_synergies.Items.Curios.Charms.TheSkywardEmblemCurio;
 import net.hazen.elemental_synergies.Items.Curios.GauntletsOfIgnis.GauntletsOfIgnis;
 import net.hazen.elemental_synergies.Items.Curios.Spellbooks.GrimoireOfCorruption.GrimoireOfCorruptionSpellbook;
 import net.hazen.elemental_synergies.Items.Shields.SupremeShield.SupremeShield;
@@ -32,6 +35,7 @@ import net.hazen.elemental_synergies.Items.Staves.ArcaneMace.ArcaneMaceItem;
 import net.hazen.elemental_synergies.Items.Weapons.Ascended.Catastrophe.Catastrophe;
 import net.hazen.elemental_synergies.Items.Weapons.Ascended.Violence.ViolenceItem;
 import net.hazen.elemental_synergies.Items.Weapons.Ascended.Excelsior.Excelsior;
+import net.hazen.elemental_synergies.Items.Weapons.Fusions.StormseekerItem;
 import net.hazen.hazentouvelib.Rarities.HLRarities;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
@@ -132,6 +136,9 @@ public class ESItemRegistry {
     // Violence
     public static final DeferredHolder<Item, Item> VIOLENCE = ITEMS.register("violence", ViolenceItem::new);
 
+    // Stormseeker
+    public static final DeferredHolder<Item, Item> STORMSEEKER = ITEMS.register("stormseeker", StormseekerItem::new);
+
 
 
     /*
@@ -165,6 +172,12 @@ public class ESItemRegistry {
     /*
     *** Curios
      */
+
+    // Charms
+    public static final DeferredItem <RingOfAcropolisCurio> RING_OF_ACROPOLIS = ITEMS.register("ring_of_acropolis", RingOfAcropolisCurio::new);
+    public static final DeferredItem <LunarShardCurio> LUNAR_SHARD = ITEMS.register("lunar_shard", LunarShardCurio::new);
+    public static final DeferredItem <TheSkywardEmblemCurio> THE_SKYWARD_EMBLEM = ITEMS.register("the_skyward_emblem", TheSkywardEmblemCurio::new);
+
 
     // Gauntlets of Ignis
     public static final DeferredItem <GauntletsOfIgnis> GAUNTLETS_OF_IGNIS = ITEMS.register("gauntlets_of_ignis", GauntletsOfIgnis::new);

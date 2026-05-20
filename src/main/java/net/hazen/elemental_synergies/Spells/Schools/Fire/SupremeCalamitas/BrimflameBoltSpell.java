@@ -100,7 +100,7 @@ public class BrimflameBoltSpell extends BrimstoneSpells {
         double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
         double bloodPower = caster.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
         double occultPower = caster.getAttributeValue(ASAttributeRegistry.RITUAL_MAGIC_POWER);
-        return (float)(2.0 + getSpellPower(spellLevel, caster) * (((firePower + bloodPower + occultPower) * 0.85))
+        return (float)(2.0 + getSpellPower(spellLevel, caster) * (firePower + ((bloodPower + occultPower) * 0.85))
         );
     }
 }

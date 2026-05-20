@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "elemental_synergies:items/curios/ring_of_acropolis"
+  }
+}

@@ -5,8 +5,6 @@ import net.acetheeldritchking.cataclysm_spellbooks.registries.ItemRegistries;
 import net.hazen.elemental_synergies.Datagen.ESTags;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.hazennstuff.Datagen.HnSTags;
-import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.hazen.hazentouvelib.Datagen.HLTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -66,6 +64,27 @@ public class ESItemTagProvider extends ItemTagsProvider {
         tag(HLTags.FIRE_SPELLBOOK)
                 .add(
                         ItemRegistries.IGNIS_SPELL_BOOK.get()
+                )
+        ;
+
+
+        tag(ESTags.HYDRO_NORMALIZING_CURIO)
+                .add(
+                        ESItemRegistry.RING_OF_ACROPOLIS.get()
+                )
+        ;
+
+
+        tag(ESTags.HYDRO_ENHANCING_CURIO)
+                .add(
+                        ESItemRegistry.LUNAR_SHARD.get()
+                )
+        ;
+
+
+        tag(ESTags.LIGHTNING_ENHANCING_CURIO)
+                .add(
+                        ESItemRegistry.THE_SKYWARD_EMBLEM.get()
                 )
         ;
 

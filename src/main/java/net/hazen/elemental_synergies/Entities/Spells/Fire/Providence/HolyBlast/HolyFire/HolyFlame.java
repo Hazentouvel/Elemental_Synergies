@@ -153,7 +153,7 @@ public class HolyFlame extends AbstractMagicProjectile implements GeoEntity {
         var target = entityHitResult.getEntity();
         float totalDamage = this.damage;
         // Apply holy damage
-        DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(target, ISSDamageTypes.HOLY_MAGIC));
+        DamageSource holyMagic = new DamageSource(DamageSources.getHolderFromResource(target, ISSDamageTypes.FIRE_MAGIC));
         DamageSources.applyDamage(target, totalDamage, holyMagic);
 
         // Apply Applies spell damage

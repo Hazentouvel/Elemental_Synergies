@@ -1,0 +1,25 @@
+{
+  "loader": "neoforge:item_layers",
+  "render_type": "cutout",
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "elemental_synergies:items/curios/lunar_shard",
+    "layer1": "elemental_synergies:items/curios/lunar_shard_glowmask"
+  },
+  "neoforge_data": {
+    "layers": {
+      "0": {
+        "color": "FFFFFFFF",
+        "block_light": 5,
+        "sky_light": 5,
+        "ambient_occlusion": false
+      },
+      "1": {
+        "color": "FFFFFFFF",
+        "block_light": 15,
+        "sky_light": 15,
+        "ambient_occlusion": false
+      }
+    }
+  }
+}

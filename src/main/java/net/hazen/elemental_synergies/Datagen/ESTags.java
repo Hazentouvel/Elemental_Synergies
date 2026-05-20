@@ -37,6 +37,16 @@ public class ESTags {
             .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "armors/ascension_boots").toString()));
 
 
+    public static final TagKey<Item> HYDRO_NORMALIZING_CURIO = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "curios/hydro_normalizing_curio").toString()));
+
+    public static final TagKey<Item> HYDRO_ENHANCING_CURIO = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "curios/hydro_enhancing_curio").toString()));
+
+    public static final TagKey<Item> LIGHTNING_ENHANCING_CURIO = ItemTags
+            .create(ResourceLocation.parse(ResourceLocation.fromNamespaceAndPath(ElementalSynergies.MOD_ID, "curios/lightning_enhancing_curio").toString()));
+
+
     public static class Blocks {
 
         public static final TagKey<Block> HOLY_FIRE_SURVIVES_ON = BlockTags

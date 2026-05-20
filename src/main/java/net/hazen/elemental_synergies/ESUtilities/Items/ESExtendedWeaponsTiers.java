@@ -21,6 +21,23 @@ import java.util.function.Supplier;
 public class ESExtendedWeaponsTiers implements Tier, IronsWeaponTier {
 
     /*
+     *** Lightning
+     */
+
+    public static ESExtendedWeaponsTiers STORMSEEKER = new ESExtendedWeaponsTiers(
+            8064,
+            13,
+            -1.4F,
+            20,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItemRegistry.ZENALITE_INGOT.get()),
+            new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ASAttributeRegistry.HYDRO_MAGIC_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.CRIT_CHANCE, .15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2.5, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+    /*
      *** Spellblade
      */
 

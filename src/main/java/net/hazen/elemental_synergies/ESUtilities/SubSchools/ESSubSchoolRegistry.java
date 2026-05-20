@@ -66,9 +66,9 @@ public class ESSubSchoolRegistry {
                     ESTags.PROFANE_FOCUS,
                     Component.translatable("school.elemental_synergies.profane")
                             .withStyle(Style.EMPTY.withColor(0xe4a6ea)),
-                    AttributeRegistry.FIRE_SPELL_POWER,
-                    AttributeRegistry.FIRE_SPELL_POWER,
-                    SoundRegistry.FIRE_CAST,
-                    ISSDamageTypes.FIRE_MAGIC
+                    AttributeRegistry.HOLY_SPELL_POWER,
+                    AttributeRegistry.HOLY_SPELL_POWER,
+                    SoundRegistry.HOLY_CAST,
+                    ISSDamageTypes.HOLY_MAGIC
             ));
     }

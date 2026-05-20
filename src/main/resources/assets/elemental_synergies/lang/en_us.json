@@ -142,10 +142,10 @@
   "item.elemental_synergies.supreme_calamitas_leggings": "Supreme Calamitas Leggings",
   "item.elemental_synergies.supreme_calamitas_boots": "Supreme Calamitas Boots",
 
-  "item.elemental_synergies.providence_helmet": "Profaned Helmet",
-  "item.elemental_synergies.providence_chestplate": "Profaned Chestplate",
-  "item.elemental_synergies.providence_leggings": "Profaned Leggings",
-  "item.elemental_synergies.providence_boots": "Profaned Boots",
+  "item.elemental_synergies.providence_helmet": "Providence Helmet",
+  "item.elemental_synergies.providence_chestplate": "Providence Chestplate",
+  "item.elemental_synergies.providence_leggings": "Providence Leggings",
+  "item.elemental_synergies.providence_boots": "Providence Boots",
 
   "item.elemental_synergies.project_sekai_helmet": "Miku's Hair",
   "item.elemental_synergies.project_sekai_chestplate": "Miku's Uniform",
@@ -201,20 +201,38 @@
   "material.elemental_synergies.aerialite": "Aerialite",
 
   "entity.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
+
   "entity.elemental_synergies.holy_blast": "Holy Blast",
   "entity.elemental_synergies.holy_flame": "Holy Flame",
+
   "entity.elemental_synergies.soulflame_bolt": "Soulflame Bolt",
   "entity.elemental_synergies.brimflame_bolt": "Brimflame Bolt",
+
+  "entity.elemental_synergies.water_spear": "Water Spear",
+  "entity.elemental_synergies.lightning_spear": "Lightning Spear",
 
   "entity.elemental_synergies.violence": "Violence",
 
   "spell.elemental_synergies.brimstone_hellblast": "Brimstone Hellblast",
-  "spell.elemental_synergies.holy_blast": "Holy Blast",
   "spell.elemental_synergies.soulflame_bolt": "Soulflame Bolt",
   "spell.elemental_synergies.brimflame_bolt": "Brimflame Bolt",
 
+  "spell.elemental_synergies.holy_blast": "Holy Blast",
+
+  "spell.elemental_synergies.spears_of_acropolis": "Spears of Acropolis",
+
+
+
   "spell.elemental_synergies.brimstone_hellblast.guide": "A Calamity Mod Reference ''The Brimstone Witch's signiture spell. Cast upon your foes a skull engulfed in brimstone flames, scaling off of the power of fire and blood, and leave your foes in ashes.''",
   "spell.elemental_synergies.holy_blast.guide": "A Calamity Mod Reference ''Fire a powerful holy blast, scaling off of Holy and Fire spell power. Upon impact, it will burst into Holy Flames.''",
+
+  "spell.elemental_synergies.soulflame_bolt.guide": "Shoot a small projectile of soul fire, igniting whatever it hits with soul flames.",
+  "spell.elemental_synergies.brimflame_bolt.guide": "Shoot a small projectile of brimstone flames, igniting whatever it hits. Scales off shadow, ritual, fire, and blood spell power.",
+
+
+  "spell.elemental_synergies.spears_of_acropolis.guide": "From the city of Acropolis, brandish the almighty spears of scylla and pierce through your foes with the aquatic spears of justice.",
+
+
 
   "effect.elemental_synergies.ignis_soul_state": "Soul State",
   "effect.elemental_synergies.ignis_soul_state.description": "Enhances your abilities.",

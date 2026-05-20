@@ -1,22 +1,18 @@
 package net.hazen.elemental_synergies.Entities.Weapons.Violence;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
-import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
-import io.redspace.ironsspellbooks.util.ParticleHelper;
+
 import javax.annotation.Nullable;
 
 import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.A.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
-import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -38,7 +34,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;

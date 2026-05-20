@@ -1,7 +1,6 @@
 package net.hazen.elemental_synergies.Setup;
 
 import com.gametechbc.gtbcs_geomancy_plus.api.init.GGAttributes;
-import com.github.L_Ender.cataclysm.client.particle.Options.CircleLightningParticleOptions;
 import com.github.L_Ender.cataclysm.entity.effect.Lightning_Area_Effect_Entity;
 import com.github.L_Ender.cataclysm.entity.effect.Lightning_Storm_Entity;
 import com.github.L_Ender.cataclysm.init.ModEffect;
@@ -34,7 +33,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;

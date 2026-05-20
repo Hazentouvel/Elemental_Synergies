@@ -1,9 +1,7 @@
 package net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas;
 
-import com.github.L_Ender.cataclysm.init.ModKeybind;
 import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
@@ -12,8 +10,6 @@ import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Spells.AbstractSpells.BrimstoneSpells;
-import net.hazen.elemental_synergies.Spells.AbstractSpells.CalamitasSpells;
-import net.hazen.elemental_synergies.Spells.AbstractSpells.ProvidenceSpells;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;

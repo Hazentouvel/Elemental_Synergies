@@ -2,14 +2,13 @@ package net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.TidalWave;
 
 import com.github.L_Ender.cataclysm.client.particle.Options.CustomPoofParticleOptions;
 import com.github.L_Ender.cataclysm.init.ModEffect;
-import com.github.L_Ender.cataclysm.init.ModEntities;
 
 import java.util.Optional;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.A.ESEntityRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;

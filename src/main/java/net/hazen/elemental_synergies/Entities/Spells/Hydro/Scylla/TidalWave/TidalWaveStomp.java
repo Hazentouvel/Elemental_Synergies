@@ -1,14 +1,13 @@
 package net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.TidalWave;
 
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
-import io.redspace.ironsspellbooks.registries.EntityRegistry;
+
 import java.util.Optional;
 
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.A.ESEntityRegistry;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;

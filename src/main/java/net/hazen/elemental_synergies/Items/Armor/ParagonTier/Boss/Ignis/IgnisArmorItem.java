@@ -1,7 +1,6 @@
 package net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis;
 
 import com.github.L_Ender.cataclysm.init.ModEffect;
-import com.github.L_Ender.cataclysm.init.ModKeybind;
 import com.github.L_Ender.cataclysm.init.ModSounds;
 import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
@@ -10,17 +9,13 @@ import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import it.crystalnest.prometheus.api.FireManager;
 import net.acetheeldritchking.cataclysm_spellbooks.spells.fire.AbstractIgnisSpell;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
-import net.hazen.elemental_synergies.Items.Armor.AscensionTier.SupremeCalamitas.SupremeCalamitasArmorItem;
 import net.hazen.elemental_synergies.Particle.SoulFlameExplosionParticlesPacket;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.elemental_synergies.Registries.ESParticleHelper;
-import net.hazen.elemental_synergies.Spells.AbstractSpells.BrimstoneSpells;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
 import net.hazen.hazennstuff.Compat.MalumCompat;
 import net.hazen.hazennstuff.HnSUtilities.Armor.ImbuableGeckolibHnSArmorItem;
 import net.hazen.hazennstuff.Registries.HnSEffects;
-import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.hazen.hazentouvelib.Items.Armor.HLKeybindArmor;
 import net.hazen.hazentouvelib.Items.Armor.HLMessageArmorKey;
 import net.hazen.hazentouvelib.Registries.HLKeybinds;

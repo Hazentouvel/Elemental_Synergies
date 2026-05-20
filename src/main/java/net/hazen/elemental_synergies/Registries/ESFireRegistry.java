@@ -2,11 +2,6 @@ package net.hazen.elemental_synergies.Registries;
 
 //import it.crystalnest.prometheus.api.Fire;
 //import it.crystalnest.prometheus.api.FireManager;
-import net.hazen.elemental_synergies.ElementalSynergies;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-
-import java.util.Objects;
 
 
 public final class ESFireRegistry {

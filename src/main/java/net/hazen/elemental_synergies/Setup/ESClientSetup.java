@@ -10,7 +10,7 @@ import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.H
 import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.WaterSpearMagicProjectileRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.LightningSpearMagicProjectileRenderer;
 import net.hazen.elemental_synergies.Entities.Weapons.Violence.ViolenceRenderer;
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.A.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleRegistry;
 import net.hazen.hazennstuff.Particle.HnSGenericParticle;
 import net.minecraft.client.renderer.entity.NoopRenderer;

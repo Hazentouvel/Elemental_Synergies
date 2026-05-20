@@ -8,20 +8,16 @@ import net.acetheeldritchking.discerning_the_eldritch.registries.ItemRegistries;
 import net.ender.ess_requiem.registries.GGItemRegistry;
 import net.hazen.elemental_synergies.ElementalSynergies;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
-import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.Registries.HnSItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 //import net.warphan.iss_magicfromtheeast.registries.MFTEItemRegistries;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ESRecipeProvider extends RecipeProvider implements IConditionBuilder {

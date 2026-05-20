@@ -1,7 +1,5 @@
 package net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Maledictus;
 
-import com.github.L_Ender.cataclysm.init.ModEffect;
-import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.L_Ender.cataclysm.init.ModKeybind;
 import com.github.L_Ender.cataclysm.items.KeybindUsingArmor;
 import com.github.L_Ender.cataclysm.message.MessageArmorKey;
@@ -10,10 +8,8 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableHat;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
-import net.acetheeldritchking.cataclysm_spellbooks.spells.fire.AbstractIgnisSpell;
 import net.acetheeldritchking.cataclysm_spellbooks.spells.ice.AbstractMaledictusSpell;
 import net.hazen.elemental_synergies.ESUtilities.Armor.ESArmorMaterials;
-import net.hazen.elemental_synergies.Items.Armor.ParagonTier.Boss.Ignis.IgnisArmorItem;
 import net.hazen.elemental_synergies.Registries.ESItemRegistry;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.hazennstuff.Compat.ArsNoveauCompat;
@@ -26,7 +22,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;

@@ -4,7 +4,7 @@ import com.github.L_Ender.cataclysm.client.particle.Options.StormParticleOptions
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import net.hazen.elemental_synergies.Entities.Spells.Misc.ElementalSpearMagicProjectile;
-import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.A.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.hazennstuff.Registries.HnSSounds;

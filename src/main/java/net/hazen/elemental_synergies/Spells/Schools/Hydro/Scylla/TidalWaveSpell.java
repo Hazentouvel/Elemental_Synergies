@@ -17,6 +17,7 @@ import java.util.Optional;
 
 import net.acetheeldritchking.aces_spell_utils.registries.ASSchoolRegistry;
 import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.TidalWave.TidalWaveStomp;
+import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.TidalWave.WaveMagicProjectileEntity;
 import net.hazen.hazennstuff.Spells.AbstractSpells.HydroSpells;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -80,18 +81,96 @@ public class TidalWaveSpell extends HydroSpells {
     }
 
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
-        Vec3 spawn = Utils.moveToRelativeGroundLevel(level, entity.getEyePosition().add(entity.getForward().multiply((double)1.0F, (double)0.0F, (double)1.0F)), 1);
+        Vec3 spawn = Utils.moveToRelativeGroundLevel(level, entity.getEyePosition().add(entity.getForward().multiply(1.0D, 0.0D, 1.0D)), 1);
+
         BlockPos bpos = BlockPos.containing(spawn);
-        ((ServerLevel)level).sendParticles((new BlockParticleOption(ParticleTypes.BLOCK, level.getBlockState(bpos))).setPos(bpos), spawn.x, spawn.y, spawn.z, 40, (double)0.0F, (double)0.0F, (double)0.0F, 0.2 + (double)(0.05F * (float)spellLevel));
+        ((ServerLevel) level).sendParticles((new BlockParticleOption(ParticleTypes.BLOCK, level.getBlockState(bpos))).setPos(bpos), spawn.x, spawn.y, spawn.z, 40, 0.0D, 0.0D, 0.0D, 0.2D + (0.05F * spellLevel));
+
         TidalWaveStomp stomp = new TidalWaveStomp(level, this.getRange(spellLevel, entity), entity.getYRot());
+
         stomp.moveTo(spawn);
         stomp.setDamage(this.getDamage(spellLevel, entity));
         stomp.setExplosionRadius(this.getEntityPowerMultiplier(entity));
         stomp.setOwner(entity);
         level.addFreshEntity(stomp);
-        super.onCast(level, spellLevel, entity, castSource, playerMagicData);
-    }
+        int waveCount = Math.min(1 + ((spellLevel - 1) * 2), 5);
 
+        float frontSpread = 28.0F;
+
+        if (waveCount == 1) {
+            Vec3 direction = entity.getLookAngle().normalize();
+            Vec3 waveSpawn = spawn.add(direction.scale(1.25D));
+            WaveMagicProjectileEntity wave = new WaveMagicProjectileEntity(level, entity, 100, this.getDamage(spellLevel, entity));
+
+            wave.moveTo(waveSpawn.x, waveSpawn.y, waveSpawn.z, entity.getYRot(), 0.0F);
+            wave.setYRot(entity.getYRot());
+            wave.setState(1);
+            wave.setDeltaMovement(direction.scale(0.35D));
+
+            level.addFreshEntity(wave);
+        }
+        else if (waveCount == 3) {
+
+            for (int i = 0; i < 3; i++) {
+                float angleOffset = -frontSpread / 2.0F + (frontSpread / 2.0F) * i;
+                float waveRot = entity.getYRot() + angleOffset;
+
+                Vec3 direction = Vec3.directionFromRotation(0.0F, waveRot);
+                Vec3 waveSpawn = spawn.add(direction.scale(1.25D));
+
+                WaveMagicProjectileEntity wave = new WaveMagicProjectileEntity(level, entity, 100, this.getDamage(spellLevel, entity));
+                wave.moveTo(waveSpawn.x, waveSpawn.y, waveSpawn.z, waveRot, 0.0F);
+                wave.setYRot(waveRot);
+                wave.setState(1);
+                wave.setDeltaMovement(direction.normalize().scale(0.35D));
+
+                level.addFreshEntity(wave);
+            }
+        }
+        else if (waveCount == 5) {
+
+            // FRONT 3 WAVES
+            for (int i = 0; i < 3; i++) {
+                float angleOffset = -frontSpread / 2.0F + (frontSpread / 2.0F) * i;
+                float waveRot = entity.getYRot() + angleOffset;
+
+                Vec3 direction = Vec3.directionFromRotation(0.0F, waveRot);
+                Vec3 waveSpawn = spawn.add(direction.scale(1.25D));
+                WaveMagicProjectileEntity wave = new WaveMagicProjectileEntity(level, entity, 100, this.getDamage(spellLevel, entity));
+
+                wave.moveTo(waveSpawn.x, waveSpawn.y, waveSpawn.z, waveRot, 0.0F);
+                wave.setYRot(waveRot);
+                wave.setState(1);
+                wave.setDeltaMovement(direction.normalize().scale(0.35D));
+
+                level.addFreshEntity(wave);
+            }
+
+            for (int i = 0; i < 2; i++) {
+                float angleOffset = (i == 0) ? -12.0F : 12.0F;
+                float waveRot = entity.getYRot() + angleOffset;
+
+                Vec3 direction = Vec3.directionFromRotation(0.0F, waveRot);
+                Vec3 backOffset = entity.getLookAngle().normalize().scale(-3.0D);
+                Vec3 waveSpawn = spawn.add(backOffset).add(direction.scale(1.0D));
+
+                WaveMagicProjectileEntity wave = new WaveMagicProjectileEntity(level, entity, 100, this.getDamage(spellLevel, entity));
+                wave.moveTo(waveSpawn.x, waveSpawn.y, waveSpawn.z, waveRot, 0.0F);
+                wave.setYRot(waveRot);
+                wave.setState(1);
+                wave.setDeltaMovement(direction.normalize().scale(0.35D));
+                level.addFreshEntity(wave);
+            }
+        }
+
+        super.onCast(
+                level,
+                spellLevel,
+                entity,
+                castSource,
+                playerMagicData
+        );
+    }
     private float getDamage(int spellLevel, LivingEntity caster) {
         return this.getSpellPower(spellLevel, caster);
     }

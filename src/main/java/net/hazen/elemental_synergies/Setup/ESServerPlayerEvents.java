@@ -556,6 +556,16 @@ public class ESServerPlayerEvents {
                 event.setCanceled(true);
             }
         }
+        if (!event.getEntity().getItemBySlot(EquipmentSlot.FEET).isEmpty() && event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.SUPREME_CALAMITAS_BOOTS.get()) {
+            if (!event.getEntity().isShiftKeyDown() && (event.getFluidState().is(Fluids.LAVA) || event.getFluidState().is(Fluids.FLOWING_LAVA))) {
+                event.setCanceled(true);
+            }
+        }
+        if (!event.getEntity().getItemBySlot(EquipmentSlot.FEET).isEmpty() && event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.PROVIDENCE_BOOTS.get()) {
+            if (!event.getEntity().isShiftKeyDown() && (event.getFluidState().is(Fluids.LAVA) || event.getFluidState().is(Fluids.FLOWING_LAVA))) {
+                event.setCanceled(true);
+            }
+        }
         if (!event.getEntity().getItemBySlot(EquipmentSlot.FEET).isEmpty() && event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() == ESItemRegistry.SCYLLA_BOOTS.get()) {
             if (!event.getEntity().isShiftKeyDown() && (event.getFluidState().is(Fluids.WATER) || event.getFluidState().is(Fluids.FLOWING_WATER))) {
                 event.setCanceled(true);

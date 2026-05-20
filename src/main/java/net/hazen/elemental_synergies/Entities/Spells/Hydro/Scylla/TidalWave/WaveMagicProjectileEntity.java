@@ -7,8 +7,10 @@ import java.util.Optional;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
+import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
+import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
@@ -92,12 +94,15 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
         return this.owner;
     }
 
-    protected void defineSynchedData(SynchedEntityData.Builder p_326229_) {
-        p_326229_.define(LIFESPAN, 0);
-        p_326229_.define(MAX_TICKS, 0);
-        p_326229_.define(Y_ROT, 0.0F);
-        p_326229_.define(STATE, 0);
-        p_326229_.define(DAMAGE, 0.0F);
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+
+        builder.define(LIFESPAN, 0);
+        builder.define(MAX_TICKS, 0);
+        builder.define(Y_ROT, 0.0F);
+        builder.define(STATE, 0);
+        builder.define(DAMAGE, 0.0F);
     }
 
     public AnimationState getAnimationState(String input) {
@@ -110,8 +115,8 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
         }
     }
 
-    public void onSyncedDataUpdated(EntityDataAccessor<?> p_21104_) {
-        if (STATE.equals(p_21104_)) {
+    public void onSyncedDataUpdated(EntityDataAccessor<?> entityDataAccessor) {
+        if (STATE.equals(entityDataAccessor)) {
             switch (this.getState()) {
                 case 0:
                     this.stopAllAnimationStates();
@@ -130,7 +135,7 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
             }
         }
 
-        super.onSyncedDataUpdated(p_21104_);
+        super.onSyncedDataUpdated(entityDataAccessor);
     }
 
     public void stopAllAnimationStates() {
@@ -290,16 +295,28 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
     }
 
     protected void attackEntities(double strength, double x, double z) {
-        AABB bashBox = this.getBoundingBox().inflate((double)0.01F);
-        DamageSource source = this.damageSources().mobProjectile(this, this.owner);
+        AABB bashBox = this.getBoundingBox().inflate(0.01F);
 
-        for(LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
-            if (this.owner == null || !this.owner.equals(entity) && !this.owner.isAlliedTo(entity) && !entity.isAlliedTo(this.owner)) {
-                boolean flag = entity.hurt(source, this.getDamage());
+        for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
+
+            if (this.owner == null
+                    || (!this.owner.equals(entity)
+                    && !this.owner.isAlliedTo(entity)
+                    && !entity.isAlliedTo(this.owner))) {
+
+                DamageSources.ignoreNextKnockback(entity);
+                float totalDamage = this.getDamage();
+                boolean flag = DamageSources.applyDamage(entity, totalDamage, (ESSpellRegistries.TIDAL_WAVE.get()).getDamageSource(this, this.getOwner()));
+
                 if (flag) {
+
                     entity.extinguishFire();
-                    MobEffectInstance effectinstance1 = entity.getEffect(ModEffect.EFFECTWETNESS);
+
+                    MobEffectInstance effectinstance1 =
+                            entity.getEffect(ModEffect.EFFECTWETNESS);
+
                     int i = 1;
+
                     if (effectinstance1 != null) {
                         i += effectinstance1.getAmplifier();
                         entity.removeEffectNoUpdate(ModEffect.EFFECTWETNESS);
@@ -308,27 +325,58 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
                     }
 
                     i = Mth.clamp(i, 0, 4);
-                    MobEffectInstance effectinstance = new MobEffectInstance(ModEffect.EFFECTWETNESS, 200, i, false, true, true);
+
+                    MobEffectInstance effectinstance =
+                            new MobEffectInstance(
+                                    ModEffect.EFFECTWETNESS,
+                                    200,
+                                    i,
+                                    false,
+                                    true,
+                                    true
+                            );
+
                     entity.addEffect(effectinstance);
                 }
 
                 entity.hasImpulse = true;
 
                 Vec3 vec3;
-                for(vec3 = entity.getDeltaMovement(); x * x + z * z < (double)1.0E-5F; z = (Math.random() - Math.random()) * 0.01) {
-                    x = (Math.random() - Math.random()) * 0.01;
+
+                for (vec3 = entity.getDeltaMovement();
+                     x * x + z * z < 1.0E-5F;
+                     z = (Math.random() - Math.random()) * 0.01D) {
+
+                    x = (Math.random() - Math.random()) * 0.01D;
                 }
 
-                double playerSize = 1.08;
-                double entitySize = (double)(entity.getBbWidth() * entity.getBbHeight());
-                double scale = playerSize / Math.max(0.1, entitySize);
-                double knockbackScale = Math.min(scale, (double)1.5F);
-                double adjustedStrength = strength * knockbackScale;
-                Vec3 knockback = (new Vec3(x, (double)0.0F, z)).normalize().scale(adjustedStrength);
-                entity.setDeltaMovement(vec3.x / (double)2.0F - knockback.x, entity.onGround() ? Math.min((double)0.5F, vec3.y / (double)2.0F + strength) : vec3.y, vec3.z / (double)2.0F - knockback.z);
+                double playerSize = 1.08D;
+                double entitySize =
+                        entity.getBbWidth() * entity.getBbHeight();
+
+                double scale =
+                        playerSize / Math.max(0.1D, entitySize);
+
+                double knockbackScale =
+                        Math.min(scale, 1.5D);
+
+                double adjustedStrength =
+                        strength * knockbackScale;
+
+                Vec3 knockback =
+                        (new Vec3(x, 0.0D, z))
+                                .normalize()
+                                .scale(adjustedStrength);
+
+                entity.setDeltaMovement(
+                        vec3.x / 2.0D - knockback.x,
+                        entity.onGround()
+                                ? Math.min(0.5D, vec3.y / 2.0D + strength)
+                                : vec3.y,
+                        vec3.z / 2.0D - knockback.z
+                );
             }
         }
-
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -365,3 +413,4 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
         DAMAGE = SynchedEntityData.defineId(WaveMagicProjectileEntity.class, EntityDataSerializers.FLOAT);
     }
 }
+

@@ -7,7 +7,8 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import java.util.Optional;
 
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;

@@ -153,6 +153,8 @@ public class ESCreativeModeTabs {
 
                         //Violence
                         output.accept(ESItemRegistry.VIOLENCE.get());
+                        //Violence
+                        output.accept(ESItemRegistry.STORMSEEKER.get());
 
                         /*
                         *** Shields
@@ -175,10 +177,15 @@ public class ESCreativeModeTabs {
                          *** Curios
                          */
 
+                        //Charms
+                        output.accept(ESItemRegistry.RING_OF_ACROPOLIS.get());
+                        output.accept(ESItemRegistry.LUNAR_SHARD.get());
+                        output.accept(ESItemRegistry.THE_SKYWARD_EMBLEM.get());
+
                         //Spellbooks
 
 
-                        //Arcane Mace
+                        //Grimoire of Corruption
                         output.accept(ESItemRegistry.GRIMOIRE_OF_CORRUPTION.get());
 
                         output.accept(ESItemRegistry.GAUNTLETS_OF_IGNIS.get());

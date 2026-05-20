@@ -112,7 +112,7 @@ public class ESEntityRegistry {
      */
 
 
-    // Soulflame Bolt
+    // Violence
     public static final DeferredHolder<EntityType<?>, EntityType<Violence>> VIOLENCE =
             ENTITIES.register("violence", () -> EntityType.Builder.<Violence>of(Violence::new, MobCategory.MISC)
                     .sized(1f, 1.5f)

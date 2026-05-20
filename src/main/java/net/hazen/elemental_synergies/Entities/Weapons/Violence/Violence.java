@@ -11,7 +11,8 @@ import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.acetheeldritchking.aces_spell_utils.registries.ASAttributeRegistry;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.hazentouvelib.Registries.HLAttributeRegistry;
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESEffectRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageType;

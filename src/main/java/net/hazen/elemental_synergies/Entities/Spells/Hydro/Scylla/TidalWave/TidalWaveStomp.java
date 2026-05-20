@@ -7,7 +7,7 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 
 import java.util.Optional;
 
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;

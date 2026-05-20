@@ -10,7 +10,8 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.acetheeldritchking.aces_spell_utils.registries.ASDamageTypes;
 import net.hazen.elemental_synergies.Particle.BrimstoneExplosionParticlesPacket;
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;
 import net.hazen.hazennstuff.Registries.HnSSounds;
 import net.minecraft.core.Holder;

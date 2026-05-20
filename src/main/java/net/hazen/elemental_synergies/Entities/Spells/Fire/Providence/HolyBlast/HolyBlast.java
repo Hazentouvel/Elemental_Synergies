@@ -8,7 +8,7 @@ import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import net.hazen.elemental_synergies.Particle.HolyFlameExplosionParticlesPacket;
-import net.hazen.elemental_synergies.A.ESEntityRegistry;
+import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
 import net.hazen.elemental_synergies.Registries.ESParticleHelper;
 import net.hazen.elemental_synergies.Registries.ESSounds;
 import net.hazen.elemental_synergies.Spells.ESSpellRegistries;

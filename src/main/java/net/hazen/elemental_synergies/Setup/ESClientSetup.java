@@ -9,6 +9,7 @@ import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.H
 import net.hazen.elemental_synergies.Entities.Spells.Fire.Providence.HolyBlast.HolyFire.HolyFlameRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.WaterSpearMagicProjectileRenderer;
 import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.SpearsOfAcropolis.LightningSpearMagicProjectileRenderer;
+import net.hazen.elemental_synergies.Entities.Spells.Hydro.Scylla.TidalWave.WaveMagicProjectileRenderer;
 import net.hazen.elemental_synergies.Entities.Weapons.Violence.ViolenceRenderer;
 
 import net.hazen.elemental_synergies.Registries.ESEntityRegistry;
@@ -50,6 +51,7 @@ public class ESClientSetup {
         event.registerEntityRenderer(ESEntityRegistry.WATER_SPEAR.get(), WaterSpearMagicProjectileRenderer::new);
         event.registerEntityRenderer(ESEntityRegistry.LIGHTNING_SPEAR.get(), LightningSpearMagicProjectileRenderer::new);
         event.registerEntityRenderer(ESEntityRegistry.TIDAL_WAVE_STOMP.get(), NoopRenderer::new);
+        event.registerEntityRenderer(ESEntityRegistry.WAVE.get(), WaveMagicProjectileRenderer::new);
 
 
         /*

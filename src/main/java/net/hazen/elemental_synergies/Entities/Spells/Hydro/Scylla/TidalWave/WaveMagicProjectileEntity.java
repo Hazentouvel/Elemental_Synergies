@@ -259,8 +259,8 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
             this.remove(RemovalReason.DISCARDED);
         }
 
-        float f = Math.max(1.0F - (float)this.getLifespan() / (1.0F * (float)this.getMaxTicks()), 0.0F);
-        Vec3 directionVec = (new Vec3((double)0.0F, (double)0.0F, (double)(f * f * 0.1F))).yRot((float)Math.toRadians((double)(-this.getYRot())));
+        float f = Math.max(1.0F - (float)this.getLifespan() / (float)this.getMaxTicks(), 0.0F);
+
         if (this.level().isClientSide) {
             if (this.lSteps > 0) {
                 double d5 = this.getX() + (this.lx - this.getX()) / (double)this.lSteps;
@@ -289,9 +289,19 @@ public class WaveMagicProjectileEntity extends AbstractMagicProjectile {
             this.attackEntities((double)1.5F, (double)Mth.sin(this.getYRot() * ((float)Math.PI / 180F)), (double)(-Mth.cos(this.getYRot() * ((float)Math.PI / 180F))));
         }
 
-        Vec3 vec3 = this.getDeltaMovement().scale((double)0.9F).add(directionVec);
-        this.move(MoverType.SELF, vec3);
-        this.setDeltaMovement(vec3.multiply((double)0.99F, (double)0.98F, (double)0.99F));
+        double speed = f * f * 0.35F;
+
+        float yawRad = this.getYRot() * ((float)Math.PI / 180F);
+
+        Vec3 movement = new Vec3(
+                -Mth.sin(yawRad) * speed,
+                this.getDeltaMovement().y,
+                Mth.cos(yawRad) * speed
+        );
+
+        this.setDeltaMovement(movement);
+
+        this.move(MoverType.SELF, movement);
     }
 
     protected void attackEntities(double strength, double x, double z) {
